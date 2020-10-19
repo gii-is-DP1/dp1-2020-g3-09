@@ -39,7 +39,7 @@
         <roles>
           <role>undetermined</role>
         </roles>
-       <developer>
+       </developer>
        <developer>
         <id>Rodri</id>
         <name>Rodrigo</name>
@@ -47,7 +47,7 @@
         <roles>
           <role>leader</role>
         </roles>
-       <developer>
+       </developer>
     </developers>
     <dependencies>
         <!-- Spring and Spring Boot dependencies -->
