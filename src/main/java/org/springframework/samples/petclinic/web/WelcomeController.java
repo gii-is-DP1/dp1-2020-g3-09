@@ -22,12 +22,12 @@ public class WelcomeController {
       List<Person> persons = new ArrayList<Person>();
       Person person1 = new Person();
       person1.setFirstName("Antonio Javier");
-      person1.setLastName("Dominguez");
+      person1.setLastName(" Dominguez");
       persons.add(person1);
 
       Person person2 = new Person();
       person2.setFirstName("Rodrigo");
-      person2.setLastName("Garcia Casasola");
+      person2.setLastName(" Garcia Casasola");
       persons.add(person2);
       model.put("persons",persons);
       model.put("title","My project");
