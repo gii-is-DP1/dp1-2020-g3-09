@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.configuration;
+package com.tempura17.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
