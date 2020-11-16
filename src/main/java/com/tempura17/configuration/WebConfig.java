@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.configuration;
+package com.tempura17.configuration;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
