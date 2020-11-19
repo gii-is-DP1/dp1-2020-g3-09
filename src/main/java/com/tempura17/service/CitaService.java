@@ -25,6 +25,10 @@ public class CitaService {
     public Cita findById(long id){
         return repo.findById(id);
     }
+
+    public Collection<Cita> findByPacienteId(int pacienteId){
+      return repo.findByPacienteId(pacienteId);
+    }
 	
     
 }

@@ -1,15 +1,13 @@
 package com.tempura17.web;
 
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.tempura17.model.Paciente;
-import com.tempura17.service.PacienteService;
+import com.tempura17.model.Cita;
 import com.tempura17.service.CitaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,34 +21,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
-@RequestMapping("/pacientes")
-public class PacienteController {
+@RequestMapping("/citas")
+public class CitaController {
 
     @Autowired
-	PacienteService pacienteServ;
-	
-	@Autowired
 	CitaService citaServ;
-    
-    @GetMapping
-	public String listPacientes(ModelMap model)
-	{
-		model.addAttribute("pacientes",pacienteServ.findAll());
-		return "pacientes/pacientesListing";
-	}
+	
 
-	@GetMapping("/json")
+
+    @GetMapping("/json")
 	@ResponseBody
-	public Collection<Paciente> jsonPacientes()
+	public Collection<Cita> jsonCitas()
 	{
 		
-		return pacienteServ.findAll();
-	}
-
-	@GetMapping(value="/{pacienteId}/citas")
-	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		model.addAttribute("citas", citaServ.findByPacienteId(pacienteId));
-		return "citas/History";
+		return citaServ.findAll();
 	}
     
 }
