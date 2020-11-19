@@ -26,8 +26,17 @@ public class CitaController {
 
     @Autowired
 	CitaService citaServ;
+
+	PacienteController pacienteController;
 	
 
+
+	@GetMapping
+	public String listCitas(ModelMap model)
+	{
+		model.addAttribute("citas", citaServ.findAll());
+			return "citas/History";
+	}
 
     @GetMapping("/json")
 	@ResponseBody
@@ -35,6 +44,73 @@ public class CitaController {
 	{
 		
 		return citaServ.findAll();
+	}
+
+	@GetMapping("/new")
+	public String editNewCita(ModelMap model){
+		model.addAttribute("cita", new Cita());
+		return "citas/Citas_Form";
+	}
+
+	@PostMapping("/new")
+	public String saveNewCita(@Valid Cita cita, BindingResult binding, ModelMap model){
+
+		if(binding.hasErrors()){
+			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			return listCitas(model);
+
+		}else {
+			citaServ.save(cita);
+			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			return listCitas(model);
+
+		}
+	}
+
+
+	@GetMapping("/{citaId}/edit")
+	public String editCita(@PathVariable("citaId") int citaId, ModelMap model){
+		Optional<Cita> cita = citaServ.findById(citaId);
+
+		if(cita.isPresent()){
+			model.addAttribute("cita", cita.get());
+			return "citas/Citas_Form";
+
+		}else{
+			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			return listCitas(model);
+		}
+	}
+
+	@PostMapping("/{citaId}/edit")
+	public String editCita(@PathVariable("citaId") int citaId, @Valid Cita citaModified, BindingResult binding, ModelMap model){
+		Optional<Cita> cita = citaServ.findById(citaId);
+
+		if(binding.hasErrors()){
+			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			return listCitas(model);
+
+		}else{
+			BeanUtils.copyProperties(citaModified, cita.get(), "id", "paciente");
+			citaServ.save(cita.get());
+			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			return listCitas(model);
+		}
+	}
+
+	@GetMapping("/{citaId}/delete")
+	public String deleteCita(@PathVariable("citaId") int citaId, ModelMap model){
+		Optional<Cita> cita = citaServ.findById(citaId);
+		
+		if(cita.isPresent()){
+			citaServ.delete(cita.get());
+			model.addAttribute("message", "ENHORABUENA HAS BORRADO ALGO, QUE PENA QUE NO SE PUEDA HACER CONTIGO LO MISMO");
+			return listCitas(model);
+
+		}else{
+			model.addAttribute("message","NO EXISTE CITA CON ESE ID RETRASADO");
+			return listCitas(model);
+		}
 	}
     
 }

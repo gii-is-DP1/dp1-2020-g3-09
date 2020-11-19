@@ -17,12 +17,21 @@ public class CitaService {
 
     @Autowired
     CitaRepository repo;
+
+
+    public void delete(Cita cita){
+      repo.deleteById(cita.getId());
+    }
+
+    public void save(@Valid Cita cita){
+      repo.save(cita);
+    }
     
     public Collection<Cita> findAll(){
 		return repo.findAll();
     }
     
-    public Cita findById(long id){
+    public Optional<Cita> findById(Integer id){
         return repo.findById(id);
     }
 

@@ -47,9 +47,8 @@ public class Paciente extends Person{
 
     private Integer edad;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
-
-    private Set<Cita> citas;
+   // @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
+   // private Set<Cita> citas;
 
 
 

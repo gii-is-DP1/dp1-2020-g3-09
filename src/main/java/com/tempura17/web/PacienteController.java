@@ -8,6 +8,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
 import com.tempura17.service.PacienteService;
 import com.tempura17.service.CitaService;
@@ -51,6 +53,12 @@ public class PacienteController {
 	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		model.addAttribute("citas", citaServ.findByPacienteId(pacienteId));
 		return "citas/History";
+	}
+
+	@GetMapping(value="/{pacienteId}/citas/json")
+	@ResponseBody
+	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+		return citaServ.findByPacienteId(pacienteId);
 	}
     
 }
