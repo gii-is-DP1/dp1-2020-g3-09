@@ -18,8 +18,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -31,30 +29,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
-
-
 @Entity
 @Data
-@Table(name = "pacientes")
-public class Paciente extends Person{
+@Table(name = "aseguradoras")
+public class Aseguradora extends BaseEntity{
 
-    private String dni;
-    
-    private String email;
+    private String nombre;
 
-    private String direccion;
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
+   private Set<Doctor> doctores;
 
-    @Enumerated(EnumType.STRING)
-    private Sexo sexo;
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
+   private Set<Paciente> pacientes;
 
-    private Integer edad;
 
-   // @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
-   // private Set<Cita> citas;
-  
-   @ManyToOne
-    @JoinColumn(name ="aseguradora_id")
-    private Aseguradora aseguradora;
+
 
     
-}   
+}

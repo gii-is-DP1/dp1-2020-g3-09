@@ -18,8 +18,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -35,26 +33,18 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "pacientes")
-public class Paciente extends Person{
+@Table(name = "doctores")
+public class Doctor extends Person{
 
     private String dni;
-    
-    private String email;
 
     private String direccion;
 
-    @Enumerated(EnumType.STRING)
-    private Sexo sexo;
+    private String telefono;
 
-    private Integer edad;
-
-   // @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
-   // private Set<Cita> citas;
-  
-   @ManyToOne
-    @JoinColumn(name ="aseguradora_id")
-    private Aseguradora aseguradora;
-
+    private String correo;
     
-}   
+    @Enumerated(EnumType.STRING)
+    private Especialidad Especialidad;  //Enum o string??
+    
+}

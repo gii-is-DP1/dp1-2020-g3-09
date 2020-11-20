@@ -70,7 +70,7 @@ public class CitaController {
 
 	@GetMapping("/{citaId}/edit")
 	public String editCita(@PathVariable("citaId") int citaId, ModelMap model){
-		Optional<Cita> cita = citaServ.findById(citaId);
+		Optional<Cita> cita = citaServ.findById((citaId));
 
 		if(cita.isPresent()){
 			model.addAttribute("cita", cita.get());
