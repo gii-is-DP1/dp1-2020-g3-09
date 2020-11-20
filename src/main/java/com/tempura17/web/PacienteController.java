@@ -22,25 +22,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
-@RequestMapping("/pacientes")
 public class PacienteController {
 
     @Autowired
-    PacienteService pacienteServ;
-    
-    @GetMapping
-	public String listPacientes(ModelMap model)
-	{
-		model.addAttribute("pacientes",pacienteServ.findAll());
-		return "pacientes/pacientesListing";
+    PacienteService pacienteService;
+	
+	@Autowired
+	public PacienteController(PacienteService pacienteService){
+		this.pacienteService = pacienteService;
 	}
 
-	@GetMapping("/json")
-	@ResponseBody
-	public Collection<Paciente> jsonPacientes()
-	{
+	@GetMapping("/pacientes")
+	public Collection<Paciente> all(){
 		
-		return pacienteServ.findAll();
+		return pacienteService.findAll();
 	}
     
 }
