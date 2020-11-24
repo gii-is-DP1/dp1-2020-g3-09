@@ -8,9 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PacienteRepository extends CrudRepository<Paciente, Long> {
 
-  Collection<Paciente> findByLastName(String lastName);
-
   Collection<Paciente> findAll();
-
+  
   Paciente findById(long id);
 }

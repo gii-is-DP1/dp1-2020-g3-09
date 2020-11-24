@@ -16,15 +16,36 @@ import org.springframework.stereotype.Service;
 public class CitaService {
 
     @Autowired
-    CitaRepository repo;
-    
+    CitaRepository citaRepository;
+
+    public CitaService(){}
+
+    public CitaService(CitaRepository citaRepository){
+      this.citaRepository = citaRepository;
+    }
+
+
+    //Aggregate root
     public Collection<Cita> findAll(){
-		return repo.findAll();
+      return citaRepository.findAll();
+    }
+
+    public Optional<Cita> findById(Integer id){
+      return citaRepository.findById(id);
+    }
+
+    public Collection<Cita> findByPacienteId(int pacienteId){
+      return citaRepository.findByPacienteId(pacienteId);
     }
     
-    public Cita findById(long id){
-        return repo.findById(id);
+    public void save(@Valid Cita cita){
+      citaRepository.save(cita);
     }
+
+    public void delete(Cita cita){
+      citaRepository.deleteById(cita.getId());
+    }
+
 	
     
 }
