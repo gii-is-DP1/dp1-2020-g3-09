@@ -11,4 +11,8 @@ public interface PacienteRepository extends CrudRepository<Paciente, Long> {
   Collection<Paciente> findAll();
   
   Paciente findById(long id);
+
+  // Pendiente de inclusion
+  //Paciente findByCitaId(Integer citaId);
+
 }

@@ -35,6 +35,7 @@ import lombok.Data;
 //@Table(name = "aseguradoras")
 public class Aseguradora extends BaseEntity{
 
+
     /*
     NOTA: Necesita discutir y aobrdar detalles de implementación severos.
 

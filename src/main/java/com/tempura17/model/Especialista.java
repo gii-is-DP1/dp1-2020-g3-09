@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -29,12 +30,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
-
-
 @Entity
 @Data
 @Table(name = "especialistas")
-public class Especialista extends Person{
+public class Especialista extends Person {
 
     private String dni;
 
@@ -43,10 +42,10 @@ public class Especialista extends Person{
     private String telefono;
 
     private String correo;
-    
-    @Enumerated(EnumType.STRING)
-    private Especialidad especialidad; 
 
+    @Enumerated(EnumType.STRING)
+    private Especialidad especialidad;
+    
     /*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
     private Set<Cita> citas;

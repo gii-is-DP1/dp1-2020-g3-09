@@ -25,14 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 @RequestMapping("/citas")
 public class CitaController {
-
-    @Autowired
-	CitaService citaService;
 	
-	
-	public CitaController(){}
+	// Dado que Spring gestiona una unica inyección de las dependencias es necesario declarlo como CONSTANTE
+	private	final CitaService citaService;
 
+	@Autowired
 	public CitaController(CitaService citaService){
+		super();
 		this.citaService = citaService;
 	}
 
@@ -76,6 +75,7 @@ public class CitaController {
 
 	@GetMapping("/{citaId}/edit")
 	public String editCita(@PathVariable("citaId") int citaId, ModelMap model){
+		// Instaurar el uso de GenericTransofrmer en base al id
 		Optional<Cita> cita = citaService.findById((citaId));
 
 		if(cita.isPresent()){

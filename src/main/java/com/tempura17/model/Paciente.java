@@ -53,12 +53,12 @@ public class Paciente extends Person {
     private Integer edad;
 
     /*
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "paciente")
-    private Set<Cita> citas = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
+    private Set<Cita> citas;
     */
     //@ManyToOne
     //@JoinColumn(name ="aseguradora_id")
     private String aseguradora;
-
+    
     
 }   

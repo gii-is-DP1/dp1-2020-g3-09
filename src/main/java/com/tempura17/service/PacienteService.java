@@ -15,11 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class PacienteService {
 
-    @Autowired
     PacienteRepository pacienteRepository;
-
-    public PacienteService(){}
-
+    
+    @Autowired
     public PacienteService(PacienteRepository pacienteRepository){
       this.pacienteRepository = pacienteRepository;
     }
