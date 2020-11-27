@@ -1,4 +1,4 @@
-package com.tempura17.service;
+/*package com.tempura17.service;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -25,4 +25,4 @@ public class DoctorService {
         return repo.findById(id);
     }
     
-}
+}*/

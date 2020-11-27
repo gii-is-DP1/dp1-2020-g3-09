@@ -1,4 +1,4 @@
-package com.tempura17.web;
+/*package com.tempura17.web;
 
 import org.springframework.stereotype.Controller;
 import java.util.Collection;
@@ -41,3 +41,4 @@ public class DoctorController {
 	}
     
 }
+*/

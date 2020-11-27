@@ -1,4 +1,4 @@
-package com.tempura17.model;
+/*package com.tempura17.model;
 
 import java.util.Set;
 import java.time.LocalDate;
@@ -43,8 +43,8 @@ public class Doctor extends Person{
     private String telefono;
 
     private String correo;
-    
+
     @Enumerated(EnumType.STRING)
     private Especialidad Especialidad;  //Enum o string??
     
-}
+}*/

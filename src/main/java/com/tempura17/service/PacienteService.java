@@ -15,12 +15,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class PacienteService {
 
+  private PacienteRepository PacienteRepository;
+
     @Autowired
-    PacienteRepository repo;
+    public PacienteService(PacienteRepository pacienteRepository){
+      this.PacienteRepository = pacienteRepository;
+    }
+    
     
     public Collection<Paciente> findAll(){
       
-		return repo.findAll();
+		return PacienteRepository.findAll();
 	}
 	
     

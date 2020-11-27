@@ -1,4 +1,4 @@
-package com.tempura17.model;
+/*package com.tempura17.model;
 
 import java.util.Set;
 import java.time.LocalDate;
@@ -40,10 +40,10 @@ public class Aseguradora extends BaseEntity{
    private Set<Doctor> doctores;
 
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
-   private Set<Paciente> pacientes;
+   private Set<Paciente> pacientes; 
 
 
 
 
     
-}
+}*/

@@ -1,4 +1,4 @@
-package com.tempura17.repository;
+/*package com.tempura17.repository;
 
 import java.util.Collection;
 
@@ -10,4 +10,4 @@ public interface DoctorRepository extends CrudRepository<Doctor, Integer>{
     
 
     public Collection<Doctor> findAll();
-}
+}*/
