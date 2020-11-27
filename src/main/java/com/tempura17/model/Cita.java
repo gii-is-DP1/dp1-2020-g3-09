@@ -3,15 +3,6 @@ package com.tempura17.model;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
-<<<<<<< HEAD
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-=======
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -28,7 +19,6 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
->>>>>>> master
 import javax.persistence.JoinTable;
 import lombok.Data;
 
@@ -40,23 +30,6 @@ import lombok.Data;
 public class Cita extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
-<<<<<<< HEAD
-    private Tipologia tipo;
-
-    @Enumerated(EnumType.STRING)
-    private Formato formato;
-
-    private String especialidad;
-
-    private String especialista;
-
-    //private LocalDateTime fecha;
-
-    @ManyToOne
-    @JoinColumn(name ="paciente_id")
-    private Paciente paciente;
-
-=======
     private Formato formato;
 
     @Enumerated(EnumType.STRING)
@@ -149,7 +122,6 @@ public class Cita extends BaseEntity {
     */
 
     
->>>>>>> master
 
     
 }
