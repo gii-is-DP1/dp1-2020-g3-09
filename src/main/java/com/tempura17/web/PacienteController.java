@@ -3,6 +3,7 @@ package com.tempura17.web;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -29,24 +30,51 @@ import org.springframework.web.bind.annotation.RestController;
 public class PacienteController {
 
     @Autowired
+<<<<<<< HEAD
 	PacienteService pacienteServ;
 	
 	@Autowired
 	CitaService citaServ;
     
+=======
+	PacienteService pacienteService;
+	
+	@Autowired
+	CitaService citaService;
+	
+	@Autowired
+	public PacienteController(PacienteService pacienteService, CitaService citaService){
+		this.pacienteService = pacienteService;
+		this.citaService = citaService;
+	}
+	
+    /*
+>>>>>>> master
     @GetMapping
 	public String listPacientes(ModelMap model)
 	{
 		model.addAttribute("pacientes",pacienteServ.findAll());
 		return "pacientes/pacientesListing";
 	}
-
-	@GetMapping("/json")
+	*/
+	@GetMapping
 	@ResponseBody
-	public Collection<Paciente> jsonPacientes()
-	{
+	public List<Paciente> all(){
 		
-		return pacienteServ.findAll();
+		return pacienteService.findAll().stream()
+							  .collect(Collectors.toList());
+	}
+
+	@GetMapping(value="/{pacienteId}/citas")
+	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+		model.addAttribute("citas", citaService.findByPacienteId(pacienteId));
+		return "citas/History";
+	}
+
+	@GetMapping(value="/{pacienteId}/citas/json")
+	@ResponseBody
+	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+		return citaService.findByPacienteId(pacienteId);
 	}
 
 	@GetMapping(value="/{pacienteId}/citas")

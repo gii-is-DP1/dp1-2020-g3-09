@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -18,8 +19,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -29,36 +28,26 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import java.util.Set;
-
-import javax.persistence.*;
-import javax.persistence.JoinColumn;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "pacientes")
-public class Paciente extends Person {
+@Table(name = "especialistas")
+public class Especialista extends Person {
 
-    private String dni; 
-    private String email;
+    private String dni;
+
     private String direccion;
 
+    private String telefono;
+
+    private String correo;
+
     @Enumerated(EnumType.STRING)
-    private Sexo sexo;
-
-    private Integer edad;
-
+    private Especialidad especialidad;
+    
     /*
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
     private Set<Cita> citas;
     */
-    //@ManyToOne
-    //@JoinColumn(name ="aseguradora_id")
-    private String aseguradora;
-    
-    
-}   
+}
