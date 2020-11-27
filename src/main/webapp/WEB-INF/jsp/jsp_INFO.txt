@@ -1,0 +1,1 @@
+Este directorio será el encargado de albergar las distintas vistas usando el motor JSP

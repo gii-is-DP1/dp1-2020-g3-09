@@ -1,5 +1,6 @@
 package com.tempura17.model;
 
+/*
 import java.util.Set;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,8 +19,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -29,36 +28,24 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import java.util.Set;
-
-import javax.persistence.*;
-import javax.persistence.JoinColumn;
 import lombok.Data;
+*/
+//@Entity
+//@Data
+//@Table(name = "aseguradoras")
+public class Aseguradora extends BaseEntity{
 
-@Entity
-@Data
-@Table(name = "pacientes")
-public class Paciente extends Person {
-
-    private String dni; 
-    private String email;
-    private String direccion;
-
-    @Enumerated(EnumType.STRING)
-    private Sexo sexo;
-
-    private Integer edad;
 
     /*
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
-    private Set<Cita> citas;
+    NOTA: Necesita discutir y aobrdar detalles de implementación severos.
+
+    private String nombre;
+
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
+   private Set<Especialista> especialistaes;
+
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
+   private Set<Paciente> pacientes;
     */
-    //@ManyToOne
-    //@JoinColumn(name ="aseguradora_id")
-    private String aseguradora;
     
-    
-}   
+}
