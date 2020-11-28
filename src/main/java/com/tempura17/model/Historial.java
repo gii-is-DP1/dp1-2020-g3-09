@@ -40,9 +40,19 @@ import com.tempura17.model.Paciente;
 @Table(name = "historial")
 public class Historial extends BaseEntity{
 
+    @OneToOne
+    private Paciente paciente;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "historial", fetch = FetchType.EAGER)
     private Set<Cita> cita;
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 
     public Set<Cita> getCita() {
         return cita;
