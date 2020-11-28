@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -38,6 +39,9 @@ public class Poliza extends NamedEntity{
     @JsonIgnore
     private Aseguradora aseguradora;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
+    private Set<Paciente> pacientes;
+
     public BigDecimal getPrecio() {
         return precio;
     }
@@ -68,6 +72,14 @@ public class Poliza extends NamedEntity{
 
     public void setAseguradora(Aseguradora aseguradora) {
         this.aseguradora = aseguradora;
+    }
+
+    public Set<Paciente> getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(Set<Paciente> pacientes) {
+        this.pacientes = pacientes;
     }
 
     

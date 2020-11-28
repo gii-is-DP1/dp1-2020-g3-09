@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -35,6 +36,11 @@ public class Paciente extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
     private Set<Cita> citas;
+
+    @ManyToOne
+    @JoinColumn(name ="poliza_id", nullable = true)  
+    @JsonIgnore
+    private Poliza poliza;
 
     public String getDni() {
         return dni;
@@ -90,6 +96,14 @@ public class Paciente extends Person {
 
     public void setAseguradora(Aseguradora aseguradora) {
         this.aseguradora = aseguradora;
+    }
+
+    public Poliza getPoliza() {
+        return poliza;
+    }
+
+    public void setPoliza(Poliza poliza) {
+        this.poliza = poliza;
     }
     
     
