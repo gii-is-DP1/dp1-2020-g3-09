@@ -31,21 +31,36 @@ public class CalculadoraController {
     @GetMapping
 	public String listCalculadoras(ModelMap model)
 	{
-		model.addAttribute("calculadora", calculadoraServ.findAll());
-			return "calculadoras/calcularIMC";
+		model.addAttribute("calculadoras", calculadoraServ.findAll());
+			return "calculadoras/calculadoraListing";
 	}
 
 	@GetMapping("/json")
 	@ResponseBody
 	public Collection<CalculadoraSalud> jsonCalculadoras()
 	{
-		
 		return calculadoraServ.findAll();
 	}
 
     @GetMapping("/new")
 	public String NewCalculadora(ModelMap model){
-		model.addAttribute("calculadora", new calcularIMC(peso,altura));
+		model.addAttribute("calculadora", new CalculadoraSalud());
 		return "calculadoras/calcularIMC";
+	}
+
+
+	@PostMapping("/new")
+	public String saveNewCalculadora(@Valid CalculadoraSalud calculadora, BindingResult binding, ModelMap model){
+
+		if(binding.hasErrors()){
+			model.addAttribute("message", "ERROR AL GUARDAR LA CALCULADORA");
+			return "calculadoras/calcularIMC";
+
+		}else {
+			calculadoraServ.save(calculadora);
+			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
+			return listCalculadoras(model);
+
+		}
 	}
 }
