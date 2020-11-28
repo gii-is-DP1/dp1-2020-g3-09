@@ -1,20 +1,8 @@
 package com.tempura17.model;
 
 import java.util.Set;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import org.springframework.beans.support.MutableSortDefinition;
-import org.springframework.beans.support.PropertyComparator;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,22 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import java.util.Set;
-
-import javax.persistence.*;
-import javax.persistence.JoinColumn;
-import lombok.Data;
 
 @Entity
 @Table(name = "pacientes")
@@ -52,14 +28,13 @@ public class Paciente extends Person {
 
     private Integer edad;
 
-    
+    @OneToOne
+    @JoinColumn(name ="aseguradora_id")
+    @JsonIgnore
+    private Aseguradora aseguradora;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
     private Set<Cita> citas;
-    
-    //@ManyToOne
-    //@JoinColumn(name ="aseguradora_id")
-    private String aseguradora;
-
 
     public String getDni() {
         return dni;
@@ -109,11 +84,11 @@ public class Paciente extends Person {
         this.citas = citas;
     }
 
-    public String getAseguradora() {
+    public Aseguradora getAseguradora() {
         return aseguradora;
     }
 
-    public void setAseguradora(String aseguradora) {
+    public void setAseguradora(Aseguradora aseguradora) {
         this.aseguradora = aseguradora;
     }
     
