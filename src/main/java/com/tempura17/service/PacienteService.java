@@ -15,20 +15,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PacienteService {
 
-<<<<<<< HEAD
-  private PacienteRepository PacienteRepository;
-
-    @Autowired
-    public PacienteService(PacienteRepository pacienteRepository){
-      this.PacienteRepository = pacienteRepository;
-    }
-    
-    
-    public Collection<Paciente> findAll(){
-      
-		return PacienteRepository.findAll();
-	}
-=======
     PacienteRepository pacienteRepository;
     
     @Autowired
@@ -39,7 +25,6 @@ public class PacienteService {
     public Collection<Paciente> findAll(){
       return pacienteRepository.findAll();
 	  }
->>>>>>> master
 	
     
 }

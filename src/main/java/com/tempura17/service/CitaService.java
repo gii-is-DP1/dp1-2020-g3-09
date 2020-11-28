@@ -21,21 +21,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CitaService {
 
-<<<<<<< HEAD
-    @Autowired
-    CitaRepository repo;
-
-
-    public void delete(Cita cita){
-      repo.deleteById(cita.getId());
-    }
-
-    public void save(@Valid Cita cita){
-      repo.save(cita);
-    }
-=======
     private CitaRepository citaRepository;
->>>>>>> master
     
     private PacienteRepository pacienteRepository;
 
@@ -51,16 +37,6 @@ public class CitaService {
     public Collection<Cita> findAll(){
       return citaRepository.findAll();
     }
-<<<<<<< HEAD
-    
-    public Optional<Cita> findById(Integer id){
-        return repo.findById(id);
-    }
-
-    public Collection<Cita> findByPacienteId(int pacienteId){
-      return repo.findByPacienteId(pacienteId);
-    }
-=======
 
     public Optional<Cita> findById(Integer id){
       return citaRepository.findById(id);
@@ -88,7 +64,6 @@ public class CitaService {
       citaRepository.deleteById(cita.getId());
     }
 
->>>>>>> master
 	
     
 }

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-/*package com.tempura17.model;
-
-=======
 package com.tempura17.model;
 
 /*
->>>>>>> master
 import java.util.Set;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -34,27 +29,6 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
-<<<<<<< HEAD
-
-@Entity
-@Data
-@Table(name = "aseguradoras")
-public class Aseguradora extends BaseEntity{
-
-    private String nombre;
-
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
-   private Set<Doctor> doctores;
-
-   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
-   private Set<Paciente> pacientes; 
-
-
-
-
-    
-}*/
-=======
 */
 //@Entity
 //@Data
@@ -75,4 +49,3 @@ public class Aseguradora extends BaseEntity{
     */
     
 }
->>>>>>> master

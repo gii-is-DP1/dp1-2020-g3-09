@@ -30,13 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PacienteController {
 
     @Autowired
-<<<<<<< HEAD
-	PacienteService pacienteServ;
-	
-	@Autowired
-	CitaService citaServ;
-    
-=======
 	PacienteService pacienteService;
 	
 	@Autowired
@@ -49,7 +42,6 @@ public class PacienteController {
 	}
 	
     /*
->>>>>>> master
     @GetMapping
 	public String listPacientes(ModelMap model)
 	{
@@ -77,16 +69,4 @@ public class PacienteController {
 		return citaService.findByPacienteId(pacienteId);
 	}
 
-	@GetMapping(value="/{pacienteId}/citas")
-	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		model.addAttribute("citas", citaServ.findByPacienteId(pacienteId));
-		return "citas/History";
-	}
-
-	@GetMapping(value="/{pacienteId}/citas/json")
-	@ResponseBody
-	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		return citaServ.findByPacienteId(pacienteId);
-	}
-    
 }
