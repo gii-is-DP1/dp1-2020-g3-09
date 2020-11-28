@@ -1,6 +1,9 @@
 INSERT INTO aseguradoras(id,nombre) VALUES (
     1,
     'Caser');
+    INSERT INTO aseguradoras(id,nombre) VALUES (
+    2,
+    'NoCaser');
 
 
 INSERT INTO polizas(id, aseguradora_id, name, precio, cobertura, duracion) VALUES (
@@ -66,6 +69,16 @@ INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,
     'especialistaaso@gmail.com',
     'MEDICINA_GENERAL');
 
+INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
+    2, 
+    'Ceballa', 
+    'Enriqueta', 
+    '00000000F',
+    'casoplon',
+    '123456789',
+    'especialistaaso@gmail.com',
+    'MEDICINA_INTERNA');
+
  INSERT INTO citas(id,paciente_id,formato,tipo,especialidad,especialista,fecha) VALUES (
      1,
      1,
@@ -74,5 +87,17 @@ INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,
      'MEDICINA_GENERAL',
      'manhattan',
      '2019-01-27 22:00:00'); 
+
+INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES (
+    1,
+    2);
+
+INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES (
+    1,
+    1);
+
+INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES (
+    2,
+    2);
 
 

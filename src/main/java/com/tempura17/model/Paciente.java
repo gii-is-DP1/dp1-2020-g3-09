@@ -29,7 +29,7 @@ public class Paciente extends Person {
 
     private Integer edad;
 
-    @OneToOne
+    @ManyToOne(optional = true)
     @JoinColumn(name ="aseguradora_id")
     @JsonIgnore
     private Aseguradora aseguradora;
@@ -37,8 +37,8 @@ public class Paciente extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
     private Set<Cita> citas;
 
-    @ManyToOne
-    @JoinColumn(name ="poliza_id", nullable = true)  
+    @ManyToOne (optional = true)
+    @JoinColumn(name ="poliza_id")  
     @JsonIgnore
     private Poliza poliza;
 
