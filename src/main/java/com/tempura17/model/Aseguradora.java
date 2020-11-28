@@ -28,6 +28,9 @@ public class Aseguradora extends BaseEntity{
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
    private Set<Paciente> pacientes;
 
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
+   private Set<Poliza> polizas;
+
    public String getNombre() {
        return nombre;
    }
@@ -42,6 +45,14 @@ public class Aseguradora extends BaseEntity{
 
    public void setPacientes(Set<Paciente> pacientes) {
        this.pacientes = pacientes;
+   }
+
+   public Set<Poliza> getPolizas() {
+       return polizas;
+   }
+
+   public void setPolizas(Set<Poliza> polizas) {
+       this.polizas = polizas;
    }
     
    
