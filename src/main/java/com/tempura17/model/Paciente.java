@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import org.springframework.beans.support.MutableSortDefinition;
@@ -39,7 +40,6 @@ import javax.persistence.JoinColumn;
 import lombok.Data;
 
 @Entity
-@Data
 @Table(name = "pacientes")
 public class Paciente extends Person {
 
@@ -52,13 +52,71 @@ public class Paciente extends Person {
 
     private Integer edad;
 
-    /*
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
     private Set<Cita> citas;
-    */
+    
     //@ManyToOne
     //@JoinColumn(name ="aseguradora_id")
     private String aseguradora;
+
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
+    public Set<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(Set<Cita> citas) {
+        this.citas = citas;
+    }
+
+    public String getAseguradora() {
+        return aseguradora;
+    }
+
+    public void setAseguradora(String aseguradora) {
+        this.aseguradora = aseguradora;
+    }
+    
     
     
 }   

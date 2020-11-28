@@ -25,7 +25,6 @@ import lombok.Data;
 
 
 @Entity
-@Data
 @Table(name = "citas")
 public class Cita extends BaseEntity {
 
@@ -46,33 +45,11 @@ public class Cita extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name ="paciente_id")  
+    @JsonIgnore
     private Paciente paciente;
 
-    /* 
-    NOTA: se teorizo que el posible origen del fallo reportado[Infinity loop recursion -> stackOverflow] 
-    podría haber estado ligado a los metodos autogenerados por Lombok(hash,equals) dando que una entiedad podría estar
-    llamando al hash de la otra y así sucesivamente.
-    
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="especialista_id")  
-    private Especialista especialista;
-    
-
-    public Cita(){}
-
-    public Cita(Formato formato, Tipologia tipo, Especialidad especialidad, Date fecha, Paciente paciente,
-                Especialista especialista) {
-        this.formato = formato;
-        this.tipo = tipo;
-        this.especialidad = especialidad;
-        this.fecha = fecha;
-        this.paciente = paciente;
-        this.especialista = especialista;
-}
-
-
     public Formato getFormato() {
-        return this.formato;
+        return formato;
     }
 
     public void setFormato(Formato formato) {
@@ -80,7 +57,7 @@ public class Cita extends BaseEntity {
     }
 
     public Tipologia getTipo() {
-        return this.tipo;
+        return tipo;
     }
 
     public void setTipo(Tipologia tipo) {
@@ -88,15 +65,23 @@ public class Cita extends BaseEntity {
     }
 
     public Especialidad getEspecialidad() {
-        return this.especialidad;
+        return especialidad;
     }
 
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
 
+    public String getEspecialista() {
+        return especialista;
+    }
+
+    public void setEspecialista(String especialista) {
+        this.especialista = especialista;
+    }
+
     public Date getFecha() {
-        return this.fecha;
+        return fecha;
     }
 
     public void setFecha(Date fecha) {
@@ -104,24 +89,14 @@ public class Cita extends BaseEntity {
     }
 
     public Paciente getPaciente() {
-        return this.paciente;
+        return paciente;
     }
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 
-    public Especialista getEspecialista() {
-        return this.especialista;
-    }
-
-    public void setEspecialista(Especialista especialista) {
-        this.especialista = especialista;
-    }
-
-    */
 
     
-
     
 }

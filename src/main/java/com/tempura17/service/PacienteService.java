@@ -3,6 +3,7 @@ package com.tempura17.service;
 import java.util.Collection;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,20 @@ public class PacienteService {
     
     public Collection<Paciente> findAll(){
       return pacienteRepository.findAll();
-	  }
+    }
+    
+    public Optional<Paciente> findById(Integer id){
+      return pacienteRepository.findById(id);
+    }
+
+    public void save(@Valid Paciente paciente){
+      pacienteRepository.save(paciente);
+    }
+
+    @Transactional
+    public void deleteById(Integer id){
+      pacienteRepository.deleteById(id);
+    }
 	
     
 }
