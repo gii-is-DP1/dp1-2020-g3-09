@@ -10,24 +10,29 @@ import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.repository.CalculadoraRepository;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class CalculadoraService {
 
     @Autowired
-    CalculadoraRepository repo;
+    CalculadoraRepository calculadoraRepository;
     
     public Collection<CalculadoraSalud> findAll(){
-		return repo.findAll();
+		return calculadoraRepository.findAll();
     }
     
     public CalculadoraSalud findById(long id){
-        return repo.findById(id);
+        return calculadoraRepository.findById(id);
     }
 
-    private static Double calcularIMC(Double peso,Double altura){
-        Double imc=peso/(altura*altura);
-        return imc;
+    public void save(@Valid CalculadoraSalud calculadora){
+        calculadoraRepository.save(calculadora);
     }
+
+    public Collection<CalculadoraSalud> findByPacienteId(int pacienteId){
+        return calculadoraRepository.findByPacienteId(pacienteId);
+      }
 	
     
 }
