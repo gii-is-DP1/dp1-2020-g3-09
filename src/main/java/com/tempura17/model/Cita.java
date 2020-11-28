@@ -48,6 +48,11 @@ public class Cita extends BaseEntity {
     @JsonIgnore
     private Paciente paciente;
 
+    @ManyToOne
+    @JoinColumn(name ="historial_id")  
+    @JsonIgnore
+    private Historial historial;
+
     public Formato getFormato() {
         return formato;
     }
@@ -94,6 +99,14 @@ public class Cita extends BaseEntity {
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    public Historial getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(Historial historial) {
+        this.historial = historial;
     }
 
 
