@@ -30,7 +30,7 @@ public class CalculadoraService {
         calculadoraRepository.save(calculadora);
     }
 
-    public Collection<CalculadoraSalud> findByPacienteId(int pacienteId){
+    public CalculadoraSalud findByPacienteId(int pacienteId){
         return calculadoraRepository.findByPacienteId(pacienteId);
       }
 	
