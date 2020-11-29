@@ -37,8 +37,6 @@ public class Cita extends BaseEntity {
     @Enumerated(EnumType.STRING)    
     private Especialidad especialidad;
 
-    private String especialista;
-
     @Temporal(TemporalType.TIMESTAMP)
     @Enumerated(EnumType.STRING)
     private Date fecha;
@@ -47,6 +45,11 @@ public class Cita extends BaseEntity {
     @JoinColumn(name ="paciente_id")  
     @JsonIgnore
     private Paciente paciente;
+
+    @ManyToOne 
+    @JoinColumn(name = "especialista_id")
+    @JsonIgnore
+    private Especialista especialista;
 
     @ManyToOne
     @JoinColumn(name ="historial_id")  
@@ -77,14 +80,6 @@ public class Cita extends BaseEntity {
         this.especialidad = especialidad;
     }
 
-    public String getEspecialista() {
-        return especialista;
-    }
-
-    public void setEspecialista(String especialista) {
-        this.especialista = especialista;
-    }
-
     public Date getFecha() {
         return fecha;
     }
@@ -107,6 +102,14 @@ public class Cita extends BaseEntity {
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
+    }
+
+    public Especialista getEspecialista() {
+        return especialista;
+    }
+
+    public void setEspecialista(Especialista especialista) {
+        this.especialista = especialista;
     }
 
 

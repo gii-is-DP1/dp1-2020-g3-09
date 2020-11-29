@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
-@RequestMapping("/especialistaes")
+@RequestMapping("/especialistas")
 public class EspecialistaController {
 
     @Autowired

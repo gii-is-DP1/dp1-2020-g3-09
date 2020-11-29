@@ -64,7 +64,7 @@ public class CitaServiceTests {
         cita.setFormato(Formato.ONLINE);
         cita.setTipo(Tipologia.ASEGURADO);
         cita.setEspecialidad(Especialidad.PEDIATRIA);
-        cita.setEspecialista("Richard");
+        cita.setEspecialista(null);
         cita.setFecha(null); 
         cita.setPaciente(paciente);
         
@@ -93,7 +93,7 @@ public class CitaServiceTests {
 	@Transactional
 	public void shouldAddNewPacienteForCita() {
 		Cita cita = this.citaService.findById(1).get();
-		Paciente paciente = new Paciente();
+        Paciente paciente = new Paciente();
 		cita.setPaciente(paciente);
         paciente.setFirstName("Alejandro");
         paciente.setLastName("Dominguez");

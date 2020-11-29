@@ -10,6 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import org.springframework.beans.support.MutableSortDefinition;
@@ -49,9 +50,14 @@ public class Especialista extends Person {
     private Especialidad especialidad;
 
     @ManyToMany(mappedBy = "especialistas")
+    @JsonIgnore
     // @JoinTable(name = "aseguradoras_especialistas", joinColumns = @JoinColumn(name = "especialista_id"), 
     //inverseJoinColumns = @JoinColumn(name = "aseguradora_id"))
+
     private Set<Aseguradora> aseguradoras;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
+    private Set<Cita> citas;
 
     public String getDni() {
         return dni;
@@ -101,10 +107,11 @@ public class Especialista extends Person {
         this.aseguradoras = aseguradoras;
     }
 
+    public Set<Cita> getCita() {
+        return citas;
+    }
 
-    
-    /*
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
-    private Set<Cita> citas;
-    */
+    public void setCita(Set<Cita> citas) {
+        this.citas = citas;
+    }
 }
