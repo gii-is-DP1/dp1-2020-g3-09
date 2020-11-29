@@ -15,6 +15,7 @@ public interface CitaRepository extends CrudRepository<Cita, Integer> {
     @Query("SELECT c FROM Cita c WHERE c.paciente.id = :pacienteId")
     Collection<Cita> findByPacienteId(@Param("pacienteId")int pacienteId);
 
-	void deleteById(Integer id);
+    void deleteById(Integer id);
+    
     
 }
