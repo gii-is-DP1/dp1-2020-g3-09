@@ -1,7 +1,8 @@
 INSERT INTO aseguradoras(id,nombre) VALUES (
     1,
     'Caser');
-    INSERT INTO aseguradoras(id,nombre) VALUES (
+    
+INSERT INTO aseguradoras(id,nombre) VALUES (
     2,
     'NoCaser');
 
