@@ -1,10 +1,8 @@
 package com.tempura17.web;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,15 +51,15 @@ public class PacienteController {
 		return pacienteServ.findAll();
 	}
 
-	@GetMapping(value="/{pacienteId}/calculadoras")
+	@GetMapping("/{pacienteId}/calculadoras")
 	public String getPacienteCalculadora(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		model.addAttribute("calculadoras", calculadoraServ.findByPacienteId(pacienteId));
 		return "calculadoras/calculadoraListing";
 	}
 
-	@GetMapping(value="/{pacienteId}/calculadoras/json")
+	@GetMapping("/{pacienteId}/calculadoras/json")
 	@ResponseBody
-	public Collection<CalculadoraSalud> getPacienteCalculadoraJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		return calculadoraServ.findByPacienteId(pacienteId);
 	}
 	
