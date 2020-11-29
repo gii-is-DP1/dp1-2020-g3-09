@@ -1,24 +1,15 @@
 package com.tempura17.model;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.JoinTable;
 import lombok.Data;
 
 @Entity
@@ -26,9 +17,11 @@ import lombok.Data;
 @Table(name = "calculadora")
 public class CalculadoraSalud extends BaseEntity{
 
-    private Double peso;
+    @NotNull
+    private String peso;
 
-    private Double altura;
+    @NotNull
+    private String altura;
 
     private Double imc;
 
@@ -40,28 +33,17 @@ public class CalculadoraSalud extends BaseEntity{
     private Paciente paciente;
 
 
-    public CalculadoraSalud(){}
-
-
-    public CalculadoraSalud(Double peso,Double altura,Double imc,String resultado,Paciente paciente) {
-        this.peso = peso;
-        this.altura = altura;
-        this.imc = imc;
-        this.resultado = resultado;
-        this.paciente = paciente;
-    }
-
-    public Double getPeso() {
+    public String getPeso() {
         return this.peso;
     }
-    public void setPeso(Double peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 
-    public Double getAltura() {
+    public String getAltura() {
         return this.altura;
     }
-    public void setAltura(Double altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
 
