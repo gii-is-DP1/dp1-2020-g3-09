@@ -1,4 +1,7 @@
-INSERT INTO pacientes(id,first_name,last_name,dni,email,direccion,sexo,edad,aseguradora) VALUES (
+INSERT INTO aseguradoras(id,nombre) VALUES (1,'Caser');
+
+INSERT INTO pacientes(id,aseguradora_id,first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
+    1,
     1, 
     'Rodrigo', 
     'García', 
@@ -6,8 +9,7 @@ INSERT INTO pacientes(id,first_name,last_name,dni,email,direccion,sexo,edad,aseg
     'cosas@gmail.com', 
     'micasa', 
     'MASCULINO', 
-    20,
-    'caser');
+    20);
 INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
     1, 
     'Ceballo', 
@@ -25,4 +27,5 @@ INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,
      'MEDICINA_GENERAL',
      'manhattan',
      '2019-01-27 22:00:00'); 
+
 
