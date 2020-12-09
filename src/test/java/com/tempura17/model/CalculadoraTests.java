@@ -1,4 +1,4 @@
-/*package com.tempura17.model;
+package com.tempura17.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,6 +15,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 class CalculadoraTests{
 
+	
 
     private Validator createValidator() {
 		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
@@ -24,20 +25,18 @@ class CalculadoraTests{
 
 
     @Test
-	void shouldNotValidateWhenPesoAlturaEmpty() {
+	void shouldNotValidateWhenPesoEmpty() {
 
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
-		CalculadoraSalud calculadora = new CalculadoraSalud();
-		calculadora.setPeso();
-		calculadora.setAltura();
-
+        CalculadoraSalud calculadora = new CalculadoraSalud();
+		calculadora.setAltura("1.85");
 		Validator validator = createValidator();
 		Set<ConstraintViolation<CalculadoraSalud>> constraintViolations = validator.validate(calculadora);
 
 		assertThat(constraintViolations.size()).isEqualTo(1);
 		ConstraintViolation<CalculadoraSalud> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("peso");
-		assertThat(violation.getMessage()).isEqualTo("must not be empty");
+
 	}
-}*/
+}
 
