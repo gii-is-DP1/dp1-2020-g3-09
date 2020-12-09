@@ -10,10 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import javax.persistence.ManyToOne;
-import lombok.Data;
+
 
 @Entity
-@Data
 @Table(name = "calculadora")
 public class CalculadoraSalud extends BaseEntity{
 
