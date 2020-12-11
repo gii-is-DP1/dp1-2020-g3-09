@@ -10,6 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import org.springframework.beans.support.MutableSortDefinition;
@@ -19,8 +20,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -44,6 +48,16 @@ public class Especialista extends Person {
 
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
+
+    @ManyToMany(mappedBy = "especialistas")
+    @JsonIgnore
+    // @JoinTable(name = "aseguradoras_especialistas", joinColumns = @JoinColumn(name = "especialista_id"), 
+    //inverseJoinColumns = @JoinColumn(name = "aseguradora_id"))
+
+    private Set<Aseguradora> aseguradoras;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
+    private Set<Cita> citas;
 
     public String getDni() {
         return dni;
@@ -84,7 +98,20 @@ public class Especialista extends Person {
     public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
-    
 
-    
+    public Set<Aseguradora> getAseguradoras() {
+        return aseguradoras;
+    }
+
+    public void setAseguradoras(Set<Aseguradora> aseguradoras) {
+        this.aseguradoras = aseguradoras;
+    }
+
+    public Set<Cita> getCita() {
+        return citas;
+    }
+
+    public void setCita(Set<Cita> citas) {
+        this.citas = citas;
+    }
 }

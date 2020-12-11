@@ -68,5 +68,5 @@ public class PacienteController {
 	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		return citaService.findByPacienteId(pacienteId);
 	}
-    
+
 }

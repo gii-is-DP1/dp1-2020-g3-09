@@ -1,4 +1,4 @@
-package com.tempura17.web;
+/*package com.tempura17.web;
 
 import org.springframework.stereotype.Controller;
 import java.util.Collection;
@@ -11,8 +11,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.model.Cita;
-import com.tempura17.model.Especialista;
-import com.tempura17.service.EspecialistaService;
+import com.tempura17.model.Doctor;
+import com.tempura17.service.DoctorService;
 import com.tempura17.service.CitaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,18 +26,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
-@RequestMapping("/especialistas")
-public class EspecialistaController {
+@RequestMapping("/doctores")
+public class DoctorController {
 
     @Autowired
-    EspecialistaService especialistaService;
+    DoctorService doctorService;
 
     @GetMapping("/json")
 	@ResponseBody
-	public Collection<Especialista> jsonEspecialista()
+	public Collection<Doctor> jsonDoctor()
 	{
 		
-		return especialistaService.findAll();
+		return doctorService.findAll();
 	}
     
 }
+*/
