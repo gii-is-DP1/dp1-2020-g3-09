@@ -18,17 +18,18 @@ public class EspecialistaService {
 
     private EspecialistaRepository especialistaRepository;
 
+    @Autowired
     private CitaService citaService;
 
-    private PacienteRepository pacienteRepository;
+    private PacienteService pacienteService;
 
     @Autowired
     public EspecialistaService(EspecialistaRepository especialistaRepository, CitaService citaService,
-            PacienteRepository pacienteRepository){
+            PacienteService pacienteService){
 
         this.especialistaRepository = especialistaRepository;
         this.citaService = citaService;
-        this.pacienteRepository = pacienteRepository;
+        this.pacienteService = pacienteService;
                             
     }
 
@@ -42,9 +43,10 @@ public class EspecialistaService {
     }
 
     public void createCitaForPacienteId(Cita cita, Integer paciente_id){
-        Optional<Paciente> paciente = this.pacienteRepository.findById(paciente_id);
+        Optional<Paciente> paciente = this.pacienteService.findById(paciente_id);
         cita.setPaciente(paciente.get());
         this.citaService.save(cita);
+        this.pacienteService.saveCitaForPaciente(paciente_id,cita);
 
     }
     
