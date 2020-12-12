@@ -18,7 +18,6 @@ public class EspecialistaService {
 
     private EspecialistaRepository especialistaRepository;
 
-    @Autowired
     private CitaService citaService;
 
     private PacienteService pacienteService;
