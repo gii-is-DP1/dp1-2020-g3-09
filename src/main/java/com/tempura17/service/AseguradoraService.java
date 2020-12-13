@@ -27,76 +27,76 @@ public class AseguradoraService {
     }
 
     public Collection<Aseguradora> findAll(){
-        return aseguradoraRepository.findAll();
-      }
+      return aseguradoraRepository.findAll();
+    }
+
       
-      public Optional<Aseguradora> findById(Integer id){
-        return aseguradoraRepository.findById(id);
-      }
+    public Optional<Aseguradora> findById(Integer id){
+      return aseguradoraRepository.findById(id);
+    }
 
-      public void deletePaciente(Integer idAseguradora, Integer idPaciente){
-        Optional<Paciente> paciente= pacienteService.findById(idPaciente);
 
-        if (paciente.get() == null){
+    public void deletePaciente(Integer idAseguradora, Integer idPaciente){
+      Optional<Paciente> paciente= pacienteService.findById(idPaciente);
 
+      if (paciente.get() == null){
         System.out.println("paciente nulo");
+      }else{
+        Paciente p1 = paciente.get();
+        p1.setAseguradora(null);
+        this.pacienteService.save(p1);
 
-        }else{
-          Paciente p1 = paciente.get();
-          p1.setAseguradora(null);
-          this.pacienteService.save(p1);
-
-          Optional<Aseguradora> aseguradora= aseguradoraRepository.findById(idAseguradora);
+        Optional<Aseguradora> aseguradora= aseguradoraRepository.findById(idAseguradora);
 
         if (aseguradora.get() == null){
-
           System.out.println("aseguradora nula");
-        
         }else{
           Aseguradora a1 = aseguradora.get();
           a1.getPacientes().remove(p1);
         }
       }  
-  }
-
-  public void deleteEspecialista(Integer idAseguradora, Integer idEspecialista){
-    Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
-
-    if(especialista.get() == null){
-    System.out.println("Especialista nulo");
-
-    }else{
-    
-    Optional<Aseguradora> aseguradora = aseguradoraRepository.findById(idAseguradora);
-
-    if(aseguradora.get() == null){
-      System.out.println("Aseguradora nula");
-
-    }else{
-    Aseguradora a1 = aseguradora.get();
-    Especialista e1 = especialista.get();
-
-    a1.getEspecialistas().remove(e1);
-    e1.getAseguradoras().remove(a1);
-
-    especialistaService.save(e1);
-    aseguradoraRepository.save(a1);
-
     }
+
+    public void deleteEspecialista(Integer idAseguradora, Integer idEspecialista){
+      Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
+      
+      if(especialista.get() == null){
+        System.out.println("Especialista nulo");
+      }else{
+        Optional<Aseguradora> aseguradora = aseguradoraRepository.findById(idAseguradora);
+      
+        if(aseguradora.get() == null){
+          System.out.println("Aseguradora nula");
+        }else{
+          Aseguradora a1 = aseguradora.get();
+          Especialista e1 = especialista.get();
+
+          a1.getEspecialistas().remove(e1);
+          e1.getAseguradoras().remove(a1);
+
+          especialistaService.save(e1);
+          aseguradoraRepository.save(a1);
+        }
+      }
     }
-  }
 
 
-  public void editEspecialidad(Integer idEspecialista, String especialidad){
-    Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
+    public void editEspecialidad(Integer idEspecialista, String especialidad){
+      Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
 
-    if(especialista.get() == null){
-    System.out.println("Especialista nulo");
-
-    }else{
-      Especialista e1 = especialista.get();
-      e1.setEspecialidad(Especialidad.valueOf(especialidad));
-      this.especialistaService.save(e1);
+      if(especialista.get() == null){
+        System.out.println("Especialista nulo");
+      }else{
+        Especialista e1 = especialista.get();
+        e1.setEspecialidad(Especialidad.valueOf(especialidad));
+        this.especialistaService.save(e1);
+      }
     }
-  }
+
+
+    public void createEspecialista(Especialista especialista, Integer aseguradora_id){
+      this.especialistaService.save(especialista);
+      aseguradoraRepository.findById(aseguradora_id).get().getEspecialistas().add(especialista);
+      
+    }
 }

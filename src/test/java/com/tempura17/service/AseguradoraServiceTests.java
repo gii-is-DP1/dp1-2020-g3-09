@@ -31,7 +31,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @DataJpaTest(includeFilters = @ComponentScan.Filter(Service.class))
-
 public class AseguradoraServiceTests {
 
     @Autowired
@@ -90,20 +89,42 @@ public class AseguradoraServiceTests {
     @Transactional
     void editEspecialidad() {
         Especialista e1 = this.especialistaService.findById(1).get();
+        Aseguradora a1 = this.aseguradoraService.findById(1).get();
+        /*
+        Especialista eee0 = a1.getEspecialistas().stream()
+                                       .collect(Collectors.toList())
+                                       .get(0);
+        Especialidad esp0 = eee0.getEspecialidad();
+        */
         this.aseguradoraService.editEspecialidad(e1.getId(), "MEDICINA_INTERNA");
         
         Especialista em1 = this.especialistaService.findById(1).get();
         assertThat(em1.getEspecialidad()).isEqualTo(Especialidad.MEDICINA_INTERNA);
 
 
-        Aseguradora a1 = this.aseguradoraService.findById(1).get();
-        Especialista eee = a1.getEspecialistas().stream()
+        Aseguradora am1 = this.aseguradoraService.findById(1).get();
+        Especialista eee1 = am1.getEspecialistas().stream()
                                        .collect(Collectors.toList())
                                        .get(0);
-        Especialidad esp1 = eee.getEspecialidad();
+        Especialidad esp1 = eee1.getEspecialidad();
 
         //Se comprueba que el especialista modificado también está modificado en su aseguradora
         assertThat(esp1).isEqualTo(Especialidad.MEDICINA_INTERNA);
+    }
+
+
+    @Test
+    @Transactional
+    void createEspecialista(){
+        Integer numEspecialistasPrior = this.aseguradoraService.findById(1).get().getEspecialistas().size();
+        Especialista especialista = new Especialista();
+        especialista.setFirstName("Dr");
+        especialista.setLastName("lastName_4");
+        Set<Aseguradora> aseguradora_paciente = new HashSet<>(1);
+        especialista.setAseguradoras(aseguradora_paciente);
+        this.aseguradoraService.createEspecialista(especialista,1);
+        Integer numEspecialistasPost = this.aseguradoraService.findById(1).get().getEspecialistas().size();
+        assertThat(numEspecialistasPrior + 1).isEqualTo(numEspecialistasPost);
     }
 
 
