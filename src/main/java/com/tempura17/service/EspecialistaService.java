@@ -3,6 +3,8 @@ package com.tempura17.service;
 import java.util.Collection;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
@@ -40,6 +42,10 @@ public class EspecialistaService {
     public Optional<Especialista> findById(Integer id){
         return especialistaRepository.findById(id);
     }
+
+    public void save(@Valid Especialista especialista){
+        this.especialistaRepository.save(especialista);
+      }
 
     public void createCitaForPacienteId(Cita cita, Integer paciente_id){
         Optional<Paciente> paciente = this.pacienteService.findById(paciente_id);

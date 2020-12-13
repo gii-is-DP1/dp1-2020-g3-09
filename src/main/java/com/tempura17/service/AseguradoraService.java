@@ -2,6 +2,8 @@ package com.tempura17.service;
 
 import com.tempura17.repository.AseguradoraRepository;
 import com.tempura17.model.Aseguradora;
+import com.tempura17.model.Especialidad;
+import com.tempura17.model.Especialista;
 import com.tempura17.model.Paciente;
 
 import java.util.Collection;
@@ -15,11 +17,13 @@ public class AseguradoraService {
     
     private AseguradoraRepository aseguradoraRepository;
     private PacienteService pacienteService;
+    private EspecialistaService especialistaService;
 
     @Autowired
-    public AseguradoraService(AseguradoraRepository aseguradoraRepository, PacienteService pacienteService){
+    public AseguradoraService(AseguradoraRepository aseguradoraRepository, PacienteService pacienteService, EspecialistaService especialistaService){
         this.aseguradoraRepository = aseguradoraRepository;
         this.pacienteService = pacienteService;
+        this.especialistaService = especialistaService;
     }
 
     public Collection<Aseguradora> findAll(){
@@ -52,10 +56,47 @@ public class AseguradoraService {
           Aseguradora a1 = aseguradora.get();
           a1.getPacientes().remove(p1);
         }
+      }  
+  }
 
-        
+  public void deleteEspecialista(Integer idAseguradora, Integer idEspecialista){
+    Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
 
-      }
-      
+    if(especialista.get() == null){
+    System.out.println("Especialista nulo");
+
+    }else{
+    
+    Optional<Aseguradora> aseguradora = aseguradoraRepository.findById(idAseguradora);
+
+    if(aseguradora.get() == null){
+      System.out.println("Aseguradora nula");
+
+    }else{
+    Aseguradora a1 = aseguradora.get();
+    Especialista e1 = especialista.get();
+
+    a1.getEspecialistas().remove(e1);
+    e1.getAseguradoras().remove(a1);
+
+    especialistaService.save(e1);
+    aseguradoraRepository.save(a1);
+
+    }
+    }
+  }
+
+
+  public void editEspecialidad(Integer idEspecialista, String especialidad){
+    Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
+
+    if(especialista.get() == null){
+    System.out.println("Especialista nulo");
+
+    }else{
+      Especialista e1 = especialista.get();
+      e1.setEspecialidad(Especialidad.valueOf(especialidad));
+      this.especialistaService.save(e1);
+    }
   }
 }
