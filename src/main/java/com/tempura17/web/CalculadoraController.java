@@ -57,6 +57,21 @@ public class CalculadoraController {
 			return "calculadoras/calcularIMC";
 
 		}else {
+			Double peso=Double.parseDouble(calculadora.getPeso());
+			Double altura=Double.parseDouble(calculadora.getAltura());
+			Double imc=(peso/Math.pow(altura, 2.));
+			String resultado="";
+			if(imc<18.5){
+				resultado="Peso inferior al normal";
+			}else if(imc>=18.5 && imc<=24.9){
+				resultado="Peso normal";
+			}else if(imc>=25 && imc<=29.9){
+				resultado="Peso superior al normal";
+			}else{
+				resultado="Obesidad";
+			}
+			calculadora.setResultado(resultado);
+			calculadora.setimc(imc);
 			calculadoraServ.save(calculadora);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listCalculadoras(model);
