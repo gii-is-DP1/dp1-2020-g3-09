@@ -26,9 +26,11 @@ public class EspecialistaREST {
         this.especialistaService = especialistaService;
     }
 
-	@PostMapping("/{id}")
-	public Cita createCitaForPacienteId(@PathVariable("id") int id, @RequestBody Cita cita) {
-        this.especialistaService.createCitaForPacienteId(cita, id);
+	@PostMapping("/{id_paciente}/{id_especialista}")
+    public Cita createCitaForPacienteId(@PathVariable("id_paciente") int id_paciente
+                                        ,@PathVariable("id_especialista") int id_especialista
+                                        ,@RequestBody Cita cita) {
+        this.especialistaService.createCitaForPacienteId(cita, id_paciente, id_especialista);
         return cita;
 	}
 	
