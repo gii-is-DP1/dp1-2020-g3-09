@@ -51,19 +51,19 @@ public class PacienteController {
 		return pacienteServ.findAll();
 	}
 
-	@GetMapping("/{pacienteId}/calculadoras")
-	public String getPacienteCalculadora(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		model.addAttribute("calculadoras", calculadoraServ.findByPacienteId(pacienteId));
+	@GetMapping("/{id}/calculadoras")
+	public String getPacienteCalculadora(@PathVariable("id") int id, ModelMap model){
+		model.addAttribute("calculadoras", calculadoraServ.findByPacienteId(id));
 		return "calculadoras/calculadoraListing";
 	}
 
-	@GetMapping("/{pacienteId}/calculadoras/json")
+	@GetMapping("/{id}/calculadoras/json")
 	@ResponseBody
-	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		return calculadoraServ.findByPacienteId(pacienteId);
+	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("id") int id, ModelMap model){
+		return calculadoraServ.findByPacienteId(id);
 	}
 	
-	/*@GetMapping(value="/{pacienteId}/citas")
+	@GetMapping(value="/{pacienteId}/citas")
 	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		model.addAttribute("citas", citaServ.findByPacienteId(pacienteId));
 		return "citas/History";
@@ -73,6 +73,6 @@ public class PacienteController {
 	@ResponseBody
 	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		return citaServ.findByPacienteId(pacienteId);
-	}*/
+	}
     
 }
