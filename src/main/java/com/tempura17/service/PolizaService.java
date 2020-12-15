@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import com.tempura17.model.Aseguradora;
 import com.tempura17.model.Cobertura;
@@ -59,10 +60,10 @@ public class PolizaService {
 
             pacientes.addAll(p1.getPacientes());
 
-            
             for(Paciente p: pacientes){
-            p.setPoliza(null);
-            this.pacienteService.save(p);
+            Paciente pp = this.pacienteService.findById(p.getId()).get();
+            pp.setPoliza(null);
+            this.pacienteService.save(pp);
             }
   
             this.aseguradoraService.save(a1);

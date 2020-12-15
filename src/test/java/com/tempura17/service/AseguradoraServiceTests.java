@@ -81,7 +81,7 @@ public class AseguradoraServiceTests {
         assertThat(es1).isEqualTo(e2.getAseguradoras().size()+1);
 
         //Comprobamos que la aseguradora ha eliminado al especialista
-        Aseguradora a2 = this.aseguradoraService.findById(2).get();
+        Aseguradora a2 = this.aseguradoraService.findById(1).get();
         assertThat(as1).isEqualTo(a2.getEspecialistas().size()+1);
     }
 
