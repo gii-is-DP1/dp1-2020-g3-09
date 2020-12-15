@@ -53,19 +53,23 @@ public class PolizaService {
           }else{
 
             Aseguradora a1 = aseguradora.get();
+
+            p1.getPacientes().stream()
+                             .forEach(paciente -> {
+                               paciente.setPoliza(null);
+                               this.pacienteService.save(paciente);
+                             });
+
+
+            //pacientes.addAll(p1.getPacientes());
+            /*for(Paciente p: pacientes){
+            Paciente pp = this.pacienteService.findById(p.getId()).get();
+            p.setPoliza(null)
+            pp.setPoliza(null);
+            this.pacienteService.save(p);
+            }*/
   
             a1.getPolizas().remove(p1);
-            
-            List<Paciente> pacientes = new ArrayList<>();
-
-            pacientes.addAll(p1.getPacientes());
-
-            for(Paciente p: pacientes){
-            Paciente pp = this.pacienteService.findById(p.getId()).get();
-            pp.setPoliza(null);
-            this.pacienteService.save(pp);
-            }
-  
             this.aseguradoraService.save(a1);
             this.polizaRepository.delete(p1);
           }
