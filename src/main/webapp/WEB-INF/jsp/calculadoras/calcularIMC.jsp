@@ -26,15 +26,18 @@
 
     <form:form modelAttribute="calculadora" class="form-horizontal" id="add-calculadora-form">
     <div class="form-group has-feedback">
-        <petclinic:inputField label="Ingrese peso (kg):" name="peso"/>
+            <petclinic:inputField label="Ingrese peso (kg):" name="peso"/>
 
-        <petclinic:inputField label="Ingrese altura(m):" name="altura"/>
+            <petclinic:inputField label="Ingrese altura(m):" name="altura"/>
       
-        <button id="calc" type="hidden">Calcular</button><br>
-        <br>
-        <p>IMC: <span id="imc"></span></p><br>
+            <a id="calc">Calcular</a><br>
+            <br>
+            
+              
+            <label>IMC: <span id="imc"></span></label><br>
+  
         
-        <p>Resultado: <span id="resultado"></span></p><br>
+            <label>Resultado: <span id="resultado"></span></label><br>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
@@ -46,6 +49,7 @@
       </div>
     </div>
     </form:form>
+    
 </petclinic:layout>
     
 

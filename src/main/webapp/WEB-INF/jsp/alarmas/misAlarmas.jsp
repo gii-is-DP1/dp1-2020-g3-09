@@ -11,7 +11,8 @@
 		<thead>
 			<tr>
 				<th>Fecha de la cita</th>
-				<th>Dias de antelacion</th>			
+				<th>Dias de antelacion</th>		
+				<th>Modificar alarma</th>	
 			</tr>
 		</thead>
 		<tbody>
@@ -19,6 +20,12 @@
 				<tr>
 					<td>${citas.formato}</td>
 					<td>${alarmas.diasAntelacion}</td>
+					<td>
+						<spring:url value="/alarmas/{id}/edit" var="editAlarma">
+							<spring:param name="id" value="${alarmas.id}"/>
+						</spring:url>
+						<a href="${fn:escapeXml(editAlarma)}">Editar alerta</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
