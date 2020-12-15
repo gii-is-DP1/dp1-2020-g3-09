@@ -91,4 +91,25 @@ public class AlarmaController {
 		}
 	}
 
+	@GetMapping("/new/{id}")
+	public String newAlarmaId(ModelMap model){
+		model.addAttribute("alarma", new Alarma());
+		return "alarmas/crearAlarma";
+	}
+
+	@PostMapping("/new/{id}")
+	public String saveNewAlarmaId(@PathVariable("id") int id,@Valid Alarma alarma, BindingResult binding, ModelMap model){
+
+		if(binding.hasErrors()){
+			model.addAttribute("message", "ERROR AL GUARDAR LA ALARMA");
+			return "alarmas/crearAlarma";
+
+		}else {
+			alarmaServ.save(alarma);
+			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
+			return listAlarmas(model);
+
+		}
+	}
+
 }
