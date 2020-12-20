@@ -1,4 +1,4 @@
-package com.tempura17.model;
+/*package com.tempura17.model;
 
 import java.util.Set;
 import java.time.LocalDate;
@@ -56,4 +56,4 @@ public class Historial extends BaseEntity{
 
 
     
-}
+}*/

@@ -1,4 +1,4 @@
-package com.tempura17.repository;
+/*package com.tempura17.repository;
 
 import java.util.Collection;
 import com.tempura17.model.Historial;
@@ -9,4 +9,4 @@ public interface HistorialRepository extends CrudRepository<Historial, Integer> 
     
     Collection<Historial> findAll();
     
-}
+}*/
