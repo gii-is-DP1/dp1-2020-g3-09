@@ -8,9 +8,7 @@ import javax.validation.Valid;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
-import com.tempura17.repository.CitaRepository;
 import com.tempura17.repository.EspecialistaRepository;
-import com.tempura17.repository.PacienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
