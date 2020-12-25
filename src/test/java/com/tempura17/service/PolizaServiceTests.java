@@ -33,8 +33,8 @@ public class PolizaServiceTests {
     @Autowired
     private PolizaService polizaService;
 
-    @Test
-    @Transactional
+    //@Test
+    //@Transactional
     /*void deletePolizaAseguradora() {
         Poliza p1 = this.polizaService.findById(1).get();
         Aseguradora a1 = this.aseguradoraService.findById(1).get();
@@ -60,5 +60,6 @@ public class PolizaServiceTests {
         //Comprobamos que la poliza se borra de los pacientes
         assertThat(pNull).isNull();
 
-    }/*
+    }*/
+
 }
