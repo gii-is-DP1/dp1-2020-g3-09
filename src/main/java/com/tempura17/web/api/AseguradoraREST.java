@@ -2,7 +2,6 @@ package com.tempura17.web.api;
 
 import com.tempura17.service.AseguradoraService;
 import com.tempura17.model.Aseguradora;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
