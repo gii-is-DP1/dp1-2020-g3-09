@@ -35,7 +35,7 @@ public class PolizaServiceTests {
 
     @Test
     @Transactional
-    void deletePolizaAseguradora() {
+    /*void deletePolizaAseguradora() {
         Poliza p1 = this.polizaService.findById(1).get();
         Aseguradora a1 = this.aseguradoraService.findById(1).get();
         Set<Poliza> polizasAnt = a1.getPolizas();
@@ -60,5 +60,5 @@ public class PolizaServiceTests {
         //Comprobamos que la poliza se borra de los pacientes
         assertThat(pNull).isNull();
 
-    }
+    }/*
 }
