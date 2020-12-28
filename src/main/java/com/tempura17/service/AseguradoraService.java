@@ -9,6 +9,8 @@ import com.tempura17.model.Paciente;
 import java.util.Collection;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,10 @@ public class AseguradoraService {
       
     public Optional<Aseguradora> findById(Integer id){
       return aseguradoraRepository.findById(id);
+    }
+
+    public void save(@Valid Aseguradora aseguradora){
+      aseguradoraRepository.save(aseguradora);
     }
 
 

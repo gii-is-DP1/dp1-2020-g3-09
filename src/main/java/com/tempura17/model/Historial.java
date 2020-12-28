@@ -1,4 +1,4 @@
-package com.tempura17.model;
+/*package com.tempura17.model;
 
 import java.util.Set;
 
@@ -29,4 +29,4 @@ public class Historial extends BaseEntity{
 
 
     
-}
+}*/

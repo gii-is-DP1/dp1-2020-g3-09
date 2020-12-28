@@ -41,6 +41,9 @@ public class Poliza extends NamedEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
     private Set<Paciente> pacientes;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
+    private Set<Tratamiento> tratamientos;
+
     public BigDecimal getPrecio() {
         return precio;
     }

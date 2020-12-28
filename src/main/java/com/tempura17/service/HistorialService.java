@@ -1,4 +1,4 @@
-package com.tempura17.service;
+/*package com.tempura17.service;
 
 import java.util.Collection;
 
@@ -22,4 +22,4 @@ public class HistorialService {
         return historialRepository.findAll();
     }
     
-}
+}*/

@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.EnumType;
@@ -38,6 +39,9 @@ public class Especialista extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
     private Set<Cita> citas;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
+    private Set<Acta> actas;
 
     public String getDni() {
         return dni;
@@ -94,4 +98,13 @@ public class Especialista extends Person {
     public void setCita(Set<Cita> citas) {
         this.citas = citas;
     }
+
+    public Set<Acta> getActas() {
+        return actas;
+    }
+
+    public void setActas(Set<Acta> actas) {
+        this.actas = actas;
+    }
+
 }

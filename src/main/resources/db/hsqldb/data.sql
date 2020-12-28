@@ -24,22 +24,9 @@ INSERT INTO polizas(id, aseguradora_id, name, precio, cobertura, duracion) VALUE
     'PARCIAL',
     '2022-02-02');
 
-INSERT INTO historial (id) VALUES (
-    1
-);
-
-INSERT INTO historial (id) VALUES (
-    2
-);
-
-INSERT INTO historial (id) VALUES (
-    3
-);
-
-INSERT INTO pacientes(id,aseguradora_id, poliza_id,  historial_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
+INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
     1,
     1, 
-    1,
     1,
     'Rodrigo', 
     'García', 
@@ -49,11 +36,10 @@ INSERT INTO pacientes(id,aseguradora_id, poliza_id,  historial_id, first_name,la
     'MASCULINO', 
     20);
 
-INSERT INTO pacientes(id,aseguradora_id, poliza_id,  historial_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
+INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
     2,
     1, 
     1,
-    2,
     'Rodriga', 
     'Garcío', 
     '00000000B', 
@@ -62,11 +48,10 @@ INSERT INTO pacientes(id,aseguradora_id, poliza_id,  historial_id, first_name,la
     'MASCULINO', 
     20);
 
-INSERT INTO pacientes(id, aseguradora_id, poliza_id, historial_id, first_name, last_name, dni, email, direccion, sexo, edad) VALUES (
+INSERT INTO pacientes(id, aseguradora_id, poliza_id, first_name, last_name, dni, email, direccion, sexo, edad) VALUES (
     3,
     1, 
     null,
-    3,
     'Rodrige', 
     'Garcíe', 
     '00000000C', 
@@ -75,7 +60,7 @@ INSERT INTO pacientes(id, aseguradora_id, poliza_id, historial_id, first_name, l
     'MASCULINO', 
     20);
 
-INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
+INSERT INTO especialistas(id, first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
     1, 
     'Ceballo', 
     'Enriqueto', 
@@ -85,7 +70,7 @@ INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,
     'especialistaaso@gmail.com',
     'MEDICINA_GENERAL');
 
-INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
+INSERT INTO especialistas(id, first_name,last_name,dni,direccion,telefono,correo,especialidad) VALUES (
     2, 
     'Ceballa', 
     'Enriqueta', 
@@ -95,25 +80,43 @@ INSERT INTO especialistas(id,first_name,last_name,dni,direccion,telefono,correo,
     'especialistaaso@gmail.com',
     'MEDICINA_INTERNA');
 
- INSERT INTO citas(id, paciente_id, especialista_id, historial_id, formato, tipo, especialidad, fecha) VALUES (
+ INSERT INTO citas(id, paciente_id, especialista_id, formato, tipo, especialidad, fecha) VALUES (
      1,
      3,
      1,
-     3,
      'PRESENCIAL',
      'ASEGURADO',
      'MEDICINA_GENERAL',
      '2019-01-27 22:00:00'); 
 
-INSERT INTO citas(id, paciente_id,  especialista_id, historial_id, formato, tipo, especialidad, fecha) VALUES (
+INSERT INTO citas(id, paciente_id,  especialista_id, formato, tipo, especialidad, fecha) VALUES (
      2,
      3,
      2,
-     3,
      'ONLINE',
      'ASEGURADO',
      'MEDICINA_GENERAL',
-     '2019-01-27 22:00:00'); 
+     '2019-01-27 22:00:00');
+     
+
+
+INSERT INTO actas(id, especialista_id, descripcion, exploracion, diagnostico, cita_id) VALUES(
+    1,
+    1,
+    'esufsiufensoif',
+    'esufsiufensoif',
+    'esufsiufensoif',
+    1
+);
+
+INSERT INTO actas(id, especialista_id, descripcion, exploracion, diagnostico, cita_id) VALUES(
+    2,
+    2,
+    'esufsiufensoif',
+    'esufsiufensoif',
+    'esufsiufensoif',
+    2
+);
 
 INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES (
     1,
@@ -126,6 +129,16 @@ INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES 
 INSERT INTO aseguradoras_especialistas (aseguradora_id, especialista_id) VALUES (
     2,
     2);
+
+INSERT INTO tratamientos (id, poliza_id, descripcion, duracion, acta_id) VALUES (
+    1,
+    2,
+    'esufsiufensoif',
+    3,
+    1
+);     
+
+
 
 
 

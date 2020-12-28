@@ -43,10 +43,10 @@ public class Cita extends BaseEntity {
     @JsonIgnore
     private Especialista especialista;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name ="historial_id")  
     @JsonIgnore
-    private Historial historial;
+    private Historial historial;*/
 
     public Formato getFormato() {
         return formato;
@@ -88,13 +88,13 @@ public class Cita extends BaseEntity {
         this.paciente = paciente;
     }
 
-    public Historial getHistorial() {
+    /*public Historial getHistorial() {
         return historial;
     }
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
-    }
+    }*/
 
     public Especialista getEspecialista() {
         return especialista;

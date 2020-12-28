@@ -41,8 +41,8 @@ public class Paciente extends Person {
     @JsonIgnore
     private Poliza poliza;
 
-    @OneToOne
-    private Historial historial;
+    /*@OneToOne
+    private Historial historial;*/
 
     public String getDni() {
         return dni;
@@ -108,13 +108,13 @@ public class Paciente extends Person {
         this.poliza = poliza;
     }
 
-    public Historial getHistorial() {
+    /*public Historial getHistorial() {
         return historial;
     }
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
-    }
+    }*/
     
     
     
