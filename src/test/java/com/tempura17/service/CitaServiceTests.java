@@ -82,23 +82,7 @@ public class CitaServiceTests {
 		assertThat(cita.getEspecialidad()).isEqualTo(newEspecialidad);
 	}
     
-    @Test
-	@Transactional
-	public void shouldAddNewPacienteForCita() {
-		Cita cita = this.citaService.findById(1).get();
-        Paciente paciente = new Paciente();
-		cita.setPaciente(paciente);
-        paciente.setFirstName("Alejandro");
-        paciente.setLastName("Dominguez");
-		this.citaService.savePaciente(paciente);
-        this.citaService.save(cita);
-  
-		cita = this.citaService.findById(1).get();
-		assertThat(cita.getPaciente().getFirstName()).isEqualTo("Alejandro");
-		assertThat(paciente.getId()).isNotNull();
-    }
-    
-    /*
+    /*          CUSTOM QUERY
     @Test
 	void shouldFindPacienteByCitaId() throws Exception {
         Paciente paciente = this.citaService.findPacienteByCitaId(1);

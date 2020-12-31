@@ -12,10 +12,10 @@ import org.springframework.context.annotation.ComponentScan;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
 import com.tempura17.model.Especialista;
+
 import java.util.List;
 import java.util.Random;
 
-import com.tempura17.service.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -72,16 +72,36 @@ public class EspecialistaServiceTests {
         paciente_id = paciente.getId();
         especialista_id = especialista.getId();
         Integer numCitasPrior = paciente.getCitas().size();
-        Integer numCitasPrior1 = especialista.getCita().size();
+        Integer numCitasPrior1 = especialista.getCitas().size();
         Cita cita = new Cita();
         // Llamada a la funcion a verificar
         this.especialistaService.createCitaForPacienteId(cita, paciente_id, especialista_id);
         Integer numCitasPost = this.pacienteService.findById(paciente_id).get().getCitas().size();
-        Integer numCitasPost1 = this.especialistaService.findById(especialista_id).get().getCita().size();
+        Integer numCitasPost1 = this.especialistaService.findById(especialista_id).get().getCitas().size();
         assertThat(numCitasPrior + 1).isEqualTo(numCitasPost);
         assertThat(numCitasPrior1 + 1).isEqualTo(numCitasPost1);
 
 
         }
+
+    
+    @Test
+    @Transactional
+    void saveCitaforEspecialista(){
+        Especialista e1 = new Especialista();
+        e1.setFirstName("firstName");
+        e1.setLastName("lastName");
+        especialistaService.save(e1);
+
+        Cita c1 = new Cita();
+        citaService.save(c1);
+
+        especialistaService.saveCitaForEspecialista(e1.getId(),c1);
+
+        e1 = especialistaService.findById(e1.getId()).get();
+        assertThat(e1.getCitas().size()).isEqualTo(1);
+    }
+
+    
 
 }

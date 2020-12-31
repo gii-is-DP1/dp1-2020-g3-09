@@ -41,6 +41,10 @@ public class Paciente extends Person {
     @JsonIgnore
     private Poliza poliza;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "username", referencedColumnName = "username")
+	private User user;
+
     /*@OneToOne
     private Historial historial;*/
 
