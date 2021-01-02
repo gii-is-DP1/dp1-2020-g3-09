@@ -6,44 +6,34 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
 
-<petclinic:layout pageName="citas">
+<petclinic:layout pageName="Citas">
+    <h2>
+        <c:if test="${cita['new']}">Nueva </c:if> Cita
+    </h2>
     <form:form modelAttribute="cita" class="form-horizontal" id="add-owner-form">
         <div class="form-group has-feedback">
-        <h2>Pedir nueva cita:</h2><br>
-        <br>
-            <label>Tipologia:</label>
             <select name = "Tipo">
                 <option value = "ASEGURADO"> Asegurado</option>
                 <option value = "PRIVADO"> Privado </option>
-            </select><br>
-            <br>
-            <label>Formato:</label>
+            </select>
             <select name = "Formato">
                 <option value = "PRESENCIAL"> Presencial</option>
                 <option value = "ONLINE"> Online </option>
-            </select><br>
-            <br>
-            <label>Especialidad:</label>
-            <select name = "Especialidad">
-                <option value = "especialidad1"> Especialidad1</option>
-                <option value = "especialidad2"> Especialidad2</option>
-            </select><br>
-            <br>
-            <label>Especialista:</label>
-            <select name = "Especialista">
-                <option value = "especialista1"> Especialista1</option>
-                <option value = "especialista2"> Especialista2</option>
-            </select><br>
-            <br>
-            <label>Fecha de la cita:</label>
-            <input type="date"><br>
-            <br>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" type="submit">Pedir Cita</button>
-                </div>
+            </select>
+            <petclinic:inputField label="Especialista" name="especialista"/>
+            <petclinic:inputField label="Especialidad" name="Especialidad"/>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <c:choose>
+                    <c:when test="${cita['new']}">
+                        <button class="btn btn-default" type="submit">Add Cita</button>
+                    </c:when>
+                    <c:otherwise>
+                        <button class="btn btn-default" type="submit">Update Cita</button>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
     </form:form>
-    
 </petclinic:layout>
