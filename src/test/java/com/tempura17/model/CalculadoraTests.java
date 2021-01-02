@@ -29,7 +29,7 @@ class CalculadoraTests{
 
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
         CalculadoraSalud calculadora = new CalculadoraSalud();
-		calculadora.setAltura("1.85");
+		calculadora.setAltura(1.85);
 		Validator validator = createValidator();
 		Set<ConstraintViolation<CalculadoraSalud>> constraintViolations = validator.validate(calculadora);
 
