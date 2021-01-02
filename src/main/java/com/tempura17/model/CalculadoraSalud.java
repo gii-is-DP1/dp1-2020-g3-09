@@ -17,10 +17,10 @@ import javax.persistence.ManyToOne;
 public class CalculadoraSalud extends BaseEntity{
 
     @NotNull
-    private String peso;
+    private Double peso;
 
     @NotNull
-    private String altura;
+    private Double altura;
 
     private Double imc;
 
@@ -32,17 +32,17 @@ public class CalculadoraSalud extends BaseEntity{
     private Paciente paciente;
 
 
-    public String getPeso() {
+    public Double getPeso() {
         return this.peso;
     }
-    public void setPeso(String peso) {
+    public void setPeso(Double peso) {
         this.peso = peso;
     }
 
-    public String getAltura() {
+    public Double getAltura() {
         return this.altura;
     }
-    public void setAltura(String altura) {
+    public void setAltura(Double altura) {
         this.altura = altura;
     }
 
