@@ -1,6 +1,7 @@
 package com.tempura17.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -9,25 +10,22 @@ import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.repository.CalculadoraRepository;
 import org.springframework.stereotype.Service;
 
-
-
 @Service
 public class CalculadoraService {
 
-    
-    private CalculadoraRepository calculadoraRepository;
+  private CalculadoraRepository calculadoraRepository;
 
-    @Autowired
-    public CalculadoraService(CalculadoraRepository calculadoraRepository){
-      super();
-      this.calculadoraRepository = calculadoraRepository;
-    }
-    
-    public Collection<CalculadoraSalud> findAll(){
-		return calculadoraRepository.findAll();
-    }
-    
-    public CalculadoraSalud findById(long id){
+  @Autowired
+  public CalculadoraService(CalculadoraRepository calculadoraRepository) {
+    super();
+    this.calculadoraRepository = calculadoraRepository;
+  }
+
+  public Collection<CalculadoraSalud> findAll() {
+    return calculadoraRepository.findAll();
+  }
+
+  public Optional<CalculadoraSalud> findById(int id) {
         return calculadoraRepository.findById(id);
     }
 
