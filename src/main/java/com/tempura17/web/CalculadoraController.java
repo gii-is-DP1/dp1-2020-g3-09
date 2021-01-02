@@ -57,8 +57,8 @@ public class CalculadoraController {
 			return "calculadoras/calcularIMC";
 
 		}else {
-			Double peso=Double.parseDouble(calculadora.getPeso());
-			Double altura=Double.parseDouble(calculadora.getAltura());
+			Double peso=calculadora.getPeso();
+			Double altura=calculadora.getAltura();
 			Double imc=(peso/Math.pow(altura, 2.));
 			String resultado="";
 			if(imc<18.5){
