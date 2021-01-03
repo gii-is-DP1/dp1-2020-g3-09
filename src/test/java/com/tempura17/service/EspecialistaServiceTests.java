@@ -11,7 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Tipologia;
 import com.tempura17.model.Especialista;
+import com.tempura17.model.Formato;
 
 import java.util.List;
 import java.util.Random;
@@ -74,6 +76,8 @@ public class EspecialistaServiceTests {
         Integer numCitasPrior = paciente.getCitas().size();
         Integer numCitasPrior1 = especialista.getCitas().size();
         Cita cita = new Cita();
+        cita.setTipo(Tipologia.ASEGURADO);
+        cita.setFormato(Formato.ONLINE);
         // Llamada a la funcion a verificar
         this.especialistaService.createCitaForPacienteId(cita, paciente_id, especialista_id);
         Integer numCitasPost = this.pacienteService.findById(paciente_id).get().getCitas().size();
@@ -94,6 +98,15 @@ public class EspecialistaServiceTests {
         especialistaService.save(e1);
 
         Cita c1 = new Cita();
+        c1.setFormato(Formato.ONLINE);
+        c1.setTipo(Tipologia.ASEGURADO);
+        Paciente p1 = new Paciente();
+        p1.setFirstName("firstName");
+        p1.setLastName("lastName");
+        p1.setDni("25000000A");
+        pacienteService.save(p1);
+        c1.setPaciente(p1);
+        c1.setEspecialista(e1);
         citaService.save(c1);
 
         especialistaService.saveCitaForEspecialista(e1.getId(),c1);

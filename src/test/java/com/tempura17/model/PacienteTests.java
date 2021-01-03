@@ -36,7 +36,8 @@ class PacienteTests {
 	void shouldNotValidateWhenFirstNameEmpty() {
 
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
-        Paciente paciente = new Paciente();
+		Paciente paciente = new Paciente();
+		paciente.setDni("25000000A");
 		paciente.setFirstName("");
 		paciente.setLastName("garcia");
 

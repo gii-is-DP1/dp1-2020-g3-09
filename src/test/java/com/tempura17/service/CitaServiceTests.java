@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialidad;
+import com.tempura17.model.Especialista;
 import com.tempura17.model.Formato;
 import com.tempura17.model.Paciente;
 import com.tempura17.model.Tipologia;
@@ -26,6 +27,9 @@ public class CitaServiceTests {
     
     @Autowired
     private PacienteService pacienteService;
+
+    @Autowired 
+    private EspecialistaService especialistaService;
 
 
     @Test
@@ -53,11 +57,16 @@ public class CitaServiceTests {
                                            .collect(Collectors.toList())
                                            .get(0);
 
+        Especialista e1 = new Especialista();
+        e1.setFirstName("firstName");
+        e1.setLastName("lastName");
+        especialistaService.save(e1);
+        
         Cita cita = new Cita();
         cita.setFormato(Formato.ONLINE);
         cita.setTipo(Tipologia.ASEGURADO);
         cita.setEspecialidad(Especialidad.PEDIATRIA);
-        cita.setEspecialista(null);
+        cita.setEspecialista(e1);
         cita.setFecha(null); 
         cita.setPaciente(paciente);
         
