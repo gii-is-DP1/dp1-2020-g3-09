@@ -48,11 +48,6 @@ public class Cita extends BaseEntity {
     @JsonIgnore
     private Especialista especialista;
 
-    /*@ManyToOne
-    @JoinColumn(name ="historial_id")  
-    @JsonIgnore
-    private Historial historial;*/
-
     public Formato getFormato() {
         return formato;
     }

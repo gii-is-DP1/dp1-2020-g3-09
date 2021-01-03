@@ -49,9 +49,6 @@ public class Paciente extends Person {
     @JoinColumn(name = "username", referencedColumnName = "username")
 	private User user;
 
-    /*@OneToOne
-    private Historial historial;*/
-
     public String getDni() {
         return dni;
     }
