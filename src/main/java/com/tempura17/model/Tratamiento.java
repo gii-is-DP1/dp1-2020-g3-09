@@ -10,6 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,17 +21,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "tratamientos")
 public class Tratamiento extends BaseEntity{
 
+@Size(min = 10, max = 300, message = "La descripción tiene que tener un tamaño mínimo de 10 y máximo de 300 carácteres")
 private String descripcion;
 
+@Min(value = 1, message = "la duración no puede ser menor de 1 día")
 private Integer duracion;
 
 @ManyToOne
 @JoinColumn( name = "poliza_id")
 @JsonIgnore
+@NotNull
 private Poliza poliza;
 
 @OneToOne(cascade = CascadeType.ALL)
 @JoinColumn(name = "acta_id", referencedColumnName = "id")
+@NotNull
 private Acta acta;
 
 public String getDescripcion() {

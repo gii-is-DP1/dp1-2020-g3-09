@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -19,7 +21,9 @@ import javax.persistence.Enumerated;
 @Table(name = "pacientes")
 public class Paciente extends Person {
 
-    private String dni; 
+    @NotEmpty
+    private String dni;
+    @Email 
     private String email;
     private String direccion;
 
