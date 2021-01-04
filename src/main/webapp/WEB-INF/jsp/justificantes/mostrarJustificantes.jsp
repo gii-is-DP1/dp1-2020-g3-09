@@ -42,18 +42,14 @@
         }
     </script>
     
-    
+    <label>Justificante de la cita:</label>
     <div id="imprimir">
-	<table id="diagnosesTable" class="table table-striped">
-        <tr>
-            <th>Motivo:</th>
-            <td><c:out value="${justificante.motivo}"/></td>
-        </tr>
-        <tr>
-            <th>Especialidad:</th>
-            <td><c:out value="${justificante.cita.especialidad}"/></td>
-        </tr>
-    </table>
-    </div>
+
+    <p>El paciente con DNI <c:out value="${justificante.cita.paciente.dni}"/> tiene una cita en la fecha <c:out value="${justificante.cita.fecha}"/> de forma 
+        <c:out value="${justificante.cita.formato}"/> con el doctor/a <c:out value="${justificante.cita.especialista}"/> 
+        para <c:out value="${justificante.cita.especialidad}"/></p>
+
+    </div><br>
     <a href="javascript:JustificantePdf()" class="button">Descargar justificante</a>
+
 </petclinic:layout>
