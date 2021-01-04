@@ -1,25 +1,23 @@
 package com.tempura17.web;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 import javax.validation.Valid;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+
+
 import com.tempura17.model.Justificante;
 import com.tempura17.service.JustificanteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+
 
 
 @Controller
@@ -72,22 +70,22 @@ public class JustificanteController {
 	} 
     
 
-    @GetMapping("/{citaId}/new")
-	public String newJustificante(@PathVariable("citaId") int citaId, ModelMap model){
+    @GetMapping("/new/{id}")
+	public String newJustificante(@PathVariable("id") int id, ModelMap model){
 		model.addAttribute("justificante", new Justificante());
 		return "justificantes/crearJustificante";
     }
     
-    @PostMapping("/{citaId}/new")
-	public String saveNewJustificante(@PathVariable("citaId") int citaId, @Valid Justificante justificante, BindingResult binding, ModelMap model){
+    @PostMapping("/new/{id}")
+	public String saveNewJustificante(@PathVariable("id") int id, @Valid Justificante justificante, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL GUARDAR EL JUSTIFICANTE");
 			return "justificantes/crearJustificante";
 
 		}else {
-			justificanteService.save(justificante);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			this.justificanteService.createJustificanteForCitaId(justificante, id);
+			model.addAttribute("message", "JUSTIFICANTE GUARDADO CORRECTAMENTE");
 			return listJustificantes(model);
 
 		}
