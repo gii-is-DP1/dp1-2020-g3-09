@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.tempura17.model.Alarma;
 import com.tempura17.repository.AlarmaRepository;
-import com.tempura17.repository.CitaRepository;
+
 
 @Service
 public class AlarmaService {
@@ -18,7 +18,7 @@ public class AlarmaService {
 	private AlarmaRepository alarmaRepository;
 	
 	@Autowired
-	public AlarmaService(AlarmaRepository alarmaRepository, CitaRepository citaRepository) {
+	public AlarmaService(AlarmaRepository alarmaRepository) {
 		super();
 		this.alarmaRepository = alarmaRepository;
 	}
@@ -42,8 +42,4 @@ public class AlarmaService {
 	public void delete(Alarma alarma) {
 		alarmaRepository.delete(alarma);
 	}
-	
-	//Crear mensaje cuando fecha local = cita.fecha - diasAntelacion
-	
-
 }
