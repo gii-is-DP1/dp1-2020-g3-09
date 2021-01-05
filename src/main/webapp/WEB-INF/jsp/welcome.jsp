@@ -13,20 +13,7 @@
 					TEMPURA 17
 				</h1>
 			</div>
-			<div class="alert alert-info">
-				<a href="/citas" class="alert-link">Quedan 2 dias para su proxima cita</a>
-				<button type="button" class="close" data-dismiss="alert"></button>
-			</div>
-			<nav class="navbar navbar-expand-sm bg-light">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="/citas">Mis citas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/pacientes">Pacientes</a>
-					</li>
-				</ul>
-			</nav>
+			<img src="https://www.amepaorg.com/wp-content/uploads/2019/06/importancia-de-la-consulta-medica.jpg" alt="Inicio"> 
 		</div>
 	</div>
 	</div>

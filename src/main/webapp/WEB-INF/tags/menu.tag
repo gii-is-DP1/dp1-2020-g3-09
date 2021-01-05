@@ -63,7 +63,7 @@
 							<li>								
 									<div class="row">
 										<div class="text-center">																					
-												<a href="<c:url value="/calculadoras/new" />">Nueva calculadora</a>
+												<a href="<c:url value="/calculadoras/new" />">Calcular IMC</a>
 										</div>																					
 									</div>						
 							</li>														
