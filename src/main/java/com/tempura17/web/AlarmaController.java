@@ -1,15 +1,19 @@
 package com.tempura17.web;
 
+
+import java.text.ParseException;
 import java.util.Collection;
-import java.util.List;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.tempura17.model.Alarma;
+import com.tempura17.model.Cita;
 import com.tempura17.service.AlarmaService;
+import com.tempura17.service.CitaService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -18,97 +22,102 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
 @RequestMapping("/alarmas")
 public class AlarmaController {
 
-    @Autowired
-    AlarmaService alarmaServ;
+	private	final AlarmaService alarmaService;
 
-    @GetMapping
-	public String listAlarmas(ModelMap model){
-		model.addAttribute("alarmas", alarmaServ.findAll());
-			return "alarmas/misAlarmas";
+	private final CitaService citaService;
+
+	@Autowired
+	public AlarmaController(AlarmaService alarmaService,CitaService citaService){
+		super();
+		this.alarmaService = alarmaService;
+		this.citaService = citaService;
+    }
+
+	@GetMapping
+	public String listAlarmas(ModelMap model) {
+		model.addAttribute("alarmas", alarmaService.findAll());
+		return "alarmas/misAlarmas";
 	}
 
 	@GetMapping("/json")
 	@ResponseBody
-	public Collection<Alarma> jsonAlarmas(){
-		return alarmaServ.findAll();
-    }
+	public Collection<Alarma> jsonAlarmas() {
+		return alarmaService.findAll();
+	}
 
-    @GetMapping("/new")
-	public String NewAlarma(ModelMap model){
+	@GetMapping("/new")
+	public String NewAlarma(ModelMap model) {
 		model.addAttribute("alarma", new Alarma());
 		return "alarmas/crearAlarma";
 	}
 
 	@PostMapping("/new")
-	public String saveNewAlarma(@Valid Alarma alarma, BindingResult binding, ModelMap model){
+	public String saveNewAlarma(@Valid Alarma alarma, @Valid Cita cita, BindingResult binding, ModelMap model) {
 
-		if(binding.hasErrors()){
+		if (binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL GUARDAR LA ALARMA");
 			return "alarmas/crearAlarma";
 
-		}else {
-			alarmaServ.save(alarma);
+		} else {
+			alarmaService.save(alarma);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listAlarmas(model);
 
 		}
 	}
 
-	@GetMapping("/{id}/edit")
-	public String editAlarma(@PathVariable("id") int id, ModelMap model){
-		Optional<Alarma> alarma = alarmaServ.findById((id));
-
-		if(alarma.isPresent()){
-			model.addAttribute("alarma", alarma.get());
-			return "alarmas/crearAlarma";
-
-		}else{
-			model.addAttribute("message", "NO EXISTE ALARMA CON ESE ID");
-			return listAlarmas(model);
-		}
-	}
-
-	@PostMapping("/{id}/edit")
-	public String editAlarma(@PathVariable("id") int id, @Valid Alarma alarmaModified, BindingResult binding, ModelMap model){
-		Optional<Alarma> alarma = alarmaServ.findById(id);
-
-		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA ALARMA");
-			return listAlarmas(model);
-
-		}else{
-			BeanUtils.copyProperties(alarmaModified, alarma.get(), "id");
-			alarmaServ.save(alarma.get());
-			model.addAttribute("message", "BIEN MODIFICADA LA ALARMA");
-			return listAlarmas(model);
-		}
-	}
-
 	@GetMapping("/new/{id}")
-	public String newAlarmaId(ModelMap model){
+	public String newAlarmaId(ModelMap model) {
 		model.addAttribute("alarma", new Alarma());
 		return "alarmas/crearAlarma";
 	}
 
 	@PostMapping("/new/{id}")
-	public String saveNewAlarmaId(@PathVariable("id") int id,@Valid Alarma alarma, BindingResult binding, ModelMap model){
+	public String saveNewAlarmaId(@PathVariable("id") int id, @Valid Alarma alarma,
+			BindingResult binding, ModelMap model) throws ParseException {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL GUARDAR LA ALARMA");
 			return "alarmas/crearAlarma";
 
 		}else {
-			alarmaServ.save(alarma);
+			Optional<Cita> cita = citaService.findById(id);
+			Cita citas = cita.get();
+			Date fechainicio = citas.getFecha();
+			Date fechaactual = new Date(System.currentTimeMillis());
+			Long fechainicio2 = fechainicio.getTime();
+			Long fechaactual2 = fechaactual.getTime();
+			Long diferencia = fechainicio2 - fechaactual2;
+			Double dias = Math.floor(diferencia/86400000);
+			int diasint = (int)Math.round(dias);
+			alarma.setDias(diasint);
+			alarma.setCita(citas);
+			alarmaService.save(alarma);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listAlarmas(model);
 
+		}
+	}
+
+
+	@GetMapping("/{id}/delete")
+	public String deleteAlarma(@PathVariable("id") int id, ModelMap model){
+		Optional<Alarma> alarma = alarmaService.findById(id);
+		
+		if(alarma.isPresent()){
+			alarmaService.delete(alarma.get());
+			model.addAttribute("message", "ALARMA BORRADA CORRECTAMENTE");
+			return listAlarmas(model);
+
+		}else{
+			model.addAttribute("message","NO EXISTE NINGUNA ALARMA CON ESE ID");
+			return listAlarmas(model);
 		}
 	}
 
