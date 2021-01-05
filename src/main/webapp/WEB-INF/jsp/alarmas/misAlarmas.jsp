@@ -6,26 +6,41 @@
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags"%>
 
 <petclinic:layout pageName="alarmas">
-	
+	<c:forEach items="${alarmas}" var="alarmas">
+	<c:choose>
+	<c:when test="${alarmas.dias <= 15}">
+	<div class="alert alert-info">
+		Quedan ${alarmas.dias}
+		 dias para su proxima <a href="/citas" class="alert-link">cita</a>
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	</div>
+	</c:when>
+	</c:choose>
+	</c:forEach>	
+
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
 			<tr>
+				<th>Especialista</th>
+				<th>Especialidad</th>
 				<th>Fecha de la cita</th>
-				<th>Dias de antelacion</th>		
-				<th>Modificar alarma</th>	
+				<th>Dias restantes</th>
+				<th></th>	
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${alarmas}" var="alarmas">
 				<tr>
-					<td>${citas.formato}</td>
-					<td>${alarmas.diasAntelacion}</td>
-					<td>
-						<spring:url value="/alarmas/{id}/edit" var="editAlarma">
+					<td>${alarmas.cita.especialista}</td>
+					<td>${alarmas.cita.especialidad}</td>
+					<td>${alarmas.cita.fecha}</td>
+					<td>${alarmas.dias}</td>
+					<td> 
+						<spring:url value="/alarmas/{id}/delete" var="deleteAlarma">
 							<spring:param name="id" value="${alarmas.id}"/>
 						</spring:url>
-						<a href="${fn:escapeXml(editAlarma)}">Editar alerta</a>
-					</td>
+						<a href="${fn:escapeXml(deleteAlarma)}">Borrar alarma</a>
+						</td>
 				</tr>
 			</c:forEach>
 		</tbody>
