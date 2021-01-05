@@ -1,9 +1,11 @@
 package com.tempura17.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.PositiveOrZero;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -11,37 +13,29 @@ import javax.validation.constraints.PositiveOrZero;
 @Table(name = "alarmas")
 public class Alarma extends BaseEntity{
 	
-	@PositiveOrZero
-	private Integer diasAntelacion;
+	
+    private Integer dias;
 	
 	@OneToOne
-	private Cita cita;
+	@JoinColumn(name ="cita_id")  
+    @JsonIgnore
+    private Cita cita;
 	
 	
-	private String mensaje;
-	
-	public Integer getDiasAntelacion() {
-		return diasAntelacion;
+	public Integer getDias() {
+		return dias;
 	}
 	
-	public void setDiasAntelacion(Integer diasAntelacion) {
-		this.diasAntelacion = diasAntelacion;
+	public void setDias(Integer dias) {
+		this.dias = dias;
 	}
 	
 	public Cita getCita() {
 		return this.cita;
 	}
 	
-	public void setCita(Cita cita) {
-		this.cita = cita;
-	}
-	
-	public String getMensaje() {
-		return this.mensaje;
-	}
-	
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+	public void setCita(Cita cita2) {
+		this.cita = cita2;
 	}
 
 }
