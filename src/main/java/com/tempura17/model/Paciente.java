@@ -37,6 +37,9 @@ public class Paciente extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
     private Set<Cita> citas;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
+    private Set<CalculadoraSalud> calculadora;
+
     @ManyToOne (optional = true)
     @JoinColumn(name ="poliza_id")  
     @JsonIgnore
