@@ -30,12 +30,12 @@ private Integer duracion;
 @ManyToOne
 @JoinColumn( name = "poliza_id")
 @JsonIgnore
-@NotNull
+@NotNull(message = "La poliza no puede ser nula")
 private Poliza poliza;
 
 @OneToOne(cascade = CascadeType.ALL)
 @JoinColumn(name = "acta_id", referencedColumnName = "id")
-@NotNull
+@NotNull(message = "El acta no puede ser nulo")
 private Acta acta;
 
 public String getDescripcion() {

@@ -33,12 +33,12 @@ class PacienteTests {
 	}
 
 	@Test
-	void shouldNotValidateWhenFirstNameEmpty() {
+	void shouldNotValidateWhenDNIEmpty() {
 
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Paciente paciente = new Paciente();
-		paciente.setDni("25000000A");
-		paciente.setFirstName("");
+		paciente.setDni("");
+		paciente.setFirstName("rodrigo");
 		paciente.setLastName("garcia");
 
 		Validator validator = createValidator();
@@ -46,8 +46,27 @@ class PacienteTests {
 
 		assertThat(constraintViolations.size()).isEqualTo(1);
 		ConstraintViolation<Paciente> violation = constraintViolations.iterator().next();
-		assertThat(violation.getPropertyPath().toString()).isEqualTo("firstName");
+		assertThat(violation.getPropertyPath().toString()).isEqualTo("dni");
 		assertThat(violation.getMessage()).isEqualTo("must not be empty");
+	}
+
+	@Test
+	void shouldNotValidateWhenEmailIsNotEmail() {
+
+		LocaleContextHolder.setLocale(Locale.ENGLISH);
+		Paciente paciente = new Paciente();
+		paciente.setDni("25000000A");
+		paciente.setFirstName("rodrigo");
+		paciente.setLastName("garcia");
+		paciente.setEmail("noEmail");
+
+		Validator validator = createValidator();
+		Set<ConstraintViolation<Paciente>> constraintViolations = validator.validate(paciente);
+
+		assertThat(constraintViolations.size()).isEqualTo(1);
+		ConstraintViolation<Paciente> violation = constraintViolations.iterator().next();
+		assertThat(violation.getPropertyPath().toString()).isEqualTo("email");
+		assertThat(violation.getMessage()).isEqualTo("must be a well-formed email address");
 	}
 
 }
