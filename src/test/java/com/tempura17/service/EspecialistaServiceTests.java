@@ -72,12 +72,12 @@ public class EspecialistaServiceTests {
         paciente_id = paciente.getId();
         especialista_id = especialista.getId();
         Integer numCitasPrior = paciente.getCitas().size();
-        Integer numCitasPrior1 = especialista.getCita().size();
+        Integer numCitasPrior1 = especialista.getCitas().size();
         Cita cita = new Cita();
         // Llamada a la funcion a verificar
         this.especialistaService.createCitaForPacienteId(cita, paciente_id, especialista_id);
         Integer numCitasPost = this.pacienteService.findById(paciente_id).get().getCitas().size();
-        Integer numCitasPost1 = this.especialistaService.findById(especialista_id).get().getCita().size();
+        Integer numCitasPost1 = this.especialistaService.findById(especialista_id).get().getCitas().size();
         assertThat(numCitasPrior + 1).isEqualTo(numCitasPost);
         assertThat(numCitasPrior1 + 1).isEqualTo(numCitasPost1);
 
