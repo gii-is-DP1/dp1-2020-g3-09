@@ -92,6 +92,10 @@ public class Paciente extends Person {
         this.citas = citas;
     }
 
+    public void addCita(Cita cita){
+        this.citas.add(cita);
+    }
+
     public Aseguradora getAseguradora() {
         return aseguradora;
     }

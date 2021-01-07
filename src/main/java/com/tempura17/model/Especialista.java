@@ -91,12 +91,16 @@ public class Especialista extends Person {
         this.aseguradoras = aseguradoras;
     }
 
-    public Set<Cita> getCita() {
+    public Set<Cita> getCitas() {
         return citas;
     }
 
-    public void setCita(Set<Cita> citas) {
+    public void setCitas(Set<Cita> citas) {
         this.citas = citas;
+    }
+
+    public void addCita(Cita cita){
+        this.citas.add(cita);
     }
 
     public Set<Acta> getActas() {
