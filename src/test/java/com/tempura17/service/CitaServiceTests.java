@@ -90,7 +90,7 @@ public class CitaServiceTests {
 		cita.setPaciente(paciente);
         paciente.setFirstName("Alejandro");
         paciente.setLastName("Dominguez");
-		this.citaService.savePaciente(paciente);
+		this.pacienteService.save(paciente);
         this.citaService.save(cita);
   
 		cita = this.citaService.findById(1).get();

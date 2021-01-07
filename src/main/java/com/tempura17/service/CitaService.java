@@ -23,13 +23,13 @@ public class CitaService {
 
     private CitaRepository citaRepository;
     
-    private PacienteRepository pacienteRepository;
+    private PacienteService pacienteService;
 
     @Autowired
-    public CitaService(CitaRepository citaRepository, PacienteRepository pacienteRepository){
+    public CitaService(CitaRepository citaRepository, PacienteService pacienteService){
       super();
       this.citaRepository = citaRepository;
-      this.pacienteRepository = pacienteRepository;
+      this.pacienteService = pacienteService;
     }
 
 
@@ -53,15 +53,17 @@ public class CitaService {
     */
     public void save(@Valid Cita cita){
       citaRepository.save(cita);
-    }
-
-    @Transactional
-    public void savePaciente(Paciente paciente) throws DataAccessException {
-      pacienteRepository.save(paciente);
+      Paciente paciente = cita.getPaciente();
+      paciente.addCita(cita);
+      this.pacienteService.save(paciente);
     }
 
     public void delete(Cita cita){
       citaRepository.deleteById(cita.getId());
+    }
+
+    public void deleteById(Integer id){
+      citaRepository.deleteById(id);
     }
 
 	
