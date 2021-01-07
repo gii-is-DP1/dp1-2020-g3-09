@@ -1,7 +1,9 @@
 package com.tempura17.service;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -46,7 +48,19 @@ public class EspecialistaService {
     }
 
     public void saveCitaForEspecialista(@Valid Integer id, Cita cita){
-        especialistaRepository.findById(id).get().getCita().add(cita);
+        Especialista especialista = especialistaRepository.findById(id).get();
+
+        if(especialista.getCitas() == null){
+            Set<Cita> citas = new HashSet<>();
+            especialista.setCitas(citas);
+            especialista.getCitas().add(cita);
+            especialistaRepository.save(especialista);
+
+        }else{
+            especialistaRepository.findById(id).get().getCitas().add(cita);
+        }
+
+        
     }
     
 

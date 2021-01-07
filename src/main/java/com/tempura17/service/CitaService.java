@@ -55,11 +55,6 @@ public class CitaService {
       citaRepository.save(cita);
     }
 
-    @Transactional
-    public void savePaciente(Paciente paciente) throws DataAccessException {
-      pacienteRepository.save(paciente);
-    }
-
     public void delete(Cita cita){
       citaRepository.deleteById(cita.getId());
     }
