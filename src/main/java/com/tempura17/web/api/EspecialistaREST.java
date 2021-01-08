@@ -2,8 +2,13 @@ package com.tempura17.web.api;
 
 import com.tempura17.service.EspecialistaService;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -11,7 +16,9 @@ import javax.validation.Valid;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialista;
+import com.tempura17.model.Especialidad;
 
+import org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.CorsRegistration;
 import org.springframework.web.util.UriComponentsBuilder;
 
 
@@ -33,6 +41,8 @@ public class EspecialistaREST {
 
     @Autowired
     private final EspecialistaService especialistaService;
+
+    private static final String PATH = "/api/especialistas";
 
     public EspecialistaREST(EspecialistaService especialistaService) {
         this.especialistaService = especialistaService;
@@ -71,7 +81,7 @@ public class EspecialistaREST {
             return new ResponseEntity<Especialista>(headers, HttpStatus.BAD_REQUEST);
         }
         this.especialistaService.save(especialista);
-		headers.setLocation(ucBuilder.path("/api/especialistas").buildAndExpand(especialista.getId()).toUri());
+		headers.setLocation(ucBuilder.path(PATH).buildAndExpand(especialista.getId()).toUri());
 		return new ResponseEntity<Especialista>(especialista, headers, HttpStatus.CREATED);
 
     }
@@ -91,15 +101,36 @@ public class EspecialistaREST {
         // especialistas(id, first_name,last_name,dni,direccion,telefono,correo,especialidad)
         Especialista updatedEspecialista = this.especialistaService.findById(id)
                     .map(especialista -> {
-                            especialista.setFirstName(newEspecialista.getFirstName());
-                            especialista.setLastName(newEspecialista.getLastName());
-                            especialista.setDni(newEspecialista.getDni());
-                            especialista.setDireccion(newEspecialista.getDireccion());
-                            especialista.setTelefono(newEspecialista.getTelefono());
-                            especialista.setCorreo(newEspecialista.getTelefono());
-                            especialista.setEspecialidad(newEspecialista.getEspecialidad());
+                            // Para pringados pedantes
+                            String firstName = newEspecialista.getFirstName() == null ? especialista.getFirstName() : newEspecialista.getFirstName();
+                            especialista.setFirstName(firstName);
+                            String lastName = newEspecialista.getLastName() == null ? especialista.getLastName() : newEspecialista.getLastName();
+                            especialista.setLastName(lastName);
+                            String dni = newEspecialista.getDni() == null ? especialista.getDni() : newEspecialista.getDni();
+                            especialista.setDni(dni);
+                            String direccion = newEspecialista.getDireccion() == null ? especialista.getDireccion() : newEspecialista.getDireccion();
+                            especialista.setDireccion(direccion);
+                            String telefono = newEspecialista.getTelefono() == null ? especialista.getTelefono() : newEspecialista.getTelefono();
+                            especialista.setTelefono(telefono);
+                            String correo = newEspecialista.getCorreo() == null ? especialista.getCorreo() : newEspecialista.getCorreo();
+                            especialista.setCorreo(correo);
+                            Especialidad especialidad = newEspecialista.getEspecialidad() == null ? especialista.getEspecialidad() : newEspecialista.getEspecialidad();
+                            especialista.setEspecialidad(especialidad);
                             this.especialistaService.save(especialista);
                             return especialista;
+                            /* Apto para flipados que desean metaprogramar
+                            List<Field> fields = Arrays.asList(Especialista.class.getDeclaredFields());
+                            List<Method> methods = Arrays.asList(Especialista.class.getDeclaredMethods());
+                            
+                            for(int i=0; i<fields.size(); i++){
+                                Class<?> clazz = fields.get(i).getType(); // Class.forName("com.tempura17.model.Especialista");    
+                                Constructor<?> constructor = clazz.getConstructors()[0];
+                                Object field = constructor.newInstance();
+                                Method m = methods.get(i);
+                                field = m.invoke(newEspecialista) == null ? m.invoke(especialista) : m.invoke(newEspecialista);
+                            };
+                            */
+
                     }) 
                     .orElseGet(() -> {
                         newEspecialista.setId(id);
@@ -121,15 +152,29 @@ public class EspecialistaREST {
 	}
 
     // Adicion : errors
-	@PostMapping("/{id_paciente}/{id_especialista}")
-    public Cita createCitaForPacienteId(@PathVariable("id_paciente") int id_paciente
-                                        ,@PathVariable("id_especialista") int id_especialista
-                                        ,@RequestBody Cita cita) {
+    @RequestMapping(value = "/{id_paciente}/{id_especialista}", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity<Cita>  createCitaForPacienteId(@PathVariable("id_paciente") int id_paciente
+                                        , @PathVariable("id_especialista") int id_especialista
+                                        , @RequestBody Cita cita
+                                        , BindingResult bindingResult
+                                        , UriComponentsBuilder ucBuilder) {
+        BindingErrorsResponse errors = new BindingErrorsResponse();
+        HttpHeaders headers = new HttpHeaders();
+        if(bindingResult.hasErrors() || (cita == null)){
+            errors.addAllErrors(bindingResult);
+            headers.add("errors", errors.toJSON());
+            return new ResponseEntity<Cita>(headers, HttpStatus.BAD_REQUEST);
+        }
         this.especialistaService.createCitaForPacienteId(cita, id_paciente, id_especialista);
-        return cita;
+        /*
+        List<Cita> citas = new ArrayList<>(this.especialistaService.findById(id_especialista).get().getCitas());
+        cita = citas.get(citas.size()-1);
+        */
+        headers.setLocation(ucBuilder.path(PATH).buildAndExpand(id_especialista).toUri());
+        return new ResponseEntity<Cita>(cita, headers, HttpStatus.CREATED);
     }
     
-
+    // Posible cita_id generado como nulo
     @RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Especialista> saveCitaForEspecialista(@PathVariable("id") Integer id
                                                                 , @RequestBody @Valid Cita cita
@@ -138,8 +183,8 @@ public class EspecialistaREST {
 
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();
-        Optional<Especialista> especialista = this.especialistaService.findById(id);
-        if (especialista.get() == null) {
+        Especialista especialista = this.especialistaService.findById(id).get();
+        if (especialista == null) {
             return new ResponseEntity<Especialista>(HttpStatus.NOT_FOUND);
         }
 
@@ -149,8 +194,8 @@ public class EspecialistaREST {
             return new ResponseEntity<Especialista>(headers, HttpStatus.BAD_REQUEST);
         }
         this.especialistaService.saveCitaForEspecialista(id, cita);
-		headers.setLocation(ucBuilder.path("/api/especialistas/" + id).buildAndExpand(especialista.get().getId()).toUri());
-		return new ResponseEntity<Especialista>(especialista.get(), headers, HttpStatus.CREATED);
+		headers.setLocation(ucBuilder.path(PATH).buildAndExpand(especialista.getId()).toUri());
+		return new ResponseEntity<Especialista>(especialista, headers, HttpStatus.CREATED);
 
     }
 	
