@@ -48,23 +48,23 @@ public class EspecialistaService {
         this.especialistaRepository.save(especialista);
     }
 
+    public void deleteById(Integer id){
+        this.especialistaRepository.deleteById(id);
+      }
+
     public void saveCitaForEspecialista(@Valid Integer id, Cita cita){
         Especialista especialista = especialistaRepository.findById(id).get();
-        cita.setEspecialista(especialista);
-        this.citaService.save(cita);
         if(especialista.getCitas() == null){
             Set<Cita> citas = new HashSet<>();
             especialista.setCitas(citas);
             especialista.getCitas().add(cita);
             especialistaRepository.save(especialista);
-        }else{
-            especialista.addCita(cita);
-            especialistaRepository.save(especialista);
-        }
-    }
 
-    public void deleteById(Integer id){
-      especialistaRepository.deleteById(id);
+        }else{
+            especialistaRepository.findById(id).get().getCitas().add(cita);
+        }
+
+        
     }
     
 

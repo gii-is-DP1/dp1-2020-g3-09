@@ -53,9 +53,6 @@ public class CitaService {
     */
     public void save(@Valid Cita cita){
       citaRepository.save(cita);
-      Paciente paciente = cita.getPaciente();
-      paciente.addCita(cita);
-      this.pacienteService.save(paciente);
     }
 
     public void delete(Cita cita){

@@ -1,3 +1,13 @@
+-- One admin user, named admin1 with passwor 4dm1n and authority admin
+INSERT INTO users(username,password,enabled) VALUES ('admin1','1234',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (1,'admin1','admin');
+-- One owner user, named owner1 with passwor 0wn3r
+INSERT INTO users(username,password,enabled) VALUES ('especialista1','1234',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (2,'especialista1','especialista');
+-- One vet user, named vet1 with passwor v3t
+INSERT INTO users(username,password,enabled) VALUES ('paciente1','1234',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (3,'paciente1','paciente');
+
 INSERT INTO aseguradoras(id,nombre) VALUES (
     1,
     'Caser');
