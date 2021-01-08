@@ -1,6 +1,7 @@
 package com.tempura17.web.api;
 
 import com.tempura17.service.EspecialistaService;
+import com.tempura17.service.PacienteService;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -17,6 +18,7 @@ import javax.validation.Valid;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Especialidad;
+import com.tempura17.model.Paciente;
 
 import org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +44,14 @@ public class EspecialistaREST {
     @Autowired
     private final EspecialistaService especialistaService;
 
+    @Autowired
+    private final PacienteService pacienteService;
+
     private static final String PATH = "/api/especialistas";
 
-    public EspecialistaREST(EspecialistaService especialistaService) {
+    public EspecialistaREST(EspecialistaService especialistaService, PacienteService pacienteService) {
         this.especialistaService = especialistaService;
+        this.pacienteService = pacienteService;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
@@ -66,6 +72,17 @@ public class EspecialistaREST {
             return new ResponseEntity<Especialista>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Especialista>(especialista.get(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/historia/{id_paciente}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<Collection<Cita>> historiaClinicaId(@PathVariable("id_paciente") Integer id_paciente) {
+        Optional<Paciente> paciente = this.pacienteService.findById(id_paciente);
+        Collection<Cita> citas = new ArrayList<Cita>();
+        citas.addAll(paciente.get().getCitas());
+        if (citas.isEmpty()) {
+            return new ResponseEntity<Collection<Cita>>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<Collection<Cita>>(citas, HttpStatus.OK);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST, produces = "application/json")
