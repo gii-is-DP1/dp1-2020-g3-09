@@ -38,13 +38,13 @@ public class Cita extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name ="paciente_id")
-    @NotNull(message = "El paciente no puede ser nulo")
+    //@NotNull(message = "El paciente no puede ser nulo")
     @JsonIgnore
     private Paciente paciente;
 
     @ManyToOne 
     @JoinColumn(name = "especialista_id")
-    @NotNull(message = "El especialista no puede ser nulo")
+    //@NotNull(message = "El especialista no puede ser nulo")
     @JsonIgnore
     private Especialista especialista;
 
