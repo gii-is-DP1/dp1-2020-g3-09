@@ -99,6 +99,10 @@ public class Especialista extends Person {
         this.citas = citas;
     }
 
+    public void addCita(Cita cita){
+        this.citas.add(cita);
+    }
+
     public Set<Acta> getActas() {
         return actas;
     }

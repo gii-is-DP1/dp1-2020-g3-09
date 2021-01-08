@@ -12,6 +12,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tempura17.service.businessrules.ValidatePossibleEspecialidad;
 
 import javax.persistence.ManyToOne;
 
@@ -19,6 +20,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @Table(name = "citas")
+@ValidatePossibleEspecialidad(message = "Especialidad no apta siguiendo el formato de cita seleccionada")
 public class Cita extends BaseEntity {
 
     @Enumerated(EnumType.STRING)

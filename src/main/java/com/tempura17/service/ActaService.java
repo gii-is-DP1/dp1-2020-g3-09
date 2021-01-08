@@ -2,6 +2,9 @@ package com.tempura17.service;
 
 import java.util.Collection;
 import java.util.Optional;
+
+import javax.validation.Valid;
+
 import com.tempura17.model.Acta;
 
 import com.tempura17.repository.ActaRepository;
@@ -27,4 +30,8 @@ public class ActaService {
     public Optional<Acta> findById(Integer id){
         return actaRepository.findById(id);
     }
+
+    public void save(@Valid Acta acta){
+        actaRepository.save(acta);
+      }
 }

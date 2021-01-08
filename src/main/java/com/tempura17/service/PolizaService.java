@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import com.tempura17.model.Aseguradora;
 import com.tempura17.model.Cobertura;
 import com.tempura17.model.Poliza;
@@ -35,6 +37,10 @@ public class PolizaService {
 
     public Optional<Poliza> findById(Integer id){
         return polizaRepository.findById(id);
+    }
+
+    public void save(@Valid Poliza poliza){
+      polizaRepository.save(poliza);
     }
 
     public void deletePoliza(Integer idPoliza){
@@ -76,6 +82,7 @@ public class PolizaService {
         }
       }
 
+    // no es simetrico con el conjunto de pacientes que reside en poliza
     public void deletePacienteDePoliza(Integer idPaciente){
     Optional<Paciente> paciente = this.pacienteService.findById(idPaciente);
     

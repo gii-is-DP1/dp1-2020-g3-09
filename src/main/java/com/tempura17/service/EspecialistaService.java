@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import com.tempura17.model.Especialista;
@@ -47,9 +48,12 @@ public class EspecialistaService {
         this.especialistaRepository.save(especialista);
     }
 
+    public void deleteById(Integer id){
+        this.especialistaRepository.deleteById(id);
+      }
+
     public void saveCitaForEspecialista(@Valid Integer id, Cita cita){
         Especialista especialista = especialistaRepository.findById(id).get();
-
         if(especialista.getCitas() == null){
             Set<Cita> citas = new HashSet<>();
             especialista.setCitas(citas);

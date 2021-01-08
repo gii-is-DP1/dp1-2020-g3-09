@@ -79,7 +79,7 @@ public class CitaTests {
 	void ShouldNotValidateWithNullTipo() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Cita cita = new Cita();
-		cita.setFormato(Formato.ONLINE);
+		cita.setFormato(Formato.PRESENCIAL);
 		cita.setTipo(null);
 
 		Paciente paciente = new Paciente();
@@ -101,6 +101,7 @@ public class CitaTests {
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("tipo");
 		assertThat(violation.getMessage()).isEqualTo("La tipología no puede ser nula");
 	}
+	
 
 	@Test
 	void ShouldNotValidateWithNullFormato() {

@@ -102,7 +102,9 @@ public class AseguradoraService {
 
     public void createEspecialista(Especialista especialista, Integer aseguradora_id){
       this.especialistaService.save(especialista);
-      aseguradoraRepository.findById(aseguradora_id).get().getEspecialistas().add(especialista);
+      Aseguradora aseguradora = aseguradoraRepository.findById(aseguradora_id).get();
+      aseguradora.getEspecialistas().add(especialista);
+      aseguradoraRepository.save(aseguradora);
       
     }
 }
