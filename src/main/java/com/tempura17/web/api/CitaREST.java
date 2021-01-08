@@ -6,6 +6,7 @@ import com.tempura17.service.PacienteService;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -14,8 +15,11 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import com.tempura17.model.Cita;
+import com.tempura17.model.Especialidad;
 import com.tempura17.model.Especialista;
+import com.tempura17.model.Formato;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Tipologia;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -122,9 +126,14 @@ public class CitaREST {
         //   1,3,1,'PRESENCIAL','ASEGURADO','MEDICINA_GENERAL','2019-01-27 22:00:00'); 
         Cita updatedCita = this.citaService.findById(id)
                     .map(cita -> {
-                            cita.setFormato(newCita.getFormato());
-                            cita.setEspecialidad(newCita.getEspecialidad());
-                            cita.setFecha(newCita.getFecha());
+                            Formato formato = newCita.getFormato() == null ? cita.getFormato() : newCita.getFormato();
+                            cita.setFormato(formato);
+                            Tipologia tipo = newCita.getTipo() == null ? cita.getTipo() : newCita.getTipo();
+                            cita.setTipo(tipo);
+                            Especialidad especialidad = newCita.getEspecialidad() == null ? cita.getEspecialidad() : newCita.getEspecialidad();
+                            cita.setEspecialidad(especialidad);
+                            Date fecha = newCita.getFecha() == null ? cita.getFecha() : newCita.getFecha();
+                            cita.setFecha(fecha);
                             //Integer id_paciente = cita.getPaciente().getId();
                             Integer id_especialista = cita.getEspecialista().getId();
                             Paciente paciente = cita.getPaciente();
