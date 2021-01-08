@@ -131,7 +131,8 @@ public class AseguradoraREST {
         // aseguradoras(id,nombre)
         Aseguradora updatedAseguradora = this.aseguradoraService.findById(id)
                     .map(aseguradora -> {
-                            aseguradora.setNombre(newAseguradora.getNombre());
+                            String nombre = newAseguradora.getNombre() == null ? aseguradora.getNombre() : newAseguradora.getNombre();
+                            aseguradora.setNombre(nombre);
                             this.aseguradoraService.save(aseguradora);
                             return aseguradora;
                     }) 
@@ -145,7 +146,6 @@ public class AseguradoraREST {
     }
     
     @RequestMapping(value = "/{id_aseguradora}/{id_especialista}", method = RequestMethod.DELETE, produces = "application/json")
-    @Transactional
     public ResponseEntity<Void> deleteEspecialista(@PathVariable("id_aseguradora") Integer id_aseguradora
                                         , @PathVariable("id_especialista") Integer id_especialista){
         Aseguradora aseguradora = this.aseguradoraService.findById(id_aseguradora).get();
@@ -158,7 +158,6 @@ public class AseguradoraREST {
     }
 
     @RequestMapping(value = "/{id_aseguradora}/{id_paciente}/paciente", method = RequestMethod.DELETE, produces = "application/json")
-    @Transactional
     public ResponseEntity<Void> deletePaciente(@PathVariable("id_aseguradora") Integer id_aseguradora
                                         , @PathVariable("id_paciente") Integer id_paciente){
         Aseguradora aseguradora = this.aseguradoraService.findById(id_aseguradora).get();
