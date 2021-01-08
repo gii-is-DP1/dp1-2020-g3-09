@@ -2,6 +2,7 @@ package com.tempura17.web.api;
 
 import com.tempura17.service.EspecialistaService;
 import com.tempura17.service.PacienteService;
+import com.tempura17.service.TratamientoService;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -19,6 +20,7 @@ import com.tempura17.model.Cita;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Especialidad;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Tratamiento;
 
 import org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,11 +49,15 @@ public class EspecialistaREST {
     @Autowired
     private final PacienteService pacienteService;
 
+    @Autowired
+    private final TratamientoService tratamientoService;
+
     private static final String PATH = "/api/especialistas";
 
-    public EspecialistaREST(EspecialistaService especialistaService, PacienteService pacienteService) {
+    public EspecialistaREST(EspecialistaService especialistaService, PacienteService pacienteService, TratamientoService tratamientoService) {
         this.especialistaService = especialistaService;
         this.pacienteService = pacienteService;
+        this.tratamientoService = tratamientoService;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
@@ -190,7 +196,24 @@ public class EspecialistaREST {
         headers.setLocation(ucBuilder.path(PATH).buildAndExpand(id_especialista).toUri());
         return new ResponseEntity<Cita>(cita, headers, HttpStatus.CREATED);
     }
-    
+    @RequestMapping(value = "/tratamiento", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity<Tratamiento> createTratamiento(
+            @RequestBody @Valid Tratamiento tratamiento
+                                                , BindingResult bindingResult
+                                                , UriComponentsBuilder ucBuilder){
+        BindingErrorsResponse errors = new BindingErrorsResponse();
+        HttpHeaders headers = new HttpHeaders();
+        if(bindingResult.hasErrors() || (tratamiento == null)){
+            errors.addAllErrors(bindingResult);
+            headers.add("errors", errors.toJSON());
+            return new ResponseEntity<Tratamiento>(headers, HttpStatus.BAD_REQUEST);
+        }
+        this.tratamientoService.save(tratamiento);
+		headers.setLocation(ucBuilder.path(PATH).buildAndExpand().toUri());
+		return new ResponseEntity<Tratamiento>(tratamiento, headers, HttpStatus.CREATED);
+
+    }
+
     // Posible cita_id generado como nulo
     @RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Especialista> saveCitaForEspecialista(@PathVariable("id") Integer id
