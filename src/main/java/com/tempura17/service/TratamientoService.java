@@ -2,6 +2,9 @@ package com.tempura17.service;
 
 import java.util.Collection;
 import java.util.Optional;
+
+import javax.validation.Valid;
+
 import com.tempura17.model.Tratamiento;
 
 import com.tempura17.repository.TratamientoRepository;
@@ -27,4 +30,8 @@ public class TratamientoService {
     public Optional<Tratamiento> findById(Integer id){
         return tratamientoRepository.findById(id);
     }
+
+    public void save(@Valid Tratamiento tratamiento){
+        tratamientoRepository.save(tratamiento);
+      }
 }
