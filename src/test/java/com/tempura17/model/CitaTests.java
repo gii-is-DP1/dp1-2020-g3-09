@@ -23,8 +23,7 @@ public class CitaTests {
 		return localValidatorFactoryBean;
 	}
 
-	/* Invalidado temporalmente
-	@Test
+	/*@Test
 	void ShouldNotValidateWithNullPaciente() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Cita cita = new Cita();
@@ -75,7 +74,7 @@ public class CitaTests {
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("especialista");
 		assertThat(violation.getMessage()).isEqualTo("El especialista no puede ser nulo");
 	}
-
+	*/
 	@Test
 	void ShouldNotValidateWithNullTipo() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
@@ -102,7 +101,7 @@ public class CitaTests {
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("tipo");
 		assertThat(violation.getMessage()).isEqualTo("La tipología no puede ser nula");
 	}
-	*/
+	
 
 	@Test
 	void ShouldNotValidateWithNullFormato() {

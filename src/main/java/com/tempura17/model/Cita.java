@@ -44,7 +44,7 @@ public class Cita extends BaseEntity {
 
     @ManyToOne 
     @JoinColumn(name = "especialista_id")
-    //S@NotNull(message = "El especialista no puede ser nulo")
+    //@NotNull(message = "El especialista no puede ser nulo")
     @JsonIgnore
     private Especialista especialista;
 
