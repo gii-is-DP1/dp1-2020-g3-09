@@ -17,6 +17,8 @@ public class PossibleEspecialidadValidator implements ConstraintValidator<Valida
 	public boolean isValid(Cita cita, ConstraintValidatorContext context) {
 		List<Especialidad> especialidades_online = new ArrayList<>();
 		especialidades_online.add(Especialidad.PSIQUIATRIA);
+		especialidades_online.add(Especialidad.MEDICINA_GENERAL);
+		especialidades_online.add(Especialidad.PEDIATRIA);
 		Formato formato = cita.getFormato();
 		Especialidad especialidad = cita.getEspecialidad();
 		return formato == Formato.ONLINE ? especialidades_online.contains(especialidad) : true;

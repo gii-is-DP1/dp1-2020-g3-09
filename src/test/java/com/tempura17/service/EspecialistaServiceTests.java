@@ -77,7 +77,7 @@ public class EspecialistaServiceTests {
         Integer numCitasPrior1 = especialista.getCitas().size();
         Cita cita = new Cita();
         cita.setTipo(Tipologia.ASEGURADO);
-        cita.setFormato(Formato.ONLINE);
+        cita.setFormato(Formato.PRESENCIAL);
         // Llamada a la funcion a verificar
         this.especialistaService.createCitaForPacienteId(cita, paciente_id, especialista_id);
         Integer numCitasPost = this.pacienteService.findById(paciente_id).get().getCitas().size();
@@ -98,7 +98,7 @@ public class EspecialistaServiceTests {
         especialistaService.save(e1);
 
         Cita c1 = new Cita();
-        c1.setFormato(Formato.ONLINE);
+        c1.setFormato(Formato.PRESENCIAL);
         c1.setTipo(Tipologia.ASEGURADO);
         Paciente p1 = new Paciente();
         p1.setFirstName("firstName");

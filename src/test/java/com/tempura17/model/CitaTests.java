@@ -79,7 +79,7 @@ public class CitaTests {
 	void ShouldNotValidateWithNullTipo() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Cita cita = new Cita();
-		cita.setFormato(Formato.ONLINE);
+		cita.setFormato(Formato.PRESENCIAL);
 		cita.setTipo(null);
 
 		Paciente paciente = new Paciente();
