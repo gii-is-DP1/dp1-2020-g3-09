@@ -2,7 +2,6 @@ package com.tempura17.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,6 @@ import com.tempura17.model.Tipologia;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Formato;
 
-import java.util.List;
-import java.util.Random;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
