@@ -3,23 +3,26 @@ package com.tempura17.web;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.tempura17.model.Especialista;
 import javax.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.tempura17.model.Cita;
+import com.tempura17.model.Especialidad;
 import com.tempura17.service.CitaService;
+import com.tempura17.service.EspecialistaService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
@@ -29,10 +32,13 @@ public class CitaController {
 	// Dado que Spring gestiona una unica inyección de las dependencias es necesario declarlo como CONSTANTE
 	private	final CitaService citaService;
 
+	private final EspecialistaService especialistaService;
+
 	@Autowired
-	public CitaController(CitaService citaService){
+	public CitaController(CitaService citaService, EspecialistaService especialistaService){
 		super();
 		this.citaService = citaService;
+		this.especialistaService = especialistaService;
 	}
 
 	@GetMapping
@@ -53,6 +59,10 @@ public class CitaController {
 
 	@GetMapping("/new")
 	public String editNewCita(ModelMap model){
+		List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
+		Especialidad[] especialidad = Especialidad.values();
+		model.addAttribute("especialistas", especialistas);
+		model.addAttribute("especialidad", especialidad);
 		model.addAttribute("cita", new Cita());
 		return "citas/Citas_Form";
 	}
@@ -80,7 +90,11 @@ public class CitaController {
 
 		if(cita.isPresent()){
 			model.addAttribute("cita", cita.get());
-			return "citas/Citas_Form";
+			List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
+			Especialidad[] especialidad = Especialidad.values();
+			model.addAttribute("especialistas", especialistas);
+			model.addAttribute("especialidad", especialidad);
+			return "citas/Citas_edit";
 
 		}else{
 			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");

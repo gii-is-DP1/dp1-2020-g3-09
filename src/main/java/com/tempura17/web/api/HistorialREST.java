@@ -1,4 +1,4 @@
-package com.tempura17.web.api;
+/*package com.tempura17.web.api;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,4 +29,4 @@ public class HistorialREST {
                                     .collect(Collectors.toList());
     }
     
-}
+}*/

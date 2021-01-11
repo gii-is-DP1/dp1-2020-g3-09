@@ -1,7 +1,6 @@
 package com.tempura17.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -41,6 +40,9 @@ public class Poliza extends NamedEntity{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
     private Set<Paciente> pacientes;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
+    private Set<Tratamiento> tratamientos;
 
     public BigDecimal getPrecio() {
         return precio;

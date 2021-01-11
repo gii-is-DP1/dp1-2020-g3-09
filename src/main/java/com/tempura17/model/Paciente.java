@@ -8,11 +8,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -20,7 +21,9 @@ import javax.persistence.Enumerated;
 @Table(name = "pacientes")
 public class Paciente extends Person {
 
-    private String dni; 
+    @NotEmpty
+    private String dni;
+    @Email 
     private String email;
     private String direccion;
 
@@ -45,8 +48,9 @@ public class Paciente extends Person {
     @JsonIgnore
     private Poliza poliza;
 
-    @OneToOne
-    private Historial historial;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "username", referencedColumnName = "username")
+	private User user;
 
     public String getDni() {
         return dni;
@@ -96,6 +100,10 @@ public class Paciente extends Person {
         this.citas = citas;
     }
 
+    public void addCita(Cita cita){
+        this.citas.add(cita);
+    }
+
     public Aseguradora getAseguradora() {
         return aseguradora;
     }
@@ -112,13 +120,13 @@ public class Paciente extends Person {
         this.poliza = poliza;
     }
 
-    public Historial getHistorial() {
+    /*public Historial getHistorial() {
         return historial;
     }
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
-    }
+    }*/
     
     
     

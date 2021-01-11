@@ -1,7 +1,9 @@
 package com.tempura17.service;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -43,7 +45,17 @@ public class PacienteService {
     }
 
     public void saveCitaForPaciente(Integer id, Cita cita){
-      pacienteRepository.findById(id).get().getCitas().add(cita);
+      Paciente paciente = pacienteRepository.findById(id).get();
+
+      if(paciente.getCitas() == null){
+          Set<Cita> citas = new HashSet<>();
+          paciente.setCitas(citas);
+          paciente.getCitas().add(cita);
+          pacienteRepository.save(paciente);
+
+      }else{
+        pacienteRepository.findById(id).get().getCitas().add(cita);
+      }
     }
 
     @Transactional

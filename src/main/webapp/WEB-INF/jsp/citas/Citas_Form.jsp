@@ -12,16 +12,36 @@
     </h2>
     <form:form modelAttribute="cita" class="form-horizontal" id="add-owner-form">
         <div class="form-group has-feedback">
-            <select name = "Tipo">
+
+            <label for="tipo">Tipo de cita:</label>
+            <select name = "Tipo" id="tipo">
                 <option value = "ASEGURADO"> Asegurado</option>
                 <option value = "PRIVADO"> Privado </option>
             </select>
-            <select name = "Formato">
+
+            <label for="formato">Formato de la cita:</label>
+            <select name = "Formato" id="formato">
                 <option value = "PRESENCIAL"> Presencial</option>
                 <option value = "ONLINE"> Online </option>
             </select>
-            <petclinic:inputField label="Especialista" name="especialista"/>
-            <petclinic:inputField label="Especialidad" name="Especialidad"/>
+
+            <label for="especialistas">Especialista:</label>
+            <select name = "Especialista" id="especialistas">
+            <c:forEach items="${especialistas}" var="especialista" varStatus="loop">
+            <option value="${loop.index + 1}">
+                ${especialista}
+            </option>
+            </c:forEach>
+            </select>
+
+            <label for="especialidades">Especialidad:</label>
+            <select name = "Especialidad" id="especialidades">
+                <c:forEach items="${especialidad}" var="especialidad" varStatus="loop">
+                <option value="${especialidad}">
+                    ${especialidad}
+                </option>
+                </c:forEach>
+                </select>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

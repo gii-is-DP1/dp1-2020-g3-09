@@ -2,39 +2,36 @@ package com.tempura17.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import com.tempura17.service.businessrules.ValidatePossibleEspecialidad;
 
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.JoinTable;
-import lombok.Data;
 
 
 
 @Entity
 @Table(name = "citas")
+@ValidatePossibleEspecialidad(message = "Especialidad no apta siguiendo el formato de cita seleccionada")
 public class Cita extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "El formato no puede ser nulo")
     private Formato formato;
 
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "La tipología no puede ser nula")
     private Tipologia tipo;
 
-    @Enumerated(EnumType.STRING)    
+    @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -42,19 +39,16 @@ public class Cita extends BaseEntity {
     private Date fecha;
 
     @ManyToOne
-    @JoinColumn(name ="paciente_id")  
+    @JoinColumn(name ="paciente_id")
+    //@NotNull(message = "El paciente no puede ser nulo")
     @JsonIgnore
     private Paciente paciente;
 
     @ManyToOne 
     @JoinColumn(name = "especialista_id")
+    //@NotNull(message = "El especialista no puede ser nulo")
     @JsonIgnore
     private Especialista especialista;
-
-    @ManyToOne
-    @JoinColumn(name ="historial_id")  
-    @JsonIgnore
-    private Historial historial;
 
     public Formato getFormato() {
         return formato;
@@ -96,13 +90,13 @@ public class Cita extends BaseEntity {
         this.paciente = paciente;
     }
 
-    public Historial getHistorial() {
+    /*public Historial getHistorial() {
         return historial;
     }
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
-    }
+    }*/
 
     public Especialista getEspecialista() {
         return especialista;
