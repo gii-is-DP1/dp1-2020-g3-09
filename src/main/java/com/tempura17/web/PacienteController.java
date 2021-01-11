@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.service.PacienteService;
+import com.tempura17.service.CalculadoraService;
 import com.tempura17.service.CitaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,11 +29,15 @@ public class PacienteController {
 	
 	@Autowired
 	CitaService citaService;
+
+	@Autowired
+	CalculadoraService calculadoraService;
 	
 	@Autowired
-	public PacienteController(PacienteService pacienteService, CitaService citaService){
+	public PacienteController(PacienteService pacienteService, CitaService citaService, CalculadoraService calculadoraService){
 		this.pacienteService = pacienteService;
 		this.citaService = citaService;
+		this.calculadoraService = calculadoraService;
 	}
 	
     /*
@@ -50,12 +56,27 @@ public class PacienteController {
 							  .collect(Collectors.toList());
 	}
 
+
+
+	@GetMapping("/{id}/calculadoras")
+	public String getPacienteCalculadora(@PathVariable("id") int id, ModelMap model){
+		model.addAttribute("calculadoras", calculadoraService.findByPacienteId(id));
+		return "calculadoras/calculadoraListing";
+	}
+
+	@GetMapping("/{id}/calculadoras/json")
+	@ResponseBody
+	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("id") int id, ModelMap model){
+		return calculadoraService.findByPacienteId(id);
+	}
+	
 	@GetMapping(value="/{pacienteId}/citas")
 	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 		model.addAttribute("citas", citaService.findByPacienteId(pacienteId));
 		return "citas/History";
 	}
 
+    
 	@GetMapping(value="/{pacienteId}/citas/json")
 	@ResponseBody
 	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){

@@ -97,7 +97,7 @@ INSERT INTO especialistas(id, first_name,last_name,dni,direccion,telefono,correo
      'PRESENCIAL',
      'ASEGURADO',
      'MEDICINA_GENERAL',
-     '2019-01-27 22:00:00'); 
+     '2021-01-27 22:00:00'); 
 
 INSERT INTO citas(id, paciente_id,  especialista_id, formato, tipo, especialidad, fecha) VALUES (
      2,
@@ -151,6 +151,26 @@ INSERT INTO tratamientos (id, poliza_id, descripcion, duracion, acta_id) VALUES 
 
 
 
+INSERT INTO justificantes(id, motivo, cita_id) VALUES (
+    1,
+    'Trabajo',
+    1);
 
 
+INSERT INTO alarmas(id, dias, cita_id) VALUES(
+    1,
+    13,
+    1);
 
+INSERT INTO alarmas(id, dias, cita_id) VALUES(
+    2,
+    28,
+    2);
+
+INSERT INTO calculadora(id,peso,altura,imc,resultado,paciente_id) VALUES(
+    1,
+    72.3,
+    1.80,
+    20.0004,
+    'Peso normal',
+    1);

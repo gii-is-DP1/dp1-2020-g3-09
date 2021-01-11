@@ -5,11 +5,16 @@
 <!-- %@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %-->  
 
 <petclinic:layout pageName="home">
-    <h2>???welcome???</h2>
-    <div class="row">
-        <div class="col-md-12">
-            <spring:url value="/resources/images/pets.png" htmlEscape="true" var="petsImage"/>
-            <img class="img-responsive" src="${petsImage}"/>
-        </div>
-    </div>
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					TEMPURA 17
+				</h1>
+			</div>
+			<img src="https://www.amepaorg.com/wp-content/uploads/2019/06/importancia-de-la-consulta-medica.jpg" alt="Inicio"> 
+		</div>
+	</div>
+	</div>
 </petclinic:layout>

@@ -25,27 +25,16 @@
 				<petclinic:menuItem active="${name eq 'home'}" url="/"
 					title="home page">
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-					<span>Home</span>
+					<span>Inicio</span>
 				</petclinic:menuItem>
 
-				<petclinic:menuItem active="${name eq 'owners'}" url="/owners/find"
-					title="find owners">
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					<span>Find owners</span>
-				</petclinic:menuItem>
-
-				<petclinic:menuItem active="${name eq 'vets'}" url="/vets"
-					title="veterinarians">
-					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-					<span>Veterinarians</span>
-				</petclinic:menuItem>
-				<petclinic:menuItem active="${name eq 'vademecum'}" url="/diseases"
-					title="vademecum" dropdown="${true}">																			
+				<petclinic:menuItem active="${name eq 'citas'}" url="/citas"
+					title="citas" dropdown="${true}">																			
 						<ul class="dropdown-menu">
 							<li>								
 									<div class="row">
 										<div class="text-center">																					
-												<a href="<c:url value="/diseases" />">Diseases</a>
+												<a href="<c:url value="/citas" />">Mis citas</a>
 										</div>																					
 									</div>						
 							</li>
@@ -53,12 +42,40 @@
 							<li>								
 									<div class="row">
 										<div class="text-center">																					
-												<a href="<c:url value="#" />">Symptoms</a>
+												<a href="<c:url value="/citas/new" />">Pedir cita</a>
 										</div>																					
 									</div>						
 							</li>														
 						</ul>						
-				</petclinic:menuItem>				
+				</petclinic:menuItem>
+
+				<petclinic:menuItem active="${name eq 'calculadoras'}" url="/calculadoras"
+					title="calculadora de salud" dropdown="${true}">																			
+						<ul class="dropdown-menu">
+							<li>								
+									<div class="row">
+										<div class="text-center">																					
+												<a href="<c:url value="/calculadoras" />">Mis resultados</a>
+										</div>																					
+									</div>						
+							</li>
+							<li class="divider"></li>
+							<li>								
+									<div class="row">
+										<div class="text-center">																					
+												<a href="<c:url value="/calculadoras/new" />">Calcular IMC</a>
+										</div>																					
+									</div>						
+							</li>														
+						</ul>						
+				</petclinic:menuItem>
+
+				<petclinic:menuItem active="${name eq 'alarmas'}" url="/alarmas"
+					title="alarmas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Mis alarmas</span>
+				</petclinic:menuItem>
+								
 			</ul>
 
 
@@ -71,7 +88,7 @@
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> 
+						data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span>ï¿½
 							<strong><sec:authentication property="name" /></strong> <span
 							class="glyphicon glyphicon-chevron-down"></span>
 					</a>
