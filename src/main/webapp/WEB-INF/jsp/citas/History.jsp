@@ -13,11 +13,7 @@
 				<th>formato</th>
 				<th>tipo</th>				
 				<th>especialidad</th>
-<<<<<<< HEAD
-				<th>especilista</th>
-=======
 				<th>Especialista</th>
->>>>>>> master
 			</tr>
 		</thead>
 		<tbody>

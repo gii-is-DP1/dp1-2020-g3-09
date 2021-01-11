@@ -22,7 +22,6 @@ import com.tempura17.model.Paciente;
 import com.tempura17.model.Tratamiento;
 import com.tempura17.model.Acta;
 
-import org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

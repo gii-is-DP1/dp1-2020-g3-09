@@ -111,4 +111,11 @@ public class Especialista extends Person {
         this.actas = actas;
     }
 
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
+
+    
+
 }

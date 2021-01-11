@@ -8,23 +8,26 @@
 
 <petclinic:layout pageName="Citas">
     <h2>
-        <c:if test="${cita['new']}">Nueva </c:if> Cita
+        Editar cita:
     </h2>
     <form:form modelAttribute="cita" class="form-horizontal" id="add-owner-form">
         <div class="form-group has-feedback">
 
+            <h3>Anteriormente el dato seleccionado era: ${cita.tipo}</h3>
             <label for="tipo">Tipo de cita:</label>
             <select name = "Tipo" id="tipo">
                 <option value = "ASEGURADO"> Asegurado</option>
                 <option value = "PRIVADO"> Privado </option>
             </select>
 
+            <h3>Anteriormente el dato seleccionado era: ${cita.formato}</h3>
             <label for="formato">Formato de la cita:</label>
             <select name = "Formato" id="formato">
                 <option value = "PRESENCIAL"> Presencial</option>
                 <option value = "ONLINE"> Online </option>
             </select>
 
+            <h3>Anteriormente el dato seleccionado era: ${cita.especialista}</h3>
             <label for="especialistas">Especialista:</label>
             <select name = "Especialista" id="especialistas">
             <c:forEach items="${especialistas}" var="especialista" varStatus="loop">
@@ -34,6 +37,7 @@
             </c:forEach>
             </select>
 
+            <h3>Anteriormente el dato seleccionado era: ${cita.especialidad}</h3>
             <label for="especialidades">Especialidad:</label>
             <select name = "Especialidad" id="especialidades">
                 <c:forEach items="${especialidad}" var="especialidad" varStatus="loop">
