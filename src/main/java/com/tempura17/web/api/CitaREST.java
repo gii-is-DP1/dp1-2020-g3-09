@@ -173,8 +173,7 @@ public class CitaREST {
 	}
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
-    @Transactional
-	public ResponseEntity<Void> delete(@PathVariable("id") Integer id){
+	public ResponseEntity<Void> delete(@PathVariable("id") int id){
 		Cita cita = this.citaService.findById(id).get();
 		if(cita == null){
 			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);

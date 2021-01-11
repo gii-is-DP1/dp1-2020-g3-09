@@ -117,6 +117,15 @@ public class TratamientoREST {
 		return new ResponseEntity<Tratamiento>(updatedTratamiento, HttpStatus.NO_CONTENT);
     }
     
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
+	public ResponseEntity<Void> delete(@PathVariable("id") Integer id){
+		Tratamiento tratamiento = this.tratamientoService.findById(id).get();
+		if(tratamiento == null){
+			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+		}
+		this.tratamientoService.deleteById(id);
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
     
 
     
