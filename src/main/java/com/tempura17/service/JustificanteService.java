@@ -8,6 +8,8 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 
 
 import com.tempura17.model.Cita;
@@ -29,24 +31,27 @@ public class JustificanteService {
         this.citaService=citaService;
     }
 
-
+    @Transactional(readOnly = true)
     public Collection<Justificante> findAll(){
         return justificanteRepository.findAll();
     }
     
+    @Transactional(readOnly = true)
     public Justificante findJustificanteByCitaId(int citaId){
         return justificanteRepository.findJustificanteByCitaId(citaId);
     }
 
+    @Transactional(readOnly = true)
     public Optional<Justificante> findById(Integer id){
         return justificanteRepository.findById(id);
     }
 
+    @Transactional
     public void save(@Valid Justificante justificante){
         justificanteRepository.save(justificante);
-      }
+    }
 
-  
+    @Transactional
     public void createJustificanteForCitaId(Justificante justificante, Integer cita_id){
        Optional<Cita> cita = this.citaService.findById(cita_id);
        justificante.setCita(cita.get());

@@ -72,7 +72,7 @@ public class PacienteController {
 	
 	@GetMapping(value="/{pacienteId}/citas")
 	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		model.addAttribute("citas", citaService.findByPacienteId(pacienteId));
+		model.addAttribute("citas", pacienteService.findById(pacienteId));
 		return "citas/History";
 	}
 
@@ -80,7 +80,7 @@ public class PacienteController {
 	@GetMapping(value="/{pacienteId}/citas/json")
 	@ResponseBody
 	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		return citaService.findByPacienteId(pacienteId);
+		return this.pacienteService.findById(pacienteId).get().getCitas();
 	}
 
 }

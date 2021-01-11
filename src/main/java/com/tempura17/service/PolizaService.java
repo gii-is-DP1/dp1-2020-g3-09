@@ -1,10 +1,7 @@
 package com.tempura17.service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -15,6 +12,7 @@ import com.tempura17.model.Paciente;
 import com.tempura17.repository.PolizaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,18 +29,22 @@ public class PolizaService {
         this.pacienteService = pacienteService;
     }
 
+    @Transactional(readOnly = true)
     public Collection<Poliza> findAll(){
         return polizaRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
     public Optional<Poliza> findById(Integer id){
         return polizaRepository.findById(id);
     }
 
+    @Transactional
     public void save(@Valid Poliza poliza){
       polizaRepository.save(poliza);
     }
 
+    @Transactional
     public void deletePoliza(Integer idPoliza){
         Optional<Poliza> poliza = polizaRepository.findById(idPoliza);
         
@@ -83,6 +85,7 @@ public class PolizaService {
       }
 
     // no es simetrico con el conjunto de pacientes que reside en poliza
+    @Transactional
     public void deletePacienteDePoliza(Integer idPaciente){
     Optional<Paciente> paciente = this.pacienteService.findById(idPaciente);
     
@@ -96,7 +99,7 @@ public class PolizaService {
         }
     }
 
-
+    @Transactional
     public void editCobertura(Integer idPoliza, String cobertura){
         Optional<Poliza> poliza = polizaRepository.findById(idPoliza);
   
@@ -109,6 +112,4 @@ public class PolizaService {
         }
       }
 
-
-    
 }

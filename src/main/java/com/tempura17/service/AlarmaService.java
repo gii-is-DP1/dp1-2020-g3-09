@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.tempura17.model.Alarma;
@@ -23,22 +24,27 @@ public class AlarmaService {
 		this.alarmaRepository = alarmaRepository;
 	}
 	
+	@Transactional(readOnly = true)
 	public Collection<Alarma> findAll(){
 		return alarmaRepository.findAll();
 	}
 	
+	@Transactional(readOnly = true)
 	public Optional<Alarma> findById(int id){
 		return alarmaRepository.findById(id); 
 	}
 	
+	@Transactional(readOnly = true)
 	public Alarma findByCitaId(Integer citaId) {
 		return alarmaRepository.findByCitaId(citaId);
 	}
 	
+	@Transactional
 	public void save(@Valid Alarma alarma) {
 		alarmaRepository.save(alarma);
 	}
 	
+	@Transactional
 	public void delete(Alarma alarma) {
 		alarmaRepository.delete(alarma);
 	}
