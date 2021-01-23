@@ -42,11 +42,6 @@ public class CitaService {
       return citaRepository.findByPacienteId(pacienteId);
     }
 
-    /*Necesita mas investigacion.
-    public Paciente findPacienteByCitaId(int citaId) {
-      return pacienteRepository.findByCitaId(citaId);
-    }
-    */
     @Transactional
     public void save(@Valid Cita cita){
       citaRepository.save(cita);

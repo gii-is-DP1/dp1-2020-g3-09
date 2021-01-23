@@ -2,6 +2,8 @@ package com.tempura17.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -21,6 +23,7 @@ import javax.persistence.Table;
 
 
 @Entity
+@Audited
 @Table(name = "polizas")
 public class Poliza extends NamedEntity{
 
@@ -42,6 +45,7 @@ public class Poliza extends NamedEntity{
     private Set<Paciente> pacientes;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "poliza", fetch = FetchType.EAGER)
+    @NotAudited
     private Set<Tratamiento> tratamientos;
 
     public BigDecimal getPrecio() {

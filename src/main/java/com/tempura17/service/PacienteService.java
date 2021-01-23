@@ -1,9 +1,7 @@
 package com.tempura17.service;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -16,8 +14,6 @@ import com.tempura17.model.Paciente;
 import com.tempura17.repository.CalculadoraRepository;
 import com.tempura17.repository.PacienteRepository;
 import org.springframework.stereotype.Service;
-import com.tempura17.model.Cita;
-
 
 
 @Service
@@ -46,21 +42,6 @@ public class PacienteService {
     @Transactional
     public void save(@Valid Paciente paciente){
       pacienteRepository.save(paciente);
-    }
-
-    @Transactional
-    public void saveCitaForPaciente(Integer id, Cita cita){
-      Paciente paciente = pacienteRepository.findById(id).get();
-
-      if(paciente.getCitas() == null){
-          Set<Cita> citas = new HashSet<>();
-          paciente.setCitas(citas);
-          paciente.getCitas().add(cita);
-          pacienteRepository.save(paciente);
-
-      }else{
-        pacienteRepository.findById(id).get().getCitas().add(cita);
-      }
     }
 
     @Transactional

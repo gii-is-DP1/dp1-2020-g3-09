@@ -2,6 +2,8 @@ package com.tempura17.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.envers.Audited;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -10,8 +12,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+@Audited
 @Table(name = "actas")
-public class Acta extends BaseEntity{
+public class Acta extends AuditableEntity{
 
 
     
