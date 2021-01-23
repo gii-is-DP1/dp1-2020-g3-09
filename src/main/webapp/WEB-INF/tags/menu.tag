@@ -31,20 +31,22 @@
 				<petclinic:menuItem active="${name eq 'citas'}" url="/citas"
 					title="citas" dropdown="${true}">																			
 						<ul class="dropdown-menu">
-							<li>								
+							<li>							
 									<div class="row">
 										<div class="text-center">																					
-												<a href="<c:url value="/citas" />">Mis citas</a>
+												<a href="<c:url value="/citas/${principal.id}" />">Mis citas</a>
 										</div>																					
-									</div>						
+									</div>							
 							</li>
 							<li class="divider"></li>
-							<li>								
+							<li>	
+									<sec:authorize access="hasAuthority('paciente')">						
 									<div class="row">
 										<div class="text-center">																					
 												<a href="<c:url value="/citas/new" />">Pedir cita</a>
 										</div>																					
-									</div>						
+									</div>		
+									</sec:authorize>				
 							</li>														
 						</ul>						
 				</petclinic:menuItem>
@@ -69,12 +71,24 @@
 							</li>														
 						</ul>						
 				</petclinic:menuItem>
-
+				<sec:authorize access="hasAuthority('paciente')">
 				<petclinic:menuItem active="${name eq 'alarmas'}" url="/alarmas"
 					title="alarmas">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					<span>Mis alarmas</span>
 				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('especialista')">
+				<petclinic:menuItem active="${name eq 'actas'}" url="/actas/"
+					title="actas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Actas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+
+
 								
 			</ul>
 

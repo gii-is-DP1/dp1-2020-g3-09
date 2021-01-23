@@ -8,7 +8,11 @@ import org.springframework.http.MediaType;
 
 import com.tempura17.configuration.SecurityConfiguration;
 import com.tempura17.model.CalculadoraSalud;
+import com.tempura17.model.Cita;
+import com.tempura17.model.Justificante;
 import com.tempura17.service.CalculadoraService;
+import com.tempura17.service.CitaService;
+import com.tempura17.service.JustificanteService;
 
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
@@ -27,63 +31,32 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(controllers=CalculadoraController.class,
+@WebMvcTest(controllers=JustificanteController.class,
 		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
 		excludeAutoConfiguration= SecurityConfiguration.class)
-class CalculadoraControllerTests{
+class JustificanteControllerTests{
 
-	private static final int TEST_CALC_ID = 1;
+    private static final int TEST_JUST_ID = 1;
+    private static final int TEST_CITA_ID = 1;
 
     @Autowired
-	private CalculadoraController calculadoraController;
+	private JustificanteController justificanteController;
 
 	@MockBean
-	private CalculadoraService calculadoraService;
+    private JustificanteService justificanteService;
+    
+    @MockBean
+	private CitaService citaService;
 
 	@Autowired
     private MockMvc mockMvc;
     
-	@BeforeEach
+	/*@BeforeEach
 	void setup() {
-		CalculadoraSalud calculadora = new CalculadoraSalud();
-		calculadora.setId(TEST_CALC_ID);
-		calculadora.setPeso(72.3);
-		calculadora.setAltura(1.80);
-        calculadora.setimc(20.0004);
-		calculadora.setResultado("Peso normal");
-		given(this.calculadoraService.findCalculadoraById(TEST_CALC_ID)).willReturn(calculadora);
-    }
-
-    @WithMockUser(value = "spring")
-    @Test
-	void testNewCalculadora() throws Exception {
-        mockMvc.perform(get("/calculadoras/new"))
-        .andExpect(status().isOk()).andExpect(model().attributeExists("calculadora"))
-		.andExpect(view().name("calculadoras/calcularIMC"));
-    }
-    
-    @WithMockUser(value = "spring")
-    @Test
-	void testsaveNewCalculadoraSuccess() throws Exception {
-        mockMvc.perform(post("/calculadoras/new")
-		.with(csrf())
-		.param("peso", "75")
-		.param("altura", "1.83")
-		.param("imc", "22.39")
-		.param("resultado", "Peso normal"))
-		.andExpect(status().isOk());
-	}
-
-    
-    @WithMockUser(value = "spring")
-    @Test
-	void testsaveNewCalculadoraHasErrors() throws Exception {
-		mockMvc.perform(post("/calculadoras/new")
-		.with(csrf())
-		.param("peso", "75"))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeHasErrors("calculadora"))
-		.andExpect(model().attributeHasFieldErrors("calculadora", "altura"))
-		.andExpect(view().name("calculadoras/calcularIMC"));
-	}
+		Justificante justificante = new Justificante();
+		justificante.setId(TEST_JUST_ID);
+        justificante.setMotivo("TRABAJO");
+        given(this.citaService.findById(TEST_CITA_ID)).willReturn(new Cita());
+		given(this.justificanteService.findById(TEST_JUST_ID)).willReturn(justificante);
+    }*/
 }

@@ -120,6 +120,14 @@ public class Paciente extends Person {
         this.poliza = poliza;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     /*public Historial getHistorial() {
         return historial;
     }

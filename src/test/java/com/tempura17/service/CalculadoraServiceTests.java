@@ -51,7 +51,7 @@ public class CalculadoraServiceTests {
 
     @Test
 	public void shouldFindCalculadoraWithCorrectId() {
-		CalculadoraSalud calculadora = this.calculadoraService.findById(1).get();
+		CalculadoraSalud calculadora = this.calculadoraService.findCalculadoraById(1);
 		assertThat(calculadora.getAltura()).isEqualTo(1.80);
 
     }

@@ -17,4 +17,8 @@ public interface CalculadoraRepository extends CrudRepository<CalculadoraSalud, 
     @Query("SELECT calc FROM CalculadoraSalud calc WHERE calc.paciente.id = :pacienteId")
     CalculadoraSalud findByPacienteId(@Param("pacienteId")int pacienteId);
 
+
+    @Query("SELECT calculadora FROM CalculadoraSalud calculadora WHERE calculadora.id =:id")
+	public CalculadoraSalud findById(@Param("id") int id);
+
 }

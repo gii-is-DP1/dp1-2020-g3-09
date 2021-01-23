@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 
 import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.model.Paciente;
@@ -25,11 +26,17 @@ public class PacienteService {
     PacienteRepository pacienteRepository;
 
     CalculadoraRepository calculadoraRepository;
+
+    UserService userService;
+
+    AuthoritiesService authoritiesService;
     
     @Autowired
-    public PacienteService(PacienteRepository pacienteRepository,CalculadoraRepository calculadoraRepository){
+    public PacienteService(PacienteRepository pacienteRepository,CalculadoraRepository calculadoraRepository,UserService userService,AuthoritiesService authoritiesService){
       this.pacienteRepository = pacienteRepository;
       this.calculadoraRepository = calculadoraRepository;
+      this.userService = userService;
+      this.authoritiesService = authoritiesService;
     }
     
     public Collection<Paciente> findAll(){
@@ -66,6 +73,14 @@ public class PacienteService {
     public CalculadoraSalud findCalculadoraByPacienteId(int pacienteId){
       return calculadoraRepository.findByPacienteId(pacienteId);
     }
+
+
+    @Transactional
+	  public void savePaciente(Paciente paciente) throws DataAccessException {
+		pacienteRepository.save(paciente);		
+		userService.saveUser(paciente.getUser());
+		authoritiesService.saveAuthorities(paciente.getUser().getUsername(), "paciente");
+	}		
 	
     
 }

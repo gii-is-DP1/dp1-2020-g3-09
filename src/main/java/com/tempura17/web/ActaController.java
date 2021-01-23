@@ -47,7 +47,7 @@ public class ActaController {
     }
     
 
-    @GetMapping("/new")
+    /*@GetMapping("/new")
 	public String NewActa(ModelMap model) {
 		model.addAttribute("acta", new Acta());
 		return "actas/actasForm";
@@ -66,11 +66,27 @@ public class ActaController {
 			return "actas/listActas";
 
 		}
-    }
+	}*/
+
+	@GetMapping
+	public String all(ModelMap model){
+		List<Acta> actas = actaService.findAll().stream()
+									  .collect(Collectors.toList());
+		model.addAttribute("actas", actas);
+		
+		return "actas/listActas";
+	}
+	
+	@GetMapping("/json")
+	@ResponseBody
+	public Collection<Acta> jsonActas(){
+
+		return actaService.findAll();
+	}
     
     @GetMapping("/new/{citaId}/{especialistaId}")
 	public String NewActaId(ModelMap model) {
-		model.addAttribute("actas", new Acta());
+		model.addAttribute("acta", new Acta());
 		return "actas/actasForm";
     }
 
@@ -90,10 +106,39 @@ public class ActaController {
             acta.setEspecialista(especialistas);
 			actaService.save(acta);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
-			return "actas/listActas";
+			return all(model);
 
 		}
-    }
+	}
+	
 
-    
+	@GetMapping("/{actaId}/edit")
+	public String editActa(@PathVariable("actaId") int actaId, ModelMap model){
+		// Instaurar el uso de GenericTransofrmer en base al id
+		Optional<Acta> actas = actaService.findById(actaId);
+		if(actas.isPresent()){
+			model.addAttribute("acta", actas.get());
+			return "actas/actasForm";
+
+		}else{
+			model.addAttribute("message", "NO EXISTE NINGUN ACTA CON ESE ID");
+			return all(model);
+		}
+	}
+
+	
+	@PostMapping(value = "/{actaId}/edit")
+	public String processUpdateActaForm(@Valid Acta acta,BindingResult binding,@PathVariable("actaId") int actaId, ModelMap model) {
+		Optional<Acta> actas = actaService.findById(actaId);
+		if(binding.hasErrors()) {
+			model.addAttribute("message", "ERROR AL MODIFICAR LOS DATOS");
+			return "actas/actasForm";
+		}
+		else {
+			BeanUtils.copyProperties(acta, actas.get(), "id","cita","especialista");
+			this.actaService.save(actas.get());
+			model.addAttribute("message", "ACTA MODIFICADA CORRECTAMENTE");
+			return all(model);
+		}
+	}
 }
