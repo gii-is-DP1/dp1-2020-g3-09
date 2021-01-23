@@ -9,23 +9,27 @@
 	
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
-			<tr>
-				<th>formato</th>
-				<th>tipo</th>				
-				<th>especialidad</th>
+			<tr>			
 				<th>Especialista</th>
+				<th>especialidad</th>
+				<th>Opciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${citas}" var="citas">
+			<c:forEach items="${especialistas}" var="especialista">
 				<tr>
-					<td>${citas.formato}</td>
-					<td>${citas.tipo}</td>
-					<td>${citas.especialidad}</td>
-					<td>${citas.especialista}</td>
+					<td>${especialista.lastName}, ${especialista.firstName}</td>
+					<td>${especialista.especialidad}</td>
+					<td><form action="http://localhost:8080/especialistas/${especialista.id}/perfil">
+						<input type="submit" value="Ver perfil" />
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<form action="http://localhost:8080/citas/new">
+		<input type="submit" value="nuevo especialista" />
+	</form>
 
 </petclinic:layout>

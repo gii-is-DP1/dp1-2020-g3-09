@@ -47,7 +47,7 @@ public class CitaController {
 									  .collect(Collectors.toList());
 		model.addAttribute("citas", citas);
 		
-		return "citas/History";
+		return "citas/Citas_list";
 	}
 
     @GetMapping("/json")
@@ -64,7 +64,7 @@ public class CitaController {
 		model.addAttribute("especialistas", especialistas);
 		model.addAttribute("especialidad", especialidad);
 		model.addAttribute("cita", new Cita());
-		return "citas/Citas_Form";
+		return "citas/Citas_form";
 	}
 
 	@PostMapping("/new")
@@ -107,7 +107,7 @@ public class CitaController {
 		Optional<Cita> cita = citaService.findById(citaId);
 
 		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", binding.getAllErrors().toString());
 			return all(model);
 
 		}else{
