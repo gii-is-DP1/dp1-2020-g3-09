@@ -3,18 +3,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags"%>
 
-<petclinic:layout pageName="owners">
+<petclinic:layout pageName="citas">
 	
+
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
 			<tr>
-				<th>formato</th>
-				<th>tipo</th>				
-				<th>especialidad</th>
+				<th>Formato</th>
+				<th>Tipo</th>				
+				<th>Especialidad</th>
 				<th>Especialista</th>
-				<th>Opciones</th>
+				<th>Configurar Alerta</th>
+				<th>Justificante de la cita</th>
+
 			</tr>
 		</thead>
 		<tbody>
@@ -24,12 +28,19 @@
 					<td>${citas.tipo}</td>
 					<td>${citas.especialidad}</td>
 					<td>${citas.especialista}</td>
-					<td><form action="http://localhost:8080/citas/${citas.id}/edit">
-						<input type="submit" value="editar" />
-						</form>
-						<form action="http://localhost:8080/citas/${citas.id}/delete">
-							<input type="submit" value="borrar" />
-						</form>
+
+					<td> 
+					<spring:url value="/alarmas/new/{id}" var="addAlarma">
+						<spring:param name="id" value="${citas.id}"/>
+					</spring:url>
+					<a href="${fn:escapeXml(addAlarma)}">Anadir alarma</a>
+					</td>
+					
+					<td>
+					<spring:url value="/justificantes/new/{id}" var="genJustificante">
+						<spring:param name="id" value="${citas.id}"/>
+					</spring:url>
+					<a href="${fn:escapeXml(genJustificante)}">Generar justificante</a>
 					</td>
 				</tr>
 			</c:forEach>

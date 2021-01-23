@@ -3,19 +3,19 @@ package com.tempura17.web.api;
 import com.tempura17.service.EspecialistaService;
 import com.tempura17.service.PacienteService;
 import com.tempura17.service.TratamientoService;
+import com.tempura17.service.ActaService;
+import com.tempura17.service.CitaService;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.tempura17.model.Acta;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Especialidad;
@@ -28,12 +28,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.CorsRegistration;
 import org.springframework.web.util.UriComponentsBuilder;
 
 
@@ -51,12 +49,25 @@ public class EspecialistaREST {
     @Autowired
     private final TratamientoService tratamientoService;
 
+    @Autowired 
+    private final CitaService citaService;
+
+    @Autowired
+    private final ActaService actaService;
+
     private static final String PATH = "/api/especialistas";
 
-    public EspecialistaREST(EspecialistaService especialistaService, PacienteService pacienteService, TratamientoService tratamientoService) {
+    private static final char[] abc = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
+
+    public EspecialistaREST(EspecialistaService especialistaService, PacienteService pacienteService
+                            , TratamientoService tratamientoService, CitaService citaService
+                            , ActaService actaService) {
         this.especialistaService = especialistaService;
         this.pacienteService = pacienteService;
         this.tratamientoService = tratamientoService;
+        this.citaService = citaService;
+        this.actaService = actaService;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
@@ -174,6 +185,7 @@ public class EspecialistaREST {
 	}
 
     // Adicion : errors
+    // Estado : No se genera el acta correspondiente -> funcion posiblmente prescindible
     @RequestMapping(value = "/{id_paciente}/{id_especialista}", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Cita>  createCitaForPacienteId(@PathVariable("id_paciente") int id_paciente
                                         , @PathVariable("id_especialista") int id_especialista
@@ -182,16 +194,33 @@ public class EspecialistaREST {
                                         , UriComponentsBuilder ucBuilder) {
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();
-        if(bindingResult.hasErrors() || (cita == null)){
+        Paciente paciente = this.pacienteService.findById(id_paciente).get();
+        Especialista especialista = this.especialistaService.findById(id_especialista).get();
+        if(bindingResult.hasErrors() || (cita == null) || (paciente == null) || (especialista == null)){
             errors.addAllErrors(bindingResult);
             headers.add("errors", errors.toJSON());
             return new ResponseEntity<Cita>(headers, HttpStatus.BAD_REQUEST);
         }
-        this.especialistaService.createCitaForPacienteId(cita, id_paciente, id_especialista);
-        /*
-        List<Cita> citas = new ArrayList<>(this.especialistaService.findById(id_especialista).get().getCitas());
-        cita = citas.get(citas.size()-1);
-        */
+        Acta acta = createRandomActa();
+        acta.setEspecialista(especialista);
+        if(especialista.getActas() == null){
+            Set<Acta> actas = new HashSet<>();
+            actas.add(acta);
+            especialista.setActas(actas);
+        }else{
+            Set<Acta> actas = new HashSet<>(especialista.getActas());
+            actas.add(acta);
+            especialista.setActas(actas);
+        }
+        cita.setEspecialista(especialista);
+        cita.setPaciente(paciente);
+        acta.setCita(cita);
+        paciente.addCita(cita);
+        especialista.addCita(cita); 
+        this.citaService.save(cita);
+        this.actaService.save(acta);
+        this.pacienteService.save(paciente);
+        this.especialistaService.save(especialista);        
         headers.setLocation(ucBuilder.path(PATH).buildAndExpand(id_especialista).toUri());
         return new ResponseEntity<Cita>(cita, headers, HttpStatus.CREATED);
     }
@@ -213,28 +242,34 @@ public class EspecialistaREST {
 
     }
 
-    // Posible cita_id generado como nulo
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<Especialista> saveCitaForEspecialista(@PathVariable("id") Integer id
-                                                                , @RequestBody @Valid Cita cita
-                                                                , BindingResult bindingResult
-                                                                , UriComponentsBuilder ucBuilder){
-
-        BindingErrorsResponse errors = new BindingErrorsResponse();
-        HttpHeaders headers = new HttpHeaders();
-        Especialista especialista = this.especialistaService.findById(id).get();
-        if (especialista == null) {
-            return new ResponseEntity<Especialista>(HttpStatus.NOT_FOUND);
+    public Acta createRandomActa(){
+        Random randomGenerator = new Random();
+        Acta acta = new Acta();
+        int i;
+        Integer letras = abc.length;
+        acta.setEspecialista(null);
+        String descripcion = "";
+        Integer rand =  randomGenerator.nextInt(10);
+        for(i=0; i<rand; i++){
+            Random l = new Random();
+            descripcion += abc[l.nextInt(letras)];
         }
-
-        if(bindingResult.hasErrors() || (cita == null)){
-            errors.addAllErrors(bindingResult);
-            headers.add("errors", errors.toJSON());
-            return new ResponseEntity<Especialista>(headers, HttpStatus.BAD_REQUEST);
+        acta.setDescripcion(descripcion);
+        String exploracion = "";
+        rand = randomGenerator.nextInt(10);
+        for(i=0; i<rand; i++){
+            Random l = new Random();
+            exploracion += abc[l.nextInt(letras)];
         }
-        this.especialistaService.saveCitaForEspecialista(id, cita);
-		headers.setLocation(ucBuilder.path(PATH).buildAndExpand(especialista.getId()).toUri());
-		return new ResponseEntity<Especialista>(especialista, headers, HttpStatus.CREATED);
+        acta.setExploracion(exploracion);
+        String diagnostico = "";
+        rand = randomGenerator.nextInt(10);
+        for(i=0; i<rand; i++){
+            Random l = new Random();
+            diagnostico += abc[l.nextInt(letras)];
+        }
+        acta.setDiagnostico(diagnostico);
+        return acta;
 
     }
 	

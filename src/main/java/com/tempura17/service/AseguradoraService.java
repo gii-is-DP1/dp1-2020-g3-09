@@ -12,6 +12,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,20 +29,22 @@ public class AseguradoraService {
         this.especialistaService = especialistaService;
     }
 
+    @Transactional(readOnly = true)
     public Collection<Aseguradora> findAll(){
       return aseguradoraRepository.findAll();
     }
 
-      
+    @Transactional(readOnly = true)
     public Optional<Aseguradora> findById(Integer id){
       return aseguradoraRepository.findById(id);
     }
 
+    @Transactional
     public void save(@Valid Aseguradora aseguradora){
       aseguradoraRepository.save(aseguradora);
     }
 
-
+    @Transactional
     public void deletePaciente(Integer idAseguradora, Integer idPaciente){
       Optional<Paciente> paciente= pacienteService.findById(idPaciente);
 
@@ -63,6 +66,7 @@ public class AseguradoraService {
       }  
     }
 
+    @Transactional
     public void deleteEspecialista(Integer idAseguradora, Integer idEspecialista){
       Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
       
@@ -86,7 +90,7 @@ public class AseguradoraService {
       }
     }
 
-
+    @Transactional
     public void editEspecialidad(Integer idEspecialista, String especialidad){
       Optional<Especialista> especialista = especialistaService.findById(idEspecialista);
 
@@ -99,7 +103,7 @@ public class AseguradoraService {
       }
     }
 
-
+    @Transactional
     public void createEspecialista(Especialista especialista, Integer aseguradora_id){
       this.especialistaService.save(especialista);
       Aseguradora aseguradora = aseguradoraRepository.findById(aseguradora_id).get();

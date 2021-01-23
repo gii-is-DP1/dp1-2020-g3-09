@@ -13,7 +13,4 @@ public interface PacienteRepository extends CrudRepository<Paciente, Integer> {
   
   Optional<Paciente> findById(Integer id);
 
-  // Pendiente de inclusion
-  //Paciente findByCitaId(Integer citaId);
-
 }
