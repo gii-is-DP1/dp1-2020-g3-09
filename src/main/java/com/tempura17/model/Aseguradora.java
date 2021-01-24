@@ -62,6 +62,11 @@ public class Aseguradora extends AuditableEntity {
    public void setEspecialistas(Set<Especialista> especialistas) {
        this.especialistas = especialistas;
    }
+
+   @Override
+   public String toString() {
+       return nombre;
+   }
     
    
     

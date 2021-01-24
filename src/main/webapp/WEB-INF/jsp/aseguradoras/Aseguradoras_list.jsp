@@ -5,22 +5,20 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags"%>
 
-<petclinic:layout pageName="owners">
+<petclinic:layout pageName="Aseguradoras">
 	
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
 			<tr>			
-				<th>Especialista</th>
-				<th>especialidad</th>
+				<th>Aseguradora</th>
 				<th>Opciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${especialistas}" var="especialista">
+			<c:forEach items="${aseguradoras}" var="aseguradora">
 				<tr>
-					<td>${especialista.lastName}, ${especialista.firstName}</td>
-					<td>${especialista.especialidad}</td>
-					<td><form action="http://localhost:8080/especialistas/${especialista.id}/perfil">
+					<td>${aseguradora.nombre}</td>
+					<td><form action="http://localhost:8080/aseguradoras/${aseguradora.id}/perfil">
 						<input type="submit" value="Ver perfil" />
 						</form>
 					</td>
@@ -28,8 +26,8 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<form action="http://localhost:8080/especialistas/new">
-		<input type="submit" value="nuevo especialista" />
+	<form action="http://localhost:8080/aseguradoras/new">
+		<input type="submit" value="nueva aseguradora" />
 	</form>
 
 </petclinic:layout>
