@@ -175,3 +175,9 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
     drop table users if exists
 2021-01-24 14:25:33,231 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-28 09:59:40,095 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on manuel-VirtualBox with PID 4969 (/home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09/target/classes started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-28 09:59:40,138 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-28 09:59:40,146 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-28 09:59:54,386 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-28 10:00:03,362 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 24.438 seconds (JVM running for 26.691)
+2021-01-28 10:00:03,452 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
