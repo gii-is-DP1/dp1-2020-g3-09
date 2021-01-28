@@ -44,15 +44,15 @@ class CalculadoraControllerTests{
     private MockMvc mockMvc;
     
 	@BeforeEach
-	// void setup() {
-	// 	CalculadoraSalud calculadora = new CalculadoraSalud();
-	// 	calculadora.setId(TEST_CALC_ID);
-	// 	calculadora.setPeso(72.3);
-	// 	calculadora.setAltura(1.80);
-    //     calculadora.setimc(20.0004);
-	// 	calculadora.setResultado("Peso normal");
-	// 	given(this.calculadoraService.findCalculadoraById(TEST_CALC_ID)).willReturn(calculadora);
-    // }
+	void setup() {
+	 	CalculadoraSalud calculadora = new CalculadoraSalud();
+	 	calculadora.setId(TEST_CALC_ID);
+	 	calculadora.setPeso(72.3);
+	 	calculadora.setAltura(1.80);
+        calculadora.setimc(20.0004);
+	 	calculadora.setResultado("Peso normal");
+	 	//given(this.calculadoraService.findById(TEST_CALC_ID)).willReturn(calculadora);
+    }
 
     @WithMockUser(value = "spring")
     @Test

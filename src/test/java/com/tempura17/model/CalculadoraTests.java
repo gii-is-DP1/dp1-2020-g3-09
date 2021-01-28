@@ -38,5 +38,21 @@ class CalculadoraTests{
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("peso");
 
 	}
+
+
+	@Test
+	void shouldNotValidateWhenAlturaEmpty() {
+
+		LocaleContextHolder.setLocale(Locale.ENGLISH);
+        CalculadoraSalud calculadora = new CalculadoraSalud();
+		calculadora.setPeso(70.3);
+		Validator validator = createValidator();
+		Set<ConstraintViolation<CalculadoraSalud>> constraintViolations = validator.validate(calculadora);
+
+		assertThat(constraintViolations.size()).isEqualTo(1);
+		ConstraintViolation<CalculadoraSalud> violation = constraintViolations.iterator().next();
+		assertThat(violation.getPropertyPath().toString()).isEqualTo("altura");
+
+	}
 }
 

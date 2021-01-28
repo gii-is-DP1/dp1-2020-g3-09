@@ -48,11 +48,4 @@ public class CalculadoraServiceTests {
 		assertThat(calculadora.getPeso()).isNotNull();
 		assertThat(calculadora.getAltura()).isNotNull();
     }    
-
-    // @Test
-	// public void shouldFindCalculadoraWithCorrectId() {
-	// 	CalculadoraSalud calculadora = this.calculadoraService.findCalculadoraById(1);
-	// 	assertThat(calculadora.getAltura()).isEqualTo(1.80);
-
-    // }
 }
