@@ -8,8 +8,10 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.tempura17.model.Acta;
+import com.tempura17.model.Poliza;
 import com.tempura17.model.Tratamiento;
 import com.tempura17.service.ActaService;
+import com.tempura17.service.PolizaService;
 import com.tempura17.service.TratamientoService;
 
 import org.springframework.beans.BeanUtils;
@@ -31,12 +33,15 @@ public class TratamientoController {
 	
 	private final ActaService actaService;
 
+	private final PolizaService polizaService;
+
 
     @Autowired
-    public TratamientoController(TratamientoService tratamientoService,ActaService actaService){
+    public TratamientoController(TratamientoService tratamientoService,ActaService actaService,PolizaService polizaService){
         super();
 		this.tratamientoService = tratamientoService;
 		this.actaService = actaService;
+		this.polizaService = polizaService;
     }
 
     @GetMapping
@@ -78,14 +83,15 @@ public class TratamientoController {
     }
 	
 	
-	@GetMapping("/new/{actaId}")
+	@GetMapping("/new/{actaId}/{polizaId}")
 	public String NewTratamientoId(ModelMap model) {
 		model.addAttribute("tratamiento", new Tratamiento());
 		return "tratamientos/tratamientosForm";
     }
 
-    @PostMapping("/new/{actaId}")
-	public String saveNewTramientoId(@PathVariable("actaId") int actaId,@Valid Tratamiento tratamiento, BindingResult binding, ModelMap model) {
+    @PostMapping("/new/{actaId}/{polizaId}")
+	public String saveNewTramientoId(@PathVariable("actaId") int actaId,@PathVariable("polizaId") int polizaId,@Valid Tratamiento tratamiento, 
+						BindingResult binding, ModelMap model) {
 
 		if (binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL GUARDAR EL TRATAMIENTO");
@@ -94,7 +100,10 @@ public class TratamientoController {
 		} else {
             Optional<Acta> acta = actaService.findById(actaId);
             Acta actas = acta.get();
-            tratamiento.setActa(actas);
+			tratamiento.setActa(actas);
+			Optional<Poliza> poliza = polizaService.findById(polizaId);
+        	Poliza polizas = poliza.get();
+            tratamiento.setPoliza(polizas);
 			tratamientoService.save(tratamiento);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return all(model);
