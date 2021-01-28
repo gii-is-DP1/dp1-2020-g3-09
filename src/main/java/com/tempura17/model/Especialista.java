@@ -120,6 +120,16 @@ public class Especialista extends Person {
         this.actas = actas;
     }
 
+    public void addActa(Acta acta){
+        if(this.actas == null){
+            this.actas = new HashSet<>();
+            this.actas.add(acta);
+            setActas(actas);
+        }else{
+            this.actas.add(acta);
+        } 
+    }
+
     @Override
     public String toString() {
         return firstName + " " + lastName;

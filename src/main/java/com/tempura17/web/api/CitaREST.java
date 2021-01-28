@@ -18,7 +18,7 @@ import java.util.Random;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
-
+import javax.persistence.EntityManager;
 import javax.validation.Valid;
 
 import com.tempura17.model.Cita;
@@ -34,6 +34,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,13 +58,11 @@ public class CitaREST {
     @Autowired
     private final ActaService actaService;
 
-
     private static final String PATH = "/api/citas";
     private static final char[] abc = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
-
-    public CitaREST(CitaService citaService, PacienteService pacienteService, EspecialistaService especialistaService
-                                , ActaService actaService) {
+    public CitaREST(CitaService citaService, PacienteService pacienteService, EspecialistaService especialistaService,
+            ActaService actaService) {
         this.citaService = citaService;
         this.pacienteService = pacienteService;
         this.especialistaService = especialistaService;
@@ -92,20 +91,17 @@ public class CitaREST {
 
     // Funcion verificada
     @RequestMapping(value = "/{id_paciente}/{id_especialista}", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<Cita> create(
-                        @PathVariable("id_paciente") int id_paciente
-                        , @PathVariable("id_especialista") int id_especialista
-                        , @Valid @RequestBody Cita cita
-                        , BindingResult bindingResult
-                        , UriComponentsBuilder ucBuilder){
+    public ResponseEntity<Cita> create(@PathVariable("id_paciente") int id_paciente,
+            @PathVariable("id_especialista") int id_especialista, @Valid @RequestBody Cita cita,
+            BindingResult bindingResult, UriComponentsBuilder ucBuilder) {
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();
-        if(bindingResult.hasErrors() || (cita == null)){
+        if (bindingResult.hasErrors() || (cita == null)) {
             errors.addAllErrors(bindingResult);
             headers.add("errors", errors.toJSON());
             return new ResponseEntity<Cita>(headers, HttpStatus.BAD_REQUEST);
         }
-        // Interesante consideracion 
+        // Interesante consideracion
         Paciente paciente = this.pacienteService.findById(id_paciente).get();
         Especialista especialista = this.especialistaService.findById(id_especialista).get();
         cita.setPaciente(paciente);
@@ -115,69 +111,75 @@ public class CitaREST {
         especialista.addCita(cita);
         this.especialistaService.save(especialista);
         this.pacienteService.save(paciente);
-		headers.setLocation(ucBuilder.path(PATH).buildAndExpand(cita.getId()).toUri());
-		return new ResponseEntity<Cita>(cita, headers, HttpStatus.CREATED);
+        headers.setLocation(ucBuilder.path(PATH).buildAndExpand(cita.getId()).toUri());
+        return new ResponseEntity<Cita>(cita, headers, HttpStatus.CREATED);
 
     }
 
     // Funcion verificada
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = "application/json")
-	public ResponseEntity<Cita> update(@PathVariable("id") Integer id, @RequestBody @Valid Cita newCita, BindingResult bindingResult){
-		BindingErrorsResponse errors = new BindingErrorsResponse();
-		HttpHeaders headers = new HttpHeaders();
-		if(bindingResult.hasErrors() || (newCita == null)){
-			errors.addAllErrors(bindingResult);
-			headers.add("errors", errors.toJSON());
-			return new ResponseEntity<Cita>(headers, HttpStatus.BAD_REQUEST);
-		}
-		if(this.citaService.findById(id).get() == null){
-			return new ResponseEntity<Cita>(HttpStatus.NOT_FOUND);
-		}
+    public ResponseEntity<Cita> update(@PathVariable("id") Integer id, @RequestBody @Valid Cita newCita,
+            BindingResult bindingResult) {
+        BindingErrorsResponse errors = new BindingErrorsResponse();
+        HttpHeaders headers = new HttpHeaders();
+        if (bindingResult.hasErrors() || (newCita == null)) {
+            errors.addAllErrors(bindingResult);
+            headers.add("errors", errors.toJSON());
+            return new ResponseEntity<Cita>(headers, HttpStatus.BAD_REQUEST);
+        }
+        if (this.citaService.findById(id).get() == null) {
+            return new ResponseEntity<Cita>(HttpStatus.NOT_FOUND);
+        }
         // citas(id, paciente_id, especialista_id, formato, tipo, especialidad, fecha)
-        //   1,3,1,'PRESENCIAL','ASEGURADO','MEDICINA_GENERAL','2019-01-27 22:00:00'); 
-        Cita updatedCita = this.citaService.findById(id)
-                    .map(cita -> {
-                            Formato formato = newCita.getFormato() == null ? cita.getFormato() : newCita.getFormato();
-                            cita.setFormato(formato);
-                            Tipologia tipo = newCita.getTipo() == null ? cita.getTipo() : newCita.getTipo();
-                            cita.setTipo(tipo);
-                            Especialidad especialidad = newCita.getEspecialidad() == null ? cita.getEspecialidad() : newCita.getEspecialidad();
-                            cita.setEspecialidad(especialidad);
-                            Date fecha = newCita.getFecha() == null ? cita.getFecha() : newCita.getFecha();
-                            cita.setFecha(fecha);
-                            //Integer id_paciente = cita.getPaciente().getId();
-                            Especialista especialista = cita.getEspecialista();
-                            Paciente paciente = cita.getPaciente();
-                            //Especialista especialista = cita.getEspecialista();
-                            especialista.addCita(cita);
-                            paciente.addCita(cita);
-                            this.citaService.save(cita);
-                            this.especialistaService.save(especialista);
-                            this.pacienteService.save(paciente);
-                            return cita;
-                    }) 
-                    .orElseGet(() -> {
-                        newCita.setId(id);
-                        Especialista especialista = newCita.getEspecialista();
-                        Paciente paciente = newCita.getPaciente();
-                        especialista.addCita(newCita);
-                        paciente.addCita(newCita);
-                        this.citaService.save(newCita);
-                        this.especialistaService.save(especialista);
-                        this.pacienteService.save(paciente);
-                        return newCita;
-                    });
+        // 1,3,1,'PRESENCIAL','ASEGURADO','MEDICINA_GENERAL','2019-01-27 22:00:00');
+        Cita updatedCita = this.citaService.findById(id).map(cita -> {
+            Formato formato = newCita.getFormato() == null ? cita.getFormato() : newCita.getFormato();
+            cita.setFormato(formato);
+            Tipologia tipo = newCita.getTipo() == null ? cita.getTipo() : newCita.getTipo();
+            cita.setTipo(tipo);
+            Especialidad especialidad = newCita.getEspecialidad() == null ? cita.getEspecialidad()
+                    : newCita.getEspecialidad();
+            cita.setEspecialidad(especialidad);
+            Date fecha = newCita.getFecha() == null ? cita.getFecha() : newCita.getFecha();
+            cita.setFecha(fecha);
+            // Integer id_paciente = cita.getPaciente().getId();
+            Especialista especialista = cita.getEspecialista();
+            Paciente paciente = cita.getPaciente();
+            // Especialista especialista = cita.getEspecialista();
+            especialista.addCita(cita);
+            paciente.addCita(cita);
+            this.citaService.save(cita);
+            this.especialistaService.save(especialista);
+            this.pacienteService.save(paciente);
+            return cita;
+        }).orElseGet(() -> {
+            newCita.setId(id);
+            Especialista especialista = newCita.getEspecialista();
+            Paciente paciente = newCita.getPaciente();
+            especialista.addCita(newCita);
+            paciente.addCita(newCita);
+            this.citaService.save(newCita);
+            this.especialistaService.save(especialista);
+            this.pacienteService.save(paciente);
+            return newCita;
+        });
 
-		return new ResponseEntity<Cita>(updatedCita, HttpStatus.NO_CONTENT);
-	}
-    
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json")
-	public ResponseEntity<Void> delete(@PathVariable("id") int id){
-		Cita cita = this.citaService.findById(id).get();
+        return new ResponseEntity<Cita>(updatedCita, HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") int id) {
+        Cita cita = this.citaService.findById(id).get();
+        Paciente paciente = cita.getPaciente();
+        Especialista especialista = cita.getEspecialista();
+        //Acta acta = new ArrayList<>(especialista.getActas()).get(cita.getId());
 		if(cita == null){
 			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 		}
-		this.citaService.deleteById(id);
+        this.citaService.deleteById(cita.getId());
+        this.pacienteService.deleteById(paciente.getId());
+        //this.especialistaService.deleteById(especialista.getId());
+        //this.actaService.deleteById(acta.getId());
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
@@ -217,15 +219,7 @@ public class CitaREST {
         Especialista especialista = findRandomEspecialista();
         Acta acta = createRandomActa();
         acta.setEspecialista(especialista);
-        if(especialista.getActas() == null){
-            Set<Acta> actas = new HashSet<>();
-            actas.add(acta);
-            especialista.setActas(actas);
-        }else{
-            Set<Acta> actas = new HashSet<>(especialista.getActas());
-            actas.add(acta);
-            especialista.setActas(actas);
-        }
+        especialista.addActa(acta);
         cita.setEspecialista(especialista);
         Paciente paciente = findRandomPaciente();
         cita.setPaciente(paciente);
@@ -279,15 +273,7 @@ public class CitaREST {
         Especialista especialista = cita.getEspecialista();
         Acta acta = createRandomActa();
         acta.setEspecialista(especialista);
-        if(especialista.getActas() == null){
-            Set<Acta> actas = new HashSet<>();
-            actas.add(acta);
-            especialista.setActas(actas);
-        }else{
-            Set<Acta> actas = new HashSet<>(especialista.getActas());
-            actas.add(acta);
-            especialista.setActas(actas);
-        }
+        especialista.addActa(acta);
         cita.setEspecialista(especialista);
         Paciente paciente = cita.getPaciente();
         cita.setPaciente(paciente);

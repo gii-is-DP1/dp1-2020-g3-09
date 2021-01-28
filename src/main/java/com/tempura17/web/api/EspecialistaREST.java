@@ -185,7 +185,6 @@ public class EspecialistaREST {
 	}
 
     // Adicion : errors
-    // Estado : No se genera el acta correspondiente -> funcion posiblmente prescindible
     @RequestMapping(value = "/{id_paciente}/{id_especialista}", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Cita>  createCitaForPacienteId(@PathVariable("id_paciente") int id_paciente
                                         , @PathVariable("id_especialista") int id_especialista
