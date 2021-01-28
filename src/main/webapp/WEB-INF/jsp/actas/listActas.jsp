@@ -31,8 +31,9 @@
 						<a href="${fn:escapeXml(editActa)}">Editar acta</a>
 					</td>
 					<td>
-						<spring:url value="/tratamientos/new/{actaId}" var="newTratamiento">
+						<spring:url value="/tratamientos/new/{actaId}/{polizaId}" var="newTratamiento">
 							<spring:param name="actaId" value="${actas.id}"/>
+							<spring:param name="polizaId" value="${actas.cita.paciente.poliza.id}"/>
 						</spring:url>
 						<a href="${fn:escapeXml(newTratamiento)}">Nuevo Tratamiento</a>
 					</td>
