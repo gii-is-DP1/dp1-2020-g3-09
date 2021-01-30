@@ -70,6 +70,19 @@
                         <dd><c:out value="${cita.formato}"/></dd>
                     </dl>
                 </td>
+                <td>
+                    <form action="http://localhost:8080/citas/${cita.id}/delete">
+                        <input type="submit" value="borrar cita" />
+                    </form>
+
+                    <form action="http://localhost:8080/citas/${cita.id}/edit">
+                        <input type="submit" value="editar cita" />
+                    </form>
+
+                    <form action="http://localhost:8080/citas/${especialista.id}/${cita.paciente.id}">
+                        <input type="submit" value="Ver citas de este paciente" />
+                    </form>
+					</td>
                 <!--<td valign="top">
                     <table class="table-condensed">
                         <thead>

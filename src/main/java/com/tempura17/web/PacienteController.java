@@ -34,7 +34,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class PacienteController {
 
     @Autowired
-	PacienteService pacienteService;
+	private final PacienteService pacienteService;
 	
 	@Autowired
 	CitaService citaService;
@@ -48,21 +48,31 @@ public class PacienteController {
 		this.citaService = citaService;
 		this.calculadoraService = calculadoraService;
 	}
-	
-    /*
-    @GetMapping
-	public String listPacientes(ModelMap model)
-	{
-		model.addAttribute("pacientes",pacienteServ.findAll());
-		return "pacientes/pacientesListing";
-	}
-	*/
+
 	@GetMapping
-	@ResponseBody
-	public List<Paciente> all(){
+	public String all(ModelMap model){
 		
-		return pacienteService.findAll().stream()
+		List<Paciente> pacientes = pacienteService.findAll().stream()
 							  .collect(Collectors.toList());
+		model.addAttribute("pacientes", pacientes);
+
+		return "pacientes/Pacientes_list";
+	}
+
+	@GetMapping("{pacienteId}/perfil")
+	public String pacientePerfil(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+		Optional<Paciente> paciente = pacienteService.findById((pacienteId));
+
+		if(paciente.isPresent()){
+			model.addAttribute("paciente", paciente.get());
+			List<Cita> citas = paciente.get().getCitas().stream().collect(Collectors.toList());
+			model.addAttribute("citas", citas);
+			return "pacientes/Pacientes_perfil";
+
+		}else{
+			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			return all(model);
+		}
 	}
 
 
@@ -78,60 +88,52 @@ public class PacienteController {
 	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("id") int id, ModelMap model){
 		return calculadoraService.findByPacienteId(id);
 	}
-	
-	@GetMapping(value="/{pacienteId}/citas")
-	public String getPacienteCitas(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		model.addAttribute("citas", pacienteService.findById(pacienteId));
-		return "citas/History";
-	}
-
-    
-	@GetMapping(value="/{pacienteId}/citas/json")
-	@ResponseBody
-	public Collection<Cita> getPacienteCitasJson(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		return this.pacienteService.findById(pacienteId).get().getCitas();
-	}
-
-	@GetMapping("/{pacienteId}")
-	public String showPaciente(@PathVariable("pacienteId") int pacienteId, ModelMap model) {
-		Optional<Paciente> paciente = pacienteService.findById(pacienteId);
-		if(paciente.isPresent()){
-			model.addAttribute("pacientes", paciente.get());
-			return "pacientes/datosPacientes";
-		}else{
-			 return "welcome";
-		}
-	}
 
 
 	@GetMapping("/{pacienteId}/edit")
-	public String editCita(@PathVariable("pacienteId") int pacienteId, ModelMap model){
-		// Instaurar el uso de GenericTransofrmer en base al id
+	public String editPaciente(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+
 		Optional<Paciente> paciente = pacienteService.findById((pacienteId));
+
 		if(paciente.isPresent()){
 			model.addAttribute("paciente", paciente.get());
-			return "users/usersForm";
+			return "pacientes/Pacientes_edit";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE EL PACIENTE");
-			return "welcome";
+			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			return all(model);
 		}
 	}
 
-	
-	@PostMapping(value = "/{pacienteId}/edit")
-	public String processUpdatePacienteForm(@Valid Paciente pacienteModificado,BindingResult binding,@PathVariable("pacienteId") int pacienteId,ModelMap model) {
+	@PostMapping("/{pacienteId}/edit")
+	public String editPaciente(@PathVariable("pacienteId") int pacienteId, @Valid Paciente pacienteModified, BindingResult binding, ModelMap model){
 		Optional<Paciente> paciente = pacienteService.findById(pacienteId);
-		if(binding.hasErrors()) {
-			model.addAttribute("message", "ERROR AL MODIFICAR LOS DATOS");
-			return "users/usersForm";
+
+		if(binding.hasErrors()){
+			model.addAttribute("message", binding.getAllErrors().toString());
+			return all(model);
+
+		}else{
+			BeanUtils.copyProperties(pacienteModified, paciente.get(), "id");
+			pacienteService.save(paciente.get());
+			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			return all(model);
 		}
-		else {
-			BeanUtils.copyProperties(pacienteModificado, paciente.get(), "id", "firstName", "lastName", "dni", "sexo");
-			pacienteModificado.setId(pacienteId);
-			this.pacienteService.save(paciente.get());
-			model.addAttribute("message", "PERFIL MODIFICADO CORRECTAMENTE");
-			return "welcome";
+	}
+
+
+	@GetMapping("/{pacienteId}/delete")
+	public String deleteAPaciente(@PathVariable("pacienteId") int id, ModelMap model){
+		Optional<Paciente> paciente = pacienteService.findById(id);
+		
+		if(paciente.isPresent()){
+			pacienteService.deleteById(id);
+			model.addAttribute("message", "ALARMA BORRADA CORRECTAMENTE");
+			return "pacientes/Pacientes_list";
+
+		}else{
+			model.addAttribute("message","NO EXISTE NINGUNA ALARMA CON ESE ID");
+			return "pacientes/Pacientes_list";
 		}
 	}
 }

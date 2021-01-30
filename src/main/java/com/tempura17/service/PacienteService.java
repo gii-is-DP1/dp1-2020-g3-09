@@ -55,6 +55,11 @@ public class PacienteService {
     public void deleteById(Integer id){
       pacienteRepository.deleteById(id);
     }
+    
+    @Transactional
+    public void delete(Paciente paciente) {
+      pacienteRepository.delete(paciente);
+    }
 
     @Transactional
     public CalculadoraSalud findCalculadoraByPacienteId(int pacienteId){

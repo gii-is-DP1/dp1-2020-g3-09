@@ -21,6 +21,7 @@
 					<th>Especialista</th>
 					<th>Configurar Alerta</th>
 					<th>Justificante de la cita</th>
+					<th>Opciones</th>
 				</sec:authorize>
 				<sec:authorize access="hasAuthority('especialista')">
 					<th>Paciente</th>
@@ -50,6 +51,12 @@
 						<spring:param name="id" value="${citas.id}"/>
 					</spring:url>
 					<a href="${fn:escapeXml(genJustificante)}">Generar justificante</a>
+					</td>
+					<td>
+					<form action="http://localhost:8080/citas/${citas.id}/delete">
+					<input type="submit" value="Borrar cita" />
+					</form>
+
 					</td>
 					</sec:authorize>
 					<sec:authorize access="hasAuthority('especialista')">

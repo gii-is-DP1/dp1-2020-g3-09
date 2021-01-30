@@ -10,9 +10,12 @@ import javax.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.tempura17.model.Cita;
+import com.tempura17.model.Paciente;
 import com.tempura17.model.Especialidad;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
+import com.tempura17.service.PacienteService;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,16 +36,28 @@ public class CitaController {
 
 	private final EspecialistaService especialistaService;
 
+	private final PacienteService pacienteService;
+
 	@Autowired
-	public CitaController(CitaService citaService, EspecialistaService especialistaService){
+	public CitaController(CitaService citaService, EspecialistaService especialistaService, PacienteService pacienteService){
 		super();
 		this.citaService = citaService;
 		this.especialistaService = especialistaService;
+		this.pacienteService = pacienteService;
 	}
 
 	@GetMapping
 	public String all(ModelMap model){
 		List<Cita> citas = citaService.findAll().stream()
+									  .collect(Collectors.toList());
+		model.addAttribute("citas", citas);
+		
+		return "citas/Citas_list";
+	}
+
+	@GetMapping("/historial/{pacienteId}")
+	public String historial(@PathVariable("pacienteId") int pacienteId, ModelMap model){
+		List<Cita> citas = pacienteService.findById(pacienteId).get().getCitas().stream()
 									  .collect(Collectors.toList());
 		model.addAttribute("citas", citas);
 		
@@ -56,8 +71,8 @@ public class CitaController {
 		return citaService.findAll();
 	}
 
-	@GetMapping("/new")
-	public String editNewCita(ModelMap model){
+	@GetMapping("/new/{pacienteId}")
+	public String saveNewCita(ModelMap model){
 		List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
 		Especialidad[] especialidad = Especialidad.values();
 		model.addAttribute("especialistas", especialistas);
@@ -66,15 +81,19 @@ public class CitaController {
 		return "citas/Citas_form";
 	}
 
-	@PostMapping("/new")
-	public String saveNewCita(@Valid Cita cita, BindingResult binding, ModelMap model){
+	@PostMapping("/new/{pacienteId}")
+	public String saveNewCita(@PathVariable("pacienteId") int pacienteId, @Valid Cita cita, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
 			return all(model);
 
 		}else {
+			Paciente paciente = pacienteService.findById(pacienteId).get();
+			paciente.addCita(cita);
+			cita.setPaciente(paciente);
 			citaService.save(cita);
+			pacienteService.save(paciente);
 			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
 			return all(model);
 
@@ -131,5 +150,22 @@ public class CitaController {
 			return all(model);
 		}
 	}
+
+	@GetMapping("/{especialistaId}/{pacienteId}")
+	public String filterBy(@PathVariable("especialistaId") int especialistaId,
+						   @PathVariable("pacienteId") int pacienteId, ModelMap model){
+		
+		
+		List<Cita> citas = this.citaService.findAll().stream().filter(x->x.getEspecialista().getId() == especialistaId 
+																		&& x.getPaciente().getId() == pacienteId).
+																		collect(Collectors.toList());
+		
+		model.addAttribute("citas", citas);
+
+		return "citas/Citas_list";
+	}
+
+
+
 
 }
