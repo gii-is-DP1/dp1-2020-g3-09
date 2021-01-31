@@ -23,7 +23,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Audited
 @Table(name = "citas")
-@ValidatePossibleEspecialidad(message = "Especialidad no apta siguiendo el formato de cita seleccionada")
+@ValidatePossibleEspecialidad()
 public class Cita extends AuditableEntity {
 
     @Enumerated(EnumType.STRING)
