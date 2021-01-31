@@ -28,27 +28,19 @@
 					<span>Inicio</span>
 				</petclinic:menuItem>
 
-				<petclinic:menuItem active="${name eq 'citas'}" url="/citas"
-					title="citas" dropdown="${true}">																			
-						<ul class="dropdown-menu">
-							<li>								
-									<div class="row">
-										<div class="text-center">																					
-												<a href="<c:url value="/citas" />">Mis citas</a>
-										</div>																					
-									</div>						
-							</li>
-							<li class="divider"></li>
-							<li>								
-									<div class="row">
-										<div class="text-center">																					
-												<a href="<c:url value="/citas/new" />">Pedir cita</a>
-										</div>																					
-									</div>						
-							</li>														
-						</ul>						
+				<petclinic:menuItem active="${name eq 'pacientes'}" url="/pacientes"
+					title="pacientes">																			
+					<span>Pacientes</span>						
 				</petclinic:menuItem>
 
+				<sec:authorize access="hasAuthority('especialista')">
+				<petclinic:menuItem active="${name eq 'especialistas'}" url="/especialistas/"
+					title="especialistas">
+					<span>Especialistas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('paciente')">
 				<petclinic:menuItem active="${name eq 'calculadoras'}" url="/calculadoras"
 					title="calculadora de salud" dropdown="${true}">																			
 						<ul class="dropdown-menu">
@@ -69,12 +61,42 @@
 							</li>														
 						</ul>						
 				</petclinic:menuItem>
+				</sec:authorize>
 
+				<sec:authorize access="hasAuthority('paciente')">
 				<petclinic:menuItem active="${name eq 'alarmas'}" url="/alarmas"
 					title="alarmas">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					<span>Mis alarmas</span>
 				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('especialista')">
+				<petclinic:menuItem active="${name eq 'actas'}" url="/actas/"
+					title="actas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Actas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('aseguradora')">
+				<petclinic:menuItem active="${name eq 'especialistas'}" url="/especialistas/"
+					title="especialistas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Especialistas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('admin')">
+				<petclinic:menuItem active="${name eq 'aseguradoras'}" url="/aseguradoras/"
+					title="aseguradoras">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Aseguradoras</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+
+
 								
 			</ul>
 

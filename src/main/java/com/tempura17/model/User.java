@@ -13,7 +13,8 @@ import org.hibernate.envers.NotAudited;
 
 import lombok.Data;
 
-@Data
+
+
 @Entity
 @Audited
 @Table(name = "users")
@@ -28,4 +29,36 @@ public class User{
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	@NotAudited
 	private Set<Authorities> authorities;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Set<Authorities> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Set<Authorities> authorities) {
+		this.authorities = authorities;
+	}	
 }

@@ -1,0 +1,1577 @@
+2021-01-29 13:27:39,417 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 13:27:39,422 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 13:27:39,428 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 13:27:47,737 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 13:27:50,896 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 12.26 seconds (JVM running for 13.22)
+2021-01-29 13:27:50,903 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 16:25:59,679 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 16:25:59,707 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 16:25:59,726 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 16:25:59,732 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 16:25:59,737 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 16:25:59,739 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 16:25:59,746 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 16:25:59,749 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 16:25:59,957 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 16:26:00,431 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 16:26:00,434 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 16:26:00,434 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 16:26:03,481 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 16:26:04,589 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 4.248 seconds (JVM running for 338.958)
+2021-01-29 16:26:04,596 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 16:26:34,652 ERROR org.springframework.web.servlet.tags.RequestContextAwareTag [http-nio-8080-exec-7] Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:26:34,668 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [jsp] threw exception
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:26:34,700 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [An exception occurred processing [/WEB-INF/tags/inputField.tag] at line [9]
+
+6: <%@ attribute name="label" required="true" rtexprvalue="true"
+7:               description="Label appears in red color if input is considered as invalid after submission" %>
+8: 
+9: <spring:bind path="${name}">
+10:     <c:set var="cssGroup" value="form-group ${status.error ? 'has-error' : '' }"/>
+11:     <c:set var="valid" value="${not status.error and not empty status.actualValue}"/>
+12:     <div class="${cssGroup}">
+
+
+Stacktrace:] with root cause
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:27:05,470 ERROR org.springframework.web.servlet.tags.RequestContextAwareTag [http-nio-8080-exec-10] Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:27:05,474 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-10] Servlet.service() for servlet [jsp] threw exception
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:27:05,535 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [An exception occurred processing [/WEB-INF/tags/inputField.tag] at line [9]
+
+6: <%@ attribute name="label" required="true" rtexprvalue="true"
+7:               description="Label appears in red color if input is considered as invalid after submission" %>
+8: 
+9: <spring:bind path="${name}">
+10:     <c:set var="cssGroup" value="form-group ${status.error ? 'has-error' : '' }"/>
+11:     <c:set var="valid" value="${not status.error and not empty status.actualValue}"/>
+12:     <div class="${cssGroup}">
+
+
+Stacktrace:] with root cause
+javax.servlet.jsp.JspTagException: Neither BindingResult nor plain target object for bean name 'especialista' available as request attribute
+	at org.springframework.web.servlet.tags.BindTag.doStartTagInternal(BindTag.java:163)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:83)
+	at org.apache.jsp.tag.web.inputField_tag.doTag(inputField_tag.java:155)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005finputField_005f0(Aseguradoras_005fform_jsp.java:309)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_form_005fform_005f0(Aseguradoras_005fform_jsp.java:240)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp.access$1(Aseguradoras_005fform_jsp.java:217)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke0(Aseguradoras_005fform_jsp.java:544)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp$Helper.invoke(Aseguradoras_005fform_jsp.java:562)
+	at org.apache.jsp.tag.web.layout_tag.doTag(layout_tag.java:157)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspx_meth_petclinic_005flayout_005f0(Aseguradoras_005fform_jsp.java:178)
+	at org.apache.jsp.WEB_002dINF.jsp.aseguradoras.Aseguradoras_005fform_jsp._jspService(Aseguradoras_005fform_jsp.java:145)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequestDispatcher.forward(HeaderWriterFilter.java:172)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:216)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-01-29 16:31:37,424 INFO com.tempura17.configuration.GenericIdToEntityConverter [http-nio-8080-exec-4] Did not find an entity with id 3 of type class com.tempura17.model.Especialista
+2021-01-29 16:31:37,574 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.orm.jpa.JpaSystemException: Unable to perform beforeTransactionCompletion callback: org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [protected java.lang.Integer com.tempura17.model.BaseEntity.id] by reflection for persistent property [com.tempura17.model.Especialista#id] : null; nested exception is org.hibernate.HibernateException: Unable to perform beforeTransactionCompletion callback: org.hibernate.property.access.spi.PropertyAccessException: Error accessing field [protected java.lang.Integer com.tempura17.model.BaseEntity.id] by reflection for persistent property [com.tempura17.model.Especialista#id] : null]
+2021-01-29 17:00:09,631 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:00:09,646 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:00:09,653 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:00:09,664 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:00:09,670 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:00:09,689 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:00:09,700 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:00:09,701 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:00:09,903 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-8] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:00:10,324 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:00:10,328 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:00:10,328 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:00:11,751 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:00:13,572 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.295 seconds (JVM running for 2387.942)
+2021-01-29 17:00:13,579 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:02:03,490 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:02:03,494 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:02:03,497 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:02:03,500 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:02:03,502 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:02:03,504 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:02:03,505 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:02:03,505 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:02:03,707 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-13] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:02:04,174 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:02:04,175 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:02:04,175 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:02:05,438 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:02:05,750 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The blank final field PacienteService may not have been initialized
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+2021-01-29 17:02:05,754 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:02:05,770 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:02:05,781 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:02:05,784 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:02:05,785 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:02:05,790 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:02:05,798 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:02:05,799 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:02:06,001 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [restartedMain] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:02:06,069 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The blank final field PacienteService may not have been initialized
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:314)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:295)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.tempura17.Tempura17Application.main(Tempura17Application.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	The blank final field PacienteService may not have been initialized
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:216)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field PacienteService may not have been initialized
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at com.tempura17.web.CitaController.<init>(CitaController.java:40)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:203)
+	... 26 common frames omitted
+2021-01-29 17:02:30,641 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:02:30,646 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:02:30,646 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:02:32,652 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:02:33,193 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	pacienteService cannot be resolved to a variable
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+2021-01-29 17:02:33,198 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:02:33,207 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:02:33,214 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:02:33,215 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:02:33,215 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:02:33,218 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:02:33,221 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:02:33,221 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:02:33,423 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [restartedMain] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:02:33,468 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	pacienteService cannot be resolved to a variable
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:314)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:295)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.tempura17.Tempura17Application.main(Tempura17Application.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	pacienteService cannot be resolved to a variable
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:216)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	pacienteService cannot be resolved to a variable
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at com.tempura17.web.CitaController.<init>(CitaController.java:44)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:203)
+	... 26 common frames omitted
+2021-01-29 17:02:34,947 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:02:34,947 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:02:34,947 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:02:36,932 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:02:37,308 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+2021-01-29 17:02:37,315 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:02:37,324 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:02:37,336 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:02:37,346 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:02:37,347 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:02:37,355 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:02:37,355 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:02:37,358 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:02:37,559 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [restartedMain] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:02:37,586 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'citaController' defined in file [/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes/com/tempura17/web/CitaController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:314)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:295)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.tempura17.Tempura17Application.main(Tempura17Application.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.tempura17.web.CitaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:216)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	pacienteService cannot be resolved or is not a field
+	Syntax error on token ")", delete this token
+	The method stream() is undefined for the type Optional<Cita>
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+	The method all(int, ModelMap) in the type CitaController is not applicable for the arguments (ModelMap)
+
+	at com.tempura17.web.CitaController.<init>(CitaController.java:44)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:203)
+	... 26 common frames omitted
+2021-01-29 17:03:00,541 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:03:00,550 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:03:00,550 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:03:01,423 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:03:02,130 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.621 seconds (JVM running for 2556.5)
+2021-01-29 17:03:02,142 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:04:07,825 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:04:07,843 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:04:07,866 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:04:07,869 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:04:07,874 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:04:07,877 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:04:07,879 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:04:07,880 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:04:08,085 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-17] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:04:08,341 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:04:08,342 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:04:08,343 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:04:09,167 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:04:09,903 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.599 seconds (JVM running for 2624.273)
+2021-01-29 17:04:09,907 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:05:18,611 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:05:18,615 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:05:18,618 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:05:18,622 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:05:18,622 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:05:18,624 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:05:18,624 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:05:18,625 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-27] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:05:18,827 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-27] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:05:19,342 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:05:19,342 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:05:19,342 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:05:20,996 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:05:22,703 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.428 seconds (JVM running for 2697.073)
+2021-01-29 17:05:22,707 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:06:08,279 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:06:08,282 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:06:08,297 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:06:08,307 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:06:08,308 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:06:08,311 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:06:08,313 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:06:08,314 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-31] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:06:08,530 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-31] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:06:08,847 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:06:08,848 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:06:08,850 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:06:09,670 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:06:10,731 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.912 seconds (JVM running for 2745.101)
+2021-01-29 17:06:10,742 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:15:04,758 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:15:04,766 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:15:04,774 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:15:04,775 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:15:04,776 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:15:04,776 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:15:04,780 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:15:04,780 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-35] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:15:04,985 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-35] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:15:05,300 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:15:05,300 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:15:05,301 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:15:06,670 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:15:07,830 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.561 seconds (JVM running for 3282.199)
+2021-01-29 17:15:07,831 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:15:24,327 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:15:24,330 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:15:24,359 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:15:24,367 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:15:24,370 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:15:24,376 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:15:24,382 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:15:24,385 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:15:24,591 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-39] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:15:25,063 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 30154 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:15:25,065 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:15:25,065 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:15:26,141 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:15:27,030 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.01 seconds (JVM running for 3301.4)
+2021-01-29 17:15:27,033 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:16:20,320 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.dao.InvalidDataAccessApiUsageException: Target object must not be null; nested exception is java.lang.IllegalArgumentException: Target object must not be null]
+2021-01-29 17:20:03,828 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:20:03,830 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:20:03,833 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:20:03,833 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:20:03,834 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:20:03,836 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:20:03,836 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:20:03,836 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:20:04,037 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:25:40,527 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 2688 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:25:40,534 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:25:40,535 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:25:45,690 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:25:47,934 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 7.956 seconds (JVM running for 8.649)
+2021-01-29 17:25:47,942 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:34:43,677 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:34:43,695 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:34:43,721 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:34:43,723 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:34:43,729 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:34:43,738 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:34:43,741 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:34:43,741 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:34:43,956 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:34:44,446 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 2688 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:34:44,450 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:34:44,451 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:41:55,734 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:41:55,736 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:41:55,742 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:42:02,870 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:42:06,059 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 10.885 seconds (JVM running for 11.813)
+2021-01-29 17:42:06,061 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:45:37,440 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:45:37,468 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:45:37,510 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:45:37,514 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:45:37,534 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:45:37,534 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:45:37,546 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:45:37,546 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:45:37,754 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:45:38,275 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:45:38,282 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:45:38,282 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:45:41,741 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:45:43,094 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 4.922 seconds (JVM running for 228.848)
+2021-01-29 17:45:43,098 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:48:36,431 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:48:36,446 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:48:36,457 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:48:36,459 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:48:36,465 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:48:36,467 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:48:36,479 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:48:36,487 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:48:36,691 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-8] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:48:37,073 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:48:37,078 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:48:37,080 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:48:38,448 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:48:39,257 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.28 seconds (JVM running for 405.011)
+2021-01-29 17:48:39,264 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 17:51:25,536 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 17:51:25,549 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 17:51:25,565 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 17:51:25,568 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 17:51:25,572 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 17:51:25,574 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 17:51:25,576 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 17:51:25,588 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 17:51:25,794 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-13] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 17:51:26,111 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 17:51:26,113 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:51:26,115 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 17:51:27,703 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 17:51:28,729 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.685 seconds (JVM running for 574.483)
+2021-01-29 17:51:28,741 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:03:26,964 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:03:26,973 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:03:26,990 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:03:26,991 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:03:26,992 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:03:26,996 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:03:27,001 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:03:27,001 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:03:27,207 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-17] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:03:27,660 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:03:27,661 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:03:27,663 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:03:29,065 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:03:30,724 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.119 seconds (JVM running for 1296.478)
+2021-01-29 18:03:30,727 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:03:44,194 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:03:44,218 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:03:44,227 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:03:44,227 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:03:44,234 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:03:44,235 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:03:44,241 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:03:44,242 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:03:44,447 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-21] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:03:44,810 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:03:44,813 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:03:44,814 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:03:45,750 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:03:46,683 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.923 seconds (JVM running for 1312.437)
+2021-01-29 18:03:46,685 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:04:03,159 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:04:03,170 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:04:03,179 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:04:03,180 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:04:03,183 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:04:03,185 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:04:03,189 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:04:03,190 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:04:03,396 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-25] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:04:03,772 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:04:03,773 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:04:03,774 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:04:04,905 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:04:05,656 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.954 seconds (JVM running for 1331.411)
+2021-01-29 18:04:05,662 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:23:07,035 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:23:07,042 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:23:07,050 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:23:07,058 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:23:07,064 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:23:07,064 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:23:07,066 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:23:07,066 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:23:07,270 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-29] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:23:07,544 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 4305 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:23:07,545 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:23:07,547 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:23:08,820 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:25:41,208 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:25:41,210 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:25:41,217 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:25:46,396 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:25:48,501 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 7.813 seconds (JVM running for 8.922)
+2021-01-29 18:25:48,507 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:26:03,374 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2021-01-29 18:27:12,216 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:27:12,230 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:27:12,250 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:27:12,254 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:27:12,256 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:27:12,266 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:27:12,278 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:27:12,282 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:27:12,497 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:27:12,704 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:27:12,704 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:27:12,707 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:27:14,183 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:27:15,202 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.535 seconds (JVM running for 95.624)
+2021-01-29 18:27:15,207 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:27:54,740 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:27:54,748 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:27:54,763 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:27:54,776 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:27:54,778 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:27:54,782 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:27:54,787 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:27:54,789 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:27:54,997 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-8] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:27:55,247 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:27:55,248 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:27:55,248 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:27:57,414 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:27:58,381 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.17 seconds (JVM running for 138.803)
+2021-01-29 18:27:58,390 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:28:08,026 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2021-01-29 18:30:30,440 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:30:30,451 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:30:30,470 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:30:30,478 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:30:30,490 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:30:30,494 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:30:30,497 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:30:30,498 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:30:30,701 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-13] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:30:31,068 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:30:31,070 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:30:31,070 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:30:32,602 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:30:33,377 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.378 seconds (JVM running for 293.799)
+2021-01-29 18:30:33,380 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:35:43,311 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:35:43,318 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:35:43,330 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:35:43,331 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:35:43,334 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:35:43,335 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:35:43,342 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:35:43,345 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:35:43,547 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-17] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:35:43,835 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:35:43,838 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:35:43,842 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:35:44,839 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:35:46,270 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.504 seconds (JVM running for 606.692)
+2021-01-29 18:35:46,275 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-01-29 18:36:01,206 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-01-29 18:36:01,229 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-01-29 18:36:01,234 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-01-29 18:36:01,238 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-01-29 18:36:01,246 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-01-29 18:36:01,246 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-01-29 18:36:01,254 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-01-29 18:36:01,254 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-01-29 18:36:01,463 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-21] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-01-29 18:36:02,024 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 7379 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-01-29 18:36:02,026 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 18:36:02,030 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-29 18:36:03,296 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-29 18:36:04,003 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.075 seconds (JVM running for 624.425)
+2021-01-29 18:36:04,005 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
