@@ -1,14 +1,16 @@
 package com.tempura17.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.hibernate.envers.Audited;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.EnumType;
@@ -16,6 +18,7 @@ import javax.persistence.Enumerated;
 
 
 @Entity
+@Audited
 @Table(name = "especialistas")
 public class Especialista extends Person {
 
@@ -34,7 +37,6 @@ public class Especialista extends Person {
     @JsonIgnore
     // @JoinTable(name = "aseguradoras_especialistas", joinColumns = @JoinColumn(name = "especialista_id"), 
     //inverseJoinColumns = @JoinColumn(name = "aseguradora_id"))
-
     private Set<Aseguradora> aseguradoras;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "especialista", fetch = FetchType.EAGER)
@@ -100,7 +102,14 @@ public class Especialista extends Person {
     }
 
     public void addCita(Cita cita){
-        this.citas.add(cita);
+        if(this.citas == null){
+            this.citas = new HashSet<>();
+            this.citas.add(cita);
+            setCitas(citas);
+        }else{
+            this.citas.add(cita);
+        }
+        
     }
 
     public Set<Acta> getActas() {
@@ -109,6 +118,16 @@ public class Especialista extends Person {
 
     public void setActas(Set<Acta> actas) {
         this.actas = actas;
+    }
+
+    public void addActa(Acta acta){
+        if(this.actas == null){
+            this.actas = new HashSet<>();
+            this.actas.add(acta);
+            setActas(actas);
+        }else{
+            this.actas.add(acta);
+        } 
     }
 
     @Override

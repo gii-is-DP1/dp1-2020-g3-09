@@ -14,14 +14,17 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tempura17.service.businessrules.ValidatePossibleEspecialidad;
 
+import org.hibernate.envers.Audited;
+
 import javax.persistence.ManyToOne;
 
 
 
 @Entity
+@Audited
 @Table(name = "citas")
-@ValidatePossibleEspecialidad(message = "Especialidad no apta siguiendo el formato de cita seleccionada")
-public class Cita extends BaseEntity {
+@ValidatePossibleEspecialidad()
+public class Cita extends AuditableEntity {
 
     @Enumerated(EnumType.STRING)
     @NotNull(message = "El formato no puede ser nulo")

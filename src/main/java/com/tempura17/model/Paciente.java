@@ -1,8 +1,12 @@
 package com.tempura17.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,6 +22,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
+@Audited
 @Table(name = "pacientes")
 public class Paciente extends Person {
 
@@ -41,6 +46,7 @@ public class Paciente extends Person {
     private Set<Cita> citas;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paciente", fetch = FetchType.EAGER)
+    @NotAudited
     private Set<CalculadoraSalud> calculadora;
 
     @ManyToOne (optional = true)
@@ -101,7 +107,13 @@ public class Paciente extends Person {
     }
 
     public void addCita(Cita cita){
-        this.citas.add(cita);
+        if(this.citas == null){
+            this.citas = new HashSet<>();
+            this.citas.add(cita);
+            setCitas(citas);
+        }else{
+            this.citas.add(cita);
+        }
     }
 
     public Aseguradora getAseguradora() {
@@ -120,14 +132,4 @@ public class Paciente extends Person {
         this.poliza = poliza;
     }
 
-    /*public Historial getHistorial() {
-        return historial;
-    }
-
-    public void setHistorial(Historial historial) {
-        this.historial = historial;
-    }*/
-    
-    
-    
 }   

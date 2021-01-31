@@ -2,9 +2,16 @@ package com.tempura17.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Collection;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -31,47 +38,57 @@ public class CitaServiceTests {
     @Autowired 
     private EspecialistaService especialistaService;
 
-
-    @Test
-	void citaExistente() {
-        // Objeto cita_n, donde n es el ID que se conoce una cita existente tiene asociado
-        Cita cita_1 = this.citaService.findAll().stream()
-                                      .collect(Collectors.toList())
-                                      .get(0);
-		System.out.println(cita_1);
-    }
-    
-    @Test
-	void shouldFindCitaWithCorrectId() {
-		Cita cita_1 = this.citaService.findById(1).get();
-		assertThat(cita_1.getEspecialidad()).isEqualTo(Especialidad.MEDICINA_GENERAL);
-
+    public Especialista findRandomEspecialista(){
+        Random randomGenerator = new Random();
+        List<Especialista> especialistas = this.especialistaService.findAll().stream()
+                                                .collect(Collectors.toList());
+        Integer rand =  especialistas.size() == 1 ? 0 : randomGenerator.nextInt(especialistas.size());
+        return especialistas.get(rand);
     }
 
+    public Paciente findRandomPaciente(){
+        Random randomGenerator = new Random();
+        List<Paciente> pacientes = this.pacienteService.findAll().stream()
+                                                .collect(Collectors.toList());
+        Integer rand = pacientes.size() == 1 ? 0 : randomGenerator.nextInt(pacientes.size());
+        return pacientes.get(rand);
+    }
+
     @Test
+    @Disabled
 	@Transactional
 	public void shouldInsert() {
-		Collection<Cita> citas = this.citaService.findAll();
-        int found = citas.size();
-        Paciente paciente = pacienteService.findAll().stream()
-                                           .collect(Collectors.toList())
-                                           .get(0);
-
-        Especialista e1 = new Especialista();
-        e1.setFirstName("firstName");
-        e1.setLastName("lastName");
-        especialistaService.save(e1);
-        
+		Integer numCitasPrior = this.citaService.findAll().size();
         Cita cita = new Cita();
-        cita.setFormato(Formato.ONLINE);
+        cita.setFormato(Formato.PRESENCIAL);
         cita.setTipo(Tipologia.ASEGURADO);
         cita.setEspecialidad(Especialidad.PEDIATRIA);
-        cita.setEspecialista(e1);
-        cita.setFecha(null); 
+        Especialista especialista = findRandomEspecialista();
+        Integer id_especialista = especialista.getId();
+        Integer numCitasEspPrior = especialista.getCitas().size();
+        cita.setEspecialista(especialista);
+        Paciente paciente = findRandomPaciente();
+        Integer id_paciente = paciente.getId();
+        Integer numCitasPacPrior = paciente.getCitas().size();
         cita.setPaciente(paciente);
-        
+        //Zona horaria
+	    ZoneId defaultZoneId = ZoneId.systemDefault();
+	    //creating the instance of LocalDate using the day, month, year info
+        LocalDate localDate = LocalDate.now();
+        //local date + atStartOfDay() + default time zone + toInstant() = Date
+        Date fecha = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+        cita.setFecha(fecha);
+        especialista.addCita(cita);
+        paciente.addCita(cita);
         this.citaService.save(cita);
-        assertThat(this.citaService.findAll().size()).isEqualTo(found+1);
+        this.especialistaService.save(especialista);
+        this.pacienteService.save(paciente);
+        Integer numCitasPost = this.citaService.findAll().size();
+        Integer numCitasEspPost = this.especialistaService.findById(id_especialista).get().getCitas().size();
+        Integer numCitasPacPost = this.pacienteService.findById(id_paciente).get().getCitas().size();
+        assertThat(numCitasEspPost).isEqualTo(numCitasEspPrior+1);
+        assertThat(numCitasPacPost).isEqualTo(numCitasPacPrior+1);
+        assertThat(numCitasPost).isEqualTo(numCitasPrior+1);
 
     }
     
@@ -79,26 +96,40 @@ public class CitaServiceTests {
     @Test
 	@Transactional
 	public void shouldUpdate() {
-		Cita cita = this.citaService.findById(1).get();
-		Especialidad oldEspecialidad = cita.getEspecialidad();
-
-		Especialidad newEspecialidad = Especialidad.CARDIOLOGIA;
-		cita.setEspecialidad(newEspecialidad);
+        Random randomGenerator = new Random();
+        List<Cita> citas = new ArrayList<>(this.citaService.findAll());
+        Integer rand = citas.size() == 1 ? 0 : randomGenerator.nextInt(citas.size());
+        Cita cita = citas.get(rand);
+        Integer id_cita = cita.getId();
+        Especialidad especialidadPrior = cita.getEspecialidad();
+        List<Especialidad> especialidadess = Arrays.asList(Especialidad.values());
+        List<Especialidad> especialidades = new ArrayList<>();
+        especialidades.addAll(especialidadess);
+        especialidades.remove(especialidadPrior);
+        rand = randomGenerator.nextInt(especialidades.size());
+		Especialidad especialidadPost = especialidades.get(rand);
+		cita.setEspecialidad(especialidadPost);
         this.citaService.save(cita);
-        assertThat(newEspecialidad).isNotEqualTo(oldEspecialidad);
-
-		cita = this.citaService.findById(1).get();
-		assertThat(cita.getEspecialidad()).isEqualTo(newEspecialidad);
-	}
+        assertThat(especialidadPrior).isNotEqualTo(especialidadPost);
+		cita = this.citaService.findById(id_cita).get();
+		assertThat(cita.getEspecialidad()).isEqualTo(especialidadPost);
+    }
     
-    /*          CUSTOM QUERY
+    /*
+    Investingado el suceso fracaso a la hora de borrar entidades persisitidas
     @Test
-	void shouldFindPacienteByCitaId() throws Exception {
-        Paciente paciente = this.citaService.findPacienteByCitaId(1);
-        assertThat(paciente.getId()).isEqualTo(1);
-		assertThat(paciente.getDni()).isNotNull();
-		assertThat(paciente.getEdad()).isEqualTo(20);
+	@Transactional
+	public void shouldDelete() {
+        List<Cita> citas = this.citaService.findAll().stream()
+                                    .collect(Collectors.toList());
+        Random randomGenerator = new Random();
+        Integer numCitasPrior = citas.size();
+        Integer rand = randomGenerator.nextInt(numCitasPrior);
+        Cita cita = citas.get(rand);
+        this.citaService.deleteById(cita.getId());
+        Integer numCitasPost = this.citaService.findAll().size();
+        assertThat(numCitasPrior).isEqualTo(numCitasPost+1);
+
     }
     */
-
 }
