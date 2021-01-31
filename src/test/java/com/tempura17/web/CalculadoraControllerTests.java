@@ -27,6 +27,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import java.util.Optional;
+
 @WebMvcTest(controllers=CalculadoraController.class,
 		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
 		excludeAutoConfiguration= SecurityConfiguration.class)
@@ -51,7 +53,7 @@ class CalculadoraControllerTests{
 	 	calculadora.setAltura(1.80);
         calculadora.setimc(20.0004);
 	 	calculadora.setResultado("Peso normal");
-	 	//given(this.calculadoraService.findById(TEST_CALC_ID)).willReturn(calculadora);
+	 	given(this.calculadoraService.findById(TEST_CALC_ID)).willReturn(Optional.of(calculadora));
     }
 
     @WithMockUser(value = "spring")
@@ -67,11 +69,12 @@ class CalculadoraControllerTests{
 	void testsaveNewCalculadoraSuccess() throws Exception {
         mockMvc.perform(post("/calculadoras/new")
 		.with(csrf())
-		.param("peso", "75")
-		.param("altura", "1.83")
-		.param("imc", "22.39")
+		.param("peso", "72.3")
+		.param("altura", "1.80")
+		.param("imc", "20.0004")
 		.param("resultado", "Peso normal"))
-		.andExpect(status().isOk());
+		.andExpect(status().isOk())
+		.andExpect(view().name("calculadoras/calculadoraListing"));
 	}
 
     
@@ -79,11 +82,13 @@ class CalculadoraControllerTests{
     @Test
 	void testsaveNewCalculadoraHasErrors() throws Exception {
 		mockMvc.perform(post("/calculadoras/new")
-		.with(csrf())
-		.param("peso", "75"))
+		.with(csrf()))
 		.andExpect(status().isOk())
 		.andExpect(model().attributeHasErrors("calculadora"))
 		.andExpect(model().attributeHasFieldErrors("calculadora", "altura"))
+		.andExpect(model().attributeHasFieldErrors("calculadora", "peso"))
+		.andExpect(model().attributeHasFieldErrors("calculadora", "imc"))
+		.andExpect(model().attributeHasFieldErrors("calculadora", "resultado"))
 		.andExpect(view().name("calculadoras/calcularIMC"));
 	}
 }

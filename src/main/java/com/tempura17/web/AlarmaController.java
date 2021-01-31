@@ -72,14 +72,14 @@ public class AlarmaController {
 		}
 	}
 
-	@GetMapping("/new/{id}")
+	@GetMapping("/new/{citaId}")
 	public String newAlarmaId(ModelMap model) {
 		model.addAttribute("alarma", new Alarma());
 		return "alarmas/crearAlarma";
 	}
 
-	@PostMapping("/new/{id}")
-	public String saveNewAlarmaId(@PathVariable("id") int id, @Valid Alarma alarma,
+	@PostMapping("/new/{citaId}")
+	public String saveNewAlarmaId(@PathVariable("citaId") int citaId, @Valid Alarma alarma,
 			BindingResult binding, ModelMap model) throws ParseException {
 
 		if(binding.hasErrors()){
@@ -87,7 +87,7 @@ public class AlarmaController {
 			return "alarmas/crearAlarma";
 
 		}else {
-			Optional<Cita> cita = citaService.findById(id);
+			Optional<Cita> cita = citaService.findById(citaId);
 			Cita citas = cita.get();
 			Date fechainicio = citas.getFecha();
 			Date fechaactual = new Date(System.currentTimeMillis());
@@ -106,9 +106,9 @@ public class AlarmaController {
 	}
 
 
-	@GetMapping("/{id}/delete")
-	public String deleteAlarma(@PathVariable("id") int id, ModelMap model){
-		Optional<Alarma> alarma = alarmaService.findById(id);
+	@GetMapping("/{alarmaId}/delete")
+	public String deleteAlarma(@PathVariable("alarmaId") int alarmaId, ModelMap model){
+		Optional<Alarma> alarma = alarmaService.findById(alarmaId);
 		
 		if(alarma.isPresent()){
 			alarmaService.delete(alarma.get());

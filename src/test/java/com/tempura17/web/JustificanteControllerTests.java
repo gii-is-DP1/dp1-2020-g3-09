@@ -31,6 +31,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import java.util.Optional;
+
 @WebMvcTest(controllers=JustificanteController.class,
 		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
 		excludeAutoConfiguration= SecurityConfiguration.class)
@@ -39,8 +41,6 @@ class JustificanteControllerTests{
     private static final int TEST_JUST_ID = 1;
     private static final int TEST_CITA_ID = 1;
 
-    @Autowired
-	private JustificanteController justificanteController;
 
 	@MockBean
     private JustificanteService justificanteService;
@@ -51,12 +51,42 @@ class JustificanteControllerTests{
 	@Autowired
     private MockMvc mockMvc;
     
-	/*@BeforeEach
+	@BeforeEach
 	void setup() {
 		Justificante justificante = new Justificante();
 		justificante.setId(TEST_JUST_ID);
         justificante.setMotivo("TRABAJO");
-        given(this.citaService.findById(TEST_CITA_ID)).willReturn(new Cita());
-		given(this.justificanteService.findById(TEST_JUST_ID)).willReturn(justificante);
-    }*/
+		given(this.justificanteService.findById(TEST_JUST_ID)).willReturn(Optional.of(justificante));
+	}
+	
+	@WithMockUser(value = "spring")
+    @Test
+	void testNewJustificante() throws Exception {
+        mockMvc.perform(get("/justificantes/new/{citaId}",TEST_CITA_ID))
+        .andExpect(status().isOk()).andExpect(model().attributeExists("justificante"))
+		.andExpect(view().name("justificantes/crearJustificante"));
+	}
+	
+
+	@WithMockUser(value = "spring")
+	@Test
+	void testsaveNewJustificanteSuccess() throws Exception {
+        mockMvc.perform(post("/justificantes/new/{citaId}",TEST_CITA_ID)
+		.with(csrf())
+		.param("motivo", "TRABAJO"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("justificantes/mostrarJustificantes"));
+	}
+
+
+	@WithMockUser(value = "spring")
+    @Test
+	void testsaveNewJustificanteHasErrors() throws Exception {
+		mockMvc.perform(post("/justificantes/new/{citaId}",TEST_CITA_ID)
+		.with(csrf()))
+		.andExpect(status().isOk())
+		.andExpect(model().attributeHasErrors("justificante"))
+		.andExpect(model().attributeHasFieldErrors("justificante", "motivo"))
+		.andExpect(view().name("justificantes/crearJustificante"));
+	}
 }

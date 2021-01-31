@@ -21,13 +21,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/calculadoras")
 public class CalculadoraController {
 
-    @Autowired
-    CalculadoraService calculadoraServ;
+	private final CalculadoraService calculadoraService;
+	
+	@Autowired
+	public CalculadoraController(CalculadoraService calculadoraService){
+		super();
+		this.calculadoraService = calculadoraService;
+	}
 
     @GetMapping
 	public String listCalculadoras(ModelMap model)
 	{
-		model.addAttribute("calculadoras", calculadoraServ.findAll());
+		model.addAttribute("calculadoras", calculadoraService.findAll());
 			return "calculadoras/calculadoraListing";
 	}
 
@@ -35,7 +40,7 @@ public class CalculadoraController {
 	@ResponseBody
 	public Collection<CalculadoraSalud> jsonCalculadoras()
 	{
-		return calculadoraServ.findAll();
+		return calculadoraService.findAll();
 	}
 
     @GetMapping("/new")
@@ -68,7 +73,7 @@ public class CalculadoraController {
 			}
 			calculadora.setResultado(resultado);
 			calculadora.setimc(imc);
-			calculadoraServ.save(calculadora);
+			calculadoraService.save(calculadora);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listCalculadoras(model);
 

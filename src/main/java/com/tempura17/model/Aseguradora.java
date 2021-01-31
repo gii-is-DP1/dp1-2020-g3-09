@@ -10,6 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.envers.Audited;
 
@@ -18,6 +19,7 @@ import org.hibernate.envers.Audited;
 @Table(name = "aseguradoras")
 public class Aseguradora extends AuditableEntity {
 
+    @NotNull(message="El nombre no puede estar vacio")
     private String nombre;
 
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
