@@ -1,23 +1,18 @@
 package com.tempura17.web;
 
-import org.assertj.core.util.Lists;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+
 
 import com.tempura17.configuration.SecurityConfiguration;
-import com.tempura17.model.CalculadoraSalud;
-import com.tempura17.model.Cita;
 import com.tempura17.model.Justificante;
-import com.tempura17.service.CalculadoraService;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.JustificanteService;
 
-import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 
 import static org.mockito.BDDMockito.given;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
