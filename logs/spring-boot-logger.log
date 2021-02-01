@@ -5386,3 +5386,48 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'es
     drop table users if exists
 2021-01-30 14:33:20,696 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-01 11:57:28,564 INFO org.springframework.boot.StartupInfoLogger [main] Starting Tempura17ApplicationTests on manuel-VirtualBox with PID 8674 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-02-01 11:57:28,575 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-01 11:57:28,592 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-01 11:57:49,504 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-01 11:58:01,409 INFO org.springframework.boot.StartupInfoLogger [main] Started Tempura17ApplicationTests in 34.477 seconds (JVM running for 39.568)
+2021-02-01 11:58:01,877 INFO org.springframework.boot.StartupInfoLogger [main] Starting EspecialistaServiceTests on manuel-VirtualBox with PID 8674 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-02-01 11:58:01,885 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-01 11:58:01,890 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-01 11:58:07,124 INFO org.springframework.boot.StartupInfoLogger [main] Started EspecialistaServiceTests in 5.319 seconds (JVM running for 45.283)
+2021-02-01 11:58:15,552 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 8674 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-02-01 11:58:15,563 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-01 11:58:15,572 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-01 11:58:19,813 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 4.367 seconds (JVM running for 57.972)
+2021-02-01 11:58:20,370 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-01 11:58:20,370 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-01 11:58:20,414 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-01 11:58:20,424 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-01 11:58:20,453 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-01 11:58:20,452 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-01 11:58:20,460 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-01 11:58:20,466 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-01 11:58:20,481 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-01 11:58:20,483 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-01 11:58:20,493 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-01 11:58:20,492 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-01 11:58:20,528 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-01 11:58:20,530 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-01 11:58:20,539 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-01 11:58:20,540 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
