@@ -2,6 +2,7 @@ package com.tempura17.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
@@ -18,18 +19,28 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
  */
 class PacienteTests {
 
-    /*
-    @Autowired
-    private TestEntityManager entityManager;
- 
-    @Autowired
-    private EmployeeRepository employeeRepository;
 
-    */
 	private Validator createValidator() {
 		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
 		localValidatorFactoryBean.afterPropertiesSet();
 		return localValidatorFactoryBean;
+	}
+
+	@Test
+	void shouldValidateWhenEmailIsWellFormated() {
+
+		LocaleContextHolder.setLocale(Locale.ENGLISH);
+		Paciente paciente = new Paciente();
+		paciente.setDni("25000000A");
+		paciente.setFirstName("nombre");
+		paciente.setLastName("apellidos");
+		paciente.setEmail("sometext@text");
+
+		Validator validator = createValidator();
+		Set<ConstraintViolation<Paciente>> constraintViolations = validator.validate(paciente);
+
+		assertThat(constraintViolations).isEqualTo(new HashSet<>());
+
 	}
 
 	@Test
@@ -38,8 +49,8 @@ class PacienteTests {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Paciente paciente = new Paciente();
 		paciente.setDni("");
-		paciente.setFirstName("rodrigo");
-		paciente.setLastName("garcia");
+		paciente.setFirstName("nombre");
+		paciente.setLastName("apellidos");
 
 		Validator validator = createValidator();
 		Set<ConstraintViolation<Paciente>> constraintViolations = validator.validate(paciente);
@@ -56,8 +67,8 @@ class PacienteTests {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Paciente paciente = new Paciente();
 		paciente.setDni("25000000A");
-		paciente.setFirstName("rodrigo");
-		paciente.setLastName("garcia");
+		paciente.setFirstName("nombre");
+		paciente.setLastName("apellidos");
 		paciente.setEmail("noEmail");
 
 		Validator validator = createValidator();

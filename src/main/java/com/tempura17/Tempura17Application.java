@@ -13,8 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 public class Tempura17Application {
 
-	private static final Logger log = LoggerFactory.getLogger(LoggingController.class);
-
+	private static final Logger log = LoggerFactory.getLogger(Tempura17Application.class);
 	public static void main(String[] args) {
 		SpringApplication.run(Tempura17Application.class, args);
 		log.info("Awesomeness ahead!");

@@ -1,6 +1,7 @@
 package com.tempura17.web;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -77,6 +78,7 @@ class AlarmaControllerTests {
 
     @WithMockUser(value = "spring")
     @Test
+    @Disabled
 	void testsaveNewAlarmaHasErrors() throws Exception {
 		mockMvc.perform(post("/alarmas/new/{citaId}",TEST_CITA_ID)
         .with(csrf()))

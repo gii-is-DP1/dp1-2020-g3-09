@@ -23,7 +23,7 @@ public class Justificante extends BaseEntity{
     @JsonIgnore
     private Cita cita;
 
-    @NotNull
+    @NotNull(message="El motivo no puede estar vacio")
     private String motivo;
 
 

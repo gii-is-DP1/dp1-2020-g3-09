@@ -92,18 +92,15 @@ public class TratamientoController {
     @PostMapping("/new/{actaId}/{polizaId}")
 	public String saveNewTramientoId(@PathVariable("actaId") int actaId,@PathVariable("polizaId") int polizaId,@Valid Tratamiento tratamiento, 
 						BindingResult binding, ModelMap model) {
-
+		Acta acta = actaService.findById(actaId).get();
+		Poliza poliza = polizaService.findById(polizaId).get();
 		if (binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL GUARDAR EL TRATAMIENTO");
 			return "tratamientos/tratamientosForm";
 
 		} else {
-            Optional<Acta> acta = actaService.findById(actaId);
-            Acta actas = acta.get();
-			tratamiento.setActa(actas);
-			Optional<Poliza> poliza = polizaService.findById(polizaId);
-        	Poliza polizas = poliza.get();
-            tratamiento.setPoliza(polizas);
+			tratamiento.setActa(acta);
+            tratamiento.setPoliza(poliza);
 			tratamientoService.save(tratamiento);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return all(model);
@@ -114,29 +111,22 @@ public class TratamientoController {
 
 	@GetMapping("/edit/{tratamientoId}")
 	public String editTratamiento(@PathVariable("tratamientoId") int tratamientoId, ModelMap model){
-		// Instaurar el uso de GenericTransofrmer en base al id
-		Optional<Tratamiento> tratamientos = tratamientoService.findById(tratamientoId);
-		if(tratamientos.isPresent()){
-			model.addAttribute("tratamiento", tratamientos.get());
-			return "tratamientos/tratamientosForm";
-
-		}else{
-			model.addAttribute("message", "NO EXISTE NINGUN TRATAMIENTO CON ESE ID");
-			return all(model);
-		}
+		Tratamiento tratamiento = tratamientoService.findById(tratamientoId).get();
+		model.addAttribute("tratamiento", tratamiento);
+		return "tratamientos/tratamientosForm";
 	}
 
 	
 	@PostMapping(value = "/edit/{tratamientoId}")
-	public String processUpdateTratamientoForm(@Valid Tratamiento tratamiento,BindingResult binding,@PathVariable("tratamientoId") int tratamientoId, ModelMap model) {
-		Optional<Tratamiento> tratamientos = tratamientoService.findById(tratamientoId);
+	public String processUpdateTratamientoForm(@PathVariable("tratamientoId") int tratamientoId,@Valid Tratamiento tratamientoModified,BindingResult binding, ModelMap model) {
+		Tratamiento tratamiento = tratamientoService.findById(tratamientoId).get();
 		if(binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL MODIFICAR LOS DATOS");
 			return "tratamientos/tratamientosForm";
 		}
 		else {
-			BeanUtils.copyProperties(tratamiento, tratamientos.get(), "id","acta","poliza");
-			this.tratamientoService.save(tratamientos.get());
+			BeanUtils.copyProperties(tratamientoModified, tratamiento, "id","acta","poliza");
+			this.tratamientoService.save(tratamiento);
 			model.addAttribute("message", "TRATAMIENTO MODIFICADO CORRECTAMENTE");
 			return all(model);
 		}

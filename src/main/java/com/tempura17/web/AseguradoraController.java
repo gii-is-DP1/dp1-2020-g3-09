@@ -59,7 +59,7 @@ public class AseguradoraController {
 		List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
 		model.addAttribute("especialistas", especialistas);
 		model.addAttribute("aseguradora", new Aseguradora());
-		return "aseguradoras/Aseguradora_form";
+		return "aseguradoras/Aseguradoras_form";
 	}
 
 	@PostMapping("/new")

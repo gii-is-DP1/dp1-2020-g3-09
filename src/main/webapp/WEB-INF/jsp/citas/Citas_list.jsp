@@ -9,6 +9,7 @@
 
 <petclinic:layout pageName="citas">
 	
+<h2>Citas para el especialista <c:out value="${especialista.firstName} ${especialista.lastName}"></c:out></h2>
 
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
@@ -21,6 +22,7 @@
 					<th>Especialista</th>
 					<th>Configurar Alerta</th>
 					<th>Justificante de la cita</th>
+					<th>Opciones</th>
 				</sec:authorize>
 				<sec:authorize access="hasAuthority('especialista')">
 					<th>Paciente</th>
@@ -39,8 +41,8 @@
 					<sec:authorize access="hasAuthority('paciente')">
 					<td>${citas.especialista}</td>
 					<td> 
-					<spring:url value="/alarmas/new/{id}" var="addAlarma">
-						<spring:param name="id" value="${citas.id}"/>
+					<spring:url value="/alarmas/new/{citaId}" var="addAlarma">
+						<spring:param name="citaId" value="${citas.id}"/>
 					</spring:url>
 					<a href="${fn:escapeXml(addAlarma)}">Anadir alarma</a>
 					</td>
@@ -51,6 +53,12 @@
 					</spring:url>
 					<a href="${fn:escapeXml(genJustificante)}">Generar justificante</a>
 					</td>
+					<td>
+					<form action="http://localhost:8080/citas/${citas.id}/delete">
+					<input type="submit" value="Borrar cita" />
+					</form>
+
+					</td>
 					</sec:authorize>
 					<sec:authorize access="hasAuthority('especialista')">
 						<td>${citas.paciente.firstName}   ${citas.paciente.lastName}</td>
@@ -60,14 +68,19 @@
 								<spring:param name="especialistaId" value="${citas.especialista.id}"/>
 							</spring:url>
 							<a href="${fn:escapeXml(addActa)}">Anadir acta</a>
-						</td>	
+						</td>
 					</sec:authorize>
+				
 				</tr>
+				
 			</c:forEach>
-		</tbody>
-	</table>
-	<form action="http://localhost:8080/citas/new">
-		<input type="submit" value="nueva cita" />
-	</form>
 
+			
+		</tbody>
+</table>
+		<spring:url value="/citas/new/{especialistaId}/{pacienteId}" var="addCita">
+		<spring:param name="pacienteId" value="${paciente.id}"></spring:param>
+		<spring:param name="especialistaId" value="${especialista.id}"></spring:param>
+		</spring:url>
+		<a href="${fn:escapeXml(addCita)}">Anadir cita</a>
 </petclinic:layout>

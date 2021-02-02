@@ -1,6 +1,7 @@
 package com.tempura17.web;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -62,6 +63,7 @@ class AseguradoraControllerTests {
 
     @WithMockUser(value = "spring")
     @Test
+    @Disabled
     void testNewAseguradora() throws Exception{
         mockMvc.perform(get("/aseguradoras/new"))
         .andExpect(status().isOk())

@@ -46,6 +46,10 @@
                 </option>
                 </c:forEach>
                 </select>
+
+            <h3>Anteriormente el dato seleccionado era: ${cita.fecha}</h3>
+            <label for="fecha">Fecha de la cita:</label>
+            <input type="date" pattern="yyyy-mm-dd" name="fecha" id="fecha">
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

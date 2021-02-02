@@ -5,18 +5,27 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 import com.tempura17.model.Especialista;
 import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
+import com.tempura17.model.Paciente;
 import com.tempura17.model.Aseguradora;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialidad;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
 import com.tempura17.service.AseguradoraService;
+import com.tempura17.service.PacienteService;
+
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -35,15 +44,19 @@ public class EspecialistaController {
 
     
 	private final EspecialistaService especialistaService;
+	private final PacienteService pacienteService;
 	private final CitaService citaService;
 	private final AseguradoraService aseguradoraService;
 	
 	@Autowired
-	public EspecialistaController(EspecialistaService especialistaService, CitaService citaService, AseguradoraService aseguradoraService){
+	public EspecialistaController(EspecialistaService especialistaService, CitaService citaService, 
+	AseguradoraService aseguradoraService, 
+	PacienteService pacienteService){
 		super();
 		this.especialistaService = especialistaService;
 		this.citaService = citaService;
 		this.aseguradoraService = aseguradoraService;
+		this.pacienteService = pacienteService;
 	}
 
 	@GetMapping
@@ -64,7 +77,7 @@ public class EspecialistaController {
 	}
 
 	@GetMapping("/new")
-	public String newEspecialistas(ModelMap model){
+	public String newEspecialista(ModelMap model){
 		List<Aseguradora> aseguradoras = this.aseguradoraService.findAll().stream().collect(Collectors.toList());
 		Especialidad[] especialidad = Especialidad.values();
 		model.addAttribute("aseguradoras", aseguradoras);
@@ -74,7 +87,7 @@ public class EspecialistaController {
 	}
 
 	@PostMapping("/new")
-	public String saveNewCita(@Valid Especialista especialista, BindingResult binding, ModelMap model){
+	public String newEspecialista(@Valid Especialista especialista, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
@@ -135,10 +148,46 @@ public class EspecialistaController {
 			return all(model);
 		}
 	}
-	/*public ModelAndView showEspecialista(@PathVariable("especialistaId") int especialistaId) {
-		ModelAndView mav = new ModelAndView("especialistas/Especialistas_perfil");
-		mav.addObject(this.especialistaService.findById(especialistaId).get());
-		return mav;
-	}*/
-    
+
+	@GetMapping("/cita/{especialistaId}/{pacienteId}")
+	public String createCita(@PathVariable("especialistaId") int especialistaId,
+							 @PathVariable("pacienteId") int pacienteId, ModelMap model){
+
+		Especialidad[] especialidad = Especialidad.values();
+		model.addAttribute("especialidad", especialidad);
+		model.addAttribute("cita", new Cita());
+		return "citas/Citas_form";
+	}
+
+	@PostMapping("/cita/{especialistaId}/{pacienteId}")
+	public String saveNewCita(@PathVariable("especialistaId") int especialistaId, 
+							  @PathVariable("pacienteId") int pacienteId, 
+							  @Valid Cita cita, BindingResult binding, ModelMap model){
+
+		Paciente paciente = this.pacienteService.findById(pacienteId).get();
+		Especialista especialista = this.especialistaService.findById(especialistaId).get();						
+
+		if(binding.hasErrors() || (cita == null) || (paciente == null) || (especialista == null)){
+			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			return all(model);
+
+		}else {
+			ZoneId defaultZoneId = ZoneId.systemDefault();
+			//creating the instance of LocalDate using the day, month, year info
+			LocalDate localDate = LocalDate.now();
+			//local date + atStartOfDay() + default time zone + toInstant() = Date
+			Date fecha = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+			cita.setFecha(fecha);
+			cita.setEspecialista(especialista);
+			cita.setPaciente(paciente);
+			paciente.addCita(cita);
+			especialista.addCita(cita); 
+			citaService.save(cita);
+			pacienteService.save(paciente);
+			especialistaService.save(especialista);  
+			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			return all(model); 
+
+		}
+	}
 }

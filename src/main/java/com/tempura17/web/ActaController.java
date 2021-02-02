@@ -21,6 +21,7 @@ import com.tempura17.service.EspecialistaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -92,19 +93,18 @@ public class ActaController {
 
     @PostMapping("/new/{citaId}/{especialistaId}")
 	public String saveNewActaId(@PathVariable("citaId") int citaId,@PathVariable("especialistaId") int especialistaId,@Valid Acta acta, BindingResult binding, ModelMap model) {
-
+		Cita cita = citaService.findById(citaId).get();
+		Especialista especialista = especialistaService.findById(especialistaId).get();
 		if (binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL GUARDAR EL ACTA");
 			return "actas/actasForm";
 
 		} else {
-            Optional<Cita> cita = citaService.findById(citaId);
-            Cita citas = cita.get();
-            acta.setCita(citas);
-            Optional<Especialista> especialista = especialistaService.findById(especialistaId);
-            Especialista especialistas = especialista.get();
-            acta.setEspecialista(especialistas);
+            acta.setCita(cita);
+			acta.setEspecialista(especialista);
+			especialista.addActa(acta);
 			actaService.save(acta);
+			especialistaService.save(especialista);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return all(model);
 
@@ -114,29 +114,29 @@ public class ActaController {
 
 	@GetMapping("/{actaId}/edit")
 	public String editActa(@PathVariable("actaId") int actaId, ModelMap model){
-		// Instaurar el uso de GenericTransofrmer en base al id
-		Optional<Acta> actas = actaService.findById(actaId);
-		if(actas.isPresent()){
-			model.addAttribute("acta", actas.get());
-			return "actas/actasForm";
-
-		}else{
-			model.addAttribute("message", "NO EXISTE NINGUN ACTA CON ESE ID");
-			return all(model);
-		}
+		Acta acta = actaService.findById(actaId).get();
+		model.addAttribute("acta", acta);
+		return "actas/actasForm";
 	}
 
 	
 	@PostMapping(value = "/{actaId}/edit")
-	public String processUpdateActaForm(@Valid Acta acta,BindingResult binding,@PathVariable("actaId") int actaId, ModelMap model) {
-		Optional<Acta> actas = actaService.findById(actaId);
+	public String processUpdateActaForm(@PathVariable("actaId") int actaId,@Valid Acta actaModified,BindingResult binding,ModelMap model) {
+		Acta acta = actaService.findById(actaId).get();
 		if(binding.hasErrors()) {
 			model.addAttribute("message", "ERROR AL MODIFICAR LOS DATOS");
 			return "actas/actasForm";
 		}
 		else {
-			BeanUtils.copyProperties(acta, actas.get(), "id","cita","especialista");
-			this.actaService.save(actas.get());
+			String descripcion = actaModified.getDescripcion()==null ? acta.getDescripcion():actaModified.getDescripcion();
+			acta.setDescripcion(descripcion);
+			String exploracion = actaModified.getExploracion()==null ? acta.getExploracion():actaModified.getExploracion();
+			acta.setExploracion(exploracion);
+			String diagnostico = actaModified.getDiagnostico()==null ? acta.getDiagnostico():actaModified.getDiagnostico();
+			acta.setDiagnostico(diagnostico);
+			this.actaService.save(acta);
+			Especialista especialista = acta.getEspecialista();
+			this.especialistaService.save(especialista);
 			model.addAttribute("message", "ACTA MODIFICADA CORRECTAMENTE");
 			return all(model);
 		}

@@ -39,7 +39,6 @@ class CalculadoraTests{
 
 	}
 
-
 	@Test
 	void shouldNotValidateWhenAlturaEmpty() {
 
