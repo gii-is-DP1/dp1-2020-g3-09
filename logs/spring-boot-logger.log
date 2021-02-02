@@ -1,33 +1,42 @@
-2021-02-01 10:58:29,734 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 4961 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 10:58:29,752 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 10:58:29,776 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 10:58:42,567 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 14.644 seconds (JVM running for 19.328)
-2021-02-01 11:00:20,224 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 5117 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:00:20,235 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:00:20,255 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:00:30,880 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 12.218 seconds (JVM running for 16.797)
-2021-02-01 11:02:20,810 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 5402 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:02:20,832 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:02:20,858 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:02:31,886 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 12.679 seconds (JVM running for 17.618)
-2021-02-01 11:03:24,470 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 5581 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:03:24,476 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:03:24,492 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:03:35,180 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 12.333 seconds (JVM running for 16.017)
-2021-02-01 11:05:03,598 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 5801 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:05:03,608 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:05:03,626 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:05:14,296 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 12.197 seconds (JVM running for 15.803)
-2021-02-01 11:05:35,783 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 5888 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:05:35,796 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:05:35,813 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:05:46,280 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 12.014 seconds (JVM running for 15.849)
-2021-02-01 11:05:47,213 WARN org.springframework.web.servlet.DispatcherServlet [main] No mapping for DELETE alarmas/1/delete
-2021-02-01 11:06:43,461 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 6054 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:06:43,483 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:06:43,494 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:06:54,332 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 12.537 seconds (JVM running for 16.069)
-2021-02-01 11:08:05,707 INFO org.springframework.boot.StartupInfoLogger [main] Starting JustificanteControllerTests on manuel-VirtualBox with PID 6290 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
-2021-02-01 11:08:05,717 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-01 11:08:05,737 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2021-02-01 11:08:16,300 INFO org.springframework.boot.StartupInfoLogger [main] Started JustificanteControllerTests in 13.16 seconds (JVM running for 19.251)
+2021-02-03 00:02:15,671 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-03 00:02:15,681 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-03 00:02:15,684 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-03 00:02:15,688 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-03 00:02:15,688 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-03 00:02:15,690 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-03 00:02:15,694 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-03 00:02:15,695 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-03 00:02:15,898 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-39] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-03 00:02:16,195 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 14315 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-03 00:02:16,198 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-03 00:02:16,199 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-03 00:02:17,800 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-03 00:02:19,051 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.888 seconds (JVM running for 1613.568)
+2021-02-03 00:02:19,056 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-03 00:47:04,762 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-03 00:47:04,764 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-03 00:47:04,767 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-03 00:47:04,767 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-03 00:47:04,771 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-03 00:47:04,771 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-03 00:47:04,778 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-03 00:47:04,779 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-03 00:47:04,980 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]

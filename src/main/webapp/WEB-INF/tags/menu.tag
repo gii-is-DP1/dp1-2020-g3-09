@@ -82,6 +82,14 @@
 				</sec:authorize>
 
 				<sec:authorize access="hasAuthority('aseguradora')">
+				<petclinic:menuItem active="${name eq 'actas'}" url="/actas/"
+					title="actas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Actas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('aseguradora')">
 				<petclinic:menuItem active="${name eq 'especialistas'}" url="/especialistas/"
 					title="especialistas">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
@@ -90,6 +98,14 @@
 				</sec:authorize>
 
 				<sec:authorize access="hasAuthority('admin')">
+				<petclinic:menuItem active="${name eq 'aseguradoras'}" url="/aseguradoras/"
+					title="aseguradoras">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Aseguradoras</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
+				<sec:authorize access="hasAuthority('aseguradora')">
 				<petclinic:menuItem active="${name eq 'aseguradoras'}" url="/aseguradoras/"
 					title="aseguradoras">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>

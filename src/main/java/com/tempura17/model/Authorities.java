@@ -6,8 +6,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-
-
 @Entity
 @Table(name = "authorities")
 public class Authorities extends BaseEntity{
