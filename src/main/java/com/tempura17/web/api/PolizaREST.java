@@ -4,16 +4,20 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.validation.Valid;
 
 import com.tempura17.service.PolizaService;
+import com.tempura17.service.AseguradoraService;
 import com.tempura17.service.PacienteService;
 
 import com.tempura17.model.Poliza;
 
 import com.tempura17.model.Cobertura;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Aseguradora;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -37,12 +41,16 @@ public class PolizaREST {
     @Autowired
     private final PacienteService pacienteService;
 
+    @Autowired
+    private final AseguradoraService aseguradoraService;
+
     private static final String PATH = "/api/polizas";
 
 
-    public PolizaREST(PolizaService polizaService, PacienteService pacienteService){
+    public PolizaREST(PolizaService polizaService, PacienteService pacienteService, AseguradoraService aseguradoraService){
         this.polizaService = polizaService;
         this.pacienteService = pacienteService;
+        this.aseguradoraService = aseguradoraService;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
@@ -65,19 +73,23 @@ public class PolizaREST {
         return new ResponseEntity<Poliza>(poliza, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity<Poliza> create(
-            @RequestBody @Valid Poliza poliza
+    @RequestMapping(value = "/{id_aseguradora}", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity<Poliza> create(@PathVariable("id_aseguradora") Integer id_aseguradora
+                                                ,@RequestBody @Valid Poliza poliza
                                                 , BindingResult bindingResult
                                                 , UriComponentsBuilder ucBuilder){
+        Aseguradora aseguradora = this.aseguradoraService.findById(id_aseguradora).get();
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();
-        if(bindingResult.hasErrors() || (poliza == null)){
+        if(bindingResult.hasErrors() || (poliza == null) || (aseguradora==null)){
             errors.addAllErrors(bindingResult);
             headers.add("errors", errors.toJSON());
             return new ResponseEntity<Poliza>(headers, HttpStatus.BAD_REQUEST);
         }
+        poliza.setAseguradora(aseguradora);
+        aseguradora.addPoliza(poliza);
         this.polizaService.save(poliza);
+        this.aseguradoraService.save(aseguradora);
 		headers.setLocation(ucBuilder.path(PATH).buildAndExpand(poliza.getId()).toUri());
 		return new ResponseEntity<Poliza>(poliza, headers, HttpStatus.CREATED);
 

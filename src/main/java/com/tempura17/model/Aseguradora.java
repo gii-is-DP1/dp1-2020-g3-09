@@ -1,5 +1,6 @@
 package com.tempura17.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -63,6 +64,15 @@ public class Aseguradora extends AuditableEntity {
        this.especialistas = especialistas;
    }
     
+   public void addPoliza(Poliza poliza){
+    if(this.polizas == null){
+        this.polizas = new HashSet<>();
+        this.polizas.add(poliza);
+        setPolizas(polizas);
+    }else{
+        this.polizas.add(poliza);
+    }
+}
    
     
 }
