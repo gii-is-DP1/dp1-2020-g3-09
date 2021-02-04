@@ -25,16 +25,16 @@ public class PacienteService {
 
     PacienteRepository pacienteRepository;
 
-    CalculadoraRepository calculadoraRepository;
+    CalculadoraService calculadoraService;
 
     UserService userService;
 
     AuthoritiesService authoritiesService;
     
     @Autowired
-    public PacienteService(PacienteRepository pacienteRepository,CalculadoraRepository calculadoraRepository,UserService userService,AuthoritiesService authoritiesService){
+    public PacienteService(PacienteRepository pacienteRepository,CalculadoraService calculadoraService ,UserService userService,AuthoritiesService authoritiesService){
       this.pacienteRepository = pacienteRepository;
-      this.calculadoraRepository = calculadoraRepository;
+      this.calculadoraService = calculadoraService;
       this.userService = userService;
       this.authoritiesService = authoritiesService;
     }
@@ -66,7 +66,7 @@ public class PacienteService {
 
     @Transactional
     public CalculadoraSalud findCalculadoraByPacienteId(int pacienteId){
-      return calculadoraRepository.findByPacienteId(pacienteId);
+      return calculadoraService.findByPacienteId(pacienteId);
     }
 
 
