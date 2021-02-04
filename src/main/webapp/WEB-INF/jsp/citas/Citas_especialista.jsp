@@ -24,15 +24,6 @@
                 <option value = "PRESENCIAL"> Presencial</option>
                 <option value = "ONLINE"> Online </option>
             </select><br>
-            
-            <label for="especialistas">Especialista:</label>
-            <select name = "Especialista" id="especialistas">
-            <c:forEach items="${especialistas}" var="especialista" varStatus="loop">
-            <option value="${loop.index + 1}">
-                ${especialista}
-            </option>
-            </c:forEach>
-            </select><br>
 
             <label for="especialidades">Especialidad:</label>
             <select name = "Especialidad" id="especialidades">

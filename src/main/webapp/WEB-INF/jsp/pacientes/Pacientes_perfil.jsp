@@ -24,7 +24,7 @@
         </tr>
     </table>
     <sec:authorize access="hasAuthority('paciente')">
-        <h2><form action="http://localhost:8080/pacientes/${paciente.id}/edit">
+        <form action="http://localhost:8080/pacientes/${paciente.id}/edit">
         <input type="submit" value="editar" />
         </form>
 
@@ -32,9 +32,13 @@
             <input type="submit" value="borrar" />
         </form>
 
-        <h2><form action="http://localhost:8080/citas/new/${paciente.id}">
+        <form action="http://localhost:8080/citas/new/${paciente.id}">
             <input type="submit" value="pedir una cita" />
-        </h2>
+        </form>
+
+        <form action="/calculadoras/new/${paciente.id}">
+            <input type="submit" value="calcular imc"/>
+        </form>
     </sec:authorize>
     <sec:authorize access="hasAuthority('especialista')">
         <h2><form action="http://localhost:8080/citas/new/${paciente.id}">
@@ -63,9 +67,12 @@
                     </dl>
                 </td>
                 <td>
-                    <form action="http://localhost:8080/citas/${cita.id}/delete">
-                        <input type="submit" value="borrar cita" />
-                    </form>
+                    <spring:url value="/pacientes/cita/delete/{citaId}/{pacienteId}" var="perfilPaciente">
+                        <spring:param name="citaId" value="${cita.id}"/>
+                        <spring:param name="pacienteId" value="${paciente.id}"/>
+                    </spring:url>
+                    <a href="${fn:escapeXml(perfilPaciente)}">borrar cita</a>
+
                     <form action="http://localhost:8080/justificantes/new/${cita.id}">
                         <input type="submit" value="generar justificante" />
                     </form>

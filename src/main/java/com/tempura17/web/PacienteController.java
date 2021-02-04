@@ -129,11 +129,21 @@ public class PacienteController {
 		if(paciente.isPresent()){
 			pacienteService.deleteById(id);
 			model.addAttribute("message", "ALARMA BORRADA CORRECTAMENTE");
-			return "pacientes/Pacientes_list";
+			return all(model);
 
 		}else{
 			model.addAttribute("message","NO EXISTE NINGUNA ALARMA CON ESE ID");
-			return "pacientes/Pacientes_list";
+			return all(model);
 		}
+	}
+
+	@GetMapping("cita/delete/{citaId}/{pacienteId}")
+	public String deleteCita(@PathVariable("pacienteId") int pacienteId, @PathVariable("citaId") int citaId, ModelMap model){
+
+		pacienteService.deleteCita(pacienteId, citaId);
+		Cita cita = citaService.findById(citaId).get();
+		cita.setPaciente(null);
+		citaService.save(cita);
+		return "redirect:/pacientes/{pacienteId}/perfil";
 	}
 }

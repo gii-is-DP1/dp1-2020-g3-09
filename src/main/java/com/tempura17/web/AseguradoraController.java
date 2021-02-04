@@ -63,11 +63,11 @@ public class AseguradoraController {
 	}
 
 	@PostMapping("/new")
-	public String saveNewCita(@Valid Aseguradora aseguradora, BindingResult binding, ModelMap model){
+	public String saveNewAseguradora(@Valid Aseguradora aseguradora, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
-			return all(model);
+			return "aseguradoras/Aseguradora_form";
 
 		}else {
 			aseguradoraService.save(aseguradora);
@@ -115,7 +115,7 @@ public class AseguradoraController {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", binding.getAllErrors().toString());
-			return all(model);
+			return "aseguradoras/Aseguradoras_edit";
 
 		}else{
 			BeanUtils.copyProperties(aseguradoraModified, aseguradora.get(), "id");
@@ -124,6 +124,13 @@ public class AseguradoraController {
 			return all(model);
 		}
 	}
+
+	@GetMapping("delete/{especialistaId}/{aseguradoraId}")
+	public String deleteEspecialista(@PathVariable("aseguradoraId") int aseguradoraId,@PathVariable("especialistaId") int especialistaId, ModelMap model){
+
+        aseguradoraService.deleteEspecialista(aseguradoraId, especialistaId);
+        return "redirect:/aseguradoras/{aseguradoraId}/perfil";
+    }
     
 }
 

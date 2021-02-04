@@ -37,10 +37,11 @@ INSERT INTO polizas(id, aseguradora_id, name, precio, cobertura, duracion) VALUE
     'PARCIAL',
     '2022-02-02');
 
-INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
+INSERT INTO pacientes(id,aseguradora_id, poliza_id, username, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
     1,
     1, 
     1,
+    'paciente1',
     'Rodrigo', 
     'García', 
     '00000000A', 
@@ -64,7 +65,7 @@ INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,ema
 INSERT INTO pacientes(id, aseguradora_id, poliza_id, first_name, last_name, dni, email, direccion, sexo, edad) VALUES (
     3,
     1, 
-    null,
+    1,
     'Rodrige', 
     'Garcíe', 
     '00000000C', 

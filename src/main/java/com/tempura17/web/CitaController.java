@@ -161,8 +161,56 @@ public class CitaController {
 																		collect(Collectors.toList());
 		
 		model.addAttribute("citas", citas);
+		Especialista especialista = especialistaService.findById(especialistaId).get();
+		model.addAttribute("especialista",especialista);
+		Paciente paciente = pacienteService.findById(pacienteId).get();
+		model.addAttribute("paciente",paciente);
 
 		return "citas/Citas_list";
+	}
+
+	@GetMapping("/{citaId}")
+	public String findById(@PathVariable("citaId") Integer citaId, ModelMap model){
+		Cita cita = this.citaService.findById(citaId).get();
+		model.addAttribute("cita", cita);
+		return "citas/Citas_detalles";
+	}
+
+
+	@GetMapping("/new/{especialistaId}/{pacienteId}")
+	public String saveNewCitaForPaciente(@PathVariable("especialistaId") int especialistaId,
+	@PathVariable("pacienteId") int pacienteId,ModelMap model){
+		Especialidad[] especialidad = Especialidad.values();
+		model.addAttribute("especialidad", especialidad);
+		Cita cita = new Cita();
+		model.addAttribute("cita", cita);
+		return "citas/Citas_especialista";
+	}
+
+	@PostMapping("/new/{especialistaId}/{pacienteId}")
+	public String saveNewCitaForPaciente(@PathVariable("especialistaId") int especialistaId,
+	@PathVariable("pacienteId") int pacienteId,@Valid Cita cita, BindingResult binding, ModelMap model){
+		cita.setEspecialista(this.especialistaService.findById(especialistaId).get());
+		cita.setPaciente(this.pacienteService.findById(pacienteId).get());
+		model.addAttribute("especialista", cita.getEspecialista());
+		if(binding.hasErrors()){
+			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			return filterBy(especialistaId, pacienteId, model);
+
+		}else {
+			Paciente paciente = cita.getPaciente();
+			paciente.addCita(cita);
+			cita.setPaciente(paciente);
+			Especialista especialista = cita.getEspecialista();
+			especialista.addCita(cita);
+			cita.setEspecialista(especialista);
+			citaService.save(cita);
+			pacienteService.save(paciente);
+			especialistaService.save(especialista);
+			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			return filterBy(especialistaId, pacienteId, model);
+
+		}
 	}
 
 

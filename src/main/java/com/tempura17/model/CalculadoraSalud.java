@@ -16,10 +16,10 @@ import javax.persistence.ManyToOne;
 @Table(name = "calculadora")
 public class CalculadoraSalud extends BaseEntity{
 
-    @NotNull
+    @NotNull(message = "El peso no puede ser nulo")
     private Double peso;
 
-    @NotNull
+    @NotNull(message = "La altura no puede ser nula")
     private Double altura;
 
     private Double imc;

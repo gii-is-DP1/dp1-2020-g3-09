@@ -16,6 +16,8 @@
 				<th>Diagnostico</th>
 				<th>Editar acta</th>
 				<th>Crear tratamiento</th>
+				<th>Ver especialista</th>
+				<th>Detalles cita</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -31,10 +33,23 @@
 						<a href="${fn:escapeXml(editActa)}">Editar acta</a>
 					</td>
 					<td>
-						<spring:url value="/tratamientos/new/{actaId}" var="newTratamiento">
+						<spring:url value="/tratamientos/new/{actaId}/{polizaId}" var="newTratamiento">
 							<spring:param name="actaId" value="${actas.id}"/>
+							<spring:param name="polizaId" value="${actas.cita.paciente.poliza.id}"/>
 						</spring:url>
 						<a href="${fn:escapeXml(newTratamiento)}">Nuevo Tratamiento</a>
+					</td>
+					<td>
+						<spring:url value="/especialistas/{especialistaId}/perfil" var="verEspecialista">
+							<spring:param name="especialistaId" value="${actas.cita.especialista.id}"/>
+						</spring:url>
+						<a href="${fn:escapeXml(verEspecialista)}">Ver especialista</a>
+					</td>
+					<td>
+						<spring:url value="/citas/{citaId}" var="verCitas">
+							<spring:param name="citaId" value="${actas.cita.id}"></spring:param>
+						</spring:url>
+						<a href="${fn:escapeXml(verCitas)}">Ver cita</a>
 					</td>
 				</tr>
 			</c:forEach>
