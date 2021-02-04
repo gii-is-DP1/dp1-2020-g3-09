@@ -1,8 +1,10 @@
 package com.tempura17.web;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.tempura17.model.Especialista;
@@ -86,7 +88,12 @@ public class CitaController {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
-			return all(model);
+			List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
+			Especialidad[] especialidad = Especialidad.values();
+			model.addAttribute("especialistas", especialistas);
+			model.addAttribute("especialidad", especialidad);
+			model.addAttribute("cita",cita);
+			return "citas/Citas_form";
 
 		}else {
 			Paciente paciente = pacienteService.findById(pacienteId).get();
@@ -95,7 +102,9 @@ public class CitaController {
 			citaService.save(cita);
 			pacienteService.save(paciente);
 			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
-			return all(model);
+			Set<Cita> citas = this.pacienteService.findById(pacienteId).get().getCitas();
+			model.addAttribute("citas", citas);
+			return "redirect:/pacientes/{pacienteId}/perfil";
 
 		}
 	}
@@ -106,18 +115,12 @@ public class CitaController {
 		// Instaurar el uso de GenericTransofrmer en base al id
 		Optional<Cita> cita = citaService.findById((citaId));
 
-		if(cita.isPresent()){
-			model.addAttribute("cita", cita.get());
-			List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
-			Especialidad[] especialidad = Especialidad.values();
-			model.addAttribute("especialistas", especialistas);
-			model.addAttribute("especialidad", especialidad);
-			return "citas/Citas_edit";
-
-		}else{
-			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
-			return all(model);
-		}
+		model.addAttribute("cita", cita.get());
+		List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
+		Especialidad[] especialidad = Especialidad.values();
+		model.addAttribute("especialistas", especialistas);
+		model.addAttribute("especialidad", especialidad);
+		return "citas/Citas_edit";
 	}
 
 	@PostMapping("/{citaId}/edit")
@@ -126,13 +129,17 @@ public class CitaController {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", binding.getAllErrors().toString());
-			return all(model);
+			List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
+			Especialidad[] especialidad = Especialidad.values();
+			model.addAttribute("especialistas", especialistas);
+			model.addAttribute("especialidad", especialidad);
+			return "citas/Citas_edit";
 
 		}else{
 			BeanUtils.copyProperties(citaModified, cita.get(), "id", "paciente");
 			citaService.save(cita.get());
 			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
-			return all(model);
+			return "redirect:/especialistas/" + cita.get().getEspecialista().getId() + "/perfil";
 		}
 	}
 
@@ -154,12 +161,10 @@ public class CitaController {
 	@GetMapping("/{especialistaId}/{pacienteId}")
 	public String filterBy(@PathVariable("especialistaId") int especialistaId,
 						   @PathVariable("pacienteId") int pacienteId, ModelMap model){
-		
-		
-		List<Cita> citas = this.citaService.findAll().stream().filter(x->x.getEspecialista().getId() == especialistaId 
-																		&& x.getPaciente().getId() == pacienteId).
-																		collect(Collectors.toList());
-		
+	
+		Set<Cita> citas = this.citaService.findByPacienteId(pacienteId).stream()
+											.filter(x -> x.getEspecialista().getId() == especialistaId)
+											.collect(Collectors.toSet());												
 		model.addAttribute("citas", citas);
 		Especialista especialista = especialistaService.findById(especialistaId).get();
 		model.addAttribute("especialista",especialista);

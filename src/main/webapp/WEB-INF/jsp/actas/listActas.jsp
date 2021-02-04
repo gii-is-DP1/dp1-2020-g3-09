@@ -18,6 +18,7 @@
 				<th>Crear tratamiento</th>
 				<th>Ver especialista</th>
 				<th>Detalles cita</th>
+				<th>Ver tratamientos</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -50,6 +51,12 @@
 							<spring:param name="citaId" value="${actas.cita.id}"></spring:param>
 						</spring:url>
 						<a href="${fn:escapeXml(verCitas)}">Ver cita</a>
+					</td>
+					<td>
+						<spring:url value="/tratamientos/{actaId}" var="verTratamientosForActa">
+							<spring:param name="actaId" value="${actas.id}"></spring:param>
+						</spring:url>
+						<a href="${fn:escapeXml(verTratamientosForActa)}">Ver tratamientos</a>
 					</td>
 				</tr>
 			</c:forEach>

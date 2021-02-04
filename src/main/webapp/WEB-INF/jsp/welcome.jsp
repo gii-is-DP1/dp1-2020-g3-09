@@ -17,7 +17,4 @@
 		</div>
 	</div>
 	</div>
-	<script type="text/javascript">
-		console.log(getElementByXPath("/html/body/nav/div/div[2]/ul[2]/li/a/strong"));
-	</script>
 </petclinic:layout>
