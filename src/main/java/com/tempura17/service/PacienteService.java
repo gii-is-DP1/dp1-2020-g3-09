@@ -2,6 +2,8 @@ package com.tempura17.service;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -12,6 +14,7 @@ import org.springframework.dao.DataAccessException;
 
 import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Cita;
 import com.tempura17.repository.CalculadoraRepository;
 import com.tempura17.repository.PacienteRepository;
 import org.springframework.stereotype.Service;
@@ -72,7 +75,14 @@ public class PacienteService {
 		pacienteRepository.save(paciente);		
 		userService.saveUser(paciente.getUser());
 		authoritiesService.saveAuthorities(paciente.getUser().getUsername(), "paciente");
-	}		
+  }		
+  
+  @Transactional
+  public void deleteCita(Integer pacienteId, Integer citaId){
+    Paciente paciente = pacienteRepository.findById(pacienteId).get();
+    Set<Cita> citas = paciente.getCitas().stream().filter(x->x.getId()!=citaId).collect(Collectors.toSet());
+    paciente.setCitas(citas);
+  }
 	
     
 }

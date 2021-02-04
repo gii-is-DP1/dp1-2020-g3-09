@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -20,6 +21,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -33,8 +36,9 @@ public class Poliza extends NamedEntity{
     @Enumerated(EnumType.STRING)
     private Cobertura cobertura;
     
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private LocalDate  duracion;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date duracion;
 
     @ManyToOne
     @JoinColumn(name = "aseguradora_id")
@@ -64,11 +68,11 @@ public class Poliza extends NamedEntity{
         this.cobertura = cobertura;
     }
 
-    public LocalDate  getDuracion() {
+    public Date getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(LocalDate duracion) {
+    public void setDuracion(Date duracion) {
         this.duracion = duracion;
     }
 
@@ -86,6 +90,14 @@ public class Poliza extends NamedEntity{
 
     public void setPacientes(Set<Paciente> pacientes) {
         this.pacientes = pacientes;
+    }
+
+    public Set<Tratamiento> getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(Set<Tratamiento> tratamientos) {
+        this.tratamientos = tratamientos;
     }
 
     

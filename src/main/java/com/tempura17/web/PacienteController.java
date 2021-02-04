@@ -136,4 +136,14 @@ public class PacienteController {
 			return all(model);
 		}
 	}
+
+	@GetMapping("cita/delete/{citaId}/{pacienteId}")
+	public String deleteCita(@PathVariable("pacienteId") int pacienteId, @PathVariable("citaId") int citaId, ModelMap model){
+
+		pacienteService.deleteCita(pacienteId, citaId);
+		Cita cita = citaService.findById(citaId).get();
+		cita.setPaciente(null);
+		citaService.save(cita);
+		return "redirect:/pacientes/{pacienteId}/perfil";
+	}
 }

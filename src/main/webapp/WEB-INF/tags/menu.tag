@@ -97,6 +97,14 @@
 				</petclinic:menuItem>
 				</sec:authorize>
 
+				<sec:authorize access="hasAuthority('especialista')">
+				<petclinic:menuItem active="${name eq 'especialistas'}" url="/especialistas/"
+					title="especialistas">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+					<span>Especialistas</span>
+				</petclinic:menuItem>
+				</sec:authorize>
+
 				<sec:authorize access="hasAuthority('admin')">
 				<petclinic:menuItem active="${name eq 'aseguradoras'}" url="/aseguradoras/"
 					title="aseguradoras">

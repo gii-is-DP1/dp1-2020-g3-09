@@ -144,6 +144,13 @@ public class EspecialistaController {
 		}else{
 			BeanUtils.copyProperties(especialistaModified, especialista.get(), "id");
 			especialistaService.save(especialista.get());
+			Set<Aseguradora> aseguradoras = especialista.get().getAseguradoras();
+
+			for(Aseguradora aseguradora: aseguradoras){
+			aseguradora.addEspecialista(especialista.get());
+			aseguradoraService.save(aseguradora);
+			}
+
 			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
 			return all(model);
 		}
@@ -190,4 +197,10 @@ public class EspecialistaController {
 
 		}
 	}
+	@GetMapping("cita/delete/{citaId}/{especialistaId}")
+		public String deleteCita(@PathVariable("especialistaId") int especialistaId, @PathVariable("citaId") int citaId, ModelMap model){
+	
+			especialistaService.deleteCita(citaId);
+			return "redirect:/especialistas/{especialistaId}/perfil";
+		}
 }

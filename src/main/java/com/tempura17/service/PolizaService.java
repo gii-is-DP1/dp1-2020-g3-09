@@ -87,15 +87,18 @@ public class PolizaService {
     // no es simetrico con el conjunto de pacientes que reside en poliza
     @Transactional
     public void deletePacienteDePoliza(Integer idPaciente){
-    Optional<Paciente> paciente = this.pacienteService.findById(idPaciente);
-    
-    if(paciente.get() == null){
+    Paciente paciente = this.pacienteService.findById(idPaciente).get();
+
+    if(paciente == null){
         System.out.println("paciente nulo");
     
     }else{
-        Paciente p1 = paciente.get();
-        p1.setPoliza(null);
-        this.pacienteService.save(p1);
+        Poliza poliza = paciente.getPoliza();
+        poliza.getPacientes().remove(paciente);
+        paciente.setPoliza(null);
+
+        this.pacienteService.save(paciente);
+        polizaRepository.save(poliza);
         }
     }
 

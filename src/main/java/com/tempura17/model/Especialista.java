@@ -130,6 +130,10 @@ public class Especialista extends Person {
         } 
     }
 
+    public void removeCita(Cita cita){
+        this.citas.remove(cita);
+    }
+
     @Override
     public String toString() {
         return firstName + " " + lastName;

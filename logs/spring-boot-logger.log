@@ -1,42 +1,891 @@
-2021-02-03 00:02:15,671 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,534 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table actas if exists
-2021-02-03 00:02:15,681 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,549 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table aseguradoras if exists
-2021-02-03 00:02:15,684 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,550 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table citas if exists
-2021-02-03 00:02:15,688 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,551 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table especialistas if exists
-2021-02-03 00:02:15,688 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,551 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table pacientes if exists
-2021-02-03 00:02:15,690 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,551 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table polizas if exists
-2021-02-03 00:02:15,694 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,552 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table user_rev_entity if exists
-2021-02-03 00:02:15,695 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-39] HHH000478: Unsuccessful: 
+2021-02-04 00:00:48,553 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-101] HHH000478: Unsuccessful: 
     drop table users if exists
-2021-02-03 00:02:15,898 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-39] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+2021-02-04 00:00:48,755 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-101] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2021-02-03 00:02:16,195 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 14315 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
-2021-02-03 00:02:16,198 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2021-02-03 00:02:16,199 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-02-03 00:02:17,800 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-02-03 00:02:19,051 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.888 seconds (JVM running for 1613.568)
-2021-02-03 00:02:19,056 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
-2021-02-03 00:47:04,762 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:00:49,048 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:00:49,048 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:00:49,048 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:00:49,846 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:00:50,508 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.495 seconds (JVM running for 4300.234)
+2021-02-04 00:00:50,512 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:02:52,200 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table actas if exists
-2021-02-03 00:47:04,764 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,213 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table aseguradoras if exists
-2021-02-03 00:47:04,767 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,220 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table citas if exists
-2021-02-03 00:47:04,767 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,221 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table especialistas if exists
-2021-02-03 00:47:04,771 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,223 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table pacientes if exists
-2021-02-03 00:47:04,771 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,224 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table polizas if exists
-2021-02-03 00:47:04,778 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,224 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table user_rev_entity if exists
-2021-02-03 00:47:04,779 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+2021-02-04 00:02:52,228 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-105] HHH000478: Unsuccessful: 
     drop table users if exists
-2021-02-03 00:47:04,980 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+2021-02-04 00:02:52,429 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-105] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:02:52,740 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:02:52,743 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:02:52,743 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:02:53,503 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:02:54,276 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.574 seconds (JVM running for 4424.002)
+2021-02-04 00:02:54,288 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:03:22,189 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:03:22,194 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:03:22,196 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:03:22,198 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:03:22,199 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:03:22,199 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:03:22,201 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:03:22,201 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-109] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:03:22,402 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-109] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:03:23,040 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:03:23,047 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:03:23,047 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:03:24,403 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:03:25,862 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.906 seconds (JVM running for 4455.588)
+2021-02-04 00:03:25,876 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:03:36,323 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:03:36,331 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:03:36,334 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:03:36,335 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:03:36,337 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:03:36,344 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:03:36,345 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:03:36,345 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-113] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:03:36,549 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-113] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:03:36,984 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:03:36,998 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:03:36,999 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:03:37,980 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:03:39,064 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.162 seconds (JVM running for 4468.79)
+2021-02-04 00:03:39,085 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:04:52,215 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:04:52,229 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:04:52,235 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:04:52,239 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:04:52,247 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:04:52,258 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:04:52,258 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:04:52,259 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-117] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:04:52,461 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-117] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:04:52,857 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:04:52,857 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:04:52,857 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:04:53,565 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:04:54,249 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.42 seconds (JVM running for 4543.976)
+2021-02-04 00:04:54,258 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:06:11,945 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:06:11,947 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:06:11,952 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:06:11,952 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:06:11,952 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:06:11,952 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:06:11,953 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:06:11,953 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-121] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:06:12,154 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-121] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:06:12,807 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:06:12,807 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:06:12,808 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:06:14,588 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:06:15,852 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.121 seconds (JVM running for 4625.578)
+2021-02-04 00:06:15,861 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:06:39,389 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:06:39,399 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:06:39,400 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:06:39,401 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:06:39,407 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:06:39,407 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:06:39,407 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:06:39,408 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-125] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:06:39,609 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-125] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:06:39,961 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:06:39,967 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:06:39,967 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:06:40,881 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:06:42,666 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.769 seconds (JVM running for 4652.392)
+2021-02-04 00:06:42,687 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:07:12,158 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:07:12,165 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:07:12,171 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:07:12,172 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:07:12,174 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:07:12,176 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:07:12,177 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:07:12,183 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-129] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:07:12,391 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-129] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:07:13,075 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:07:13,090 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:07:13,091 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:07:14,711 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:07:16,167 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.187 seconds (JVM running for 4685.894)
+2021-02-04 00:07:16,188 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:08:36,937 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:08:36,943 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:08:36,944 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:08:36,947 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:08:36,947 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:08:36,947 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:08:36,948 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:08:36,948 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-133] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:08:37,149 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-133] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:08:37,647 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:08:37,651 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:08:37,651 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:08:38,610 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:08:39,905 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.298 seconds (JVM running for 4769.631)
+2021-02-04 00:08:39,923 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:09:28,507 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:09:28,517 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:09:28,531 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:09:28,532 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:09:28,532 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:09:28,532 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:09:28,533 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:09:28,533 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-137] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:09:28,734 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-137] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:09:29,408 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:09:29,417 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:09:29,417 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:09:31,275 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:09:32,539 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.217 seconds (JVM running for 4822.266)
+2021-02-04 00:09:32,540 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:10:02,387 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:10:02,388 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:10:02,389 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:10:02,390 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:10:02,390 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:10:02,391 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:10:02,392 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:10:02,393 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-141] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:10:02,594 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-141] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:10:03,064 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:10:03,067 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:10:03,067 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:10:04,481 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:10:05,621 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.607 seconds (JVM running for 4855.347)
+2021-02-04 00:10:05,624 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:11:55,880 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:11:55,886 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:11:55,887 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:11:55,887 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:11:55,890 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:11:55,890 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:11:55,891 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:11:55,891 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-145] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:11:56,101 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-145] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:11:56,491 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 13308 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:11:56,498 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:11:56,498 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:11:57,393 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:11:59,086 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.643 seconds (JVM running for 4968.812)
+2021-02-04 00:11:59,099 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:13:34,099 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:13:34,104 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:13:34,107 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:13:34,108 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:13:34,108 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:13:34,109 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:13:34,111 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:13:34,111 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:13:34,313 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:14:06,538 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:14:06,544 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:14:06,551 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:14:11,557 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:14:13,686 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 7.667 seconds (JVM running for 8.332)
+2021-02-04 00:14:13,693 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:23:23,895 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:23:23,916 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:23:23,931 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:23:23,934 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:23:23,936 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:23:23,939 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:23:23,946 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:23:23,946 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:23:24,161 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:23:24,561 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:23:24,561 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:23:24,561 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:23:26,348 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:23:27,793 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.269 seconds (JVM running for 562.438)
+2021-02-04 00:23:27,806 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:23:46,692 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:23:46,708 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:23:46,720 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:23:46,725 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:23:46,740 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:23:46,748 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:23:46,756 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:23:46,763 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:23:46,967 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-8] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:23:47,260 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:23:47,260 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:23:47,260 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:23:49,470 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:23:50,871 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.658 seconds (JVM running for 585.516)
+2021-02-04 00:23:50,873 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:24:20,777 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:24:20,784 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:24:20,787 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:24:20,788 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:24:20,792 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:24:20,792 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:24:20,794 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:24:20,795 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:24:20,996 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-13] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:24:21,215 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:24:21,219 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:24:21,219 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:24:22,244 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:24:22,934 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.751 seconds (JVM running for 617.579)
+2021-02-04 00:24:22,946 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:26:50,584 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:26:50,591 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:26:50,607 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:26:50,607 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:26:50,609 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:26:50,610 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:26:50,611 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:26:50,612 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:26:50,815 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-17] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:26:51,089 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:26:51,090 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:26:51,091 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:26:53,017 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:26:54,173 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.112 seconds (JVM running for 768.818)
+2021-02-04 00:26:54,176 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:26:58,575 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:26:58,595 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:26:58,615 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:26:58,615 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:26:58,622 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:26:58,623 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:26:58,632 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:26:58,633 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:26:58,843 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-21] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:26:59,126 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:26:59,130 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:26:59,130 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:27:00,199 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:27:00,961 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.867 seconds (JVM running for 775.606)
+2021-02-04 00:27:00,971 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:29:22,091 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:29:22,107 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:29:22,119 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:29:22,120 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:29:22,121 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:29:22,122 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:29:22,130 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:29:22,131 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:29:22,352 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-25] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:29:22,896 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:29:22,902 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:29:22,903 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:29:24,092 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:29:24,750 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.94 seconds (JVM running for 919.395)
+2021-02-04 00:29:24,752 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:29:58,272 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:29:58,275 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:29:58,303 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:29:58,315 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:29:58,338 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:29:58,339 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:29:58,343 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:29:58,343 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:29:58,548 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-29] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:29:59,068 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:29:59,071 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:29:59,073 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:30:00,446 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:30:01,100 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.127 seconds (JVM running for 955.745)
+2021-02-04 00:30:01,107 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:36:29,835 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:36:29,841 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:36:29,847 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:36:29,848 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:36:29,852 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:36:29,852 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:36:29,853 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:36:29,853 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-33] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:36:30,055 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-33] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:36:30,504 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:36:30,504 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:36:30,505 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:36:32,226 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:36:33,976 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.526 seconds (JVM running for 1348.621)
+2021-02-04 00:36:33,978 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:37:17,571 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:37:17,584 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:37:17,601 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:37:17,614 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:37:17,615 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:37:17,617 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:37:17,618 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:37:17,618 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-37] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:37:17,822 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-37] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:37:18,074 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:37:18,074 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:37:18,074 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:37:19,632 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:37:20,375 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.329 seconds (JVM running for 1395.02)
+2021-02-04 00:37:20,378 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:38:33,099 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:38:33,124 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:38:33,147 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:38:33,148 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:38:33,151 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:38:33,155 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:38:33,156 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:38:33,156 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-41] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:38:33,357 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-41] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:38:33,877 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:38:33,880 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:38:33,880 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:38:35,349 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:38:36,915 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.116 seconds (JVM running for 1471.56)
+2021-02-04 00:38:36,916 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:38:47,341 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:38:47,364 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:38:47,365 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:38:47,368 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:38:47,369 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:38:47,376 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:38:47,379 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:38:47,384 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-45] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:38:47,588 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-45] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:38:48,034 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:38:48,042 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:38:48,043 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:38:49,401 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:38:50,304 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.363 seconds (JVM running for 1484.949)
+2021-02-04 00:38:50,312 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:39:11,775 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:39:11,785 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:39:11,800 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:39:11,800 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:39:11,800 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:39:11,801 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:39:11,801 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:39:11,801 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-49] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:39:12,015 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-49] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:39:12,473 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:39:12,475 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:39:12,475 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:39:13,647 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:39:14,547 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.177 seconds (JVM running for 1509.192)
+2021-02-04 00:39:14,549 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:40:23,204 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:40:23,209 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:40:23,216 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:40:23,217 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:40:23,233 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:40:23,234 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:40:23,272 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:40:23,279 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-53] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:40:23,480 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-53] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:40:23,997 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 22647 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:40:23,999 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:40:23,999 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:40:25,537 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:40:26,358 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.422 seconds (JVM running for 1581.003)
+2021-02-04 00:40:26,365 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 00:44:54,847 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 00:44:54,849 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 00:44:54,850 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 00:44:54,850 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 00:44:54,850 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 00:44:54,853 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 00:44:54,853 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 00:44:54,854 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 00:44:55,063 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 00:45:27,168 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 00:45:27,178 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 00:45:27,179 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 00:45:33,922 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 00:45:36,919 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 10.881 seconds (JVM running for 11.651)
+2021-02-04 00:45:36,926 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:32:06,976 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:32:06,987 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:32:07,011 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:32:07,013 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:32:07,016 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:32:07,019 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:32:07,024 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:32:07,026 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-3] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:32:07,233 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-3] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:32:07,713 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:32:07,714 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:32:07,715 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:32:10,025 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:32:11,541 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.909 seconds (JVM running for 734.285)
+2021-02-04 11:32:11,559 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:32:43,060 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:32:43,079 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:32:43,088 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:32:43,095 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:32:43,110 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:32:43,114 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:32:43,130 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:32:43,131 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:32:43,332 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-8] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:32:43,724 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:32:43,724 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:32:43,724 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:32:45,861 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:32:47,269 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.591 seconds (JVM running for 770.013)
+2021-02-04 11:32:47,284 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:34:26,832 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:34:26,840 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:34:26,842 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:34:26,844 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:34:26,848 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:34:26,848 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:34:26,849 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:34:26,850 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-13] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:34:27,056 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-13] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:34:27,317 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:34:27,319 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:34:27,320 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:34:28,566 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:34:29,512 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 2.242 seconds (JVM running for 872.256)
+2021-02-04 11:34:29,526 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:34:51,385 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:34:51,412 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:34:51,428 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:34:51,428 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:34:51,430 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:34:51,455 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:34:51,459 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:34:51,459 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-17] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:34:51,661 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-17] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:34:52,072 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:34:52,072 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:34:52,073 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:34:54,267 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:34:56,061 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 4.063 seconds (JVM running for 898.805)
+2021-02-04 11:34:56,085 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:34:57,459 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:34:57,483 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:34:57,488 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:34:57,490 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:34:57,492 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:34:57,499 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:34:57,501 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:34:57,517 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-21] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:34:57,720 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-21] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:34:58,118 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:34:58,122 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:34:58,123 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:34:59,951 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:35:01,300 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.25 seconds (JVM running for 904.044)
+2021-02-04 11:35:01,305 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:36:35,088 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:36:35,103 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:36:35,111 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:36:35,116 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:36:35,123 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:36:35,124 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:36:35,125 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:36:35,125 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:36:35,327 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-25] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:36:35,552 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:36:35,555 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:36:35,555 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:36:36,377 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:36:37,022 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.507 seconds (JVM running for 999.766)
+2021-02-04 11:36:37,031 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:37:28,729 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:37:28,733 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:37:28,748 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:37:28,766 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:37:28,771 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:37:28,775 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:37:28,778 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:37:28,778 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-29] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:37:28,981 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-29] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-02-04 11:37:29,327 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 26449 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:37:29,330 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:37:29,330 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-04 11:37:30,273 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:37:31,052 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 1.798 seconds (JVM running for 1053.796)
+2021-02-04 11:37:31,059 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-04 11:41:18,873 INFO org.springframework.boot.StartupInfoLogger [main] Starting Tempura17ApplicationTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:18,877 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:18,878 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:27,739 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-04 11:41:33,040 INFO org.springframework.boot.StartupInfoLogger [main] Started Tempura17ApplicationTests in 14.746 seconds (JVM running for 17.334)
+2021-02-04 11:41:33,358 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraServiceTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:33,361 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:33,364 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:35,723 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraServiceTests in 2.471 seconds (JVM running for 20.017)
+2021-02-04 11:41:40,132 INFO org.springframework.boot.StartupInfoLogger [main] Starting JustificanteControllerTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:40,135 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:40,137 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:42,339 INFO org.springframework.boot.StartupInfoLogger [main] Started JustificanteControllerTests in 2.336 seconds (JVM running for 26.633)
+2021-02-04 11:41:42,657 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:42,658 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:42,663 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:44,962 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 2.362 seconds (JVM running for 29.256)
+2021-02-04 11:41:45,201 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:45,205 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:45,210 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:47,366 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 2.239 seconds (JVM running for 31.66)
+2021-02-04 11:41:47,462 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on rog0d-VirtualBox with PID 29806 (started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-04 11:41:47,464 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-04 11:41:47,466 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-02-04 11:41:49,320 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 1.901 seconds (JVM running for 33.614)
+2021-02-04 11:41:49,446 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:41:49,478 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:41:49,497 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:41:49,500 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:41:49,502 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:41:49,508 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:41:49,511 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:41:49,515 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:41:49,520 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:41:49,522 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:41:49,527 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:41:49,530 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:41:49,531 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:41:49,535 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:41:49,550 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:41:49,551 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:42:53,297 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-04 11:42:53,303 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-04 11:42:53,305 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-04 11:42:53,305 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-04 11:42:53,306 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-04 11:42:53,315 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-04 11:42:53,319 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-04 11:42:53,319 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-04 11:42:53,522 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]

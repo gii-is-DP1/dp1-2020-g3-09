@@ -124,6 +124,13 @@ public class AseguradoraController {
 			return all(model);
 		}
 	}
+
+	@GetMapping("delete/{especialistaId}/{aseguradoraId}")
+	public String deleteEspecialista(@PathVariable("aseguradoraId") int aseguradoraId,@PathVariable("especialistaId") int especialistaId, ModelMap model){
+
+        aseguradoraService.deleteEspecialista(aseguradoraId, especialistaId);
+        return "redirect:/aseguradoras/{aseguradoraId}/perfil";
+    }
     
 }
 

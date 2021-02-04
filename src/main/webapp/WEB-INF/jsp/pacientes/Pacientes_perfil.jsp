@@ -67,9 +67,12 @@
                     </dl>
                 </td>
                 <td>
-                    <form action="http://localhost:8080/citas/${cita.id}/delete">
-                        <input type="submit" value="borrar cita" />
-                    </form>
+                    <spring:url value="/pacientes/cita/delete/{citaId}/{pacienteId}" var="perfilPaciente">
+                        <spring:param name="citaId" value="${cita.id}"/>
+                        <spring:param name="pacienteId" value="${paciente.id}"/>
+                    </spring:url>
+                    <a href="${fn:escapeXml(perfilPaciente)}">borrar cita</a>
+
                     <form action="http://localhost:8080/justificantes/new/${cita.id}">
                         <input type="submit" value="generar justificante" />
                     </form>
