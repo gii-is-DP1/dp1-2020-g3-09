@@ -98,12 +98,8 @@ public class EspecialistaController {
 			return "especialistas/Especialista_form";
 
 		}else {
-			String nombre = "Caser";
-			Aseguradora aseguradoraPrueba = this.aseguradoraService.findByNombrAseguradora(nombre);
-			especialista.addAseguradora(aseguradoraPrueba);
-			aseguradoraPrueba.addEspecialista(especialista);
+			especialista.setAseguradoras(new HashSet<>());
 			especialistaService.save(especialista);
-			this.aseguradoraService.save(aseguradoraPrueba);
 			model.addAttribute("message", "Bien hecho");
 			return all(model);
 
@@ -134,6 +130,8 @@ public class EspecialistaController {
 			model.addAttribute("especialista", especialista.get());
 			Especialidad[] especialidad = Especialidad.values();
 			model.addAttribute("especialidad", especialidad);
+			List<Aseguradora> aseguradoras = aseguradoraService.findAll().stream().collect(Collectors.toList());
+			model.addAttribute("aseguradoras", aseguradoras);
 			return "especialistas/Especialistas_edit";
 
 		}else{
@@ -222,4 +220,18 @@ public class EspecialistaController {
 			this.especialistaService.save(especialista);
 			return "redirect:/especialistas/{especialistaId}/perfil";
 		}
-}
+
+		@GetMapping("aseguradora/delete/{aseguradoraId}/{especialistaId}")
+		public String deleteAseguradora(@PathVariable("especialistaId") int especialistaId, @PathVariable("aseguradoraId") int aseguradoraId, ModelMap model){
+			Aseguradora aseguradora = this.aseguradoraService.findById(aseguradoraId).get();
+			Especialista especialista = this.especialistaService.findById(especialistaId).get();
+			// Inspeccionar esta modificación
+			//especialistaService.deleteCita(citaId);
+			especialista.removeAseguradora(aseguradora);
+			aseguradora.removeEspecialista(especialista);
+
+			this.especialistaService.save(especialista);
+			this.aseguradoraService.save(aseguradora);
+			return "redirect:/especialistas/{especialistaId}/perfil";
+		}
+	}
