@@ -51,27 +51,6 @@ public class AlarmaController {
 		return alarmaService.findAll();
 	}
 
-	@GetMapping("/new")
-	public String NewAlarma(ModelMap model) {
-		model.addAttribute("alarma", new Alarma());
-		return "alarmas/crearAlarma";
-	}
-
-	@PostMapping("/new")
-	public String saveNewAlarma(@Valid Alarma alarma, @Valid Cita cita, BindingResult binding, ModelMap model) {
-
-		if (binding.hasErrors()) {
-			model.addAttribute("message", "ERROR AL GUARDAR LA ALARMA");
-			return "alarmas/crearAlarma";
-
-		} else {
-			alarmaService.save(alarma);
-			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
-			return listAlarmas(model);
-
-		}
-	}
-
 	@GetMapping("/new/{citaId}")
 	public String newAlarmaId(ModelMap model) {
 		model.addAttribute("alarma", new Alarma());

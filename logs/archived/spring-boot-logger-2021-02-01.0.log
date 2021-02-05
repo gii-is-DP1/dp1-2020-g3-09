@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2021-02-01 10:58:29,734 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 4961 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
 2021-02-01 10:58:29,752 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
 2021-02-01 10:58:29,776 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
@@ -33,6 +34,8 @@
 2021-02-01 11:08:05,737 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
 2021-02-01 11:08:16,300 INFO org.springframework.boot.StartupInfoLogger [main] Started JustificanteControllerTests in 13.16 seconds (JVM running for 19.251)
 =======
+=======
+>>>>>>> rodgarcas
 2021-01-30 11:18:36,872 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
     drop table actas if exists
 2021-01-30 11:18:36,892 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-25] HHH000478: Unsuccessful: 
@@ -5421,6 +5424,7 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'es
     drop table users if exists
 2021-01-30 14:33:20,696 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+<<<<<<< HEAD
 2021-02-01 11:57:28,564 INFO org.springframework.boot.StartupInfoLogger [main] Starting Tempura17ApplicationTests on manuel-VirtualBox with PID 8674 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
 2021-02-01 11:57:28,575 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
 2021-02-01 11:57:28,592 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
@@ -6023,3 +6027,29 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 2021-02-01 14:38:04,477 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-02-01 14:38:05,738 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 3.67 seconds (JVM running for 775.274)
 2021-02-01 14:38:05,751 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+=======
+2021-02-01 13:13:32,790 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting Tempura17Application on rog0d-VirtualBox with PID 3077 (/home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09/target/classes started by rog0d in /home/rog0d/Escritorio/Uni_COVID/DP1/tempura17/dp1-2020-g3-09)
+2021-02-01 13:13:32,799 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-02-01 13:13:32,805 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-02-01 13:13:38,097 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-01 13:13:40,260 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Tempura17Application in 7.99 seconds (JVM running for 8.762)
+2021-02-01 13:13:40,262 INFO com.tempura17.Tempura17Application [restartedMain] Awesomeness ahead!
+2021-02-01 15:02:05,898 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table actas if exists
+2021-02-01 15:02:05,911 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table aseguradoras if exists
+2021-02-01 15:02:05,954 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table citas if exists
+2021-02-01 15:02:05,956 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table especialistas if exists
+2021-02-01 15:02:05,961 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table pacientes if exists
+2021-02-01 15:02:05,962 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table polizas if exists
+2021-02-01 15:02:05,981 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table user_rev_entity if exists
+2021-02-01 15:02:05,981 ERROR org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000478: Unsuccessful: 
+    drop table users if exists
+2021-02-01 15:02:06,191 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringContextShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+>>>>>>> rodgarcas

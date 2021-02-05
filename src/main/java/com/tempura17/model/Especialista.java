@@ -130,6 +130,20 @@ public class Especialista extends Person {
         } 
     }
 
+    public void addAseguradora(Aseguradora aseguradora){
+        if(this.aseguradoras == null){
+            this.aseguradoras = new HashSet<>();
+            this.aseguradoras.add(aseguradora);
+            setAseguradoras(this.aseguradoras);
+        }else{
+            this.aseguradoras.add(aseguradora);
+        } 
+    }
+
+    public void removeCita(Cita cita){
+        this.citas.remove(cita);
+    }
+
     @Override
     public String toString() {
         return firstName + " " + lastName;

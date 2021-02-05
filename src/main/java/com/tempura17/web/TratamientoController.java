@@ -1,8 +1,10 @@
 package com.tempura17.web;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
@@ -14,6 +16,7 @@ import com.tempura17.service.ActaService;
 import com.tempura17.service.PolizaService;
 import com.tempura17.service.TratamientoService;
 
+import org.apache.taglibs.standard.tag.el.sql.TransactionTag;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -58,31 +61,18 @@ public class TratamientoController {
 	public Collection<Tratamiento> jsonTratamientos(){
 
 		return tratamientoService.findAll();
-    }
-    
-
-    @GetMapping("/new")
-	public String NewTratamiento(ModelMap model) {
-		model.addAttribute("tratamiento", new Tratamiento());
-		return "tratamientos/tratamientosForm";
-    }
-    
-    @PostMapping("/new")
-	public String saveNewTratamiento(@Valid Tratamiento tratamiento, BindingResult binding, ModelMap model) {
-
-		if (binding.hasErrors()) {
-			model.addAttribute("message", "ERROR AL GUARDAR EL TRATAMIENTO");
-			return "tratamientos/tratamientosForm";
-
-		} else {
-			tratamientoService.save(tratamiento);
-			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
-			return all(model);
-
-		}
-    }
+	}
 	
+	@GetMapping("/{actaId}")
+	public String tratamientosForActa(@PathVariable("actaId") int actaId, ModelMap model){
 	
+		Set<Tratamiento> tratamientos = new HashSet<>(this.tratamientoService.findByActaId(actaId));
+
+		model.addAttribute("tratamientos", tratamientos);
+
+		return "tratamientos/listTratamientos";
+	}
+
 	@GetMapping("/new/{actaId}/{polizaId}")
 	public String NewTratamientoId(ModelMap model) {
 		model.addAttribute("tratamiento", new Tratamiento());
@@ -103,7 +93,7 @@ public class TratamientoController {
             tratamiento.setPoliza(poliza);
 			tratamientoService.save(tratamiento);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
-			return all(model);
+			return tratamientosForActa(actaId, model);
 
 		}
 	}

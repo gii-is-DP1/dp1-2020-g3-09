@@ -15,8 +15,10 @@ import com.tempura17.model.Acta;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialidad;
 import com.tempura17.service.ActaService;
+import com.tempura17.service.AuthoritiesService;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
+import com.tempura17.service.UserService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -103,7 +105,7 @@ public class ActaController {
             acta.setCita(cita);
 			acta.setEspecialista(especialista);
 			especialista.addActa(acta);
-			actaService.save(acta);
+			this.actaService.save(acta);
 			especialistaService.save(especialista);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return all(model);

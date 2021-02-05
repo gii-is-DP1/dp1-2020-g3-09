@@ -34,6 +34,11 @@ public class TratamientoService {
         return tratamientoRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
+    public Collection<Tratamiento> findByActaId(int actaId){
+      return tratamientoRepository.findByActaId(actaId);
+    }
+
     @Transactional
     public void save(@Valid Tratamiento tratamiento){
         tratamientoRepository.save(tratamiento);

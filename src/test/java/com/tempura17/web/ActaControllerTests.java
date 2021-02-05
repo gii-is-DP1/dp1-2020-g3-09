@@ -1,18 +1,26 @@
 package com.tempura17.web;
 
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
 
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.mockito.BDDMockito.given;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
+
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -28,45 +36,40 @@ import java.util.Optional;
 
 import com.tempura17.model.Acta;
 import com.tempura17.service.ActaService;
+import com.tempura17.service.AuthoritiesService;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
+import com.tempura17.service.UserService;
 
-@WebMvcTest(controllers=ActaController.class,
-		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
-		excludeAutoConfiguration= SecurityConfiguration.class)
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@AutoConfigureMockMvc
+@Transactional
 
 class ActaControllerTests {
 
-    private static final int TEST_ACTA_ID = 3;
+    private static final int TEST_ACTA_ID = 1;
 
     private static final int TEST_CITA_ID = 1;
 
     private static final int TEST_ESPECIALISTA_ID = 1;
 
-    @MockBean
+    @Autowired
     private ActaService actaService;
 
-    @MockBean
+    @Autowired
     private EspecialistaService especialistaService;
     
-    @MockBean
+    @Autowired
     private CitaService citaService;
 
 	@Autowired
     private MockMvc mockMvc;
 
-	private Acta acta;
 	
 
     @BeforeEach
-	void setup() {
-        acta = new Acta();
-        acta.setId(TEST_ACTA_ID);
-        acta.setDescripcion("esufsiufensoif");
-        acta.setExploracion("esufsiufensoif");
-		acta.setDiagnostico("esufsiufensoif");
-        given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(acta));
-    }
+	void setup() {}
     
 
     @WithMockUser(value = "spring")
@@ -86,23 +89,20 @@ class ActaControllerTests {
         .param("descripcion", "esufsiufensoif")
         .param("exploracion", "esufsiufensoif")
 		.param("diagnostico", "esufsiufensoif"))
-		.andExpect(status().isOk());
-        //.andExpect(view().name("actas/listActas"));
+		.andExpect(status().isOk())
+        .andExpect(view().name("actas/listActas"));
     }
     
 
     @WithMockUser(value = "spring")
 	@Test
-	@Disabled
 	void testsaveNewActaHasErrors() throws Exception {
 		mockMvc.perform(post("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID)
-		.with(csrf()))
+		.with(csrf())
+		.param("descripcion","esufsiufensoif"))
 		.andExpect(status().isOk())
-		.andExpect(model().attributeHasErrors("acta"))
-		.andExpect(model().attributeHasFieldErrors("acta", "descripcion"))
-		.andExpect(model().attributeHasFieldErrors("acta", "exploracion"))
-		.andExpect(model().attributeHasFieldErrors("acta", "diagnostico"))
-		
+		.andExpect(model().attributeHasFieldErrors("acta","exploracion"))
+		.andExpect(model().attributeHasFieldErrors("acta","diagnostico"))
 		.andExpect(view().name("actas/actasForm"));
     }
     
@@ -134,15 +134,14 @@ class ActaControllerTests {
 
     @WithMockUser(value = "spring")
 	@Test
-	@Disabled
 	void testProcessUpdateActaFormHasErrors() throws Exception {
 		mockMvc.perform(post("/actas/{actaId}/edit", TEST_ACTA_ID)
 							.with(csrf())
-							.param("diagnostico", "pruebadescripcion1"))
+							.param("diagnostico", "pruebadiagnostico3")
+							.param("descripcion", "pruebadescripcion1"))
 				.andExpect(model().attributeHasErrors("acta"))
 				.andExpect(status().isOk())
 				.andExpect(model().attributeHasFieldErrors("acta", "exploracion"))
-				.andExpect(model().attributeHasFieldErrors("acta", "descripcion"))
 				.andExpect(view().name("actas/actasForm"));
 	}
     

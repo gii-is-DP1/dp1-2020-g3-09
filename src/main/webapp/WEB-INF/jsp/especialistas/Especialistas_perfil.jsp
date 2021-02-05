@@ -30,6 +30,15 @@
             <th>Especialidad</th>
             <td><c:out value="${especialista.especialidad}"/></td>
         </tr>
+        <c:forEach var="aseguradora" items="${especialista.aseguradoras}">
+        <tr>
+            <th>Aseguradora: </th>
+            <td><dd><spring:url value="/aseguradoras/{aseguradoraId}/perfil" var="perfilAseguradora">
+                <spring:param name="aseguradoraId" value="${aseguradora.id}"/>
+            </spring:url>
+            <a href="${fn:escapeXml(perfilAseguradora)}">${aseguradora.nombre}</a></dd></td>
+        </tr>
+        </c:forEach>
     </table>
 
     <h2><form action="http://localhost:8080/especialistas/${especialista.id}/edit">
@@ -39,16 +48,6 @@
         <input type="submit" value="borrar" />
     </form></h2>
 
-   <!--<spring:url value="{ownerId}/edit" var="editUrl">
-        <spring:param name="ownerId" value="${owner.id}"/>
-    </spring:url>
-    <a href="${fn:escapeXml(editUrl)}" class="btn btn-default">Edit Owner</a>
-
-    <spring:url value="{ownerId}/pets/new" var="addUrl">
-        <spring:param name="ownerId" value="${owner.id}"/>
-    </spring:url>
-    <a href="${fn:escapeXml(addUrl)}" class="btn btn-default">Add New Pet</a>
-    -->
     <br/>
     <br/>
     <br/>
@@ -71,9 +70,12 @@
                     </dl>
                 </td>
                 <td>
-                    <form action="http://localhost:8080/citas/${cita.id}/delete">
-                        <input type="submit" value="borrar cita" />
-                    </form>
+                    <dd><spring:url value="/especialistas/cita/delete/{citaId}/{especialistaId}" var="deleteCita">
+                        <spring:param name="citaId" value="${cita.id}"/>
+                        <spring:param name="especialistaId" value="${especialista.id}"/>
+                        
+                    </spring:url>
+                    <a href="${fn:escapeXml(deleteCita)}">borrar cita</a></dd>
 
                     <form action="http://localhost:8080/citas/${cita.id}/edit">
                         <input type="submit" value="editar cita" />
@@ -83,38 +85,6 @@
                         <input type="submit" value="Ver citas de este paciente" />
                     </form>
 					</td>
-                <!--<td valign="top">
-                    <table class="table-condensed">
-                        <thead>
-                        <tr>
-                            <th>Visit Date</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <c:forEach var="visit" items="${pet.visits}">
-                            <tr>
-                                <td><petclinic:localDate date="${visit.date}" pattern="yyyy-MM-dd"/></td>
-                                <td><c:out value="${visit.description}"/></td>
-                            </tr>
-                        </c:forEach>
-                        <tr>
-                            <td>
-                                <spring:url value="/owners/{ownerId}/pets/{petId}/edit" var="petUrl">
-                                    <spring:param name="ownerId" value="${owner.id}"/>
-                                    <spring:param name="petId" value="${pet.id}"/>
-                                </spring:url>
-                                <a href="${fn:escapeXml(petUrl)}">Edit Pet</a>
-                            </td>
-                            <td>
-                                <spring:url value="/owners/{ownerId}/pets/{petId}/visits/new" var="visitUrl">
-                                    <spring:param name="ownerId" value="${owner.id}"/>
-                                    <spring:param name="petId" value="${pet.id}"/>
-                                </spring:url>
-                                <a href="${fn:escapeXml(visitUrl)}">Add Visit</a>
-                            </td>
-                        </tr>
-                    </table>
-                </td>-->
             </tr>
 
         </c:forEach>

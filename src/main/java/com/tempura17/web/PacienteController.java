@@ -76,7 +76,6 @@ public class PacienteController {
 	}
 
 
-
 	@GetMapping("/{id}/calculadoras")
 	public String getPacienteCalculadora(@PathVariable("id") int id, ModelMap model){
 		model.addAttribute("calculadoras", calculadoraService.findByPacienteId(id));
@@ -135,5 +134,15 @@ public class PacienteController {
 			model.addAttribute("message","NO EXISTE NINGUNA ALARMA CON ESE ID");
 			return all(model);
 		}
+	}
+
+	@GetMapping("cita/delete/{citaId}/{pacienteId}")
+	public String deleteCita(@PathVariable("pacienteId") int pacienteId, @PathVariable("citaId") int citaId, ModelMap model){
+
+		pacienteService.deleteCita(pacienteId, citaId);
+		Cita cita = citaService.findById(citaId).get();
+		cita.setPaciente(null);
+		citaService.save(cita);
+		return "redirect:/pacientes/{pacienteId}/perfil";
 	}
 }

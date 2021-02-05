@@ -3,14 +3,20 @@ package com.tempura17.web;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
 
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.mockito.BDDMockito.given;
+
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -27,9 +33,11 @@ import com.tempura17.model.Alarma;
 import com.tempura17.service.AlarmaService;
 import com.tempura17.service.CitaService;
 
-@WebMvcTest(controllers=AlarmaController.class,
-		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
-		excludeAutoConfiguration= SecurityConfiguration.class)
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@AutoConfigureMockMvc
+@Transactional
+
 
 class AlarmaControllerTests {
 
@@ -48,12 +56,7 @@ class AlarmaControllerTests {
 
 
     @BeforeEach
-	void setup() {
-		Alarma alarma = new Alarma();
-		alarma.setId(TEST_ALARMA_ID);
-        alarma.setDias(13);
-		given(this.alarmaService.findById(TEST_ALARMA_ID)).willReturn(Optional.of(alarma));
-    }
+	void setup() {}
 
 
     @WithMockUser(value = "spring")
@@ -71,8 +74,8 @@ class AlarmaControllerTests {
         mockMvc.perform(post("/alarmas/new/{citaId}",TEST_CITA_ID)
 		.with(csrf())
         .param("dias", "13"))
-		.andExpect(status().isOk());
-		//.andExpect(view().name("alarmas/misAlarmas"));
+		.andExpect(status().isOk())
+		.andExpect(view().name("alarmas/misAlarmas"));
     }
 
 
@@ -87,15 +90,4 @@ class AlarmaControllerTests {
 		.andExpect(model().attributeHasFieldErrors("alarma", "dias"))
 		.andExpect(view().name("alarmas/crearAlarma"));
     }
-
-
-    /*@WithMockUser(value = "spring")
-    @Test
-    void testdeleteAlarma() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders
-        .delete("alarmas/{alarmaId}/delete",TEST_ALARMA_ID)
-        .with(csrf()))
-        .andExpect(status().isOk());
-    }*/
-    
 }

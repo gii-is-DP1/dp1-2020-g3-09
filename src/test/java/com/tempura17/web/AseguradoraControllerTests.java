@@ -20,6 +20,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.hasProperty;
 
 import java.util.Optional;
 
@@ -63,12 +65,11 @@ class AseguradoraControllerTests {
 
     @WithMockUser(value = "spring")
     @Test
-    @Disabled
     void testNewAseguradora() throws Exception{
         mockMvc.perform(get("/aseguradoras/new"))
         .andExpect(status().isOk())
         .andExpect(model().attributeExists("aseguradora"))
-		.andExpect(view().name("aseguradoras/Aseguradora_form"));
+		.andExpect(view().name("aseguradoras/Aseguradoras_form"));
     }
 
     @WithMockUser(value = "spring")
@@ -93,14 +94,15 @@ class AseguradoraControllerTests {
     }
     
 
-    /*@WithMockUser(value = "spring")
+    @WithMockUser(value = "spring")
 	@Test
+    @Disabled
 	void testInitEditAseguradora() throws Exception {
         mockMvc.perform(get("/aseguradoras/{aseguradoraId}/edit", TEST_ASEGURADORA_ID)).andExpect(status().isOk())
 				.andExpect(model().attributeExists("aseguradora"))
-				.andExpect(model().attribute("aseguradora", hasProperty("nombre", is("Caser"))))
+                .andExpect(model().attribute("aseguradora", hasProperty("nombre", is("Caser"))))
 				.andExpect(view().name("aseguradoras/Aseguradoras_edit"));
-    }*/
+    }
 
     @WithMockUser(value = "spring")
 	@Test

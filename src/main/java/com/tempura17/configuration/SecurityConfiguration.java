@@ -32,13 +32,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+				.antMatchers("/pacientes/**").hasAnyAuthority("admin", "paciente")
 				.antMatchers("/resources/**","/webjars/**","/h2-console/**").permitAll()
 				.antMatchers("/api/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/","/oups").permitAll()
 				.antMatchers("/users/new").permitAll()
 				.antMatchers("/admin/**").hasAnyAuthority("admin")
-				.antMatchers("/owners/**").hasAnyAuthority("owner","admin")				
-				.antMatchers("/vets/**").authenticated()
+				.antMatchers("/especialistas/**").hasAnyAuthority("especialista","aseguradora","admin")				
+				.antMatchers("/aseguradoras/**").hasAnyAuthority("aseguradora","admin")	
+				.antMatchers("/citas/**").authenticated()
 				.anyRequest().permitAll()
 				.and()
 				 	.formLogin()

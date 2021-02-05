@@ -19,15 +19,6 @@
             <petclinic:inputField label="lastName" name="lastName"/>
             <petclinic:inputField label="dni" name="dni"/>
 
-            <label for="aseguradoras">Aseguradora:</label>
-            <select name = "Aseguradora" id="aseguradoras">
-            <c:forEach items="${aseguradoras}" var="aseguradora" varStatus="loop">
-            <option value="${loop.index + 1}">
-                ${aseguradora}
-            </option>
-            </c:forEach>
-            </select>
-
             <label for="especialidades">Especialidad:</label>
             <select name = "Especialidad" id="especialidades">
                 <c:forEach items="${especialidad}" var="especialidad" varStatus="loop">
