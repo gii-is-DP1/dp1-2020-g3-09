@@ -68,7 +68,13 @@
                             <spring:param name="aseguradoraId" value="${aseguradora.id}"/>
                             <spring:param name="polizaId" value="${poliza.id}"/>
 						</spring:url>
-						<a href="${fn:escapeXml(editPoliza)}">editar poliza</a></dd>
+                        <a href="${fn:escapeXml(editPoliza)}">editar poliza</a></dd>
+
+                        <dd><spring:url value="/aseguradoras/deletePoliza/{aseguradoraId}/{polizaId}" var="borrarPoliza">
+                            <spring:param name="aseguradoraId" value="${aseguradora.id}"/>
+                            <spring:param name="polizaId" value="${poliza.id}"/>
+						</spring:url>
+                        <a href="${fn:escapeXml(borrarPoliza)}">borrar poliza</a></dd>
                     </dl>
                 </td>
                 <td valign="top">

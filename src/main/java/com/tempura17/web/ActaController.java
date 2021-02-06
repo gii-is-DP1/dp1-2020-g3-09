@@ -48,28 +48,6 @@ public class ActaController {
         this.citaService = citaService;
         this.especialistaService = especialistaService;
     }
-    
-
-    /*@GetMapping("/new")
-	public String NewActa(ModelMap model) {
-		model.addAttribute("acta", new Acta());
-		return "actas/actasForm";
-    }
-    
-    @PostMapping("/new")
-	public String saveNewActa(@Valid Acta acta, BindingResult binding, ModelMap model) {
-
-		if (binding.hasErrors()) {
-			model.addAttribute("message", "ERROR AL GUARDAR EL ACTA");
-			return "actas/actasForm";
-
-		} else {
-			actaService.save(acta);
-			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
-			return "actas/listActas";
-
-		}
-	}*/
 
 	@GetMapping
 	public String all(ModelMap model){

@@ -125,7 +125,7 @@ public class CitaController {
 
 	@PostMapping("/{citaId}/edit")
 	public String editCita(@PathVariable("citaId") int citaId, @Valid Cita citaModified, BindingResult binding, ModelMap model){
-		Optional<Cita> cita = citaService.findById(citaId);
+		Cita cita = citaService.findById(citaId).get();
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", binding.getAllErrors().toString());
@@ -136,10 +136,10 @@ public class CitaController {
 			return "citas/Citas_edit";
 
 		}else{
-			BeanUtils.copyProperties(citaModified, cita.get(), "id", "paciente","especialista");
-			citaService.save(cita.get());
+			BeanUtils.copyProperties(citaModified, cita, "id", "paciente","especialista");
+			citaService.save(cita);
 			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
-			return "redirect:/especialistas/" + cita.get().getEspecialista().getId() + "/perfil";
+			return "redirect:/especialistas/" + cita.getEspecialista().getId() + "/perfil";
 		}
 	}
 

@@ -36,17 +36,26 @@
             <td><dd><spring:url value="/aseguradoras/{aseguradoraId}/perfil" var="perfilAseguradora">
                 <spring:param name="aseguradoraId" value="${aseguradora.id}"/>
             </spring:url>
-            <a href="${fn:escapeXml(perfilAseguradora)}">${aseguradora.nombre}</a></dd></td>
+            <a href="${fn:escapeXml(perfilAseguradora)}">${aseguradora.nombre} </a>
+             |         
+            <spring:url value="/especialistas/aseguradora/delete/{aseguradoraId}/{especialistaId}" var="borrarAseguradora">
+                <spring:param name="aseguradoraId" value="${aseguradora.id}"/>
+                <spring:param name="especialistaId" value="${especialista.id}"/>
+            </spring:url>
+            <a href="${fn:escapeXml(borrarAseguradora)}"> borrar de esta aseguradora</a></dd></td>
+            
         </tr>
         </c:forEach>
     </table>
 
-    <h2><form action="http://localhost:8080/especialistas/${especialista.id}/edit">
+    <h2>
+    <form action="http://localhost:8080/especialistas/${especialista.id}/edit">
     <input type="submit" value="editar" />
     </form>
     <form action="http://localhost:8080/especialistas/${especialista.id}/delete">
         <input type="submit" value="borrar" />
-    </form></h2>
+    </form>
+    </h2>
 
     <br/>
     <br/>
