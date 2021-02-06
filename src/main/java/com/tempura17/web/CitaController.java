@@ -136,7 +136,7 @@ public class CitaController {
 			return "citas/Citas_edit";
 
 		}else{
-			BeanUtils.copyProperties(citaModified, cita, "id", "paciente","especialista");
+			BeanUtils.copyProperties(citaModified, cita, "id", "paciente");
 			citaService.save(cita);
 			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
 			return "redirect:/especialistas/" + cita.getEspecialista().getId() + "/perfil";
