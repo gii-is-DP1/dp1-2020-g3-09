@@ -99,17 +99,6 @@ public class Aseguradora extends AuditableEntity {
    @Override
    public String toString() {
        return nombre;
-   }
-    
-   public void addPoliza(Poliza poliza){
-    if(this.polizas == null){
-        this.polizas = new HashSet<>();
-        this.polizas.add(poliza);
-        setPolizas(polizas);
-    }else{
-        this.polizas.add(poliza);
-    }
-}
-   
+   }   
     
 }

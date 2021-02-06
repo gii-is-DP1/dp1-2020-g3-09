@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "alarmas")
 public class Alarma extends BaseEntity{
 	
+	@NotNull
 	private Integer dias;
 	
 	@OneToOne

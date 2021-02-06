@@ -71,7 +71,7 @@ public class AseguradoraController {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
-			return "aseguradoras/Aseguradora_form";
+			return "aseguradoras/Aseguradoras_form";
 
 		}else {
 			aseguradoraService.save(aseguradora);
