@@ -1,11 +1,13 @@
 package com.tempura17.web;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.Date;
+import java.util.HashSet;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
@@ -80,9 +82,11 @@ public class EspecialistaController {
 	public String newEspecialista(ModelMap model){
 		List<Aseguradora> aseguradoras = this.aseguradoraService.findAll().stream().collect(Collectors.toList());
 		Especialidad[] especialidad = Especialidad.values();
+		Especialista especialista = new Especialista();
+		especialista.setAseguradoras(new HashSet<>());
 		model.addAttribute("aseguradoras", aseguradoras);
 		model.addAttribute("especialidad", especialidad);
-		model.addAttribute("especialista", new Especialista());
+		model.addAttribute("especialista", especialista);
 		return "especialistas/Especialista_form";
 	}
 
@@ -91,11 +95,12 @@ public class EspecialistaController {
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
-			return all(model);
+			return "especialistas/Especialista_form";
 
 		}else {
+			especialista.setAseguradoras(new HashSet<>());
 			especialistaService.save(especialista);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "Bien hecho");
 			return all(model);
 
 		}
@@ -125,6 +130,8 @@ public class EspecialistaController {
 			model.addAttribute("especialista", especialista.get());
 			Especialidad[] especialidad = Especialidad.values();
 			model.addAttribute("especialidad", especialidad);
+			List<Aseguradora> aseguradoras = aseguradoraService.findAll().stream().collect(Collectors.toList());
+			model.addAttribute("aseguradoras", aseguradoras);
 			return "especialistas/Especialistas_edit";
 
 		}else{
@@ -199,8 +206,32 @@ public class EspecialistaController {
 	}
 	@GetMapping("cita/delete/{citaId}/{especialistaId}")
 		public String deleteCita(@PathVariable("especialistaId") int especialistaId, @PathVariable("citaId") int citaId, ModelMap model){
-	
-			especialistaService.deleteCita(citaId);
+			Cita cita = this.citaService.findById(citaId).get();
+			// Inspeccionar esta modificación
+			//especialistaService.deleteCita(citaId);
+			Especialista especialista = cita.getEspecialista();
+			Paciente paciente = cita.getPaciente();
+			cita.setEspecialista(null);
+			cita.setPaciente(null);
+			paciente.getCitas().remove(cita);
+			especialista.getCitas().remove(cita);
+			this.pacienteService.save(paciente);
+			this.citaService.save(cita);
+			this.especialistaService.save(especialista);
 			return "redirect:/especialistas/{especialistaId}/perfil";
 		}
-}
+
+		@GetMapping("aseguradora/delete/{aseguradoraId}/{especialistaId}")
+		public String deleteAseguradora(@PathVariable("especialistaId") int especialistaId, @PathVariable("aseguradoraId") int aseguradoraId, ModelMap model){
+			Aseguradora aseguradora = this.aseguradoraService.findById(aseguradoraId).get();
+			Especialista especialista = this.especialistaService.findById(especialistaId).get();
+			// Inspeccionar esta modificación
+			//especialistaService.deleteCita(citaId);
+			especialista.removeAseguradora(aseguradora);
+			aseguradora.removeEspecialista(especialista);
+
+			this.especialistaService.save(especialista);
+			this.aseguradoraService.save(aseguradora);
+			return "redirect:/especialistas/{especialistaId}/perfil";
+		}
+	}

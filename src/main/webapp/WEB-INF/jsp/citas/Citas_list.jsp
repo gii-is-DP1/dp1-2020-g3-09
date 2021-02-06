@@ -8,8 +8,10 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <petclinic:layout pageName="citas">
-	
+<sec:authorize access="hasAuthority('especialista')">
 <h2>Citas para el especialista <c:out value="${especialista.firstName} ${especialista.lastName}"></c:out></h2>
+</sec:authorize>
+
 
 	<table id="diagnosesTable" class="table table-striped">
 		<thead>
@@ -78,9 +80,11 @@
 			
 		</tbody>
 </table>
+<sec:authorize access="hasAuthority('especialista')">
 		<spring:url value="/citas/new/{especialistaId}/{pacienteId}" var="addCita">
 		<spring:param name="pacienteId" value="${paciente.id}"></spring:param>
 		<spring:param name="especialistaId" value="${especialista.id}"></spring:param>
 		</spring:url>
 		<a href="${fn:escapeXml(addCita)}">Anadir cita</a>
+</sec:authorize>
 </petclinic:layout>

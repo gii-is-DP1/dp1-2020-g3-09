@@ -53,14 +53,7 @@
 										</div>																					
 									</div>						
 							</li>
-							<li class="divider"></li>
-							<li>								
-									<div class="row">
-										<div class="text-center">																					
-												<a href="<c:url value="/calculadoras/new" />">Calcular IMC</a>
-										</div>																					
-									</div>						
-							</li>														
+							<li class="divider"></li>													
 						</ul>						
 				</petclinic:menuItem>
 				</sec:authorize>
@@ -69,7 +62,7 @@
 				<petclinic:menuItem active="${name eq 'alarmas'}" url="/alarmas"
 					title="alarmas">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-					<span>Mis alarmas</span>
+					<span>Alarmas</span>
 				</petclinic:menuItem>
 				</sec:authorize>
 
@@ -98,10 +91,10 @@
 				</sec:authorize>
 
 				<sec:authorize access="hasAuthority('especialista')">
-				<petclinic:menuItem active="${name eq 'especialistas'}" url="/especialistas/"
-					title="especialistas">
+				<petclinic:menuItem active="${name eq 'especialistas'}" url="/tratamientos/"
+					title="tratamientos">
 					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-					<span>Especialistas</span>
+					<span>Tratamientos</span>
 				</petclinic:menuItem>
 				</sec:authorize>
 

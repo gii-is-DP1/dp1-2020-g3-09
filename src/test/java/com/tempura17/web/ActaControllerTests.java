@@ -10,6 +10,7 @@ import com.tempura17.configuration.SecurityConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -25,8 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
-
 import com.tempura17.model.Acta;
+import com.tempura17.model.Cita;
+import com.tempura17.model.Especialista;
 import com.tempura17.service.ActaService;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
@@ -37,13 +39,16 @@ import com.tempura17.service.EspecialistaService;
 
 class ActaControllerTests {
 
-    private static final int TEST_ACTA_ID = 3;
+    private static final int TEST_ACTA_ID = 1;
 
     private static final int TEST_CITA_ID = 1;
 
     private static final int TEST_ESPECIALISTA_ID = 1;
 
-    @MockBean
+    @Autowired
+	private ActaController actaController;
+
+	@MockBean
     private ActaService actaService;
 
     @MockBean
@@ -57,23 +62,29 @@ class ActaControllerTests {
 
 	private Acta acta;
 	
-
+	/*
     @BeforeEach
 	void setup() {
-        acta = new Acta();
-        acta.setId(TEST_ACTA_ID);
-        acta.setDescripcion("esufsiufensoif");
-        acta.setExploracion("esufsiufensoif");
-		acta.setDiagnostico("esufsiufensoif");
-        given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(acta));
+        //given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(mock(Acta.class)));
+
     }
-    
+    */
+
+	@WithMockUser(value = "spring")
+    @Test
+	void all() throws Exception {
+        mockMvc.perform(get("/actas"))
+        .andExpect(status().isOk())
+		.andExpect(model().attributeExists("actas"))
+		.andExpect(view().name("actas/listActas"));
+    }
 
     @WithMockUser(value = "spring")
     @Test
 	void testNewActa() throws Exception {
         mockMvc.perform(get("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID))
-        .andExpect(status().isOk()).andExpect(model().attributeExists("acta"))
+        .andExpect(status().isOk())
+		.andExpect(model().attributeExists("acta"))
 		.andExpect(view().name("actas/actasForm"));
     }
     
@@ -81,28 +92,35 @@ class ActaControllerTests {
     @WithMockUser(value = "spring")
 	@Test
 	void testsaveNewActaSuccess() throws Exception {
-        mockMvc.perform(post("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID)
+        given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
+		given(this.especialistaService.findById(TEST_ESPECIALISTA_ID)).willReturn(Optional.of(mock(Especialista.class)));
+	
+		mockMvc.perform(post("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID)
 		.with(csrf())
         .param("descripcion", "esufsiufensoif")
         .param("exploracion", "esufsiufensoif")
 		.param("diagnostico", "esufsiufensoif"))
-		.andExpect(status().isOk());
-        //.andExpect(view().name("actas/listActas"));
+		.andExpect(status().isOk())
+        .andExpect(view().name("actas/listActas"));
     }
     
 
     @WithMockUser(value = "spring")
 	@Test
-	@Disabled
 	void testsaveNewActaHasErrors() throws Exception {
+		given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
+		given(this.especialistaService.findById(TEST_ESPECIALISTA_ID)).willReturn(Optional.of(mock(Especialista.class)));
+		acta = mock(Acta.class);
+
 		mockMvc.perform(post("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID)
-		.with(csrf()))
-		.andExpect(status().isOk())
+		.with(csrf())
+		.param("descripcion", "")
+        .param("exploracion", "")
+		.param("diagnostico", ""))
 		.andExpect(model().attributeHasErrors("acta"))
 		.andExpect(model().attributeHasFieldErrors("acta", "descripcion"))
 		.andExpect(model().attributeHasFieldErrors("acta", "exploracion"))
 		.andExpect(model().attributeHasFieldErrors("acta", "diagnostico"))
-		
 		.andExpect(view().name("actas/actasForm"));
     }
     
@@ -110,11 +128,10 @@ class ActaControllerTests {
     @WithMockUser(value = "spring")
 	@Test
 	void testInitEditActa() throws Exception {
+		given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(mock(Acta.class)));
+
 		mockMvc.perform(get("/actas/{actaId}/edit", TEST_ACTA_ID)).andExpect(status().isOk())
 				.andExpect(model().attributeExists("acta"))
-				.andExpect(model().attribute("acta", hasProperty("descripcion", is("esufsiufensoif"))))
-				.andExpect(model().attribute("acta", hasProperty("exploracion", is("esufsiufensoif"))))
-				.andExpect(model().attribute("acta", hasProperty("diagnostico", is("esufsiufensoif"))))
 				.andExpect(view().name("actas/actasForm"));
     }
     
@@ -122,6 +139,8 @@ class ActaControllerTests {
     @WithMockUser(value = "spring")
 	@Test
 	void testProcessUpdateActaFormSuccess() throws Exception {
+		given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(mock(Acta.class)));
+		given(mock(Acta.class).getEspecialista()).willReturn(mock(Especialista.class));
 		mockMvc.perform(post("/actas/{actaId}/edit", TEST_ACTA_ID)
 							.with(csrf())
 							.param("descripcion", "pruebadescripcion1")
@@ -134,15 +153,17 @@ class ActaControllerTests {
 
     @WithMockUser(value = "spring")
 	@Test
-	@Disabled
 	void testProcessUpdateActaFormHasErrors() throws Exception {
+		given(this.actaService.findById(TEST_ACTA_ID)).willReturn(Optional.of(mock(Acta.class)));
 		mockMvc.perform(post("/actas/{actaId}/edit", TEST_ACTA_ID)
-							.with(csrf())
-							.param("diagnostico", "pruebadescripcion1"))
+				.with(csrf())
+				.param("descripcion", "pruebadescripcion1")
+				.param("exploracion", "")
+				.param("diagnostico", ""))
 				.andExpect(model().attributeHasErrors("acta"))
 				.andExpect(status().isOk())
 				.andExpect(model().attributeHasFieldErrors("acta", "exploracion"))
-				.andExpect(model().attributeHasFieldErrors("acta", "descripcion"))
+				.andExpect(model().attributeHasFieldErrors("acta", "diagnostico"))
 				.andExpect(view().name("actas/actasForm"));
 	}
     
