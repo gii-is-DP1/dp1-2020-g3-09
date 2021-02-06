@@ -116,6 +116,24 @@ public class Paciente extends Person {
         }
     }
 
+    public void addCalculadora(CalculadoraSalud calculadora){
+        if(this.calculadora == null){
+            this.calculadora = new HashSet<>();
+            this.calculadora.add(calculadora);
+            setCalculadoras(this.calculadora);
+        }else{
+            this.calculadora.add(calculadora);
+        }
+    }
+
+    public Set<CalculadoraSalud> getCalculadoras() {
+        return calculadora;
+    }
+
+    public void setCalculadoras(Set<CalculadoraSalud> calculadora) {
+        this.calculadora = calculadora;
+    }
+
     public Aseguradora getAseguradora() {
         return aseguradora;
     }
@@ -132,4 +150,14 @@ public class Paciente extends Person {
         this.poliza = poliza;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+    
+    
 }   

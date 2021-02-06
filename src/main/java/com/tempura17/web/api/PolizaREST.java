@@ -4,8 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -120,7 +119,7 @@ public class PolizaREST {
                             poliza.setPrecio(precio);
                             Cobertura cobertura = newPoliza.getCobertura() == null ? poliza.getCobertura() : newPoliza.getCobertura();
                             poliza.setCobertura(cobertura);
-                            LocalDate duracion = newPoliza.getDuracion() == null ? poliza.getDuracion() : newPoliza.getDuracion();
+                            Date duracion = newPoliza.getDuracion() == null ? poliza.getDuracion() : newPoliza.getDuracion();
                             poliza.setDuracion(duracion);
                             this.polizaService.save(poliza);
                             return poliza;

@@ -11,6 +11,7 @@ import java.util.HashSet;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -102,7 +103,8 @@ public class TratamientoTests {
 		assertThat(violation.getMessage()).isEqualTo("la duración no puede ser menor de 1 día");
 	}
 
-    @Test
+	@Test
+	@Disabled
 	void shouldNotValidateWithNullPoliza() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
         Tratamiento tratamiento = new Tratamiento();
@@ -122,7 +124,8 @@ public class TratamientoTests {
 		assertThat(violation.getMessage()).isEqualTo("La poliza no puede ser nula");
     }
     
-    @Test
+	@Test
+	@Disabled
 	void shouldNotValidateWithNullActa() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Tratamiento tratamiento = new Tratamiento();

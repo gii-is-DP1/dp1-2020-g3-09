@@ -1,0 +1,8 @@
+2021-01-29 17:55:08,201 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 20283 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-29 17:55:08,219 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:55:08,237 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-29 17:55:26,967 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 21.268 seconds (JVM running for 29.437)
+2021-01-29 17:59:23,213 INFO org.springframework.boot.StartupInfoLogger [main] Starting JustificanteControllerTests on manuel-VirtualBox with PID 20873 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-29 17:59:23,226 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-29 17:59:23,260 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-29 17:59:39,462 INFO org.springframework.boot.StartupInfoLogger [main] Started JustificanteControllerTests in 19.069 seconds (JVM running for 24.989)

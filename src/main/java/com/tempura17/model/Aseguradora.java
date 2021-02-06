@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.envers.Audited;
 
@@ -19,6 +21,7 @@ import org.hibernate.envers.Audited;
 @Table(name = "aseguradoras")
 public class Aseguradora extends AuditableEntity {
 
+    @NotEmpty(message="El nombre no puede estar vacio")
     private String nombre;
 
    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aseguradora", fetch = FetchType.EAGER)
@@ -56,12 +59,46 @@ public class Aseguradora extends AuditableEntity {
        this.polizas = polizas;
    }
 
+   public void addPoliza(Poliza poliza){
+    if(this.polizas == null){
+        this.polizas = new HashSet<>();
+        this.polizas.add(poliza);
+        setPolizas(polizas);
+    }else{
+        this.polizas.add(poliza);
+    }
+    }
+
+    public void removePoliza(Poliza poliza){
+        this.polizas.remove(poliza);
+    }
+
+    
+    public void addEspecialista(Especialista especialista){
+        if(this.especialistas == null){
+            this.especialistas = new HashSet<>();
+            this.especialistas.add(especialista);
+            setEspecialistas(especialistas);
+        }else{
+            this.especialistas.add(especialista);
+        }
+        }
+
+     public void removeEspecialista(Especialista especialista){
+        this.especialistas.remove(especialista);
+    }
+
    public Set<Especialista> getEspecialistas() {
        return especialistas;
    }
 
    public void setEspecialistas(Set<Especialista> especialistas) {
        this.especialistas = especialistas;
+   }
+
+   @Override
+   public String toString() {
+       return nombre;
    }
     
    public void addPoliza(Poliza poliza){

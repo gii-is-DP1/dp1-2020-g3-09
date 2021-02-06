@@ -1,0 +1,210 @@
+2021-01-31 10:25:25,648 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 3731 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:25:25,658 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:25:25,687 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:25:38,611 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 14.899 seconds (JVM running for 20.367)
+2021-01-31 10:26:18,087 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 3896 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:26:18,094 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:26:18,112 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:26:28,937 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 12.459 seconds (JVM running for 16.798)
+2021-01-31 10:31:35,005 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 4493 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:31:35,040 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:31:35,076 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:31:59,739 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 29.115 seconds (JVM running for 40.355)
+2021-01-31 10:33:31,042 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 4934 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:33:31,061 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:33:31,092 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:33:43,888 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 14.808 seconds (JVM running for 19.356)
+2021-01-31 10:37:00,580 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 5273 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:37:00,596 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:37:00,619 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:37:12,180 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.257 seconds (JVM running for 17.713)
+2021-01-31 10:37:57,813 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 5494 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:37:57,825 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:37:57,840 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:38:09,696 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.651 seconds (JVM running for 17.796)
+2021-01-31 10:38:57,762 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 5670 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:38:57,770 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:38:57,779 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:39:09,197 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.197 seconds (JVM running for 17.688)
+2021-01-31 10:40:04,338 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 5758 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:40:04,342 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:40:04,361 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:40:15,895 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.238 seconds (JVM running for 17.19)
+2021-01-31 10:42:05,986 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 6082 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:42:05,993 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:42:06,003 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:42:17,513 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.318 seconds (JVM running for 17.283)
+2021-01-31 10:43:03,331 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 6221 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:43:03,343 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:43:03,361 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:43:14,721 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.181 seconds (JVM running for 17.212)
+2021-01-31 10:44:31,010 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 6453 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:44:31,020 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:44:31,033 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:44:42,498 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.271 seconds (JVM running for 17.311)
+2021-01-31 10:46:03,524 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 6679 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:46:03,527 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:46:03,544 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:46:15,246 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.414 seconds (JVM running for 17.459)
+2021-01-31 10:50:07,958 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 7011 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:50:07,981 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:50:07,993 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:50:21,611 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 15.5 seconds (JVM running for 20.944)
+2021-01-31 10:51:25,443 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 7140 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:51:25,457 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:51:25,465 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:51:36,754 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.011 seconds (JVM running for 17.772)
+2021-01-31 10:54:39,772 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 7403 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:54:39,778 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:54:39,789 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:54:51,593 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.535 seconds (JVM running for 17.512)
+2021-01-31 10:56:15,406 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 7569 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 10:56:15,414 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 10:56:15,433 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 10:56:27,280 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.584 seconds (JVM running for 17.472)
+2021-01-31 11:01:34,651 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 7963 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:01:34,656 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:01:34,673 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:01:46,763 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.842 seconds (JVM running for 17.856)
+2021-01-31 11:06:05,731 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 8435 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:06:05,740 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:06:05,760 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:06:18,998 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 15.066 seconds (JVM running for 19.234)
+2021-01-31 11:23:16,951 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 9291 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:23:16,966 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:23:17,004 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:23:31,111 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 16.093 seconds (JVM running for 22.358)
+2021-01-31 11:24:51,355 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 9597 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:24:51,361 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:24:51,371 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:25:04,502 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 14.999 seconds (JVM running for 19.476)
+2021-01-31 11:25:22,799 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 9676 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:25:22,806 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:25:22,840 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:25:34,084 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.101 seconds (JVM running for 17.183)
+2021-01-31 11:26:29,314 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 9818 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:26:29,322 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:26:29,336 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:26:43,917 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 16.263 seconds (JVM running for 20.428)
+2021-01-31 11:31:59,867 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 10676 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:31:59,905 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:31:59,918 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:32:12,182 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 14.035 seconds (JVM running for 18.726)
+2021-01-31 11:35:09,215 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 11396 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:35:09,221 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:35:09,256 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:35:20,800 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.423 seconds (JVM running for 17.75)
+2021-01-31 11:36:23,281 INFO org.springframework.boot.StartupInfoLogger [main] Starting ActaControllerTests on manuel-VirtualBox with PID 11638 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:36:23,290 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:36:23,316 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:36:35,207 INFO org.springframework.boot.StartupInfoLogger [main] Started ActaControllerTests in 13.615 seconds (JVM running for 17.709)
+2021-01-31 11:38:43,147 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 11979 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:38:43,158 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:38:43,167 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:38:54,620 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 13.157 seconds (JVM running for 17.155)
+2021-01-31 11:40:29,941 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 12281 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:40:29,949 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:40:29,965 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:40:41,629 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 13.464 seconds (JVM running for 17.742)
+2021-01-31 11:41:55,621 INFO org.springframework.boot.StartupInfoLogger [main] Starting CalculadoraControllerTests on manuel-VirtualBox with PID 12574 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:41:55,632 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:41:55,654 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:42:07,171 INFO org.springframework.boot.StartupInfoLogger [main] Started CalculadoraControllerTests in 13.345 seconds (JVM running for 17.719)
+2021-01-31 11:42:39,258 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 12702 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:42:39,268 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:42:39,282 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:42:51,075 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.587 seconds (JVM running for 17.654)
+2021-01-31 11:44:19,997 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 12890 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:44:20,002 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:44:20,023 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:44:31,551 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.266 seconds (JVM running for 18.655)
+2021-01-31 11:45:13,471 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 13057 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:45:13,476 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:45:13,501 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:45:25,233 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.508 seconds (JVM running for 17.585)
+2021-01-31 11:46:17,681 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 13271 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:46:17,687 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:46:17,698 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:46:29,454 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.509 seconds (JVM running for 17.528)
+2021-01-31 11:54:49,705 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 14446 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:54:49,721 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:54:49,745 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:55:01,584 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.537 seconds (JVM running for 17.371)
+2021-01-31 11:58:27,210 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 14816 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 11:58:27,216 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 11:58:27,232 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 11:58:38,707 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.227 seconds (JVM running for 17.155)
+2021-01-31 12:00:22,052 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 15099 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:00:22,060 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:00:22,096 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:00:33,180 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 12.896 seconds (JVM running for 18.127)
+2021-01-31 12:03:43,502 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 15601 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:03:43,507 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:03:43,519 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:03:55,651 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.89 seconds (JVM running for 18.118)
+2021-01-31 12:03:56,035 WARN org.springframework.web.servlet.DispatcherServlet [main] No mapping for DELETE alarmas/1/delete
+2021-01-31 12:05:47,119 INFO org.springframework.boot.StartupInfoLogger [main] Starting AlarmaControllerTests on manuel-VirtualBox with PID 15761 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:05:47,125 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:05:47,139 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:05:58,503 INFO org.springframework.boot.StartupInfoLogger [main] Started AlarmaControllerTests in 13.042 seconds (JVM running for 16.978)
+2021-01-31 12:05:58,830 WARN org.springframework.web.servlet.DispatcherServlet [main] No mapping for DELETE alarmas/1/delete
+2021-01-31 12:15:32,319 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 17489 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:15:32,325 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:15:32,340 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:15:45,363 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 14.712 seconds (JVM running for 18.49)
+2021-01-31 12:20:35,930 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 18369 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:20:35,935 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:20:35,955 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:20:47,393 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.242 seconds (JVM running for 18.522)
+2021-01-31 12:23:14,373 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 18986 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:23:14,380 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:23:14,391 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:23:25,637 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 12.942 seconds (JVM running for 17.005)
+2021-01-31 12:24:51,120 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 19318 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:24:51,147 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:24:51,160 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:25:03,534 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 14.078 seconds (JVM running for 18.382)
+2021-01-31 12:27:14,510 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 19557 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:27:14,518 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:27:14,530 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:27:26,657 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.763 seconds (JVM running for 18.06)
+2021-01-31 12:36:32,343 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 20937 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:36:32,375 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:36:32,386 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:36:46,056 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 15.825 seconds (JVM running for 20.732)
+2021-01-31 12:38:12,516 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 21173 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:38:12,525 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:38:12,538 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:38:25,264 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 14.594 seconds (JVM running for 19.851)
+2021-01-31 12:43:10,066 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 21814 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:43:10,078 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:43:10,096 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:43:21,795 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.297 seconds (JVM running for 17.63)
+2021-01-31 12:48:38,321 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 22076 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:48:38,336 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:48:38,360 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:48:50,028 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.406 seconds (JVM running for 17.42)
+2021-01-31 12:50:44,361 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 22325 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:50:44,375 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:50:44,390 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:50:55,834 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.113 seconds (JVM running for 17.113)
+2021-01-31 12:52:04,157 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 22469 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:52:04,162 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:52:04,186 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:52:15,678 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.25 seconds (JVM running for 17.269)
+2021-01-31 12:57:03,091 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 22828 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:57:03,095 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:57:03,107 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:57:14,811 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.536 seconds (JVM running for 17.513)
+2021-01-31 12:58:50,834 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 22987 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:58:50,842 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:58:50,866 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:59:02,281 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.21 seconds (JVM running for 17.499)
+2021-01-31 12:59:27,477 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 23121 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 12:59:27,502 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 12:59:27,510 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 12:59:39,085 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 13.323 seconds (JVM running for 17.674)
+2021-01-31 13:20:22,624 INFO org.springframework.boot.StartupInfoLogger [main] Starting AseguradoraControllerTests on manuel-VirtualBox with PID 23814 (started by manuel in /home/manuel/Escritorio/Sincronizacion/dp1-2020-g3-09)
+2021-01-31 13:20:22,636 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2021-01-31 13:20:22,656 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-31 13:20:35,742 INFO org.springframework.boot.StartupInfoLogger [main] Started AseguradoraControllerTests in 15.041 seconds (JVM running for 20.914)

@@ -39,6 +39,11 @@ public class AseguradoraService {
       return aseguradoraRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
+    public Aseguradora findByNombrAseguradora(String nombre){
+      return aseguradoraRepository.findByNombreAseguradora(nombre);
+    }
+
     @Transactional
     public void save(@Valid Aseguradora aseguradora){
       aseguradoraRepository.save(aseguradora);

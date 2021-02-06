@@ -1,12 +1,15 @@
--- One admin user, named admin1 with passwor 4dm1n and authority admin
+
 INSERT INTO users(username,password,enabled) VALUES ('admin1','1234',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (1,'admin1','admin');
--- One owner user, named owner1 with passwor 0wn3r
+
 INSERT INTO users(username,password,enabled) VALUES ('especialista1','1234',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (2,'especialista1','especialista');
--- One vet user, named vet1 with passwor v3t
+
 INSERT INTO users(username,password,enabled) VALUES ('paciente1','1234',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (3,'paciente1','paciente');
+
+INSERT INTO users(username,password,enabled) VALUES ('aseguradora1','1234',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (4,'aseguradora1','aseguradora');
 
 INSERT INTO aseguradoras(id,nombre) VALUES (
     1,
@@ -34,10 +37,11 @@ INSERT INTO polizas(id, aseguradora_id, name, precio, cobertura, duracion) VALUE
     'PARCIAL',
     '2022-02-02');
 
-INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
+INSERT INTO pacientes(id,aseguradora_id, poliza_id, username, first_name,last_name,dni,email,direccion,sexo,edad) VALUES (
     1,
     1, 
     1,
+    'paciente1',
     'Rodrigo', 
     'García', 
     '00000000A', 
@@ -61,7 +65,7 @@ INSERT INTO pacientes(id,aseguradora_id, poliza_id, first_name,last_name,dni,ema
 INSERT INTO pacientes(id, aseguradora_id, poliza_id, first_name, last_name, dni, email, direccion, sexo, edad) VALUES (
     3,
     1, 
-    null,
+    1,
     'Rodrige', 
     'Garcíe', 
     '00000000C', 

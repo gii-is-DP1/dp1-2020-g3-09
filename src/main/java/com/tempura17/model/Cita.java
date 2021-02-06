@@ -10,12 +10,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tempura17.service.businessrules.ValidatePossibleEspecialidad;
 import com.tempura17.service.businessrules.ValidatePossiblePoliza;
 
 import org.hibernate.envers.Audited;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.ManyToOne;
 
@@ -40,7 +42,7 @@ public class Cita extends AuditableEntity {
     private Especialidad especialidad;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Enumerated(EnumType.STRING)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
 
     @ManyToOne

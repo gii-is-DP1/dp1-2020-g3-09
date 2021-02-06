@@ -38,5 +38,5 @@ public class ActaService {
     @Transactional
     public void save(@Valid Acta acta){
         actaRepository.save(acta);
-      }
+    }
 }

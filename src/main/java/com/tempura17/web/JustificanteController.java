@@ -47,44 +47,23 @@ public class JustificanteController {
 
 		return justificanteService.findAll();
     }
-    
-    @GetMapping("/new")
-	public String newJustificante(ModelMap model){
-		model.addAttribute("justificante", new Justificante());
-		return "justificantes/crearJustificante";
-	}
-	
-	@PostMapping("/new")
-	public String saveNewJustificante(@Valid Justificante justificante, BindingResult binding, ModelMap model){
+     
 
-		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA");
-			return "justificantes/crearJustificante";
-
-		}else {
-			justificanteService.save(justificante);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
-			return listJustificantes(model);
-
-		}
-	} 
-    
-
-    @GetMapping("/new/{id}")
-	public String newJustificante(@PathVariable("id") int id, ModelMap model){
+    @GetMapping("/new/{citaId}")
+	public String newJustificante(@PathVariable("citaId") int citaId, ModelMap model){
 		model.addAttribute("justificante", new Justificante());
 		return "justificantes/crearJustificante";
     }
     
-    @PostMapping("/new/{id}")
-	public String saveNewJustificante(@PathVariable("id") int id, @Valid Justificante justificante, BindingResult binding, ModelMap model){
+    @PostMapping("/new/{citaId}")
+	public String saveNewJustificante(@PathVariable("citaId") int citaId, @Valid Justificante justificante, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL GUARDAR EL JUSTIFICANTE");
 			return "justificantes/crearJustificante";
 
 		}else {
-			this.justificanteService.createJustificanteForCitaId(justificante, id);
+			this.justificanteService.createJustificanteForCitaId(justificante, citaId);
 			model.addAttribute("message", "JUSTIFICANTE GUARDADO CORRECTAMENTE");
 			return listJustificantes(model);
 

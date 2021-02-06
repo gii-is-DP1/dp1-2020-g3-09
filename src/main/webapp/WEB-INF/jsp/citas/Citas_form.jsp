@@ -17,14 +17,14 @@
             <select name = "Tipo" id="tipo">
                 <option value = "ASEGURADO"> Asegurado</option>
                 <option value = "PRIVADO"> Privado </option>
-            </select>
+            </select><br>
 
             <label for="formato">Formato de la cita:</label>
             <select name = "Formato" id="formato">
                 <option value = "PRESENCIAL"> Presencial</option>
                 <option value = "ONLINE"> Online </option>
-            </select>
-
+            </select><br>
+            
             <label for="especialistas">Especialista:</label>
             <select name = "Especialista" id="especialistas">
             <c:forEach items="${especialistas}" var="especialista" varStatus="loop">
@@ -32,7 +32,7 @@
                 ${especialista}
             </option>
             </c:forEach>
-            </select>
+            </select><br>
 
             <label for="especialidades">Especialidad:</label>
             <select name = "Especialidad" id="especialidades">
@@ -41,7 +41,10 @@
                     ${especialidad}
                 </option>
                 </c:forEach>
-                </select>
+                </select><br>
+            
+            <label for="fecha">Fecha de la cita:</label>
+            <input type="date" name="fecha" id="fecha"><br>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

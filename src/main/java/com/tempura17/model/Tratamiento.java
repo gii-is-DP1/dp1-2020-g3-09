@@ -16,53 +16,55 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "tratamientos")
 public class Tratamiento extends BaseEntity{
 
-    @Size(min = 10, max = 300, message = "La descripción tiene que tener un tamaño mínimo de 10 y máximo de 300 carácteres")
-    private String descripcion;
+@Size(min = 10, max = 300, message = "La descripción tiene que tener un tamaño mínimo de 10 y máximo de 300 carácteres")
+private String descripcion;
 
-    @Min(value = 1, message = "la duración no puede ser menor de 1 día")
-    private Integer duracion;
+@Min(value = 1, message = "la duración no puede ser menor de 1 día")
+private Integer duracion;
 
-    @ManyToOne
-    @JoinColumn( name = "poliza_id")
-    @JsonIgnore
-    @NotNull(message = "La poliza no puede ser nula")
-    private Poliza poliza;
+@ManyToOne
+@JoinColumn( name = "poliza_id")
+@JsonIgnore
+//@NotNull(message = "La poliza no puede ser nula")
+private Poliza poliza;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "acta_id", referencedColumnName = "id")
-    @NotNull(message = "El acta no puede ser nulo")
-    private Acta acta;
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "acta_id", referencedColumnName = "id")
+//@NotNull(message = "El acta no puede ser nulo")
+private Acta acta;
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+public String getDescripcion() {
+    return descripcion;
+}
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
+}
 
-    public Integer getDuracion() {
-        return duracion;
-    }
+public Integer getDuracion() {
+    return duracion;
+}
 
-    public void setDuracion(Integer duracion) {
-        this.duracion = duracion;
-    }
+public void setDuracion(Integer duracion) {
+    this.duracion = duracion;
+}
 
-    public Acta getActa() {
-        return acta;
-    }
+public Acta getActa() {
+    return acta;
+}
 
-    public void setActa(Acta acta) {
-        this.acta = acta;
-    }
+public void setActa(Acta acta) {
+    this.acta = acta;
+}
 
-    public Poliza getPoliza() {
-        return poliza;
-    }
+public Poliza getPoliza() {
+    return poliza;
+}
 
-    public void setPoliza(Poliza poliza) {
-        this.poliza = poliza;
-    }
+public void setPoliza(Poliza poliza) {
+    this.poliza = poliza;
+}
+    
+
 
 }
