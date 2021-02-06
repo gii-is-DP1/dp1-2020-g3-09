@@ -36,7 +36,9 @@ class JustificanteControllerTests{
     private static final int TEST_JUST_ID = 1;
     private static final int TEST_CITA_ID = 1;
 
-
+	@Autowired
+	private JustificanteController justificanteController;
+	
 	@MockBean
     private JustificanteService justificanteService;
     
@@ -46,13 +48,7 @@ class JustificanteControllerTests{
 	@Autowired
     private MockMvc mockMvc;
     
-	@BeforeEach
-	void setup() {
-		Justificante justificante = new Justificante();
-		justificante.setId(TEST_JUST_ID);
-        justificante.setMotivo("TRABAJO");
-		given(this.justificanteService.findById(TEST_JUST_ID)).willReturn(Optional.of(justificante));
-	}
+	
 	
 	@WithMockUser(value = "spring")
     @Test

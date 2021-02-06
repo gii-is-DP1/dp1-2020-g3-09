@@ -103,11 +103,8 @@ class PacienteControllerTests {
     void testEditPacienteGET() throws Exception{
         given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
         mockMvc.perform(get("/pacientes/{pacienteId}/edit", TEST_PACIENTE_ID))
+            .andExpect(status().isOk())
             .andExpect(model().attributeExists("paciente"))
-            .andExpect(model().attribute("paciente", hasProperty("dni", is("00000000A"))))
-            .andExpect(model().attribute("paciente", hasProperty("email", is("cosas@gmail.com"))))
-            .andExpect(model().attribute("paciente", hasProperty("sexo", is(Sexo.MASCULINO))))
-            .andExpect(model().attribute("paciente", hasProperty("direccion", is("micasa"))))
             .andExpect(view().name("pacientes/Pacientes_edit"));
 
     }
@@ -129,12 +126,12 @@ class PacienteControllerTests {
 	void testEditPacientePOSTHasErrors() throws Exception {
         given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
 		mockMvc.perform(post("/pacientes/{pacienteId}/edit", TEST_PACIENTE_ID)
-							.with(csrf())
-							.param("firstName", "Rodri")
-							.param("dni", "00000000Z"))
+				.with(csrf())
+				.param("firstName", "Rodri")
+				.param("dni", ""))
 				.andExpect(model().attributeHasErrors("paciente"))
 				.andExpect(status().isOk())
-				.andExpect(model().attributeHasFieldErrors("paciente", "email"))
+				.andExpect(model().attributeHasFieldErrors("paciente", "dni"))
 				.andExpect(view().name("pacientes/Pacientes_list"));
 	}
     

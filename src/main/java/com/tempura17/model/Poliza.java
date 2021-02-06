@@ -23,6 +23,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -31,6 +32,7 @@ import javax.persistence.TemporalType;
 public class Poliza extends NamedEntity{
 
     @Column(precision = 8, scale =2)
+    @NotEmpty
     private BigDecimal precio;
 
     @Enumerated(EnumType.STRING)
