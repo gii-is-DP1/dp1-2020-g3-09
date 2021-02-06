@@ -68,6 +68,11 @@ public class Aseguradora extends AuditableEntity {
         this.polizas.add(poliza);
     }
     }
+
+    public void removePoliza(Poliza poliza){
+        this.polizas.remove(poliza);
+    }
+
     
     public void addEspecialista(Especialista especialista){
         if(this.especialistas == null){
@@ -78,6 +83,10 @@ public class Aseguradora extends AuditableEntity {
             this.especialistas.add(especialista);
         }
         }
+
+     public void removeEspecialista(Especialista especialista){
+        this.especialistas.remove(especialista);
+    }
 
    public Set<Especialista> getEspecialistas() {
        return especialistas;

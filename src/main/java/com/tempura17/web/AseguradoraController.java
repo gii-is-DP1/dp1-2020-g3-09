@@ -7,6 +7,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.tempura17.model.Especialista;
+import com.tempura17.model.Poliza;
+
 import javax.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import com.tempura17.model.Cita;
 import com.tempura17.model.Especialidad;
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
+import com.tempura17.service.PolizaService;
 import com.tempura17.service.AseguradoraService;
 
 import org.springframework.stereotype.Controller;
@@ -35,13 +38,14 @@ public class AseguradoraController {
 
     private final AseguradoraService aseguradoraService;
 	private final EspecialistaService especialistaService;
-
+	private final PolizaService polizaService;
 	
 	@Autowired
-	public AseguradoraController( AseguradoraService aseguradoraService, EspecialistaService especialistaService){
+	public AseguradoraController( AseguradoraService aseguradoraService, EspecialistaService especialistaService, PolizaService polizaService){
         super();
         this.aseguradoraService = aseguradoraService;
 		this.especialistaService = especialistaService;
+		this.polizaService = polizaService;
 
 	}
 
@@ -129,6 +133,17 @@ public class AseguradoraController {
 	public String deleteEspecialista(@PathVariable("aseguradoraId") int aseguradoraId,@PathVariable("especialistaId") int especialistaId, ModelMap model){
 
         aseguradoraService.deleteEspecialista(aseguradoraId, especialistaId);
+        return "redirect:/aseguradoras/{aseguradoraId}/perfil";
+	}
+	
+	@GetMapping("/deletePoliza/{aseguradoraId}/{polizaId}")
+	public String deletePoliza(@PathVariable("aseguradoraId") int aseguradoraId, @PathVariable("polizaId") int polizaId, ModelMap model){
+		Aseguradora aseguradora = this.aseguradoraService.findById(aseguradoraId).get();
+		Poliza poliza = this.polizaService.findById(polizaId).get();
+		aseguradora.removePoliza(poliza);
+		poliza.setAseguradora(null);
+		this.aseguradoraService.save(aseguradora);
+		this.polizaService.save(poliza);
         return "redirect:/aseguradoras/{aseguradoraId}/perfil";
     }
     

@@ -140,6 +140,10 @@ public class Especialista extends Person {
         } 
     }
 
+    public void removeAseguradora(Aseguradora aseguradora){
+        this.aseguradoras.remove(aseguradora);
+    }
+
     public void removeCita(Cita cita){
         this.citas.remove(cita);
     }
