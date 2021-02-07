@@ -36,6 +36,7 @@ class CalculadoraTests{
 		assertThat(constraintViolations.size()).isEqualTo(1);
 		ConstraintViolation<CalculadoraSalud> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("peso");
+		assertThat(violation.getMessage()).isEqualTo("El peso no puede ser nulo");
 
 	}
 
@@ -51,6 +52,7 @@ class CalculadoraTests{
 		assertThat(constraintViolations.size()).isEqualTo(1);
 		ConstraintViolation<CalculadoraSalud> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("altura");
+		assertThat(violation.getMessage()).isEqualTo("La altura no puede ser nula");
 
 	}
 }

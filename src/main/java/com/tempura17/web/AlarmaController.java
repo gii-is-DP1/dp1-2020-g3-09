@@ -69,6 +69,7 @@ public class AlarmaController {
 			Long diferencia = fechainicio2 - fechaactual2;
 			Double dias = Math.floor(diferencia/86400000);
 			int diasint = (int)Math.round(dias);
+			//int diasint = this.alarmaService.getDiasDiff(citaId);
 			alarma.setDias(diasint);
 			alarma.setCita(citas);
 			alarmaService.save(alarma);

@@ -93,7 +93,6 @@ class CalculadoraControllerTests{
     
     @WithMockUser(value = "spring")
 	@Test
-	//Da error de binding pero devuelve la vista bien(algo raro pasa)
 	void testsaveNewCalculadoraHasErrors() throws Exception {
 		given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
 		
