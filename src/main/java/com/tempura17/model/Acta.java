@@ -28,12 +28,15 @@ public class Acta extends AuditableEntity{
     private Especialista especialista;
 
     @Size(min = 5, max = 300, message = "La descripción tiene que tener un tamaño mínimo de 5 y máximo de 300 carácteres")
+    @NotNull
     private String descripcion;
 
     @Size(min = 5, max = 300, message = "La exploración tiene que tener un tamaño mínimo de 5 y máximo de 300 carácteres")
+    @NotNull
     private String exploracion;
 
     @Size(min = 5, max = 300, message = "El diagnóstico tiene que tener un tamaño mínimo de 5 y máximo de 300 carácteres")
+    @NotNull
     private String diagnostico;
 
     @OneToOne(cascade = CascadeType.ALL)

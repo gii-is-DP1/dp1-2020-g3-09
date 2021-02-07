@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -22,12 +23,16 @@ import javax.persistence.Enumerated;
 @Table(name = "especialistas")
 public class Especialista extends Person {
 
+    @NotEmpty
     private String dni;
 
+    @NotEmpty
     private String direccion;
 
+    @NotEmpty
     private String telefono;
 
+    @NotEmpty
     private String correo;
 
     @Enumerated(EnumType.STRING)

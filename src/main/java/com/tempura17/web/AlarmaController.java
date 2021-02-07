@@ -45,12 +45,6 @@ public class AlarmaController {
 		return "alarmas/misAlarmas";
 	}
 
-	@GetMapping("/json")
-	@ResponseBody
-	public Collection<Alarma> jsonAlarmas() {
-		return alarmaService.findAll();
-	}
-
 	@GetMapping("/new/{citaId}")
 	public String newAlarmaId(ModelMap model) {
 		model.addAttribute("alarma", new Alarma());
@@ -81,22 +75,6 @@ public class AlarmaController {
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listAlarmas(model);
 
-		}
-	}
-
-
-	@GetMapping("/{alarmaId}/delete")
-	public String deleteAlarma(@PathVariable("alarmaId") int alarmaId, ModelMap model){
-		Optional<Alarma> alarma = alarmaService.findById(alarmaId);
-		
-		if(alarma.isPresent()){
-			alarmaService.delete(alarma.get());
-			model.addAttribute("message", "ALARMA BORRADA CORRECTAMENTE");
-			return listAlarmas(model);
-
-		}else{
-			model.addAttribute("message","NO EXISTE NINGUNA ALARMA CON ESE ID");
-			return listAlarmas(model);
 		}
 	}
 
