@@ -2,7 +2,7 @@ package com.tempura17.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
-
+import static org.mockito.BDDMockito.given;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.mockito.*;
 
 public class TratamientoTests {
 
@@ -32,7 +33,10 @@ public class TratamientoTests {
 		tratamiento.setDuracion(3);
 		Poliza poliza = mock(Poliza.class);
         tratamiento.setPoliza(poliza);
-        Acta acta = mock(Acta.class);
+        Acta acta = new Acta();
+		acta.setDescripcion(generateRandom(30));
+		acta.setDiagnostico(generateRandom(30));
+		acta.setExploracion(generateRandom(30));
 		tratamiento.setActa(acta);
 		
 		Validator validator = createValidator();
