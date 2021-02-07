@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.List;
 import java.util.Date;
 import java.util.Random;
@@ -172,17 +173,25 @@ public class CitaREST {
         Cita cita = this.citaService.findById(id).get();
         Paciente paciente = cita.getPaciente();
         Especialista especialista = cita.getEspecialista();
-        //Acta acta = new ArrayList<>(especialista.getActas()).get(cita.getId());
-		if(cita == null){
-			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-		}
+        // Acta acta = new ArrayList<>(especialista.getActas()).get(cita.getId());
+        if (cita == null) {
+            return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+        }
         this.citaService.deleteById(cita.getId());
         this.pacienteService.deleteById(paciente.getId());
-        //this.especialistaService.deleteById(especialista.getId());
-        //this.actaService.deleteById(acta.getId());
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+        // this.especialistaService.deleteById(especialista.getId());
+        // this.actaService.deleteById(acta.getId());
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
+    @RequestMapping(value = "/random/new/{size}", method = RequestMethod.GET)
+    public void createRandomHuge(@PathVariable("size") Integer size) {
+
+        for(int i=0; i<size; i++){
+            createRandomCita();
+
+        }        
+    }
     // Funcion verificada
     @RequestMapping(value = "/random/new", method = RequestMethod.GET)
     public Cita createRandomCita() {

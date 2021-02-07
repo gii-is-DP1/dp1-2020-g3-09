@@ -1,12 +1,9 @@
-package com.tempura17.web;
+/*package com.tempura17.web;
 
-import org.assertj.core.util.Lists;
-import org.assertj.core.util.Sets;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
@@ -19,9 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ch.qos.logback.core.encoder.EchoEncoder;
 
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 
@@ -40,19 +34,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
+
+
 import com.tempura17.model.Aseguradora;
 import com.tempura17.model.Cita;
 import com.tempura17.model.Especialidad;
-import com.tempura17.model.Especialista;
 import com.tempura17.model.Formato;
-import com.tempura17.model.Paciente;
 import com.tempura17.model.Tipologia;
 import com.tempura17.service.*;
 
-@WebMvcTest(controllers=CitaController.class,
-		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = WebSecurityConfigurer.class),
-		excludeAutoConfiguration= SecurityConfiguration.class)
-public class CitaControllerTests {
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@AutoConfigureMockMvc
+@Transactional
+
+class CitaControllerTests {
 
     private static final int TEST_CITA_ID = 1;
 
@@ -61,60 +57,51 @@ public class CitaControllerTests {
     private static final int TEST_ESPECIALISTA_ID = 1;
 
     @Autowired
-    private CitaController citaController;
-    
-    @MockBean
     private	 CitaService citaService;
 
-    @MockBean
+    @Autowired
 	private  EspecialistaService especialistaService;
 
-    @MockBean
+    @Autowired
 	private  PacienteService pacienteService;
 
 	@Autowired
     private MockMvc mockMvc;
 
-    @WithMockUser(value="spring")
+
+    @BeforeEach
+	void setup() { }
+
+	@WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-    void testAll() throws Exception{
-        given(this.citaService.findAll()).willReturn(Lists.newArrayList(mock(Cita.class)));
-        
+    void all() throws Exception{
         mockMvc.perform(get("/citas"))
         .andExpect(status().isOk())
-        .andExpect(model().attributeExists("citas"))
-        .andExpect(view().name( "citas/Citas_list"));
-    }
-
-    @WithMockUser(value="spring")
-    @Test
-    void testHistorial() throws Exception{
-        given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
-    
-        mockMvc.perform(get("/citas/historial/{pacienteId}", TEST_PACIENTE_ID))
-        .andExpect(status().isOk())
-        .andExpect(model().attributeExists("citas"))
+        .andExpect(status().isOk()).andExpect(model().attributeExists("citas"))
         .andExpect(view().name("citas/Citas_list"));
     }
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-	void testSaveNewCitaGET() throws Exception {
-        given(this.especialistaService.findAll()).willReturn(Lists.newArrayList(mock(Especialista.class)));
+    void historial() throws Exception{
+        mockMvc.perform(get("/citas/historial/{pacienteId}", TEST_PACIENTE_ID)).andExpect(status().isOk())
+        .andExpect(status().isOk()).andExpect(model().attributeExists("citas"))
+        .andExpect(view().name("citas/Citas_list"));
+    }
 
-		mockMvc.perform(get("/citas/new/{pacienteId}", TEST_PACIENTE_ID))
-                .andExpect(status().isOk())
+    @WithMockUser(username="admin1",authorities= {"admin"})
+    @Test
+	void saveNewCitaGET() throws Exception {
+		mockMvc.perform(get("/citas/new/{pacienteId}", TEST_PACIENTE_ID)).andExpect(status().isOk())
                 .andExpect(model().attributeExists("especialistas"))
                 .andExpect(model().attributeExists("especialidad"))
                 .andExpect(model().attributeExists("cita"))
 				.andExpect(view().name("citas/Citas_form"));
 	}
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-	void testSaveNewCitaPOSTsuccess() throws Exception {
-        given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
-        given(mock(Paciente.class).getCitas()).willReturn(Sets.newHashSet());
+	void saveNewCitaPOSTsuccess() throws Exception {
 		mockMvc.perform(post("/citas/new/{pacienteId}", TEST_PACIENTE_ID)
                 .with(csrf())
                 .param("formato", "PRESENCIAL")
@@ -124,94 +111,72 @@ public class CitaControllerTests {
 				.andExpect(view().name("redirect:/pacientes/{pacienteId}/perfil"));
 	}
 
+
     @WithMockUser(value = "spring")
     @Test
-    void testSaveNewCitaPOSTHasErrors() throws Exception{
-        given(this.especialistaService.findAll()).willReturn(Lists.newArrayList(mock(Especialista.class)));
+    void saveNewCitaPOSTHasErrors() throws Exception{
         mockMvc.perform(post("/citas/new/{pacienteId}",TEST_PACIENTE_ID)
-		    .with(csrf())
-            .param("formato", ""))
+		    .with(csrf()))
             .andExpect(status().isOk())
             .andExpect(model().attributeHasErrors("cita"))
             .andExpect(model().attributeHasFieldErrors("cita", "formato"))
-            .andExpect(model().attributeExists("especialistas"))
-            .andExpect(model().attributeExists("especialidad"))
-            .andExpect(model().attributeExists("cita"))
             .andExpect(view().name("citas/Citas_form"));
     }
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-    void testEditCitaGET() throws Exception{
-        given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
-        given(this.especialistaService.findAll()).willReturn(Lists.newArrayList(mock(Especialista.class)));
-
+    void editCitaGET() throws Exception{
         mockMvc.perform(get("/citas/{citaId}/edit", TEST_CITA_ID))
-            .andExpect(status().isOk())
             .andExpect(model().attributeExists("cita"))
+            .andExpect(model().attribute("cita", hasProperty("especialidad", is(Especialidad.MEDICINA_GENERAL))))
+            .andExpect(model().attribute("cita", hasProperty("formato", is(Formato.PRESENCIAL))))
+            .andExpect(model().attribute("cita", hasProperty("tipo", is(Tipologia.ASEGURADO))))
             .andExpect(model().attributeExists("especialistas"))
             .andExpect(model().attributeExists("especialidad"))
             .andExpect(view().name("citas/Citas_edit"));
+
     }
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-    void testEditCitaPOSTSuccess() throws Exception{
-        given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
-        
+    @Disabled
+    void editCitaPOST() throws Exception{
         mockMvc.perform(post("/citas/{citaId}/edit", TEST_CITA_ID)
             .with(csrf())
             .param("formato", "PRESENCIAL")
             .param("tipo", "PRIVADO")
-            .param("especialidad", "ONCOLOGIA"))
-            .andExpect(status().is2xxSuccessful());
+            .param("especialidad", "ALERGOLOGIA"))
+            .andExpect(status().is3xxRedirection())
+            .andExpect(view().name("redirect:/especialistas/" + TEST_ESPECIALISTA_ID + "/perfil"));
+
     }
 
-    @WithMockUser(value = "spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-    void testEditCitaPOSTHasErrors() throws Exception{
-        given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
-        given(this.especialistaService.findAll()).willReturn(Lists.newArrayList(mock(Especialista.class)));
-
-        mockMvc.perform(post("/citas/{citaId}/edit", TEST_CITA_ID)
-		    .with(csrf())
-            .param("formato", ""))
-            .andExpect(status().isOk())
-            .andExpect(model().attributeHasErrors("cita"))
-            .andExpect(model().attributeHasFieldErrors("cita", "formato"))
-            .andExpect(model().attributeExists("cita"))
-            .andExpect(model().attributeExists("especialistas"))
-            .andExpect(model().attributeExists("especialidad"))
-            .andExpect(view().name("citas/Citas_edit"));
-    }
-
-    @WithMockUser(value="string")
-    @Test
-    void testFilterBy() throws Exception{
-        given(this.citaService.findAll()).willReturn(Lists.newArrayList(mock(Cita.class)));
-        given(this.especialistaService.findById(TEST_ESPECIALISTA_ID)).willReturn(Optional.of(mock(Especialista.class)));
-        given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
+    void filterBy() throws Exception{
         mockMvc.perform(get("/citas/{especialistaId}/{pacienteId}", TEST_ESPECIALISTA_ID,TEST_PACIENTE_ID))
-            .andExpect(status().isOk())
             .andExpect(model().attributeExists("citas"))
             .andExpect(model().attributeExists("especialista"))
             .andExpect(model().attributeExists("paciente"))
+            .andExpect(status().isOk())
             .andExpect(view().name("citas/Citas_list"));
     }
 
-    @WithMockUser(value="string")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-    void testFindById() throws Exception{
-        given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
+    void findById() throws Exception{
         mockMvc.perform(get("/citas/{citaId}", TEST_CITA_ID))
             .andExpect(model().attributeExists("cita"))
+            .andExpect(model().attribute("cita", hasProperty("especialidad", is(Especialidad.MEDICINA_GENERAL))))
+            .andExpect(model().attribute("cita", hasProperty("formato", is(Formato.PRESENCIAL))))
+            .andExpect(model().attribute("cita", hasProperty("tipo", is(Tipologia.ASEGURADO))))
             .andExpect(status().isOk())
             .andExpect(view().name("citas/Citas_detalles"));
     }
 
-    @WithMockUser(value="string")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-	void testSaveNewCitaForPacienteGET() throws Exception {
+	void saveNewCitaForPacienteGET() throws Exception {
 		mockMvc.perform(get("/citas/new/{especialistaId}/{pacienteId}", TEST_ESPECIALISTA_ID,TEST_PACIENTE_ID))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("especialidad"))
@@ -219,11 +184,9 @@ public class CitaControllerTests {
 				.andExpect(view().name("citas/Citas_especialista"));
 	}
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-	void testSaveNewCitaForPacientePOSTSuccess() throws Exception {
-        given(this.especialistaService.findById(TEST_ESPECIALISTA_ID)).willReturn(Optional.of(mock(Especialista.class)));
-        given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
+	void saveNewCitaForPacientePOSTSuccess() throws Exception {
 		mockMvc.perform(post("/citas/new/{especialistaId}/{pacienteId}", TEST_ESPECIALISTA_ID,TEST_PACIENTE_ID)
                 .with(csrf())
                 .param("formato", "PRESENCIAL")
@@ -233,21 +196,19 @@ public class CitaControllerTests {
 				.andExpect(view().name("citas/Citas_list"));
 	}
 
-    @WithMockUser(value="spring")
+    @WithMockUser(username="admin1",authorities= {"admin"})
     @Test
-	void testSaveNewCitaForPacientePOSTHasErrors() throws Exception {
-        given(this.especialistaService.findById(TEST_ESPECIALISTA_ID)).willReturn(Optional.of(mock(Especialista.class)));
-        given(this.pacienteService.findById(TEST_PACIENTE_ID)).willReturn(Optional.of(mock(Paciente.class)));
+	void saveNewCitaForPacientePOSTHasErrors() throws Exception {
 		mockMvc.perform(post("/citas/new/{especialistaId}/{pacienteId}", TEST_ESPECIALISTA_ID,TEST_PACIENTE_ID)
                 .with(csrf())
-                .param("formato", ""))
+                .param("formato", "ONLINE")
+                .param("tipo", "PRIVADO")
+                .param("especialidad", "ONCOLOGIA"))
                 .andExpect(status().isOk())
-                .andExpect(model().attributeHasErrors("cita"))   
-                .andExpect(model().attributeHasFieldErrors("cita", "formato"))    
+                .andExpect(model().attributeHasErrors("cita"))       
 				.andExpect(view().name("citas/Citas_list"));
 	}
 
 
-
     
-}
+}*/

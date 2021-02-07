@@ -76,20 +76,6 @@ public class PacienteController {
 	}
 
 
-
-	@GetMapping("/{id}/calculadoras")
-	public String getPacienteCalculadora(@PathVariable("id") int id, ModelMap model){
-		model.addAttribute("calculadoras", calculadoraService.findByPacienteId(id));
-		return "calculadoras/calculadoraListing";
-	}
-
-	@GetMapping("/{id}/calculadoras/json")
-	@ResponseBody
-	public CalculadoraSalud getPacienteCalculadoraJson(@PathVariable("id") int id, ModelMap model){
-		return calculadoraService.findByPacienteId(id);
-	}
-
-
 	@GetMapping("/{pacienteId}/edit")
 	public String editPaciente(@PathVariable("pacienteId") int pacienteId, ModelMap model){
 

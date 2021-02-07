@@ -99,8 +99,6 @@ public class Aseguradora extends AuditableEntity {
    @Override
    public String toString() {
        return nombre;
-   }
-    
-   
+   }   
     
 }

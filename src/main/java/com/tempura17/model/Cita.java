@@ -14,6 +14,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tempura17.service.businessrules.ValidatePossibleEspecialidad;
+import com.tempura17.service.businessrules.ValidatePossiblePoliza;
 
 import org.hibernate.envers.Audited;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,6 +27,7 @@ import javax.persistence.ManyToOne;
 @Audited
 @Table(name = "citas")
 @ValidatePossibleEspecialidad()
+//@ValidatePossiblePoliza()
 public class Cita extends AuditableEntity {
 
     @Enumerated(EnumType.STRING)

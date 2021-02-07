@@ -59,11 +59,12 @@ public class CalculadoraController {
 	@PostMapping("/new/{pacienteId}")
 	public String saveNewCalculadora(@PathVariable("pacienteId") Integer pacienteId,@Valid CalculadoraSalud calculadora, BindingResult binding, ModelMap model){
 		Paciente paciente = this.pacienteService.findById(pacienteId).get();
-		if(binding.hasErrors() || paciente==null){
+		if(binding.hasErrors()){
 			model.addAttribute("message", "ERROR AL GUARDAR LA CALCULADORA");
 			return "calculadoras/calcularIMC";
 
 		}else {
+			//Añadir al servicio
 			Double peso=calculadora.getPeso();
 			Double altura=calculadora.getAltura();
 			Double imc=(peso/Math.pow(altura, 2.));
