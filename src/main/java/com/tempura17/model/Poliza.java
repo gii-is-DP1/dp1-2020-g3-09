@@ -32,7 +32,6 @@ import javax.validation.constraints.NotEmpty;
 public class Poliza extends NamedEntity{
 
     @Column(precision = 8, scale =2)
-    @NotEmpty
     private BigDecimal precio;
 
     @Enumerated(EnumType.STRING)

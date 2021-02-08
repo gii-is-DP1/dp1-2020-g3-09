@@ -323,22 +323,19 @@ public class CitaREST {
         Integer letras = abc.length;
         acta.setEspecialista(null);
         String descripcion = "";
-        Integer rand =  randomGenerator.nextInt(10);
-        for(i=0; i<rand; i++){
+        for(i=0; i<50; i++){
             Random l = new Random();
             descripcion += abc[l.nextInt(letras)];
         }
         acta.setDescripcion(descripcion);
         String exploracion = "";
-        rand = randomGenerator.nextInt(10);
-        for(i=0; i<rand; i++){
+        for(i=0; i<50; i++){
             Random l = new Random();
             exploracion += abc[l.nextInt(letras)];
         }
         acta.setExploracion(exploracion);
         String diagnostico = "";
-        rand = randomGenerator.nextInt(10);
-        for(i=0; i<rand; i++){
+        for(i=0; i<50; i++){
             Random l = new Random();
             diagnostico += abc[l.nextInt(letras)];
         }
