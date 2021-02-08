@@ -11,7 +11,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.tempura17.model.Acta;
-import com.tempura17.model.Alarma;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +24,7 @@ class ActaServiceTests {
     @Test
 	@Transactional
     @Disabled
-    //Falla solo al ejecutar las pruebas en bloque
+    //Falla solo al ejecutar las pruebas en global
 	void shouldInsertActa() {
 		Collection<Acta> actas = this.actaService.findAll();
 		int found = actas.size();

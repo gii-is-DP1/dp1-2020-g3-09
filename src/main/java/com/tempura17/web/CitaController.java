@@ -1,6 +1,6 @@
 package com.tempura17.web;
 
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -27,10 +27,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Controller
 @RequestMapping("/citas")
+@Slf4j
 public class CitaController {
 	
 	// Dado que Spring gestiona una unica inyección de las dependencias es necesario declarlo como CONSTANTE

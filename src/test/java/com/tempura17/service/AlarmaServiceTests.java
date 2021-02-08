@@ -4,14 +4,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Collection;
 
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 
-
 import com.tempura17.model.Alarma;
+import com.tempura17.model.Cita;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +20,9 @@ public class AlarmaServiceTests {
 
     @Autowired
     private AlarmaService alarmaService;
+
+	@Autowired
+    private CitaService citaService;
 
     @Test
 	@Transactional
@@ -39,4 +42,12 @@ public class AlarmaServiceTests {
 		Alarma alarma = this.alarmaService.findById(1).get();
         assertThat(alarma.getDias()).isEqualTo(13);
     }
+
+
+	@Test
+	public void shouldCreateAlarma(){
+		Cita cita = this.citaService.findById(1).get();
+		int diasdiff = alarmaService.getDiasDiff(cita);
+		assertThat(diasdiff).isNotNull();
+	}
 }

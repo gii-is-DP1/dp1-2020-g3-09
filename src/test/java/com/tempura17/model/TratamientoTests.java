@@ -2,7 +2,6 @@ package com.tempura17.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
-
 import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
@@ -33,7 +32,10 @@ public class TratamientoTests {
 		tratamiento.setDuracion(3);
 		Poliza poliza = mock(Poliza.class);
         tratamiento.setPoliza(poliza);
-        Acta acta = mock(Acta.class);
+        Acta acta = new Acta();
+		acta.setDescripcion(generateRandom(30));
+		acta.setDiagnostico(generateRandom(30));
+		acta.setExploracion(generateRandom(30));
 		tratamiento.setActa(acta);
 		
 		Validator validator = createValidator();
@@ -104,6 +106,7 @@ public class TratamientoTests {
 		assertThat(violation.getMessage()).isEqualTo("la duración no puede ser menor de 1 día");
 	}
 
+	/* Validaciones obsoletas
 	@Test
 	@Disabled
 	void shouldNotValidateWithNullPoliza() {
@@ -144,7 +147,7 @@ public class TratamientoTests {
 		ConstraintViolation<Tratamiento> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("acta");
 		assertThat(violation.getMessage()).isEqualTo("El acta no puede ser nulo");
-	}
+	}*/
 	
     
 	public String generateRandom(Integer length){

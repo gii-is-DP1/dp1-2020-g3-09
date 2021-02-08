@@ -2,28 +2,24 @@ package com.tempura17.web;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.tempura17.model.Especialista;
 import javax.validation.Valid;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.model.Acta;
 import com.tempura17.model.Cita;
-import com.tempura17.model.Especialidad;
+
 import com.tempura17.service.ActaService;
-import com.tempura17.service.AuthoritiesService;
+
 import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
-import com.tempura17.service.UserService;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

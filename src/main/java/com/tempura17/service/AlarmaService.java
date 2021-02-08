@@ -53,9 +53,8 @@ public class AlarmaService {
 		alarmaRepository.delete(alarma);
 	}
 
-	/*
-	public int getDiasDiff(int citaId){
-		Cita cita = citaService.findById(citaId).get();
+	@Transactional
+	public int getDiasDiff(Cita cita){
 		Date fechainicio = cita.getFecha();
 		Date fechaactual = new Date(System.currentTimeMillis());
 		Long fechainicio2 = fechainicio.getTime();
@@ -64,5 +63,5 @@ public class AlarmaService {
 		Double dias = Math.floor(diferencia/86400000);
 		int diasint = (int)Math.round(dias);
 		return diasint;
-	}*/
+	}
 }

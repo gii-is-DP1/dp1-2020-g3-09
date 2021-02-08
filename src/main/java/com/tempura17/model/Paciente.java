@@ -56,6 +56,7 @@ public class Paciente extends Person {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "username", referencedColumnName = "username")
+    @JsonIgnore
 	private User user;
 
     public String getDni() {

@@ -1,28 +1,21 @@
 package com.tempura17.web;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
 import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.model.Paciente;
-import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.service.CalculadoraService;
 import com.tempura17.service.PacienteService;
 
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
