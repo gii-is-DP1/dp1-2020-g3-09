@@ -92,18 +92,5 @@ class AlarmaControllerTests {
             .andExpect(status().isOk())
             .andExpect(view().name("alarmas/misAlarmas"));
     }
-
-
-    @WithMockUser(value = "spring")
-    @Test
-	void testsaveNewAlarmaHasErrors() throws Exception {
-		mockMvc.perform(post("/alarmas/new/{citaId}",TEST_CITA_ID)
-        .with(csrf()))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeHasErrors("alarma"))
-		.andExpect(model().attributeHasFieldErrors("alarma", "dias"))
-		.andExpect(view().name("alarmas/crearAlarma"));
-    }
-
     
 }

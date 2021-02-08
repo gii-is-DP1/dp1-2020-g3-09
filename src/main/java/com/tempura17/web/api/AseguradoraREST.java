@@ -15,8 +15,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-
 import com.tempura17.model.Aseguradora;
+import com.tempura17.model.Acta;
+import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.model.Especialista;
 import com.tempura17.model.Paciente;
 import com.tempura17.model.Poliza;
@@ -50,6 +51,8 @@ public class AseguradoraREST {
     private final PolizaService polizaService;
 
     private static final String PATH = "/api/aseguradoras";
+    private static final char[] abc = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
 
 
     public AseguradoraREST(AseguradoraService aseguradoraService, EspecialistaService especialistaService
@@ -191,6 +194,11 @@ public class AseguradoraREST {
         for(i=0; i<tam; i++){
             Random p = new Random();
             Paciente paciente = pacientess.get(p.nextInt(pacientess.size()));
+            CalculadoraSalud calculadora = new CalculadoraSalud();
+            calculadora.setPeso(70.4);
+            calculadora.setAltura(1.8);
+            calculadora.setPaciente(paciente);
+            paciente.addCalculadora(calculadora);
             pacientes.add(paciente);
         } 
         aseguradora.setPacientes(pacientes);
@@ -202,6 +210,7 @@ public class AseguradoraREST {
         for(i=0; i<tam; i++){
             Random p = new Random();
             Especialista especialista = especialistass.get(p.nextInt(especialistass.size()));
+            //especialista.addActa(createRandomActa());
             especialistas.add(especialista);
         } 
         aseguradora.setEspecialistas(especialistas);
@@ -314,6 +323,34 @@ public class AseguradoraREST {
                     .forEach(x -> this.polizaService.save(x));
         return aseguradora;
     
+    }
+
+    public Acta createRandomActa(){
+        Random randomGenerator = new Random();
+        Acta acta = new Acta();
+        int i;
+        Integer letras = abc.length;
+        acta.setEspecialista(null);
+        String descripcion = "";
+        for(i=0; i<50; i++){
+            Random l = new Random();
+            descripcion += abc[l.nextInt(letras)];
+        }
+        acta.setDescripcion(descripcion);
+        String exploracion = "";
+        for(i=0; i<50; i++){
+            Random l = new Random();
+            exploracion += abc[l.nextInt(letras)];
+        }
+        acta.setExploracion(exploracion);
+        String diagnostico = "";
+        for(i=0; i<50; i++){
+            Random l = new Random();
+            diagnostico += abc[l.nextInt(letras)];
+        }
+        acta.setDiagnostico(diagnostico);
+        return acta;
+
     }
     
 }
