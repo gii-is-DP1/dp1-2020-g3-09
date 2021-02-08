@@ -1,6 +1,7 @@
 package com.tempura17.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tempura17.service.businessrules.ValidatePossibleActa;
 
 import org.hibernate.envers.Audited;
 
@@ -17,6 +18,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Audited
 @Table(name = "actas")
+@ValidatePossibleActa()
 public class Acta extends AuditableEntity{
 
 

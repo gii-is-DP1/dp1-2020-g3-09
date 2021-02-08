@@ -118,8 +118,8 @@ INSERT INTO actas(id, especialista_id, descripcion, exploracion, diagnostico, ci
     1,
     1,
     'esufsiufensoif',
-    'esufsiufensoif',
-    'esufsiufensoif',
+    'esufsiufensoi',
+    'esufsiufenso',
     1
 );
 
@@ -127,8 +127,8 @@ INSERT INTO actas(id, especialista_id, descripcion, exploracion, diagnostico, ci
     2,
     2,
     'esufsiufensoif',
-    'esufsiufensoif',
-    'esufsiufensoif',
+    'esufsiufensoi',
+    'esufsiufenso',
     2
 );
 

@@ -101,9 +101,9 @@ class ActaControllerTests {
 	
 		mockMvc.perform(post("/actas/new/{citaId}/{especialistaId}",TEST_CITA_ID,TEST_ESPECIALISTA_ID)
 		.with(csrf())
-        .param("descripcion", "esufsiufensoif")
-        .param("exploracion", "esufsiufensoif")
-		.param("diagnostico", "esufsiufensoif"))
+        .param("descripcion", "descripcion")
+        .param("exploracion", "exploracion cualesquiera")
+		.param("diagnostico", "diagnostico indeterminado"))
 		.andExpect(status().isOk())
         .andExpect(view().name("actas/listActas"));
     }
