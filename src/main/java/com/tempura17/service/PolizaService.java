@@ -101,18 +101,4 @@ public class PolizaService {
         polizaRepository.save(poliza);
         }
     }
-
-    @Transactional
-    public void editCobertura(Integer idPoliza, String cobertura){
-        Optional<Poliza> poliza = polizaRepository.findById(idPoliza);
-  
-        if(poliza.get() == null){
-          System.out.println("Poliza nula");
-        }else{
-          Poliza p1 = poliza.get();
-          p1.setCobertura(Cobertura.valueOf(cobertura));
-          this.polizaRepository.save(p1);
-        }
-      }
-
 }

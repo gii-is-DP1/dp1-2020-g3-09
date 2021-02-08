@@ -62,4 +62,18 @@ public class PolizaServiceTests {
 
     }
 
+    @Test
+    @Transactional
+    void deletePacienteDePoliza(){
+        Poliza p1 = this.polizaService.findById(1).get();
+        Set<Paciente> pacientesAnt = p1.getPacientes();
+        Integer sizeAnt = pacientesAnt.size();
+        Paciente paciente = this.pacienteService.findById(1).get();
+        p1.getPacientes().remove(paciente);
+        Poliza p2 = this.polizaService.findById(1).get();
+        Set<Paciente> pacientesPost = p2.getPacientes();
+        Integer sizePost = pacientesPost.size()+1;
+        assertThat(sizeAnt).isEqualTo(sizePost);
+
+    }
 }
