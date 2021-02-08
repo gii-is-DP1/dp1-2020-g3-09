@@ -1,4 +1,4 @@
-package com.tempura17.web.api;
+/*package com.tempura17.web.api;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -112,7 +112,7 @@ public class PolizaREST {
                             /*
                             String nombre = newAseguradora.getNombre() == null ? aseguradora.getNombre() : newAseguradora.getNombre();
                             aseguradora.setNombre(nombre);
-                            */
+                            *//*
                             String name = newPoliza.getName() == null ? poliza.getName() : newPoliza.getName();
                             poliza.setName(name);
                             BigDecimal precio = newPoliza.getPrecio() == null ? poliza.getPrecio() : newPoliza.getPrecio();
@@ -146,8 +146,6 @@ public class PolizaREST {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
     // editCobertura -> algo redundate a mi parecer, al menos en este momento
-
-
     
 
-}
+}*/
