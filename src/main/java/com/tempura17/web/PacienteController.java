@@ -1,6 +1,5 @@
 package com.tempura17.web;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -9,12 +8,9 @@ import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
-import com.tempura17.model.CalculadoraSalud;
 import com.tempura17.service.PacienteService;
 import com.tempura17.service.CalculadoraService;
 import com.tempura17.service.CitaService;
@@ -25,8 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+
 
 
 @Controller

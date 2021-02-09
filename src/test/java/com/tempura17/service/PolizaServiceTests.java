@@ -1,14 +1,26 @@
 package com.tempura17.service;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.Set;
+
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.tempura17.model.Aseguradora;
+import com.tempura17.model.Poliza;
+import com.tempura17.model.Sexo;
+import com.tempura17.model.Paciente;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @DataJpaTest(includeFilters = @ComponentScan.Filter(Service.class))
 public class PolizaServiceTests {
 
-    /*
+    
     @Autowired
     private AseguradoraService aseguradoraService;
 
@@ -18,9 +30,9 @@ public class PolizaServiceTests {
     @Autowired
     private PolizaService polizaService;
 
-    //@Test
-    //@Transactional
-    /*void deletePolizaAseguradora() {
+    @Test
+    @Transactional
+    void deletePolizaAseguradora() {
         Poliza p1 = this.polizaService.findById(1).get();
         Aseguradora a1 = this.aseguradoraService.findById(1).get();
         Set<Poliza> polizasAnt = a1.getPolizas();
@@ -36,8 +48,11 @@ public class PolizaServiceTests {
         Set<Poliza> polizasPost = a2.getPolizas();
         Integer sizePost = polizasPost.size()+1;
 
-        Paciente pa1 = this.pacienteService.findById(1).get();
-        Poliza pNull = pa1.getPoliza();
+        Paciente paciente = new Paciente();
+        paciente.setDni("dni");
+        paciente.setSexo(Sexo.MASCULINO);
+        paciente.setEmail("correo@correo.com");
+        Poliza pNull = paciente.getPoliza();
 
         //Comprobamos que ambos tamaños son iguales 
         assertThat(sizeAnt).isEqualTo(sizePost);
@@ -45,6 +60,20 @@ public class PolizaServiceTests {
         //Comprobamos que la poliza se borra de los pacientes
         assertThat(pNull).isNull();
 
-    }*/
+    }
 
+    @Test
+    @Transactional
+    void deletePacienteDePoliza(){
+        Poliza p1 = this.polizaService.findById(1).get();
+        Set<Paciente> pacientesAnt = p1.getPacientes();
+        Integer sizeAnt = pacientesAnt.size();
+        Paciente paciente = this.pacienteService.findById(1).get();
+        p1.getPacientes().remove(paciente);
+        Poliza p2 = this.polizaService.findById(1).get();
+        Set<Paciente> pacientesPost = p2.getPacientes();
+        Integer sizePost = pacientesPost.size()+1;
+        assertThat(sizeAnt).isEqualTo(sizePost);
+
+    }
 }

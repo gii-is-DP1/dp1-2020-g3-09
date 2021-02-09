@@ -23,16 +23,16 @@ import javax.persistence.Enumerated;
 @Table(name = "especialistas")
 public class Especialista extends Person {
 
-    @NotEmpty
+    @NotEmpty(message = "El DNI no puede estar vacío")
     private String dni;
 
-    @NotEmpty
+    @NotEmpty(message = "La dirección no puede estar vacía")
     private String direccion;
 
-    @NotEmpty
+    @NotEmpty(message = "El teléfono no puede estar vacío")
     private String telefono;
 
-    @NotEmpty
+    @NotEmpty(message = "El correo no puede estar vacío")
     private String correo;
 
     @Enumerated(EnumType.STRING)

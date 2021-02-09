@@ -2,9 +2,7 @@ package com.tempura17.web;
 
 
 import java.text.ParseException;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Optional;
+
 
 import javax.validation.Valid;
 
@@ -21,7 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 @Controller
@@ -60,17 +58,10 @@ public class AlarmaController {
 			return "alarmas/crearAlarma";
 
 		}else {
-			Optional<Cita> cita = citaService.findById(citaId);
-			Cita citas = cita.get();
-			Date fechainicio = citas.getFecha();
-			Date fechaactual = new Date(System.currentTimeMillis());
-			Long fechainicio2 = fechainicio.getTime();
-			Long fechaactual2 = fechaactual.getTime();
-			Long diferencia = fechainicio2 - fechaactual2;
-			Double dias = Math.floor(diferencia/86400000);
-			int diasint = (int)Math.round(dias);
+			Cita cita = citaService.findById(citaId).get();
+			int diasint = this.alarmaService.getDiasDiff(cita);
 			alarma.setDias(diasint);
-			alarma.setCita(citas);
+			alarma.setCita(cita);
 			alarmaService.save(alarma);
 			model.addAttribute("message", "SE HA GUARDADO CORRECTAMENTE");
 			return listAlarmas(model);

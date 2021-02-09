@@ -1,6 +1,7 @@
 package com.tempura17.service;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -10,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.tempura17.model.Alarma;
+import com.tempura17.model.Cita;
 import com.tempura17.repository.AlarmaRepository;
 
 
@@ -17,6 +19,8 @@ import com.tempura17.repository.AlarmaRepository;
 public class AlarmaService {
 	
 	private AlarmaRepository alarmaRepository;
+
+	private CitaService citaService;
 	
 	@Autowired
 	public AlarmaService(AlarmaRepository alarmaRepository) {
@@ -47,5 +51,17 @@ public class AlarmaService {
 	@Transactional
 	public void delete(Alarma alarma) {
 		alarmaRepository.delete(alarma);
+	}
+
+	@Transactional
+	public int getDiasDiff(Cita cita){
+		Date fechainicio = cita.getFecha();
+		Date fechaactual = new Date(System.currentTimeMillis());
+		Long fechainicio2 = fechainicio.getTime();
+		Long fechaactual2 = fechaactual.getTime();
+		Long diferencia = fechainicio2 - fechaactual2;
+		Double dias = Math.floor(diferencia/86400000);
+		int diasint = (int)Math.round(dias);
+		return diasint;
 	}
 }

@@ -1,23 +1,18 @@
 package com.tempura17.web;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
 
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -28,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import java.util.Date;
 import java.util.Optional;
 
 import com.tempura17.model.Alarma;
@@ -82,7 +76,6 @@ class AlarmaControllerTests {
 
     @WithMockUser(value = "spring")
 	@Test
-    @Disabled
 	void testsaveNewAlarmaSuccess() throws Exception {
         given(this.citaService.findById(TEST_CITA_ID)).willReturn(Optional.of(mock(Cita.class)));
 

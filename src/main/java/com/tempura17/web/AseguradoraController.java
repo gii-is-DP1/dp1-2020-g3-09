@@ -1,9 +1,8 @@
 package com.tempura17.web;
 
-import java.util.Collection;
+
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.tempura17.model.Especialista;
@@ -14,9 +13,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.model.Aseguradora;
-import com.tempura17.model.Cita;
-import com.tempura17.model.Especialidad;
-import com.tempura17.service.CitaService;
 import com.tempura17.service.EspecialistaService;
 import com.tempura17.service.PolizaService;
 import com.tempura17.service.AseguradoraService;
@@ -28,8 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+
 
 
 @Controller

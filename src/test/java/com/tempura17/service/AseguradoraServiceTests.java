@@ -22,7 +22,6 @@ import com.tempura17.model.Especialista;
 import com.tempura17.model.Paciente;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import static org.mockito.Mockito.mock;
 
 
 @DataJpaTest(includeFilters = @ComponentScan.Filter(Service.class))
@@ -106,12 +105,19 @@ public class AseguradoraServiceTests {
 
     @Test
     @Disabled
+    //Falla al ejecutar las pruebas en global
     @Transactional
     void createEspecialista(){
         Aseguradora aseguradora = findRandomAseguradora();
         Integer aseguradora_id = aseguradora.getId();
         Integer numEspecialistasPrior = this.aseguradoraService.findById(aseguradora_id).get().getEspecialistas().size();
-        Especialista especialista = createDummyEspecialista();
+        Especialista especialista = new Especialista();
+        especialista.setCorreo("correo@correo.com");
+        especialista.setDni("80234567B");
+        especialista.setDireccion("casa");
+        especialista.setTelefono("654321789");
+        especialista.setFirstName("prueba");
+        especialista.setLastName("apellido");
         Set<Aseguradora> aseguradoras = new HashSet<>();
         aseguradoras.add(aseguradora);
         especialista.setAseguradoras(aseguradoras);

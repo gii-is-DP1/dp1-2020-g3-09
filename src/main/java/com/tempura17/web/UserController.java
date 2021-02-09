@@ -1,13 +1,11 @@
 package com.tempura17.web;
 
-import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.model.Paciente;
-import com.tempura17.model.User;
 import com.tempura17.service.PacienteService;
 import com.tempura17.service.UserService;
 import org.springframework.stereotype.Controller;

@@ -56,6 +56,7 @@ public class CitaServiceTests {
 
     @Test
     @Disabled
+    //Falla al ejecutar las pruebas en global
 	@Transactional
 	public void shouldInsert() {
 		Integer numCitasPrior = this.citaService.findAll().size();

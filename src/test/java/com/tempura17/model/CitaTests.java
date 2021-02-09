@@ -23,7 +23,8 @@ public class CitaTests {
 		return localValidatorFactoryBean;
 	}
 
-	/*@Test
+	/* Validaciones obsoletas
+	@Test
 	void ShouldNotValidateWithNullPaciente() {
 		LocaleContextHolder.setLocale(Locale.ENGLISH);
 		Cita cita = new Cita();

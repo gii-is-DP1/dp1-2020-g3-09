@@ -1,30 +1,18 @@
 package com.tempura17.web;
 
 import org.assertj.core.util.Lists;
-import org.assertj.core.util.Sets;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tempura17.configuration.SecurityConfiguration;
 
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-import org.springframework.transaction.annotation.Transactional;
-
-import ch.qos.logback.core.encoder.EchoEncoder;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.hamcrest.Matchers.hasProperty;
-import static org.hamcrest.Matchers.is;
 
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -38,13 +26,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Optional;
 
 import com.tempura17.model.Aseguradora;
-import com.tempura17.model.Cita;
-import com.tempura17.model.Especialidad;
-import com.tempura17.model.Especialista;
-import com.tempura17.model.Formato;
 import com.tempura17.model.Paciente;
 import com.tempura17.model.Poliza;
-import com.tempura17.model.Tipologia;
 import com.tempura17.model.Tratamiento;
 import com.tempura17.service.*;
 

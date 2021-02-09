@@ -11,7 +11,6 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -37,7 +36,7 @@ public class ActaTests {
 		acta.setCita(cita);
 	}
 
-
+	/*
 	@Test
 	@Disabled
     void shouldNotValidateWithNullEspecialista() {
@@ -75,7 +74,7 @@ public class ActaTests {
 		ConstraintViolation<Acta> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("cita");
 		assertThat(violation.getMessage()).isEqualTo("La cita no puede ser nula");
-    }
+    }*/
 
 
     @Test

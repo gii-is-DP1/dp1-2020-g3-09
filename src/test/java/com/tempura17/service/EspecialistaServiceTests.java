@@ -12,7 +12,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.tempura17.model.Cita;
 import com.tempura17.model.Paciente;
+import com.tempura17.model.Tipologia;
 import com.tempura17.model.Especialista;
+import com.tempura17.model.Formato;
 
 import java.util.List;
 import java.util.Random;
@@ -52,22 +54,21 @@ public class EspecialistaServiceTests {
     }
 
     @Test
-    @Disabled
     @Transactional
+    @Disabled
+    //Falla al ejecutar las pruebas en global
     void saveCitaForEspecialista(){
-        //cita cita, Integer paciente_id
         Random randomGenerator = new Random();
         Paciente paciente = findRandomPaciente();
         Especialista especialista = findRandomEspecialista();
         Integer especialista_id = especialista.getId();
         Integer numCitasPrior = especialista.getCitas().size();
-        List<Cita> citas = this.citaService.findAll().stream()
-                                        .collect(Collectors.toList());
-        Integer rand = randomGenerator.nextInt(citas.size());
-        Cita cita = citas.get(rand);
-        cita.setId(citas.size());
+        Cita cita = new Cita();
+        cita.setFormato(Formato.PRESENCIAL);
+        cita.setTipo(Tipologia.ASEGURADO);
         cita.setEspecialista(especialista);
         cita.setPaciente(paciente);
+        especialista.addCita(cita);
         // Llamada a la funcion a verificar
         this.especialistaService.save(especialista);
         Integer numCitasPost = this.especialistaService.findById(especialista_id).get().getCitas().size();

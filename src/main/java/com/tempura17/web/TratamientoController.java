@@ -3,7 +3,6 @@ package com.tempura17.web;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -16,7 +15,6 @@ import com.tempura17.service.ActaService;
 import com.tempura17.service.PolizaService;
 import com.tempura17.service.TratamientoService;
 
-import org.apache.taglibs.standard.tag.el.sql.TransactionTag;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

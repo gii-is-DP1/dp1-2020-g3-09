@@ -36,4 +36,4 @@ src/.DS_Store
 
 ### LOGS ###
 *.log
-/logs/archived/
+logs/**

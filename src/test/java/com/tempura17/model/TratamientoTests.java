@@ -2,7 +2,6 @@ package com.tempura17.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
-import static org.mockito.BDDMockito.given;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
@@ -15,7 +14,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import org.mockito.*;
 
 public class TratamientoTests {
 
@@ -26,6 +24,7 @@ public class TratamientoTests {
 	}
 
 	@Test
+	@Disabled
 	void shouldValidate(){
 		Tratamiento tratamiento = new Tratamiento();
 		String descripcion = generateRandom(30);
@@ -107,6 +106,7 @@ public class TratamientoTests {
 		assertThat(violation.getMessage()).isEqualTo("la duración no puede ser menor de 1 día");
 	}
 
+	/* Validaciones obsoletas
 	@Test
 	@Disabled
 	void shouldNotValidateWithNullPoliza() {
@@ -147,7 +147,7 @@ public class TratamientoTests {
 		ConstraintViolation<Tratamiento> violation = constraintViolations.iterator().next();
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("acta");
 		assertThat(violation.getMessage()).isEqualTo("El acta no puede ser nulo");
-	}
+	}*/
 	
     
 	public String generateRandom(Integer length){
