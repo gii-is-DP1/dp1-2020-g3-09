@@ -92,7 +92,7 @@ public class EspecialistaController {
 	public String newEspecialista(@Valid Especialista especialista, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", "ERROR AL CREAR EL ESPECIALISTA");
 			return "especialistas/Especialista_form";
 
 		}else {
@@ -115,7 +115,7 @@ public class EspecialistaController {
 			return "especialistas/Especialistas_perfil";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE ESPECIALISTA CON ESE ID");
 			return all(model);
 		}
 	}
@@ -133,7 +133,7 @@ public class EspecialistaController {
 			return "especialistas/Especialistas_edit";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE ESPECIALISTA CON ESE ID");
 			return all(model);
 		}
 	}
@@ -156,7 +156,7 @@ public class EspecialistaController {
 			aseguradoraService.save(aseguradora);
 			}
 
-			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			model.addAttribute("message", "ESPECIALISTA EDITADO CON EXITO");
 			return all(model);
 		}
 	}
@@ -180,7 +180,7 @@ public class EspecialistaController {
 		Especialista especialista = this.especialistaService.findById(especialistaId).get();						
 
 		if(binding.hasErrors() || (cita == null) || (paciente == null) || (especialista == null)){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", "ERROR AL CREAR LA CITA PARA EL PACIENTE");
 			return all(model);
 
 		}else {
@@ -197,7 +197,7 @@ public class EspecialistaController {
 			citaService.save(cita);
 			pacienteService.save(paciente);
 			especialistaService.save(especialista);  
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "CITA CREADA CON EXITO");
 			return all(model); 
 
 		}

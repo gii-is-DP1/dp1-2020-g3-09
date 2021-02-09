@@ -89,7 +89,7 @@ public class PolizaController {
             polizaService.save(poliza);
             aseguradoraService.save(aseguradora);
            
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "POLIZA AÑADIDA CON EXITO");
 			return "redirect:/aseguradoras/{aseguradoraId}/perfil";
 
 		}
@@ -140,7 +140,7 @@ public class PolizaController {
             polizaService.save(poliza);
 
 
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "POLIZA EDITADA CON EXITO");
 			return "redirect:/aseguradoras/{aseguradoraId}/perfil";
 
         } 
@@ -149,6 +149,7 @@ public class PolizaController {
 	public String deletePaciente(@PathVariable("aseguradoraId") int aseguradoraId,@PathVariable("pacienteId") int pacienteId, ModelMap model){
 
         polizaService.deletePacienteDePoliza(pacienteId);
+        model.addAttribute("message", "PACIENTE BORRADO CON EXITO");
         return "redirect:/aseguradoras/{aseguradoraId}/perfil";
     }
 

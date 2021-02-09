@@ -65,12 +65,12 @@ public class AseguradoraController {
 	public String saveNewAseguradora(@Valid Aseguradora aseguradora, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", "ERROR AL CREAR LA ASEGURADORA");
 			return "aseguradoras/Aseguradoras_form";
 
 		}else {
 			aseguradoraService.save(aseguradora);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "ASEGURADORA CREADA CON EXITO");
 			return all(model);
 
 		}
@@ -87,7 +87,7 @@ public class AseguradoraController {
 			return "aseguradoras/Aseguradoras_perfil";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE ASEGURADORA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE ASEGURADORA CON ESE ID");
 			return all(model);
 		}
 	}
@@ -103,7 +103,7 @@ public class AseguradoraController {
 			return "aseguradoras/Aseguradoras_edit";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE ASEGURADORA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE ASEGURADORA CON ESE ID");
 			return all(model);
 		}
 	}
@@ -119,7 +119,7 @@ public class AseguradoraController {
 		}else{
 			BeanUtils.copyProperties(aseguradoraModified, aseguradora.get(), "id");
 			aseguradoraService.save(aseguradora.get());
-			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			model.addAttribute("message", "ASEGURADORA EDITADA CON EXITO");
 			return all(model);
 		}
 	}

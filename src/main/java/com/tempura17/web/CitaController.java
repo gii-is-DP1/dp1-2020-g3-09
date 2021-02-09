@@ -89,7 +89,7 @@ public class CitaController {
 	public String saveNewCita(@PathVariable("pacienteId") int pacienteId, @Valid Cita cita, BindingResult binding, ModelMap model){
 
 		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", "ERROR AL CREAR LA CITA");
 			List<Especialista> especialistas = this.especialistaService.findAll().stream().collect(Collectors.toList());
 			Especialidad[] especialidad = Especialidad.values();
 			model.addAttribute("especialistas", especialistas);
@@ -103,7 +103,7 @@ public class CitaController {
 			cita.setPaciente(paciente);
 			citaService.save(cita);
 			pacienteService.save(paciente);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "CITA CREADA CON EXITO");
 			Set<Cita> citas = this.pacienteService.findById(pacienteId).get().getCitas();
 			model.addAttribute("citas", citas);
 			return "redirect:/pacientes/{pacienteId}/perfil";
@@ -140,7 +140,7 @@ public class CitaController {
 		}else{
 			BeanUtils.copyProperties(citaModified, cita, "id", "paciente");
 			citaService.save(cita);
-			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			model.addAttribute("message", "CITA EDITADA CON EXITO");
 			return "redirect:/especialistas/" + cita.getEspecialista().getId() + "/perfil";
 		}
 	}
@@ -151,11 +151,11 @@ public class CitaController {
 		
 		if(cita.isPresent()){
 			citaService.delete(cita.get());
-			model.addAttribute("message", "ENHORABUENA HAS BORRADO ALGO, QUE PENA QUE NO SE PUEDA HACER CONTIGO LO MISMO");
+			model.addAttribute("message", "CITA BORRADA CON EXITO");
 			return all(model);
 
 		}else{
-			model.addAttribute("message","NO EXISTE CITA CON ESE ID RETRASADO");
+			model.addAttribute("message","NO EXISTE CITA CON ESE ID");
 			return all(model);
 		}
 	}
@@ -201,7 +201,7 @@ public class CitaController {
 		cita.setPaciente(this.pacienteService.findById(pacienteId).get());
 		model.addAttribute("especialista", cita.getEspecialista());
 		if(binding.hasErrors()){
-			model.addAttribute("message", "ERROR AL PASARLE LA CITA GILIPOLLAS");
+			model.addAttribute("message", "ERROR AL GUARDAR LA CITA");
 			return filterBy(especialistaId, pacienteId, model);
 
 		}else {
@@ -214,7 +214,7 @@ public class CitaController {
 			citaService.save(cita);
 			pacienteService.save(paciente);
 			especialistaService.save(especialista);
-			model.addAttribute("message", "ENHORABUENA BIEN COPIADO");
+			model.addAttribute("message", "CITA AÑADIDA CON EXITO");
 			return filterBy(especialistaId, pacienteId, model);
 
 		}

@@ -65,7 +65,7 @@ public class PacienteController {
 			return "pacientes/Pacientes_perfil";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE PACIENTE CON ESE ID");
 			return all(model);
 		}
 	}
@@ -81,7 +81,7 @@ public class PacienteController {
 			return "pacientes/Pacientes_edit";
 
 		}else{
-			model.addAttribute("message", "NO EXISTE CITA CON ESE ID RETRASADO");
+			model.addAttribute("message", "NO EXISTE PACIENTE CON ESE ID");
 			return all(model);
 		}
 	}
@@ -97,7 +97,7 @@ public class PacienteController {
 		}else{
 			BeanUtils.copyProperties(pacienteModified, paciente.get(), "id");
 			pacienteService.save(paciente.get());
-			model.addAttribute("message", "BIEN AÑADIDA LA CITA MONGOLO");
+			model.addAttribute("message", "PACIENTE EDITADO CON EXITO");
 			return all(model);
 		}
 	}
